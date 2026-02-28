@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="15" fill="#FFE600"/>
+  <text y=".85em" font-size="62" x="50" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" fill="#333">V</text>
+  <text y=".98em" font-size="18" x="50" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" fill="#333" dy="0">ASTTO</text>
+</svg>

@@ -1,0 +1,88 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">⚡ VASTTO</a>
+        <p>Las mejores ofertas de tecnologia en Argentina. Comparamos precios y te llevamos directo a Mercado Libre.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Categorias</h4>
+        <a href="/auriculares">Auriculares</a>
+        <a href="/celulares">Celulares</a>
+        <a href="/smartwatch">Smartwatch</a>
+        <a href="/accesorios">Accesorios</a>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <a href="/privacidad">Privacidad</a>
+        <a href="/afiliados">Programa de Afiliados</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {year} VASTTO. Sitio de afiliados de Mercado Libre Argentina.</p>
+      <p class="disclaimer">Este sitio participa del programa de afiliados de Mercado Libre. Podemos recibir comisiones por compras realizadas a traves de nuestros enlaces.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #1a1a1a;
+    color: #ccc;
+    margin-top: 3rem;
+    padding: 2rem 0 1rem;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .footer-brand .logo {
+    color: #FFE600;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .footer-brand p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .footer-links h4 {
+    color: #fff;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .footer-links a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #FFE600; }
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: #888;
+  }
+  .disclaimer { margin-top: 0.3rem; font-style: italic; }
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>

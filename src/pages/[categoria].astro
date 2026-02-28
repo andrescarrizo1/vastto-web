@@ -1,0 +1,248 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { categoria: 'auriculares' } },
+    { params: { categoria: 'celulares' } },
+    { params: { categoria: 'smartwatch' } },
+    { params: { categoria: 'accesorios' } },
+  ];
+}
+
+const { categoria } = Astro.params;
+
+const categoryData: Record<string, { title: string; description: string; products: any[] }> = {
+  auriculares: {
+    title: 'Auriculares en Argentina - Mejores Precios | VASTTO',
+    description: 'Los mejores auriculares inalambricos, bluetooth y gamer de Argentina. Comparamos precios en Mercado Libre para que ahorres mas.',
+    products: [
+      {
+        title: 'Auriculares Inalambricos Xiaomi Redmi Buds 6 Play Negro',
+        price: 29999,
+        originalPrice: 45000,
+        image: '/images/D_NQ_NP_2X_634742-MLA80088788445_102024-F.webp',
+        url: 'https://www.mercadolibre.com.ar/auriculares-inalambricos-xiaomi-redmi-buds-6-play-negro/p/MLA39962085',
+        badge: 'MAS VENDIDO',
+        rating: 4.5,
+        reviews: 2847,
+        freeShipping: true,
+      },
+      {
+        title: 'Auriculares Bluetooth Samsung Galaxy Buds FE Grafito',
+        price: 54999,
+        originalPrice: 79999,
+        image: '/images/D_NQ_NP_2X_894707-MLA71451905450_092023-F.webp',
+        url: 'https://www.mercadolibre.com.ar/auriculares-bluetooth-samsung-galaxy-buds-fe-grafito/p/MLA22165424',
+        badge: 'OFERTA',
+        rating: 4,
+        reviews: 1203,
+        freeShipping: true,
+      },
+      {
+        title: 'Auriculares Gamer HyperX Cloud Stinger 2 PC PS4 PS5',
+        price: 39999,
+        originalPrice: 59999,
+        image: '/images/D_NQ_NP_2X_834752-MLA71285272399_082023-F.webp',
+        url: 'https://www.mercadolibre.com.ar/auriculares-gamer-hyperx-cloud-stinger-2/p/MLA26547398',
+        badge: 'GAMER',
+        rating: 4.5,
+        reviews: 987,
+        freeShipping: true,
+      },
+    ],
+  },
+  celulares: {
+    title: 'Celulares en Argentina - Mejores Precios | VASTTO',
+    description: 'Los mejores celulares y smartphones de Argentina. Samsung, Xiaomi, Motorola y mas con los mejores precios en Mercado Libre.',
+    products: [
+      {
+        title: 'Samsung Galaxy A15 6GB RAM 128GB Azul Negro',
+        price: 249999,
+        originalPrice: 319999,
+        image: '/images/D_NQ_NP_2X_965083-MLA74672050466_022024-F.webp',
+        url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a15-6-gb-ram-128-gb-azul-negro/p/MLA36168782',
+        badge: 'POPULAR',
+        rating: 4,
+        reviews: 3421,
+        freeShipping: true,
+      },
+      {
+        title: 'Motorola Moto G54 5G 256GB 8GB RAM Azul',
+        price: 349999,
+        originalPrice: 449999,
+        image: '/images/D_NQ_NP_2X_629449-MLA73521474481_122023-F.webp',
+        url: 'https://www.mercadolibre.com.ar/celular-moto-g54-5g/p/MLA29900423',
+        badge: '5G',
+        rating: 4.5,
+        reviews: 1876,
+        freeShipping: true,
+      },
+    ],
+  },
+  smartwatch: {
+    title: 'Smartwatch en Argentina - Mejores Precios | VASTTO',
+    description: 'Los mejores smartwatch y relojes inteligentes de Argentina. Xiaomi, Samsung, Amazfit y mas con GPS y monitoreo de salud.',
+    products: [
+      {
+        title: 'Xiaomi Redmi Watch 4 Negro 1.97" GPS',
+        price: 89999,
+        originalPrice: 120000,
+        image: '/images/D_NQ_NP_2X_973577-MLA75428803498_032024-F.webp',
+        url: 'https://www.mercadolibre.com.ar/smartwatch-xiaomi-redmi-watch-4-negro-197-gps/p/MLA36124248',
+        badge: 'NUEVO',
+        rating: 5,
+        reviews: 856,
+        freeShipping: true,
+      },
+      {
+        title: 'Amazfit Bip 5 Blanco 1.91" GPS Bluetooth',
+        price: 79999,
+        originalPrice: 109999,
+        image: '/images/D_NQ_NP_2X_700284-MLA73126267022_112023-F.webp',
+        url: 'https://www.mercadolibre.com.ar/smartwatch-amazfit-bip-5/p/MLA29878736',
+        badge: 'OFERTA',
+        rating: 4,
+        reviews: 654,
+        freeShipping: false,
+      },
+    ],
+  },
+  accesorios: {
+    title: 'Accesorios Tech en Argentina - Mejores Precios | VASTTO',
+    description: 'Los mejores accesorios tecnologicos de Argentina. Cargadores, fundas, cables y mas con los mejores precios en Mercado Libre.',
+    products: [
+      {
+        title: 'Cargador Inalambrico Qi 15W Fast Charge',
+        price: 14999,
+        originalPrice: 22000,
+        image: '/images/D_NQ_NP_2X_707699-MLA52695813780_012023-F.webp',
+        url: 'https://www.mercadolibre.com.ar/cargador-inalambrico-qi-15w/p/MLA18937481',
+        badge: 'OFERTA',
+        rating: 4,
+        reviews: 432,
+        freeShipping: true,
+      },
+    ],
+  },
+};
+
+const data = categoryData[categoria as string];
+const pageTitle = data?.title || `${categoria} | VASTTO`;
+const pageDescription = data?.description || `Mejores productos en ${categoria}`;
+const products = data?.products || [];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <section class="category-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a> &rsaquo;
+        <span>{categoria}</span>
+      </nav>
+      <h1>Los Mejores {categoria?.charAt(0).toUpperCase()}{categoria?.slice(1)} de Argentina</h1>
+      <p>{pageDescription}</p>
+    </div>
+  </section>
+
+  <section class="products-section">
+    <div class="container">
+      <div class="products-header">
+        <p>{products.length} productos encontrados</p>
+        <span class="affiliate-note">* Precios sujetos a cambios. Ver en ML para precio final.</span>
+      </div>
+      <div class="products-grid">
+        {products.map((product: any) => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .category-hero {
+    background: linear-gradient(135deg, rgba(255,230,0,1) 0%, rgba(255,165,0,0.85) 100%), url('/favicon.svg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .category-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  .breadcrumb a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .breadcrumb a:hover { color: #3483fa; text-decoration: underline; }
+  .category-hero h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .category-hero p {
+    color: #333;
+    font-size: 1.15rem;
+    font-weight: 500;
+    max-width: 800px;
+    line-height: 1.5;
+  }
+  .products-section {
+    padding: 4rem 0 6rem;
+    background: #fdfdfd;
+  }
+  .products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(0,0,0,0.03);
+  }
+  .products-header p {
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 1.1rem;
+  }
+  .affiliate-note {
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+  }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  @media (max-width: 768px) {
+    .category-hero { padding: 3rem 0; }
+    .category-hero h1 { font-size: 2rem; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .products-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  }
+  @media (max-width: 480px) {
+    .products-grid { grid-template-columns: 1fr; }
+  }
+</style>

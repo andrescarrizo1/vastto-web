@@ -1,0 +1,372 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const featuredProducts = [
+  {
+    title: 'Auriculares Inalambricos Xiaomi Redmi Buds 6 Play Negro',
+    price: 21335,
+    originalPrice: 35000,
+    image: '/images/D_Q_NP_802305-MLA95679505222_102025-F.webp',
+    url: 'https://www.mercadolibre.com.ar/auriculares-inalambricos-xiaomi-redmi-buds-6-play/p/MLA39962085',
+    badge: 'MAS VENDIDO',
+    rating: 5,
+    reviews: 61894,
+    freeShipping: true,
+  },
+  {
+    title: 'Auriculares Inalambricos Bluetooth Sony WH-CH520 Negro',
+    price: 89999,
+    originalPrice: 97499,
+    image: '/images/D_Q_NP_661094-MLA1535410113_022025-F.webp',
+    url: 'https://www.mercadolibre.com.ar/auriculares-inalambricos-bluetooth-sony-wh-ch520-negro/p/MLA23138487',
+    badge: 'MAS VENDIDO',
+    rating: 5,
+    reviews: 11023,
+    freeShipping: true,
+  },
+  {
+    title: 'Celular Samsung Galaxy A16 4g 128gb 4 Gb Ram Negro',
+    price: 246799,
+    originalPrice: 469999,
+    image: '/images/D_Q_NP_741960-MLA2063957868_022025-F.webp',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a16-4g-128gb-4-gb-ram-negro/p/MLA45806032',
+    badge: 'MAS VENDIDO',
+    rating: 5,
+    reviews: 2215,
+    freeShipping: true,
+  },
+  {
+    title: 'Auriculares inalambricos Aiwa AW-BT301 Negro',
+    price: 38196,
+    originalPrice: 81499,
+    image: '/images/D_Q_NP_637527-MLA1367709752_012025-F.webp',
+    url: 'https://www.mercadolibre.com.ar/auriculares-inalambricos-aiwa-aw-bt301-negro/p/MLA19149264',
+    badge: '53% OFF',
+    rating: 5,
+    reviews: 10000,
+    freeShipping: true,
+  },
+  {
+    title: 'Auriculares Inalambricos Lenovo Livepod LP75 Bluetooth Negro',
+    price: 39999,
+    originalPrice: 65000,
+    image: '/images/D_Q_NP_744765-MLA1906627998_012025-F.webp',
+    url: 'https://www.mercadolibre.com.ar/auriculares-inalambricos-lenovo-livepod-lp75-bluetooth-negro/p/MLA28026305',
+    badge: 'POPULAR',
+    rating: 5,
+    reviews: 50000,
+    freeShipping: true,
+  },
+  {
+    title: 'Auriculares Inalambricos Bluetooth Sony WF-C510 Negro',
+    price: 94999,
+    originalPrice: 125887,
+    image: '/images/D_Q_NP_665823-MLA2363177602_022025-F.webp',
+    url: 'https://www.mercadolibre.com.ar/auriculares-inalambricos-bluetooth-sony-wf-c510-negro/p/MLA40935289',
+    badge: 'OFERTA',
+    rating: 5,
+    reviews: 5000,
+    freeShipping: true,
+  },
+  {
+    title: 'Smartwatch Reloj Inteligente T900 Ultra 2 Serie 9 Llamadas',
+    price: 39999,
+    originalPrice: 75000,
+    image: '/images/D_Q_NP_838405-MLA74701138882_022024-F.webp',
+    url: 'https://www.mercadolibre.com.ar/smartwatch-reloj-inteligente-t900-ultra-2-serie-9-llamadas/p/MLA28257974',
+    badge: '47% OFF',
+    rating: 4,
+    reviews: 15420,
+    freeShipping: true,
+  },
+  {
+    title: 'Teclado Gamer Mecanico Retroiluminado Rgb Switch Blue',
+    price: 29990,
+    originalPrice: 45000,
+    image: '/images/D_Q_NP_643149-MLA70080252609_062023-F.webp',
+    url: 'https://www.mercadolibre.com.ar/teclado-gamer-mecanico-retroiluminado-rgb-switch-blue/p/MLA19426925',
+    badge: '33% OFF',
+    rating: 5,
+    reviews: 8500,
+    freeShipping: true,
+  },
+  {
+    title: 'Mouse Gamer Logitech G203 Lightsync Rgb 8000 Dpi',
+    price: 34990,
+    originalPrice: 52000,
+    image: '/images/D_Q_NP_971187-MLA46516512347_062021-F.webp',
+    url: 'https://www.mercadolibre.com.ar/mouse-gamer-logitech-g203-lightsync-rgb-8000-dpi/p/MLA15900366',
+    badge: 'POPULAR',
+    rating: 5,
+    reviews: 12300,
+    freeShipping: true,
+  },
+  {
+    title: 'Funda Protectora Para Celular Samsung Galaxy A16 5g',
+    price: 8990,
+    originalPrice: 15000,
+    image: '/images/D_Q_NP_924784-MLA78653621558_082024-F.webp',
+    url: 'https://www.mercadolibre.com.ar/funda-protectora-para-celular-samsung-galaxy-a16-5g/p/MLA36293448',
+    badge: '40% OFF',
+    rating: 5,
+    reviews: 6700,
+    freeShipping: true,
+  },
+  {
+    title: 'Cargador Inalambrico Qi Wireless 15w Carga Rapida',
+    price: 19990,
+    originalPrice: 35000,
+    image: '/images/D_Q_NP_707723-MLA48198444149_112021-F.webp',
+    url: 'https://www.mercadolibre.com.ar/cargador-inalambrico-qi-wireless-15w-carga-rapida/p/MLA18166598',
+    badge: '43% OFF',
+    rating: 4,
+    reviews: 9800,
+    freeShipping: true,
+  },
+  {
+    title: 'Auriculares Gamer Hyperx Cloud Stinger Core Xbox Ps4 Pc',
+    price: 49990,
+    originalPrice: 75000,
+    image: '/images/D_Q_NP_611544-MLA45083290688_032021-F.webp',
+    url: 'https://www.mercadolibre.com.ar/auriculares-gamer-hyperx-cloud-stinger-core-xbox-ps4-pc/p/MLA15609816',
+    badge: '33% OFF',
+    rating: 5,
+    reviews: 11250,
+    freeShipping: true,
+  }
+];
+
+const categories = [
+  { name: 'Auriculares', icon: '🎧', href: '/auriculares', count: '500+ productos' },
+  { name: 'Celulares', icon: '📱', href: '/celulares', count: '800+ productos' },
+  { name: 'Smartwatch', icon: '⌚', href: '/smartwatch', count: '300+ productos' },
+  { name: 'Accesorios', icon: '🔌', href: '/accesorios', count: '1000+ productos' },
+];
+---
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Las Mejores Ofertas de Tecnologia en Argentina</h1>
+        <p>Encontra los mejores precios en auriculares, celulares, smartwatch y accesorios. Compramos en Mercado Libre con seguridad y comodidad.</p>
+        <a href="/auriculares" class="btn-hero">Ver Ofertas Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section class="categories">
+    <div class="container">
+      <h2>Explorar por Categoria</h2>
+      <div class="categories-grid">
+        {categories.map((cat) => (
+          <a href={cat.href} class="category-card">
+            <span class="cat-icon">{cat.icon}</span>
+            <span class="cat-name">{cat.name}</span>
+            <span class="cat-count">{cat.count}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS -->
+  <section class="featured">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ofertas Destacadas del Dia</h2>
+        <p>Seleccionamos los mejores productos con los mejores precios</p>
+      </div>
+      <div class="products-grid">
+        {featuredProducts.map((product) => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE VASTTO -->
+  <section class="why-us">
+    <div class="container">
+      <h2>Por que usar VASTTO?</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <span class="feature-icon">🔍</span>
+          <h3>Comparamos por vos</h3>
+          <p>Analizamos cientos de productos para mostrarte los mejores precios del mercado.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">⚡</span>
+          <h3>Actualizacion diaria</h3>
+          <p>Nuestros precios se actualizan todos los dias para que no te pierdas ninguna oferta.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">🛒</span>
+          <h3>Compra segura</h3>
+          <p>Todas las compras se realizan directamente en Mercado Libre con toda su seguridad.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">★</span>
+          <h3>Top rated</h3>
+          <p>Solo mostramos productos con buenas resenas de compradores reales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, rgba(255,230,0,1) 0%, rgba(255,165,0,0.85) 100%), url('/favicon.svg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 1.25rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .hero p {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-hero {
+    display: inline-block;
+    background: #3483fa;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(52, 131, 250, 0.4);
+  }
+  .btn-hero:hover { 
+    background: #2968c8; 
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(52, 131, 250, 0.5);
+  }
+  .categories {
+    padding: 5rem 0;
+    background: #fdfdfd;
+  }
+  .categories h2, .featured h2, .why-us h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+  }
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .category-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.02);
+  }
+  .category-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border-color: rgba(52, 131, 250, 0.1);
+  }
+  .cat-icon { 
+    font-size: 3rem; 
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  .category-card:hover .cat-icon {
+    transform: scale(1.1);
+  }
+  .cat-name { font-weight: 700; color: #1a1a1a; font-size: 1.1rem; }
+  .cat-count { color: #666; font-size: 0.85rem; font-weight: 500; }
+  .featured { padding: 5rem 0; background: #fff; }
+  .section-header { margin-bottom: 2.5rem; text-align: center; }
+  .section-header h2 { margin-bottom: 0.5rem; }
+  .section-header p { color: #666; font-size: 1.1rem; }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  .why-us { padding: 5rem 0; background: #fafafa; }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .feature {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .feature:hover {
+    transform: translateY(-5px);
+  }
+  .feature-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+  .feature h3 { font-size: 1.1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem; }
+  .feature p { font-size: 0.95rem; color: #666; line-height: 1.5; }
+  
+  @media (max-width: 992px) {
+    .categories-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .hero { padding: 4rem 0; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.1rem; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  }
+  @media (max-width: 480px) {
+    .products-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .categories-grid { grid-template-columns: 1fr; }
+  }
+</style>
