@@ -100,7 +100,8 @@ const schema = {
       {freeShipping && (
         <span class="free-shipping">&#10003; Envio gratis</span>
       )}
-      <button class="btn-buy">Ver en Mercado Libre</button>
+      <p class="stock-warning">⚡ Stock Limitado - Consultar Disponibilidad</p>
+      <button class="btn-buy">Ver Precio con Descuento</button>
     </div>
   </a>
 </article>
@@ -225,6 +226,15 @@ const schema = {
     align-items: center;
     gap: 4px;
     margin-bottom: 1rem;
+  }
+  .stock-warning {
+    font-size: 0.75rem;
+    color: #f73f05;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
   .btn-buy {
     width: 100%;
