@@ -33,7 +33,7 @@ const categoryData: Record<string, { title: string; description: string; product
         title: 'Samsung Galaxy Buds FE - Grafito',
         price: 54999,
         originalPrice: 79999,
-        image: '/images/D_NQ_NP_956913-MLA96144013345_102025-O.webp',
+        image: '/images/samsung-galaxy-buds-fe---grafito.jpg',
         url: 'https://www.mercadolibre.com.ar/auriculares-bluetooth-samsung-galaxy-buds-fe-grafito/p/MLA22165424',
         badge: 'OFERTA',
         rating: 4.9,
@@ -464,9 +464,30 @@ const data = categoryData[categoria as string];
 const pageTitle = data?.title || `${categoria} | VASTTO`;
 const pageDescription = data?.description || `Mejores productos en ${categoria}`;
 const products = data?.products || [];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": products.map((prod, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Product",
+      "name": prod.title,
+      "image": `https://vastto.com.ar${prod.image}`,
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "ARS",
+        "price": prod.price,
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  }))
+});
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={schema} />
   <section class="category-hero">
     <div class="container">
       <nav class="breadcrumb">

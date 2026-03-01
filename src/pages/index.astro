@@ -166,8 +166,29 @@ const categories = [
   { name: 'Smartwatch', icon: '⌚', href: '/smartwatch', count: '300+ productos' },
   { name: 'Accesorios', icon: '🔌', href: '/accesorios', count: '1000+ productos' },
 ];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": featuredProducts.map((prod, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Product",
+      "name": prod.title,
+      "image": `https://vastto.com.ar${prod.image}`,
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "ARS",
+        "price": prod.price,
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  }))
+});
 ---
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title="VASTTO | Las mejores ofertas en tecnologia" description="Encuentra las mejores ofertas en celulares, auriculares y tecnologia en Argentina. Comparamos los precios mas bajos y verificados diariamente.">
+  <script type="application/ld+json" set:html={schema} />
   <!-- HERO -->
   <section class="hero">
     <div class="container">
