@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vastto-web.pages.dev/</loc>
+    <loc>https://vastto.com.ar/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vastto-web.pages.dev/auriculares</loc>
+    <loc>https://vastto.com.ar/auriculares</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vastto-web.pages.dev/celulares</loc>
+    <loc>https://vastto.com.ar/celulares</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vastto-web.pages.dev/smartwatch</loc>
+    <loc>https://vastto.com.ar/smartwatch</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vastto-web.pages.dev/accesorios</loc>
+    <loc>https://vastto.com.ar/accesorios</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
