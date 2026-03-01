@@ -4,10 +4,10 @@ import https from 'https';
 
 const products = [
     // Auriculares
-    { "title": "Xiaomi Redmi Buds 6 Play - Negro", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_802305-MLA79567950522_102024-O.webp" },
+    { "title": "Xiaomi Redmi Buds 6 Play - Negro", "imageURL": 'https://http2.mlstatic.com/D_NQ_NP_2X_802305-MLA95679505222_102025-F.webp' }, // Redmi Buds
     { "title": "Samsung Galaxy Buds FE - Grafito", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_956913-MLA96144013345_102025-O.webp" },
     { "title": "HyperX Cloud Stinger 2 Core - Black", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_608332-MLA75034123583_112023-O.webp" },
-    { "title": "Sony WH-CH520 Inalámbricos", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_908553-MLA74003250325_012024-O.webp" },
+    { "title": "Sony WH-CH520 Inalámbricos", "imageURL": 'https://http2.mlstatic.com/D_NQ_NP_2X_932176-MLA99502277578_112025-F.webp' }, // Sony
     { "title": "Lenovo Thinkplus XT80 Sport", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_821735-MLA74531567432_022024-O.webp" },
     { "title": "Aiwa AW-BT301 Black Series", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_751235-MLA75103547432_032024-O.webp" },
     { "title": "JBL Tune 510BT Wireless", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_710235-MLA45932026432_052021-O.webp" },
@@ -22,7 +22,7 @@ const products = [
     { "title": "Xiaomi Redmi Note 13 Pro 256GB", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_881035-MLA73453043623_102023-O.webp" },
     { "title": "ZTE Blade A55 128GB - Negro", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_901035-MLA74210354532_122023-O.webp" },
     { "title": "Samsung Galaxy S24 FE 256GB", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_551035-MLA73453043624_102023-O.webp" },
-    { "title": "Xiaomi 14T Pro 512GB Extreme", "imageURL": "https://http2.mlstatic.com/D_NQ_NP_441035-MLA74353043625_092023-O.webp" },
+    { "title": "Xiaomi 14T Pro 512GB Extreme", "imageURL": 'https://http2.mlstatic.com/D_NQ_NP_2X_688124-MLA96868489273_102025-F.webp' }, // Xiaomi 14T Pro
 
     // Smartwatch
     { "title": "Xiaomi Redmi Watch 4 - Negro GPS", "imageURL": "https://http2.mlstatic.com/D_Q_NP_949531-MLA99521864140_122025-O.webp" },
@@ -60,22 +60,32 @@ async function downloadImage(url, dest) {
     return new Promise((resolve, reject) => {
         const options = {
             headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Referer': 'https://www.mercadolibre.com.ar/'
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+                'Accept-Language': 'es-AR,es;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Referer': 'https://www.mercadolibre.com.ar/',
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache'
             }
         };
 
         https.get(url, options, (res) => {
             if (res.statusCode === 200) {
-                res.pipe(fs.createWriteStream(dest))
-                    .on('error', reject)
-                    .once('close', () => resolve(dest));
+                const file = fs.createWriteStream(dest);
+                res.pipe(file);
+                file.on('finish', () => {
+                    file.close();
+                    const stats = fs.statSync(dest);
+                    if (stats.size < 9000) { // El placeholder de ML mide ~8.4KB
+                        console.log(`[!] WARN: ${path.basename(dest)} is very small (${stats.size} bytes). Likely a placeholder.`);
+                    }
+                    resolve(dest);
+                });
             } else if (res.statusCode === 301 || res.statusCode === 302) {
-                // Seguir redirecciones
                 downloadImage(res.headers.location, dest).then(resolve).catch(reject);
             } else {
                 res.resume();
-                reject(new Error(`Request failed with status code ${res.statusCode} for ${url}`));
+                reject(new Error(`Status ${res.statusCode} for ${url}`));
             }
         }).on('error', reject);
     });
