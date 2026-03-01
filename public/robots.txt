@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vastto.com.ar/sitemap-index.xml
+Sitemap: https://vastto.com.ar/sitemap.xml
