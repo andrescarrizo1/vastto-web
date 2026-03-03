@@ -16,7 +16,7 @@ const { categoria } = Astro.params;
 const categoryData: Record<string, { title: string; description: string; products: any[] }> = {
   auriculares: {
     title: 'Auriculares en Argentina - Mejores Precios | VASTTO',
-    description: 'Los mejores auriculares bluetooth, in-ear y gamer de Argentina. Comparamos los más vendidos de Mercado Libre.',
+    description: 'Los mejores auriculares bluetooth, in-ear y gamer de Argentina. Comparamos precios en las principales tiendas online.',
     products: [
       {
         title: 'Xiaomi Redmi Buds 6 Play - Negro',
@@ -516,17 +516,10 @@ const schema = JSON.stringify({
 
 <style>
   .category-hero {
-    background: linear-gradient(135deg, rgba(255,230,0,1) 0%, rgba(255,165,0,0.85) 100%), url('/favicon.svg') no-repeat center center/cover;
-    background-blend-mode: overlay;
+    background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%);
     padding: 4rem 0;
     position: relative;
     overflow: hidden;
-  }
-  .category-hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
   }
   .container {
     max-width: 1200px;
@@ -537,26 +530,26 @@ const schema = JSON.stringify({
   }
   .breadcrumb {
     font-size: 0.9rem;
-    color: #4a4a4a;
+    color: rgba(255,255,255,0.7);
     margin-bottom: 1.5rem;
     font-weight: 500;
   }
   .breadcrumb a {
-    color: #1a1a1a;
+    color: rgba(255,255,255,0.85);
     text-decoration: none;
     transition: color 0.2s ease;
   }
-  .breadcrumb a:hover { color: #3483fa; text-decoration: underline; }
+  .breadcrumb a:hover { color: #fff; text-decoration: underline; }
   .category-hero h1 {
     font-size: 2.75rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: #ffffff;
     margin: 0 0 0.75rem;
     letter-spacing: -0.5px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
   }
   .category-hero p {
-    color: #333;
+    color: rgba(255,255,255,0.85);
     font-size: 1.15rem;
     font-weight: 500;
     max-width: 800px;
