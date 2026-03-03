@@ -465,6 +465,10 @@ const pageTitle = data?.title || `${categoria} | VASTTO`;
 const pageDescription = data?.description || `Mejores productos en ${categoria}`;
 const products = data?.products || [];
 
+const validUntil = new Date();
+validUntil.setFullYear(validUntil.getFullYear() + 1);
+const validUntilStr = validUntil.toISOString().split('T')[0];
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -479,6 +483,7 @@ const schema = JSON.stringify({
         "@type": "Offer",
         "priceCurrency": "ARS",
         "price": prod.price,
+        "priceValidUntil": validUntilStr,
         "availability": "https://schema.org/InStock"
       }
     }

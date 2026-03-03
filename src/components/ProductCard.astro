@@ -46,6 +46,10 @@ const formattedOriginal = originalPrice
 const affiliateUrl = addAffiliateParam(url);
 
 // Generar JSON-LD estructurado para SEO
+const validUntil = new Date();
+validUntil.setFullYear(validUntil.getFullYear() + 1);
+const validUntilStr = validUntil.toISOString().split('T')[0];
+
 const schema = {
   "@context": "https://schema.org/",
   "@type": "Product",
@@ -56,6 +60,7 @@ const schema = {
     "url": affiliateUrl,
     "priceCurrency": "ARS",
     "price": price,
+    "priceValidUntil": validUntilStr,
     "itemCondition": "https://schema.org/NewCondition",
     "availability": "https://schema.org/InStock",
     "seller": {
