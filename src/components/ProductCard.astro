@@ -11,6 +11,9 @@ interface Props {
   rating?: number;
   reviews?: number;
   freeShipping?: boolean;
+  verdict?: string;
+  pros?: string[];
+  cons?: string[];
 }
 
 const {
@@ -23,6 +26,9 @@ const {
   rating = 0,
   reviews = 0,
   freeShipping = false,
+  verdict,
+  pros = [],
+  cons = [],
 } = Astro.props;
 
 const discount = originalPrice
@@ -105,7 +111,29 @@ const schema = {
       {freeShipping && (
         <span class="free-shipping">&#10003; Envio gratis</span>
       )}
-      <button class="btn-buy">Ver Precio y Ofertas</button>
+      
+      {verdict && (
+        <div class="vastto-verdict">
+          <h4>Veredicto VASTTO</h4>
+          <p>{verdict}</p>
+          {(pros.length > 0 || cons.length > 0) && (
+             <div class="pros-cons">
+               {pros.length > 0 && (
+                 <ul class="pros">
+                   {pros.map(pro => <li>✓ {pro}</li>)}
+                 </ul>
+               )}
+               {cons.length > 0 && (
+                 <ul class="cons">
+                   {cons.map(con => <li>✕ {con}</li>)}
+                 </ul>
+               )}
+             </div>
+          )}
+        </div>
+      )}
+      
+      <button class="btn-buy">Ver Oferta en ML</button>
     </div>
   </a>
 </article>
@@ -242,6 +270,53 @@ const schema = {
     font-size: 0.95rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .vastto-verdict {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #6c47ff;
+    font-size: 0.85rem;
+  }
+  
+  .vastto-verdict h4 {
+    margin: 0 0 0.5rem 0;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .vastto-verdict p {
+    margin: 0 0 0.75rem 0;
+    color: #4a4a4a;
+    line-height: 1.4;
+  }
+  
+  .pros-cons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .pros, .cons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .pros li {
+    color: #10b981;
+    margin-bottom: 2px;
+  }
+  
+  .cons li {
+    color: #ef4444;
+    margin-bottom: 2px;
   }
 </style>

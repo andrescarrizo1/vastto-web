@@ -1,0 +1,217 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+// Usamos datos duros (mock) para esta guía de ejemplo, 
+// lo ideal a largo plazo es usar Content Collections de Astro.
+const products = [
+  {
+    title: 'Xiaomi Redmi Buds 6 Play - Negro',
+    price: 29999,
+    image: '/images/xiaomi-redmi-buds-6-play---negro.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-inalambricos-xiaomi-redmi-buds-6-play-negro/p/MLA39962085',
+    badge: 'EL MÁS BARATO',
+    verdict: 'No tienen cancelación de ruido activa (ANC), pero las gomitas (aislamiento pasivo) te tapan bien de los ruidos de la calle. Por menos de 30 lucas, es un regalo.',
+    freeShipping: true,
+    rating: 4.8,
+    reviews: 6189,
+    pros: ['Precio imbatible', 'Batería ridícula (36h)', 'Livianos (no cansan)'],
+    cons: ['Plásticos frágiles', 'Graves poco profundos']
+  },
+  {
+    title: 'Sony WH-CH520 Inalámbricos',
+    price: 87999,
+    originalPrice: 105000,
+    image: '/images/sony-wh-ch520-inal-mbricos.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-sony-wh-ch520-inalambricos/p/MLA22103546',
+    badge: 'DIADEMA',
+    verdict: 'Al ser on-ear (sobre la oreja), aíslan mecánicamente gran parte del ruido ambiente. Y tienen un modo de sintonización que realza voces, ideal para podcasts.',
+    freeShipping: true,
+    rating: 4.9,
+    reviews: 11023,
+    pros: ['Sonido Sony garantizado', 'Súper cómodos en bondis largos', 'Control por botones físicos'],
+    cons: ['Dan calor en verano', 'Superan apenas los $50k pero valen la estirada']
+  },
+  {
+    title: 'Lenovo Thinkplus XT80 Sport',
+    price: 59999,
+    image: '/images/lenovo-thinkplus-xt80-sport.jpg',
+    url: 'https://www.mercadolibre.com.ar/auricular-lenovo-thinkplus-xt80/p/MLA1510677462',
+    badge: 'NO SE CAEN',
+    verdict: 'Tienen un enganche deportivo que evita que de un tirón (o empujón en el subte D) se te caigan a las vías del tren. El aislamiento es decente.',
+    freeShipping: true,
+    rating: 4.5,
+    reviews: 5000,
+    pros: ['Sujeción deportiva de seguridad', 'Botones grandes fáciles de tocar', 'Volumen brutal'],
+    cons: ['Estuche demasiado grande para el bolsillo', 'Los agudos saturan un poco']
+  }
+];
+
+// Schema Article para SEO
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Los 3 mejores auriculares para el colectivo en Argentina (Sub $50k)",
+  "image": "https://vastto.com.ar/og-vastto.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "VASTTO"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "VASTTO",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://vastto.com.ar/favicon.svg"
+    }
+  },
+  "datePublished": "2026-03-03",
+  "dateModified": "2026-03-03"
+});
+---
+
+<Layout 
+  title="Top 3 Auriculares para el Colectivo y Subte (Menos de $50k) | VASTTO" 
+  description="Viajar en el bondi es ruidoso. Analizamos 3 auriculares económicos que te aíslan del motor, los gritos y la cumbia sin gastar un sueldo en Argentina.">
+  <script type="application/ld+json" set:html={schema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> &rsaquo;
+          <a href="/guias">Guías</a> &rsaquo;
+          <span>Auriculares</span>
+        </nav>
+        <h1>Los 3 mejores auriculares para viajar en bondi sin que el ruido del motor te vuelva loco (Menos de $50k)</h1>
+        <div class="meta">
+          <span>Actualizado: Marzo 2026</span> • <span>Tiempo de lectura: 4 min</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Si viajas más de 40 minutos en el 60 o en el Subte D todos los días, sabes que el ruido te destruye los oídos. Intentar escuchar un podcast o música tranquila se vuelve imposible a menos que pongas el volumen al 100% (lo cual te daña la audición a largo plazo).</p>
+
+      <h2>El problema del "Volumen al 100%"</h2>
+      <p>Mucha gente comete el error de pensar que para "ganarle" al ruido del colectivo necesitan auriculares que suenen muy fuerte. <strong>Falso.</strong> Lo que necesitas es <em>Aislamiento Pasivo</em> (gomitas que sellen bien) o <em>Cancelación Activa de Ruido</em> (ANC). Como la ANC es carísima, hoy nos enfocamos en opciones económicas con excelente aislamiento pasivo.</p>
+      
+      <div class="verdict-box">
+        <strong>Veredicto VASTTO:</strong> No compres auriculares "de botón" (tipo los Airpods originales) para viajar. Jamás sellarán el ruido exterior. Invierte siempre en modelos <em>In-Ear</em> (con gomitas de silicona) o <em>Over-Ear</em> cerrados.
+      </div>
+
+      <h2>Nuestro Top 3 Económico</h2>
+      <p>Filtramos el catálogo interminable de Mercado Libre para traerte las 3 mejores opciones reales bajo nuestro radar.</p>
+    </div>
+
+    <div class="container products-showcase">
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>¿Cómo elegimos estos modelos?</h2>
+      <ul>
+        <li><strong>Fijación:</strong> En un frenada brusca, no queremos que tus auriculares terminen en el piso.</li>
+        <li><strong>Batería real:</strong> Chequeamos que banquen de 4 a 6 viajes de ida y vuelta promedio antes de necesitar el estuche.</li>
+        <li><strong>Precio/Calidad:</strong> Descartamos docenas de marcas genéricas que mueren a los 2 meses. Priorizamos Xiaomi, Lenovo y Sony.</li>
+      </ul>
+
+      <p><em>Nota del Editor: Los precios en Argentina varían día a día, pero hacemos el esfuerzo mantener este artículo actualizado. Haz click en "Ver Oferta" para ver el precio final de hoy.</em></p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header {
+    background: #1a0a3e;
+    color: white;
+    padding: 4rem 0 3rem;
+  }
+  .container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .post-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+  }
+  .meta {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+  }
+  
+  .post-content {
+    padding: 3rem 1.5rem;
+  }
+  .lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .post-content h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin: 2.5rem 0 1rem;
+    font-weight: 800;
+  }
+  .post-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+  }
+  .post-content ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+  }
+  .post-content li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .verdict-box {
+    background: #f0ebff;
+    border-left: 4px solid #6c47ff;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 2rem 0;
+    font-size: 1.1rem;
+    color: #3b1fa8;
+  }
+  
+  .products-showcase {
+    background: #fdfdfd;
+    padding: 3rem 1.5rem;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .post-header h1 { font-size: 2rem; }
+  }
+</style>

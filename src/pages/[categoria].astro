@@ -489,6 +489,45 @@ const schema = JSON.stringify({
     }
   }))
 });
+
+let faqSchemaStr = "";
+let currentFaqs: {q: string, a: string}[] = [];
+
+if (categoria === 'auriculares') {
+  currentFaqs = [
+    { q: "¿Qué auriculares bluetooth comprar en 2026?", a: "Depende de tu uso. Si viajas mucho en transporte público, prioriza modelos in-ear u over-ear con buen aislamiento pasivo como los Sony WH-CH520." },
+    { q: "¿Vale la pena la cancelación de ruido (ANC)?", a: "Sí, pero en modelos económicos (menos de $50.000 ARS) suele ser muy básica. Es mejor un auricular con buenas gomitas de silicona que un ANC de mala calidad." }
+  ];
+} else if (categoria === 'celulares') {
+  currentFaqs = [
+    { q: "¿Cuál es el mejor celular calidad/precio en Argentina?", a: "Actualmente, la serie Galaxy A de Samsung (como el A15 o A55) y la serie Redmi Note de Xiaomi dominan la gama media por sus pantallas AMOLED y actualizaciones garantizadas." },
+    { q: "¿Es seguro comprar celulares por Mercado Libre?", a: "Sí, siempre y cuando elijas publicaciones marcadas como 'Full' (enviadas por ML) y de vendedores con reputación verde o tiendas oficiales." }
+  ];
+} else if (categoria === 'smartwatch') {
+  currentFaqs = [
+    { q: "¿Qué smartwatch es compatible con iPhone?", a: "Además del Apple Watch (la mejor opción integrada), los relojes Garmin y Amazfit funcionan excelente en iOS a través de sus propias apps." },
+    { q: "¿Cuánto dura la batería de un smartwatch?", a: "Depende del sistema. Relojes con WearOS o WatchOS apenas duran 1-2 días, mientras que las pulseras deportivas (como Xiaomi Band o Amazfit) pueden superar los 14 días sin cargar." }
+  ];
+} else if (categoria === 'accesorios') {
+  currentFaqs = [
+    { q: "¿Los cargadores genéricos dañan la batería del celular?", a: "Sí, los cargadores sin certificación pueden no regular bien el voltaje. Recomendamos siempre comprar cargadores originales (Samsung, Apple) o marcas certificadas (Baseus, Ugreen)." }
+  ];
+}
+
+if (currentFaqs.length > 0) {
+  faqSchemaStr = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": currentFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  });
+}
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -516,7 +555,25 @@ const schema = JSON.stringify({
         ))}
       </div>
     </div>
+    
+    {currentFaqs.length > 0 && (
+      <div class="faq-section">
+        <h3>Preguntas Frecuentes sobre {categoria}</h3>
+        <div class="faq-list">
+          {currentFaqs.map(faq => (
+            <details class="faq-item">
+              <summary>
+                {faq.q}
+                <span class="icon">+</span>
+              </summary>
+              <p>{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    )}
   </section>
+  {faqSchemaStr && <script type="application/ld+json" set:html={faqSchemaStr} />}
 </Layout>
 
 <style>
@@ -587,6 +644,58 @@ const schema = JSON.stringify({
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
   }
+  
+  .faq-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+  .faq-section h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+  }
+  .faq-item {
+    background: #fdfdfd;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 1.25rem;
+    font-weight: 700;
+    color: #3b1fa8;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item p {
+    padding: 0 1.25rem 1.25rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .faq-item[open] summary .icon {
+    transform: rotate(45deg);
+  }
+  .icon {
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+    color: #6c47ff;
+  }
+  
   @media (max-width: 768px) {
     .category-hero { padding: 3rem 0; }
     .category-hero h1 { font-size: 2rem; }
