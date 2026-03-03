@@ -60,7 +60,7 @@ const schema = {
     "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
-      "name": "Mercado Libre"
+      "name": "VASTTO"
     }
   },
   ...(rating > 0 && reviews > 0 ? {
@@ -121,11 +121,11 @@ const schema = {
   .product-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    border-color: rgba(52, 131, 250, 0.15);
+    border-color: rgba(108, 71, 255, 0.15);
   }
   .product-card:hover .btn-buy {
-    background: #2968c8;
-    box-shadow: 0 4px 12px rgba(52, 131, 250, 0.3);
+    background: #5535e0;
+    box-shadow: 0 4px 12px rgba(108, 71, 255, 0.3);
   }
   .product-card:hover .card-image img {
     transform: scale(1.05);
@@ -134,15 +134,15 @@ const schema = {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: #FFE600;
-    color: #1a1a1a;
+    background: #ff6b35;
+    color: #fff;
     font-size: 0.75rem;
     font-weight: 800;
     padding: 4px 10px;
     border-radius: 6px;
     z-index: 2;
     text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(255, 230, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
   }
   .card-link {
     text-decoration: none;
@@ -190,7 +190,7 @@ const schema = {
     display: flex;
     align-items: center;
   }
-  .stars { color: #3483fa; letter-spacing: 1px; }
+  .stars { color: #f59e0b; letter-spacing: 1px; }
   .reviews { color: #888; margin-left: 6px; font-weight: 500; }
   .card-pricing {
     display: flex;
@@ -213,12 +213,12 @@ const schema = {
     letter-spacing: -0.5px;
   }
   .discount {
-    color: #00a650;
+    color: #10b981;
     font-size: 0.8rem;
     font-weight: 700;
   }
   .free-shipping {
-    color: #00a650;
+    color: #10b981;
     font-size: 0.85rem;
     font-weight: 700;
     display: flex;
@@ -228,7 +228,7 @@ const schema = {
   }
   .btn-buy {
     width: 100%;
-    background: #3483fa;
+    background: #6c47ff;
     color: #fff;
     border: none;
     border-radius: 8px;

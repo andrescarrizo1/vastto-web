@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="logo">⚡ VASTTO</a>
-        <p>Las mejores ofertas de tecnologia en Argentina. Comparamos precios y te llevamos directo a Mercado Libre.</p>
+        <p>Las mejores ofertas de tecnología en Argentina. Comparamos precios y te llevamos a las mejores tiendas online.</p>
       </div>
       <div class="footer-links">
         <h4>Categorias</h4>
@@ -22,7 +22,8 @@ const year = new Date().getFullYear();
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {year} VASTTO. Las mejores ofertas en tecnologia.</p>
+      <p>&copy; {year} VASTTO. Las mejores ofertas en tecnología de Argentina.</p>
+      <p class="disclaimer">VASTTO es un sitio independiente de comparación de precios. Al hacer clic en los productos podés ser redirigido a tiendas de terceros. No somos representantes ni afiliados oficiales de ningún retailer. Los precios y disponibilidad pueden variar.</p>
     </div>
   </div>
 </footer>
@@ -46,7 +47,7 @@ const year = new Date().getFullYear();
     margin-bottom: 2rem;
   }
   .footer-brand .logo {
-    color: #FFE600;
+    color: #6c47ff;
     text-decoration: none;
     font-weight: 800;
     font-size: 1.2rem;
@@ -72,14 +73,14 @@ const year = new Date().getFullYear();
     margin-bottom: 0.4rem;
     transition: color 0.2s;
   }
-  .footer-links a:hover { color: #FFE600; }
+  .footer-links a:hover { color: #6c47ff; }
   .footer-bottom {
     border-top: 1px solid #333;
     padding-top: 1rem;
     font-size: 0.8rem;
     color: #888;
   }
-  .disclaimer { margin-top: 0.3rem; font-style: italic; }
+  .disclaimer { margin-top: 0.5rem; font-style: italic; font-size: 0.75rem; color: #666; line-height: 1.5; }
   @media (max-width: 768px) {
     .footer-grid { grid-template-columns: 1fr; }
   }
