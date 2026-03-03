@@ -117,21 +117,30 @@ const schema = {
           <h4>Veredicto VASTTO</h4>
           <p>{verdict}</p>
           {(pros.length > 0 || cons.length > 0) && (
-             <div class="pros-cons">
-               {pros.length > 0 && (
-                 <ul class="pros">
-                   {pros.map(pro => <li>✓ {pro}</li>)}
-                 </ul>
-               )}
-               {cons.length > 0 && (
-                 <ul class="cons">
-                   {cons.map(con => <li>✕ {con}</li>)}
-                 </ul>
-               )}
-             </div>
+            <div class="pros-cons">
+              {pros && pros.length > 0 && (
+                <div class="pros">
+                  <ul>
+                    {pros.map((pro: string) => <li><span class="icon">✓</span> {pro}</li>)}
+                  </ul>
+                </div>
+              )}
+              {/* Se ocultan temporalmente las contras para no afectar la conversión */}
+              {/* cons && cons.length > 0 && (
+                <div class="cons">
+                  <ul>
+                    {cons.map((con: string) => <li><span class="icon">✕</span> {con}</li>)}
+                  </ul>
+                </div>
+              ) */}
+            </div>
           )}
         </div>
       )}
+      
+      <div class="calc-hint">
+        <a href="/herramientas/calculadora-cuotas">🧮 ¿Conviene en cuotas? Calculalo acá</a>
+      </div>
       
       <button class="btn-buy">Ver Oferta en ML</button>
     </div>
@@ -318,5 +327,23 @@ const schema = {
   .cons li {
     color: #ef4444;
     margin-bottom: 2px;
+  }
+  
+  .calc-hint {
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .calc-hint a {
+    color: #6c47ff;
+    font-size: 0.85rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  
+  .calc-hint a:hover {
+    color: #3b1fa8;
+    text-decoration: underline;
   }
 </style>

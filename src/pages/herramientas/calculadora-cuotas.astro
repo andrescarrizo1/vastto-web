@@ -1,0 +1,403 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Calculadora de Cuotas vs Contado en Argentina | VASTTO" 
+  description="Descubrí si te conviene pagar en cuotas con interés o en efectivo. Calculadora gratis con estimación de inflación para aprovechar las verdaderas ofertas.">
+  
+  <section class="tools-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a> &rsaquo;
+        <span>Herramientas</span>
+      </nav>
+      <h1>¿Cuotas Pijas o Contado Rey? 👑</h1>
+      <p>La herramienta definitiva para saber si esa "oferta en cuotas" en Mercado Libre te conviene o te están robando con el interés frente a la inflación (Actualizado 2026).</p>
+    </div>
+  </section>
+
+  <section class="calculator-section">
+    <div class="container-narrow">
+      <div class="calculator-card">
+        <div class="calc-header">
+          <h2>🧮 Calculadora Inteligentne de Inflación</h2>
+          <p>Ingresá los precios. Nosotros hacemos la matemática financiera.</p>
+        </div>
+        
+        <form id="cuotas-form" class="calc-form">
+          <div class="form-group">
+            <label for="cash-price">Precio de Contado (o 1 pago) [$ARS]</label>
+            <div class="input-prefix">
+              <span>$</span>
+              <input type="number" id="cash-price" name="cash-price" required min="1" placeholder="Ej: 50000">
+            </div>
+          </div>
+          
+          <div class="form-group dual">
+            <div class="half-group">
+              <label for="installments">Cantidad de Cuotas</label>
+              <select id="installments" name="installments" required>
+                <option value="3">3 Cuotas</option>
+                <option value="6">6 Cuotas</option>
+                <option value="9">9 Cuotas</option>
+                <option value="12" selected>12 Cuotas</option>
+                <option value="18">18 Cuotas</option>
+                <option value="24">24 Cuotas</option>
+              </select>
+            </div>
+            <div class="half-group">
+              <label for="installment-price">Valor de 1 Cuota [$ARS]</label>
+              <div class="input-prefix">
+                <span>$</span>
+                <input type="number" id="installment-price" name="installment-price" required min="1" placeholder="Ej: 5000">
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group advanced-toggle">
+            <label for="inflation">Inflación Mensual Estimada (%)</label>
+            <input type="number" id="inflation" name="inflation" required min="0" max="100" step="0.1" value="5.0">
+            <span class="help-text">Ajustá este valor según las proyecciones (actualmente ~5% mensual en 2026).</span>
+          </div>
+
+          <button type="submit" class="btn-calc">Calcular Convicción 🚀</button>
+        </form>
+
+        <div id="results" class="results-container hidden">
+          <div class="result-box winner" id="result-winner">
+            <h3>¡Conviene pagar en <span id="w-method">Cuotas</span>! 🎉</h3>
+            <p id="w-reason">Por el efecto de la inflación, financiarlo te ahorra plata real.</p>
+          </div>
+          
+          <div class="breakdown">
+            <div class="breakdown-item">
+              <span>Precio Contado Fijo:</span>
+              <strong id="res-cash"></strong>
+            </div>
+            <div class="breakdown-item">
+              <span>Precio Total Financiado (Nominal):</span>
+              <strong id="res-total-nominal"></strong>
+            </div>
+            <div class="breakdown-item highlight">
+              <span>Costo Real Financiado (Costo Actualizado):</span>
+              <strong id="res-real"></strong>
+            </div>
+          </div>
+          
+          <div class="explanation">
+            <h4>¿Qué significa esto?</h4>
+            <p id="res-explanation"></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="seo-content">
+        <h3>¿Cómo funciona esta calculadora de cuotas?</h3>
+        <p>En Argentina, debido a la inflación, el dinero de hoy vale más que el dinero de mañana. Esta calculadora utiliza el concepto de <strong>Valor Presente de las Cuotas</strong>. En lugar de sumar simplemente el valor de todas las cuotas (que te dará un nominal más alto), descuenta la inflación estimada mes a mes.</p>
+        <p>Si el costo total de las cuotas traído al "valor de hoy" es MENOR que el precio de contado, entonces <strong>te conviene endeudarte en cuotas</strong> porque se licúan con la inflación. Esta es una herramienta clave de VASTTO para que no tires tu plata.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('cuotas-form') as HTMLFormElement;
+  const resultsContainer = document.getElementById('results');
+  
+  if (form && resultsContainer) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const cashPrice = parseFloat((document.getElementById('cash-price') as HTMLInputElement).value);
+      const installments = parseInt((document.getElementById('installments') as HTMLSelectElement).value);
+      const installmentPrice = parseFloat((document.getElementById('installment-price') as HTMLInputElement).value);
+      const inflation = parseFloat((document.getElementById('inflation') as HTMLInputElement).value) / 100;
+      
+      // Cálculo del spread total nominal
+      const totalNominal = installments * installmentPrice;
+      
+      // Cálculo del Valor Presente (VP) de las cuotas
+      let presentValue = 0;
+      for (let i = 1; i <= installments; i++) {
+        // Asumimos que la cuota se paga a fin de mes, descontamos la inflación por cada mes
+        presentValue += installmentPrice / Math.pow(1 + inflation, i);
+      }
+      
+      const formatCurrency = (val: number) => new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(val);
+      
+      // DOM Elements
+      const wMethod = document.getElementById('w-method');
+      const wReason = document.getElementById('w-reason');
+      const resCash = document.getElementById('res-cash');
+      const resTotalNominal = document.getElementById('res-total-nominal');
+      const resReal = document.getElementById('res-real');
+      const resExplanation = document.getElementById('res-explanation');
+      const winnerBox = document.getElementById('result-winner');
+      
+      if (wMethod && wReason && resCash && resTotalNominal && resReal && resExplanation && winnerBox) {
+        resCash.textContent = formatCurrency(cashPrice);
+        resTotalNominal.textContent = formatCurrency(totalNominal);
+        resReal.textContent = formatCurrency(presentValue);
+        
+        let difference = Math.abs(cashPrice - presentValue);
+        let diffFmt = formatCurrency(difference);
+
+        if (presentValue < cashPrice) {
+          // Conviene Cuotas
+          winnerBox.className = "result-box winner green";
+          wMethod.textContent = "CUOTAS";
+          wReason.innerHTML = `Considerando la inflación, terminás ahorrando <strong>${diffFmt}</strong> de "poder adquisitivo real" que si lo pagaras de contado hoy.`;
+          resExplanation.textContent = `Pagarías un total nominal de ${formatCurrency(totalNominal)}, pero como la inflación del ${inflation*100}% mensual te va "comiendo" el valor de la deuda, el peso de esas cuotas en tu bolsillo equivale a pagar ${formatCurrency(presentValue)} hoy. Como esto es menor al precio de lista de ${formatCurrency(cashPrice)}, ¡es negocio!`;
+        } else {
+           // Conviene Contado
+          winnerBox.className = "result-box winner red";
+          wMethod.textContent = "CONTADO (1 Pago)";
+          wReason.innerHTML = `Las cuotas tienen excesivo interés. Terminás pagando <strong>${diffFmt}</strong> más en valor real.`;
+          resExplanation.textContent = `Aún asumiendo que tu sueldo acompañe la inflación del ${inflation*100}%, el interés de estas cuotas es usurero. En valor de hoy, las cuotas representan ${formatCurrency(presentValue)}, mucho más caro que los ${formatCurrency(cashPrice)} de contado. No financies.`;
+        }
+        
+        resultsContainer.classList.remove('hidden');
+        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+</script>
+
+<style>
+  .tools-hero {
+    background: linear-gradient(135deg, #111111 0%, #2a0845 100%);
+    padding: 3.5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .tools-hero h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.5px;
+  }
+  .tools-hero p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  .breadcrumb a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+  }
+
+  .calculator-section {
+    padding: 4rem 1.5rem;
+    background: #f4f6f8;
+  }
+  .container-narrow {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .calculator-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  .calc-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
+  }
+  .calc-header h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin: 0 0 0.5rem;
+  }
+  .calc-header p {
+    color: #666;
+    margin: 0;
+  }
+
+  .calc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-group.dual {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  .half-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  label {
+    font-weight: 700;
+    color: #333;
+    font-size: 0.95rem;
+  }
+  .input-prefix {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .input-prefix span {
+    position: absolute;
+    left: 1rem;
+    color: #666;
+    font-weight: bold;
+  }
+  input, select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    font-family: inherit;
+    background: #f8fafc;
+  }
+  .input-prefix input {
+    padding-left: 2.5rem;
+  }
+  input:focus, select:focus {
+    outline: none;
+    border-color: #6c47ff;
+    box-shadow: 0 0 0 3px rgba(108, 71, 255, 0.1);
+    background: white;
+  }
+  .help-text {
+    font-size: 0.8rem;
+    color: #888;
+  }
+
+  .btn-calc {
+    background: #6c47ff;
+    color: white;
+    border: none;
+    padding: 1.2rem;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(108, 71, 255, 0.3);
+  }
+  .btn-calc:hover {
+    background: #5535e0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(108, 71, 255, 0.4);
+  }
+
+  /* Results */
+  .hidden {
+    display: none;
+  }
+  .results-container {
+    margin-top: 3rem;
+    animation: slideUpFade 0.5s ease;
+  }
+  @keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .result-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  .result-box.green {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+  }
+  .result-box.red {
+    background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+    box-shadow: 0 10px 25px rgba(244, 63, 94, 0.3);
+  }
+  .result-box h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .result-box p {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.95;
+  }
+  
+  .breakdown {
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+  }
+  .breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .breakdown-item:last-child { border: none; }
+  .breakdown-item span { color: #64748b; font-weight: 500;}
+  .breakdown-item strong { color: #0f172a; font-size: 1.1rem;}
+  .breakdown-item.highlight strong { color: #6c47ff; font-weight: 800; font-size: 1.25rem;}
+  
+  .explanation {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #e0e7ff;
+    border-left: 4px solid #4f46e5;
+    border-radius: 0 8px 8px 0;
+  }
+  .explanation h4 {
+    margin: 0 0 0.5rem;
+    color: #3730a3;
+  }
+  .explanation p {
+    margin: 0;
+    color: #4338ca;
+    line-height: 1.6;
+  }
+
+  .seo-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  .seo-content h3 {
+    margin-top: 0;
+    color: #1a1a1a;
+  }
+  .seo-content p {
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 600px) {
+    .form-group.dual { flex-direction: column; gap: 1.5rem; }
+    .calculator-card { padding: 1.5rem; }
+  }
+</style>
