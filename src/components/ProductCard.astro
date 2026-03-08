@@ -1,5 +1,6 @@
 ---
 import { addAffiliateParam } from '../utils/affiliate';
+import LazyImage from './LazyImage.astro';
 
 interface Props {
   title: string;
@@ -89,7 +90,7 @@ const schema = {
   {badge && <span class="badge">{badge}</span>}
   <a href={affiliateUrl} target="_blank" rel="noopener sponsored" class="card-link">
     <div class="card-image">
-      <img src={image} alt={title} loading="lazy" />
+      <LazyImage src={image} alt={title} class="card-img" />
     </div>
     <div class="card-body">
       <h3 class="card-title">{title}</h3>

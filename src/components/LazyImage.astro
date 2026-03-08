@@ -1,0 +1,18 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+}
+
+const { src, alt, class: className = '' } = Astro.props;
+const placeholder = '/images/placeholder.jpg'; // We need this image
+---
+
+<img 
+  src={src} 
+  alt={alt} 
+  class={className}
+  loading="lazy"
+  onerror={`this.onerror=null; this.src='${placeholder}';`}
+/>
