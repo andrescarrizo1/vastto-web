@@ -1,0 +1,202 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const products = [
+  {
+    title: 'Samsung Galaxy Buds FE - Grafito',
+    price: 54999,
+    originalPrice: 79999,
+    image: '/images/samsung-galaxy-buds-fe---grafito.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-bluetooth-samsung-galaxy-buds-fe-grafito/p/MLA22165424',
+    badge: '🏆 MEJOR ANC BARATO',
+    rating: 4.9,
+    reviews: 1203,
+    freeShipping: true,
+    verdict: 'Los Galaxy Buds FE son el santo grial del ANC barato. Por $55k tenés cancelación activa, sonido Samsung tuneado por AKG y la mejor integración si tenés un Galaxy. El ANC no compite con los Sony XM5, pero a este precio con esta calidad, es un golazo.',
+    pros: ['ANC por solo $55.000', 'Sonido tuneado por AKG', 'Integración Samsung perfecta', 'IPX2 resistente al sudor'],
+    cons: ['ANC no es la más fuerte', 'Batería justa (5h con ANC)', 'Solo brillan con Samsung'],
+  },
+  {
+    title: 'SoundPEATS Clear In-Ear',
+    price: 42000,
+    originalPrice: 50000,
+    image: '/images/soundpeats-clear-in-ear.jpg',
+    url: 'https://www.mercadolibre.com.ar/soundpeats-c30-hybrid-noise-cancelling-bluetooth-earphones/p/MLA2048863874',
+    badge: 'HÍBRIDO',
+    rating: 4.6,
+    reviews: 1263,
+    freeShipping: true,
+    verdict: 'Los SoundPEATS tienen cancelación de ruido híbrida (usa micrófonos internos y externos). No es la ANC más potente del mercado pero para el colectivo promedio reduces bastante. Y por $42k es una locura.',
+    pros: ['ANC híbrida por $42.000', 'Diseño transparente único', 'Sonido detallado', 'Modo ambiente'],
+    cons: ['ANC no bloquea graves fuertes', 'Plásticos se rayan', 'Batería baja con ANC (4h)'],
+  },
+  {
+    title: 'Haylou GT1 2022',
+    price: 23000,
+    originalPrice: 28000,
+    image: '/images/haylou-gt1-2022.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-bluetooth-gamer-inalambricos-haylou-gt1-pro-negro/p/MLA15466444',
+    badge: 'SIN ANC',
+    rating: 4.6,
+    reviews: 1632,
+    freeShipping: true,
+    verdict: 'Los Haylou NO tienen ANC, pero los incluimos como referencia. Sus gomitas de silicona ofrecen aislamiento pasivo decente. Si tu presupuesto es mínimo, es mejor esto que nada.',
+    pros: ['Aislamiento pasivo correcto', 'Precio imbatible', 'Livianos'],
+    cons: ['SIN cancelación activa', 'No bloquean motor del colectivo'],
+  },
+  {
+    title: 'JBL Wave Flex TWS',
+    price: 68000,
+    originalPrice: null,
+    image: '/images/jbl-wave-flex-tws.jpg',
+    url: 'https://www.mercadolibre.com.ar/auricular-jbl-wave-flex-in-ear-inalambrico-negro/p/MLA24649805',
+    badge: 'CONFORT',
+    rating: 4.7,
+    reviews: 2099,
+    freeShipping: true,
+    verdict: 'Los Wave Flex no tienen ANC pero su diseño open-ear es ideal si te molestan las gomitas. Para oficina o casa donde no hay tanto ruido, son los más cómodos de la lista.',
+    pros: ['Diseño open-ear cómodo', 'Sonido JBL cálido', 'App personalizable'],
+    cons: ['Sin ANC', 'No aíslan nada del ruido externo'],
+  },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Auriculares con Cancelación de Ruido Baratos en Argentina 2026",
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "publisher": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuánto cuestan los auriculares con cancelación de ruido más baratos en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "Los más baratos con ANC real son los SoundPEATS Clear por ~$42.000 (cancelación híbrida) y los Samsung Galaxy Buds FE por ~$55.000 (ANC completa). Por debajo de $40.000 no hay ANC real, solo aislamiento pasivo." } },
+    { "@type": "Question", "name": "¿Qué es la cancelación activa de ruido (ANC)?", "acceptedAnswer": { "@type": "Answer", "text": "La ANC usa micrófonos para captar el sonido externo y generar una onda contraria que lo neutraliza. Es diferente del aislamiento pasivo (tapar físicamente el oído con gomitas). La ANC es mucho más efectiva para ruidos constantes como el motor del colectivo o el aire acondicionado." } },
+    { "@type": "Question", "name": "¿Por qué necesito cancelación de ruido?", "acceptedAnswer": { "@type": "Answer", "text": "Si viajás en colectivo, subte o trabajás en oficina ruidosa, sin ANC terminás subiendo el volumen para tapar el ruido. Esto daña tus oídos a largo plazo. Con ANC escuchás a volumen bajo porque el ruido externo desaparece. Es una inversión en tu salud auditiva." } }
+  ]
+});
+---
+
+<Layout 
+  title="Auriculares con Cancelación de Ruido Baratos Argentina 2026 | VASTTO" 
+  description="¿Querés auriculares con ANC sin gastar una fortuna? Los mejores con cancelación de ruido baratos disponibles en Argentina. Desde $42.000 en ML.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/auriculares">Auriculares</a> ›
+          <span>Cancelación de Ruido Baratos</span>
+        </nav>
+        <h1>Auriculares con Cancelación de Ruido Baratos en Argentina (2026)</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 5 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">La cancelación de ruido (ANC) ya no es un lujo de $500.000. Hoy podés conseguir auriculares con buena ANC desde <strong>$42.000 en Argentina</strong>. Acá te mostramos las opciones reales, sin mentirte sobre fabricaciones truchas que dicen tener ANC y no la tienen.</p>
+
+      <div class="verdict-box">
+        <strong>🏆 Veredicto rápido VASTTO:</strong> Los <strong>Samsung Galaxy Buds FE por $55.000</strong> son la mejor ANC barata. Si no llegás, los <strong>SoundPEATS Clear por $42.000</strong> tienen cancelación híbrida que funciona. Por debajo de $40k, no hay ANC real — solo aislamiento pasivo.
+      </div>
+
+      <h2>¿Por Qué Necesitás ANC? (En Serio)</h2>
+      <p>Si viajás en colectivo en Buenos Aires, el motor genera entre 70-85 decibelios. Sin ANC, subís el volumen a 80-90% para taparlo. <strong>A ese volumen, estás dañando tus oídos cada día.</strong></p>
+      <p>Con ANC, escuchás al 40-50% del volumen porque el ruido del motor desaparece. Es literalmente una inversión en tu salud auditiva. Los $55.000 de los Galaxy Buds FE se pagan solos si viajás todos los días.</p>
+
+      <h2>La Verdad Sobre ANC Barata</h2>
+      <p>Hay que ser honestos: <strong>la ANC de $55.000 no es igual a la de $580.000</strong> (Sony WH-1000XM5). La diferencia:</p>
+      <ul>
+        <li><strong>ANC premium ($500k+):</strong> Bloquea el 95% del sonido. Silencio total en avión.</li>
+        <li><strong>ANC media ($55-100k):</strong> Bloquea el 60-70%. Reduce el motor del bondi notablemente.</li>
+        <li><strong>ANC "trucha" ($20-30k):</strong> Dice ANC en la caja pero no hace diferencia. Evitar.</li>
+      </ul>
+
+      <h2>Las Opciones Reales en Argentina</h2>
+    </div>
+
+    <div class="container products-showcase">
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Tabla: ¿Cuál Tiene ANC Real?</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Modelo</th><th>ANC</th><th>Tipo</th><th>Precio</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Galaxy Buds FE</strong></td><td>✅ ANC completa</td><td>In-ear TWS</td><td>~$55.000</td></tr>
+            <tr><td><strong>SoundPEATS Clear</strong></td><td>✅ ANC híbrida</td><td>In-ear TWS</td><td>~$42.000</td></tr>
+            <tr><td><strong>Haylou GT1</strong></td><td>❌ Solo pasivo</td><td>In-ear TWS</td><td>~$23.000</td></tr>
+            <tr><td><strong>JBL Wave Flex</strong></td><td>❌ Open-ear</td><td>In-ear open</td><td>~$68.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item"><summary>¿Cuánto cuestan los auriculares con ANC más baratos?<span class="icon">+</span></summary><p>SoundPEATS Clear: $42.000 (ANC híbrida). Samsung Galaxy Buds FE: $55.000 (ANC completa). Debajo de $40k no hay ANC real.</p></details>
+        <details class="faq-item"><summary>¿Qué es la cancelación activa de ruido?<span class="icon">+</span></summary><p>Usa micrófonos para captar ruido externo y generar una onda contraria que lo neutraliza. Diferente al aislamiento pasivo (gomitas). Mucho más efectiva.</p></details>
+        <details class="faq-item"><summary>¿Por qué necesito ANC?<span class="icon">+</span></summary><p>Si viajás en transporte público, sin ANC subís el volumen para tapar el ruido, dañando tus oídos. Con ANC escuchás a volumen bajo. Inversión en salud auditiva.</p></details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Más sobre Auriculares</h3>
+        <ul>
+          <li><a href="/auriculares">← Volver a Auriculares</a></li>
+          <li><a href="/auriculares/mejores-bluetooth-baratos">Top 5 Bluetooth Baratos</a></li>
+          <li><a href="/auriculares/sony-wh-ch520-review">Sony WH-CH520: Review</a></li>
+          <li><a href="/guias/mejores-auriculares-aislantes-colectivo-argentina">Auriculares para viajar en colectivo</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.05rem; line-height: 1.8; color: #4a4a4a; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+  .table-wrapper { overflow-x: auto; margin: 1.5rem 0 2.5rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+  th { background: #f0ebff; color: #3b1fa8; font-weight: 700; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #6c47ff; font-weight: 600; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .products-grid { grid-template-columns: 1fr; } }
+</style>

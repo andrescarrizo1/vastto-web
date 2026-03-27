@@ -1,0 +1,323 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const products = [
+  {
+    "title": "Sony WH-1000XM5 Noise Cancelling",
+    "price": 580000,
+    "originalPrice": 650000,
+    "image": "/images/sony-wh-1000xm5-noise-cancelling.jpg",
+    "url": "https://www.mercadolibre.com.ar/auriculares-bluetooth-sony-inalambricos-wh-1000xm5-color-negro/p/MLA19176887",
+    "badge": "PREMIUM",
+    "rating": 4.8,
+    "reviews": 2023,
+    "freeShipping": true,
+    "verdict": "El rey indiscutido de la cancelación de ruido. Si viajás en subte o avión frecuentemente, es una inversión en salud mental. No lo recomendamos solo para estar en casa por su precio.",
+    "pros": ["Cancelación de ruido extrema", "Batería de 30 horas", "Comodidad para usos largos"],
+    "cons": ["Precio muy elevado", "No se pliegan completamente"]
+  },
+  {
+    "title": "SoundPEATS Clear In-Ear",
+    "price": 42000,
+    "originalPrice": 50000,
+    "image": "/images/soundpeats-clear-in-ear.jpg",
+    "url": "https://www.mercadolibre.com.ar/soundpeats-c30-hybrid-noise-cancelling-bluetooth-earphones/p/MLA2048863874",
+    "badge": "CALIDAD/PRECIO",
+    "rating": 4.6,
+    "reviews": 1263,
+    "freeShipping": true,
+    "verdict": "La mejor opción transparente y económica. Tienen un sonido que compite con auriculares del doble de precio. Ideales para el día a día.",
+    "pros": ["Diseño transparente único", "Sonido claro y fuerte", "Baratos"],
+    "cons": ["Micrófono regular en exteriores", "Los plásticos se rayan fácil"]
+  },
+  {
+    "title": "JBL Wave Flex TWS",
+    "price": 68000,
+    "originalPrice": null,
+    "image": "/images/jbl-wave-flex-tws.jpg",
+    "url": "https://www.mercadolibre.com.ar/auricular-jbl-wave-flex-in-ear-inalambrico-negro/p/MLA24649805",
+    "badge": "CONFORT",
+    "rating": 4.7,
+    "reviews": 2099,
+    "freeShipping": true,
+    "verdict": "Si no te gustan las gomitas in-ear que entran al canal auditivo, los Wave Flex son la opción más segura y confiable de JBL.",
+    "pros": ["No son intrusivos (sin gomita)", "Bajos potentes típicos de JBL", "App personalizable"],
+    "cons": ["Aíslan poco el ruido del colectivo"]
+  },
+  {
+    title: 'Xiaomi Redmi Buds 6 Play - Negro',
+    price: 29999,
+    originalPrice: 45000,
+    image: '/images/xiaomi-redmi-buds-6-play---negro.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-inalambricos-xiaomi-redmi-buds-6-play-negro/p/MLA39962085',
+    badge: 'TOP VENTAS',
+    rating: 4.8,
+    reviews: 6189,
+    freeShipping: true,
+    verdict: 'Los más vendidos de Argentina por algo. Batería de 36 horas, conexión estable y un precio que no tiene sentido de lo bajo. Tu primer TWS obligado.',
+    pros: ['Batería interminable (36h)', 'Precio imbatible', 'Súper livianos'],
+    cons: ['Sin cancelación de ruido', 'Graves algo débiles'],
+  },
+  {
+    title: 'Sony WH-CH520 Inalámbricos',
+    price: 87999,
+    originalPrice: 105000,
+    image: '/images/sony-wh-ch520-inal-mbricos.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-sony-wh-ch520-inalambricos/p/MLA22103546',
+    badge: '🏆 RECOMENDADO',
+    rating: 4.8,
+    reviews: 11023,
+    freeShipping: true,
+    verdict: 'El auricular más vendido de TODA Argentina. 50 horas de batería, sonido equilibrado y micrófono excelente para Zoom/Discord. El comodín que sirve para todo.',
+    pros: ['Batería récord de 50 horas', 'Micrófono nítido', '11.000+ reseñas positivas', 'Cómodos para 8+ horas'],
+    cons: ['Sin cancelación activa de ruido', 'Plástico algo endeble'],
+  },
+  {
+    title: 'JBL Tune 510BT Wireless',
+    price: 45999,
+    originalPrice: 58000,
+    image: '/images/jbl-tune-510bt-wireless.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-jbl-tune-510bt-negro/p/MLA17347134',
+    badge: 'MÁS VENDIDO',
+    rating: 4.8,
+    reviews: 12431,
+    freeShipping: true,
+    verdict: 'El clásico de JBL que todo el mundo conoce. Sonido potente con los bajos característicos de JBL. No tiene ANC pero por esta plata el sonido es adictivo.',
+    pros: ['Bajos JBL potentes', '12.400+ reseñas', 'Batería de 40 horas', 'Plegables'],
+    cons: ['Sin cancelación de ruido', 'Almohadillas pequeñas'],
+  },
+  {
+    title: 'Samsung Galaxy Buds FE - Grafito',
+    price: 54999,
+    originalPrice: 79999,
+    image: '/images/samsung-galaxy-buds-fe---grafito.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-bluetooth-samsung-galaxy-buds-fe-grafito/p/MLA22165424',
+    badge: 'SAMSUNG',
+    rating: 4.9,
+    reviews: 1203,
+    freeShipping: true,
+    verdict: 'La opción Samsung para quien tiene Galaxy y quiere todo integrado. ANC buena, sonido equilibrado y se sincronizan automáticamente con tu Samsung.',
+    pros: ['ANC incluida por buen precio', 'Integración perfecta con Samsung', 'Sonido claro'],
+    cons: ['ANC no compite con Sony', 'Batería algo justa (5h)'],
+  },
+  {
+    title: 'HyperX Cloud Stinger 2 Core',
+    price: 39999,
+    originalPrice: 59999,
+    image: '/images/hyperx-cloud-stinger-2-core---black.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-gamer-hyperx-cloud-stinger-2/p/MLA26547398',
+    badge: 'GAMER',
+    rating: 5,
+    reviews: 1125,
+    freeShipping: true,
+    verdict: 'El auricular gamer más honesto. Micrófono que se mutea al levantarlo, copas cómodas y compatible con todo. Por menos de $40k no hay nada mejor para gaming.',
+    pros: ['Micro que mutea al levantar', 'Memory foam cómodo', 'Compatible con todo'],
+    cons: ['Todo plástico', 'Cable de goma fina'],
+  },
+  {
+    "title": "Haylou GT1 2022",
+    "price": 23000,
+    "originalPrice": 28000,
+    "image": "/images/haylou-gt1-2022.jpg",
+    "url": "https://www.mercadolibre.com.ar/auriculares-bluetooth-gamer-inalambricos-haylou-gt1-pro-negro/p/MLA15466444",
+    "badge": "ECONÓMICO",
+    "rating": 4.6,
+    "reviews": 1632,
+    "freeShipping": true,
+    "verdict": "Tu presupuesto mínimo que no sea basura. Suenan bien, conectan rápido y son enanos. Para salir del paso o tener unos de backup.",
+    "pros": ["Tamaño ínfimo", "Conexión estable", "Precio imbatible"],
+    "cons": ["Batería justa (4h)", "Construcción frágil"]
+  },
+  {
+    title: 'Lenovo Thinkplus XT80 Sport',
+    price: 59999,
+    originalPrice: 75000,
+    image: '/images/lenovo-thinkplus-xt80-sport.jpg',
+    url: 'https://www.mercadolibre.com.ar/auricular-lenovo-thinkplus-xt80/p/MLA1510677462',
+    badge: 'DEPORTIVO',
+    rating: 4.5,
+    reviews: 876,
+    freeShipping: true,
+    verdict: 'Para correr y hacer ejercicio. Enganche de oreja seguro, resistentes al sudor y sonido motivador. No son para calidad audiófila pero para el gym cumplen perfecto.',
+    pros: ['Enganche seguro para deporte', 'IPX5 resistente al sudor', 'No se caen corriendo'],
+    cons: ['Sonido no es el mejor', 'Case de carga algo grande'],
+  },
+];
+
+const siloGuides = [
+  { title: 'Mejores Auriculares Bluetooth Baratos', href: '/auriculares/mejores-bluetooth-baratos', tag: 'Top 5', desc: 'Los 5 mejores auriculares wireless por menos de $90k.' },
+  { title: 'Auriculares con Cancelación de Ruido Baratos', href: '/auriculares/mejores-cancelacion-ruido-baratos', tag: 'ANC', desc: 'Aislá el ruido del bondi sin vender un riñón.' },
+  { title: 'Sony WH-CH520: Review Completa', href: '/auriculares/sony-wh-ch520-review', tag: 'Review', desc: '¿Valen la pena los más vendidos de Argentina? Los probamos.' },
+  { title: 'JBL Tune 510BT vs Sony WH-CH520', href: '/auriculares/jbl-tune-520bt-vs-sony-wh-ch520', tag: 'VS', desc: 'Los 2 over-ear más vendidos, frente a frente.' },
+  { title: 'Auriculares para Viajar en Colectivo', href: '/guias/mejores-auriculares-aislantes-colectivo-argentina', tag: 'Viaje', desc: '3 opciones que realmente aíslan el ruido del bondi.' },
+  { title: 'Setup Gamer Barato que Funciona', href: '/guias/auriculares-gamer-baratos-argentina', tag: 'Gaming', desc: 'Auriculares + mouse + teclado por menos de $165k.' },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Auriculares en Argentina — Guías, Reviews y Mejores Precios",
+  "description": "Todo sobre auriculares en Argentina: comparativas, reviews, guías de compra y los mejores precios de Mercado Libre. Bluetooth, gamer, con ANC y más.",
+  "url": "https://vastto.com.ar/auriculares",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": products.slice(0, 5).map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": { "@type": "Product", "name": p.title, "image": `https://vastto.com.ar${p.image}` }
+    }))
+  }
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuáles son los mejores auriculares bluetooth en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "Los Sony WH-CH520 son los más vendidos de Argentina con más de 11.000 reseñas positivas. Para presupuesto bajo, los Xiaomi Redmi Buds 6 Play son imbatibles por menos de $30.000." } },
+    { "@type": "Question", "name": "¿Qué auriculares comprar para el colectivo?", "acceptedAnswer": { "@type": "Answer", "text": "Los mejores para transporte público son los in-ear con buen aislamiento pasivo (gomitas de silicona) como los SoundPEATS Clear, o los over-ear como los Sony WH-CH520 que cubren toda la oreja." } },
+    { "@type": "Question", "name": "¿Auriculares in-ear o over-ear?", "acceptedAnswer": { "@type": "Answer", "text": "In-ear son más portátiles y aíslan mejor el ruido, ideales para transporte. Over-ear son más cómodos para sesiones largas (trabajo, gaming) y generalmente suenan mejor. Depende de tu uso principal." } }
+  ]
+});
+---
+
+<Layout 
+  title="Auriculares en Argentina — Guías, Reviews y Mejores Precios | VASTTO" 
+  description="Todo sobre auriculares en Argentina: comparativas, reviews, guías de compra y los mejores precios de Mercado Libre. Bluetooth, gamer, ANC, in-ear y over-ear.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <section class="hero-silo">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a> ›
+        <span>Auriculares</span>
+      </nav>
+      <h1>Auriculares en Argentina: Guías, Reviews y Mejores Precios 2026</h1>
+      <p>Tu centro de referencia para comprar auriculares inteligentemente. Comparamos modelos, analizamos pros y contras, y te mostramos los mejores precios de Mercado Libre.</p>
+    </div>
+  </section>
+
+  <!-- SILO GUIDES - Cluster articles -->
+  <section class="silo-guides">
+    <div class="container">
+      <h2>📖 Guías y Comparativas de Auriculares</h2>
+      <div class="guides-grid">
+        {siloGuides.map(guide => (
+          <a href={guide.href} class="guide-card">
+            <span class="guide-tag">{guide.tag}</span>
+            <h3>{guide.title}</h3>
+            <p>{guide.desc}</p>
+            <span class="guide-cta">Leer →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL PRODUCTS -->
+  <section class="products-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Todos los Auriculares Recomendados</h2>
+        <p>{products.length} productos verificados con envío gratis en Mercado Libre</p>
+      </div>
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section-wrapper">
+    <div class="container">
+      <h2>Preguntas Frecuentes sobre Auriculares</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Cuáles son los mejores auriculares bluetooth en Argentina?<span class="icon">+</span></summary>
+          <p>Los Sony WH-CH520 son los más vendidos con más de 11.000 reseñas positivas. Para presupuesto bajo, los Xiaomi Redmi Buds 6 Play son imbatibles por menos de $30.000.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué auriculares comprar para el colectivo?<span class="icon">+</span></summary>
+          <p>Los mejores para transporte público son in-ear con buen aislamiento pasivo o over-ear como los Sony WH-CH520. Leé nuestra <a href="/guias/mejores-auriculares-aislantes-colectivo-argentina">guía completa</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Auriculares in-ear o over-ear?<span class="icon">+</span></summary>
+          <p>In-ear: más portátiles, aíslan mejor, ideales para transporte. Over-ear: más cómodos para sesiones largas (trabajo, gaming), mejor sonido general.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-silo {
+    background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%);
+    padding: 4rem 0;
+    color: white;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .hero-silo h1 { font-size: 2.75rem; font-weight: 800; margin: 0 0 0.75rem; letter-spacing: -0.5px; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .hero-silo p { color: rgba(255,255,255,0.85); font-size: 1.15rem; max-width: 800px; line-height: 1.5; }
+
+  .silo-guides { padding: 4rem 0; background: #f8f7ff; }
+  .silo-guides h2 { font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: #1a1a1a; }
+  .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+  .guide-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.75rem;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    display: block;
+  }
+  .guide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(108, 71, 255, 0.1);
+    border-color: rgba(108, 71, 255, 0.2);
+  }
+  .guide-tag {
+    background: rgba(108, 71, 255, 0.1);
+    color: #6c47ff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+  .guide-card h3 { font-size: 1.15rem; color: #1a1a1a; margin: 0 0 0.5rem; font-weight: 800; line-height: 1.3; }
+  .guide-card p { color: #666; font-size: 0.95rem; line-height: 1.5; margin: 0 0 1rem; }
+  .guide-cta { color: #6c47ff; font-weight: 700; font-size: 0.9rem; }
+
+  .products-section { padding: 4rem 0; background: #fff; }
+  .section-header { margin-bottom: 2rem; }
+  .section-header h2 { font-size: 2rem; font-weight: 800; color: #1a1a1a; margin-bottom: 0.5rem; }
+  .section-header p { color: #666; font-size: 1rem; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+
+  .faq-section-wrapper { padding: 4rem 0; background: #fdfdfd; border-top: 1px solid #eee; }
+  .faq-section-wrapper h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 2rem; color: #1a1a1a; }
+  .faq-list { display: flex; flex-direction: column; gap: 1rem; max-width: 800px; }
+  .faq-item { background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .faq-item a { color: #6c47ff; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .hero-silo h1 { font-size: 2rem; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .guides-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) { .products-grid { grid-template-columns: 1fr; } }
+</style>

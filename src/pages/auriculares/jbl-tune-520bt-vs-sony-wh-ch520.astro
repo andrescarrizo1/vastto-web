@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const jbl = {
+  title: 'JBL Tune 510BT Wireless',
+  price: 45999,
+  originalPrice: 58000,
+  image: '/images/jbl-tune-510bt-wireless.jpg',
+  url: 'https://www.mercadolibre.com.ar/auriculares-jbl-tune-510bt-negro/p/MLA17347134',
+  badge: 'JBL',
+  rating: 4.8,
+  reviews: 12431,
+  freeShipping: true,
+  verdict: 'El clásico. Bajos potentes e icónicos de JBL, 40 horas de batería y se pliegan para guardar. El auricular over-ear más vendido de Mercado Libre.',
+  pros: ['Bajos JBL icónicos', '12.400+ reseñas', 'Batería 40h', 'Plegables', 'Precio bajo'],
+  cons: ['Sin ANC', 'Almohadillas chicas', 'Micrófono promedio', 'Sin app dedicada'],
+};
+
+const sony = {
+  title: 'Sony WH-CH520 Inalámbricos',
+  price: 87999,
+  originalPrice: 105000,
+  image: '/images/sony-wh-ch520-inal-mbricos.jpg',
+  url: 'https://www.mercadolibre.com.ar/auriculares-sony-wh-ch520-inalambricos/p/MLA22103546',
+  badge: 'SONY',
+  rating: 4.8,
+  reviews: 11023,
+  freeShipping: true,
+  verdict: 'El rey de la batería. 50 horas de reproducción, micrófono excelente y sonido equilibrado con la app Sony Headphones Connect.',
+  pros: ['Batería récord 50h', '11.000+ reseñas', 'Micrófono superior', 'App con ecualizador', 'Sonido más equilibrado'],
+  cons: ['Sin ANC', 'Más caro', 'Todo plástico', 'No se pliegan'],
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "JBL Tune 510BT vs Sony WH-CH520: ¿Cuál Comprar en Argentina?",
+  "description": "Comparativa completa JBL Tune 510BT vs Sony WH-CH520. Sonido, batería, micrófono y precio. Los 2 over-ear más vendidos de Argentina.",
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "publisher": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿JBL Tune 510BT o Sony WH-CH520?", "acceptedAnswer": { "@type": "Answer", "text": "Si tu presupuesto es ajustado y querés bajos potentes: JBL por $46k. Si podés gastar un poco más y priorizás batería (50h vs 40h) y mejor micrófono: Sony por $88k. Ambos son excelentes pero el Sony vale la diferencia de precio si hacés llamadas o Zoom frecuentemente." } },
+    { "@type": "Question", "name": "¿Cuál suena mejor, JBL o Sony?", "acceptedAnswer": { "@type": "Answer", "text": "Son perfiles diferentes. El JBL tiene bajos más pronunciados, ideal para reggaetón, trap y EDM. El Sony es más equilibrado y natural, mejor para pop, rock y podcasts. Ninguno es 'mejor', depende de lo que escuches." } }
+  ]
+});
+---
+
+<Layout 
+  title="JBL Tune 510BT vs Sony WH-CH520: ¿Cuál Comprar? Comparativa Argentina 2026" 
+  description="Comparativa directa JBL Tune 510BT vs Sony WH-CH520. Los 2 over-ear más vendidos de Argentina. Sonido, batería, micrófono y precio real.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/auriculares">Auriculares</a> ›
+          <span>JBL vs Sony</span>
+        </nav>
+        <h1>JBL Tune 510BT vs Sony WH-CH520: ¿Cuál Comprar en Argentina?</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 5 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">El JBL Tune 510BT ($46k) y el Sony WH-CH520 ($88k) son los <strong>dos auriculares over-ear inalámbricos más vendidos de Argentina</strong>. Entre los dos acumulan más de 23.000 reseñas positivas en Mercado Libre. Pero, ¿cuál deberías comprar?</p>
+
+      <div class="verdict-box">
+        <strong>⚡ Veredicto rápido:</strong> ¿Presupuesto ajustado? → <strong>JBL Tune 510BT</strong>. ¿Hacés Zoom/llamadas? → <strong>Sony WH-CH520</strong>. ¿Querés bajos que retumben? → JBL. ¿Querés batería infinita? → Sony (50h vs 40h).
+      </div>
+
+      <h2>Tabla Comparativa Directa</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Característica</th><th>JBL 510BT</th><th>Sony CH520</th><th>Ganador</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Precio</strong></td><td>~$46.000</td><td>~$88.000</td><td>🏆 JBL</td></tr>
+            <tr><td><strong>Batería</strong></td><td>40 horas</td><td>50 horas</td><td>🏆 Sony</td></tr>
+            <tr><td><strong>Graves</strong></td><td>Potentes</td><td>Equilibrados</td><td>🏆 JBL</td></tr>
+            <tr><td><strong>Micrófono</strong></td><td>Básico</td><td>Excelente</td><td>🏆 Sony</td></tr>
+            <tr><td><strong>App</strong></td><td>JBL Headphones</td><td>Sony Headphones</td><td>🏆 Sony</td></tr>
+            <tr><td><strong>Peso</strong></td><td>160g</td><td>147g</td><td>🏆 Sony</td></tr>
+            <tr><td><strong>Plegable</strong></td><td>Sí ✅</td><td>No ❌</td><td>🏆 JBL</td></tr>
+            <tr><td><strong>ANC</strong></td><td>No</td><td>No</td><td>Empate</td></tr>
+            <tr><td><strong>Reseñas ML</strong></td><td>12.400+</td><td>11.000+</td><td>~Empate</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Sonido: Perfiles Diferentes</h2>
+      <p><strong>JBL = Bajos potentes.</strong> Si escuchás reggaetón, trap, cumbia, EDM o cualquier género con bajo prominente, los JBL te van a encantar. Los bajos retumban de verdad. Es el "sonido JBL" que los hizo famosos.</p>
+      <p><strong>Sony = Equilibrio.</strong> El CH520 tiene un sonido más plano y natural. Mejor para pop, rock, podcasts y películas. Es más fiel al audio original. Con la app podés ecualizar a gusto, lo que le da ventaja en versatilidad.</p>
+
+      <h2>Batería: Sony Gana por Goleada</h2>
+      <p>40 horas vs 50 horas. Ambos son excelentes, pero 10 horas extra del Sony significan que en la práctica <strong>cargás cada 2-3 semanas vs cada 1-2 semanas</strong>. Si sos de los que se olvida de cargar, el Sony perdona más.</p>
+
+      <h2>Micrófono: La Gran Diferencia</h2>
+      <p>Acá el Sony <strong>gana por lejos</strong>. El micro con beam forming del CH520 capta tu voz limpia y reduce el ruido ambiente. Para Zoom, Discord o llamadas, es otro mundo. El JBL tiene un micro básico que cumple de emergencia pero no es para uso diario profesional.</p>
+
+      <h2>Entonces, ¿Cuál Comprar?</h2>
+      <div class="verdict-box">
+        <p><strong>Comprá el JBL Tune 510BT si:</strong> tu presupuesto máximo es ~$50k, querés bajos potentes, necesitás que se plieguen para la mochila, y no hacés muchas videollamadas.</p>
+        <p style="margin-top:1rem;"><strong>Comprá el Sony WH-CH520 si:</strong> podés gastar ~$88k, hacés Zoom/llamadas seguido, preferís sonido equilibrado, y valorás la batería récord de 50 horas.</p>
+      </div>
+    </div>
+
+    <div class="container products-showcase-duo">
+      <div class="duo-grid">
+        <ProductCard {...jbl} />
+        <ProductCard {...sony} />
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item"><summary>¿JBL 510BT o Sony CH520?<span class="icon">+</span></summary><p>Presupuesto ajustado + bajos: JBL. Zoom/llamadas + batería: Sony.</p></details>
+        <details class="faq-item"><summary>¿Cuál suena mejor?<span class="icon">+</span></summary><p>JBL tiene graves más potentes. Sony es más equilibrado y natural. Ninguno es "mejor", depende de tus gustos.</p></details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Más sobre Auriculares</h3>
+        <ul>
+          <li><a href="/auriculares">← Volver a Auriculares</a></li>
+          <li><a href="/auriculares/sony-wh-ch520-review">Sony WH-CH520: Review Completa</a></li>
+          <li><a href="/auriculares/mejores-bluetooth-baratos">Top 5 Bluetooth Baratos</a></li>
+          <li><a href="/auriculares/mejores-cancelacion-ruido-baratos">Auriculares con ANC Baratos</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .verdict-box p { margin: 0; }
+  .products-showcase-duo { padding: 2rem 1.5rem; max-width: 900px; margin: 0 auto; }
+  .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .table-wrapper { overflow-x: auto; margin: 1.5rem 0 2.5rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+  th { background: #f0ebff; color: #3b1fa8; font-weight: 700; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #6c47ff; font-weight: 600; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .duo-grid { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const personSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "VASTTO",
+  "url": "https://vastto.com.ar",
+  "description": "Sitio argentino independiente de guías de compra y comparativas de tecnología. Analizamos celulares, auriculares, smartwatch y accesorios disponibles en Mercado Libre.",
+  "foundingDate": "2026",
+  "areaServed": { "@type": "Country", "name": "Argentina" },
+  "sameAs": []
+});
+---
+
+<Layout 
+  title="Sobre Nosotros — Quiénes Somos | VASTTO" 
+  description="VASTTO es un sitio argentino independiente de guías de compra tecnológicas. No vendemos productos, te ayudamos a elegir inteligentemente en Mercado Libre.">
+  <script type="application/ld+json" set:html={personSchema} />
+  
+  <section class="about-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a> ›
+        <span>Sobre Nosotros</span>
+      </nav>
+      <h1>Sobre VASTTO</h1>
+      <p>Tu filtro inteligente de tecnología en Argentina</p>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="container-narrow">
+      <h2>¿Qué es VASTTO?</h2>
+      <p>VASTTO es un sitio argentino independiente de <strong>guías de compra y comparativas de tecnología</strong>. No somos tienda, no vendemos nada. Analizamos celulares, auriculares, smartwatch y accesorios disponibles en Mercado Libre para que no tires la plata comprando a ciegas.</p>
+
+      <h2>¿Por qué existe VASTTO?</h2>
+      <p>Porque en Argentina falta un sitio que te diga la verdad sobre los productos. Las reseñas de YouTube duran 15 minutos y no te dicen los defectos. Las publicaciones de Mercado Libre solo muestran lo bueno. Y los foros tienen información desactualizada.</p>
+      <p>Nosotros comparamos precios reales, mostramos pros Y contras, y te damos un veredicto honesto basado en reseñas de usuarios reales, specs técnicos y experiencia de uso.</p>
+
+      <div class="values-grid">
+        <div class="value">
+          <span class="value-icon">🔍</span>
+          <h3>Análisis Honesto</h3>
+          <p>Mostramos los defectos de cada producto. Si un auricular de $50k tiene micrófono malo, te lo decimos.</p>
+        </div>
+        <div class="value">
+          <span class="value-icon">🇦🇷</span>
+          <h3>100% Argentina</h3>
+          <p>Precios en pesos, productos disponibles en ML con envío a todo el país. No recomendamos cosas que no puedas comprar acá.</p>
+        </div>
+        <div class="value">
+          <span class="value-icon">🛒</span>
+          <h3>Compra Segura</h3>
+          <p>Todo se compra en Mercado Libre con Compra Protegida. No manejamos pagos ni datos personales.</p>
+        </div>
+        <div class="value">
+          <span class="value-icon">💡</span>
+          <h3>Independencia</h3>
+          <p>Nuestras recomendaciones no están influenciadas por marcas. Si un Xiaomi de $30k le gana a un Samsung de $80k, lo decimos.</p>
+        </div>
+      </div>
+
+      <h2>¿Cómo nos mantenemos?</h2>
+      <p>VASTTO participa en el programa de afiliados de Mercado Libre. Cuando hacés click en un producto y comprás, recibimos una pequeña comisión de ML. Esto <strong>no cambia el precio que pagás</strong> — es exactamente el mismo que verías buscándolo vos directamente.</p>
+      <p>Esta es la forma en que financiamos el sitio y podemos seguir creando contenido gratuito para ayudarte a comprar mejor.</p>
+
+      <h2>¿Cómo seleccionamos los productos?</h2>
+      <p>Cada producto que recomendamos pasa por un proceso de filtrado:</p>
+      <ol>
+        <li><strong>Disponibilidad real:</strong> Solo productos que podés comprar hoy en ML Argentina con envío</li>
+        <li><strong>Reseñas de usuarios:</strong> Mínimo 100+ reseñas reales con rating 4+</li>
+        <li><strong>Relación precio/calidad:</strong> No recomendamos lo más caro ni lo más barato, sino lo que vale lo que cuesta</li>
+        <li><strong>Marca con soporte:</strong> Descartamos marcas sin representación en Argentina que no ofrecen garantía real</li>
+      </ol>
+
+      <div class="contact-box">
+        <h3>Contacto</h3>
+        <p>¿Tenés una sugerencia, encontraste un error o querés colaborar? Escribinos a <strong>contacto@vastto.com.ar</strong></p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-hero {
+    background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%);
+    padding: 4rem 0;
+    color: white;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .about-hero h1 { font-size: 2.75rem; font-weight: 800; margin: 0 0 0.5rem; }
+  .about-hero p { color: rgba(255,255,255,0.85); font-size: 1.15rem; }
+  .about-content { padding: 4rem 0; }
+  .about-content h2 { font-size: 1.8rem; font-weight: 800; color: #1a1a1a; margin: 2.5rem 0 1rem; }
+  .about-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .about-content ol { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; padding-left: 1.5rem; }
+  .about-content li { margin-bottom: 0.75rem; }
+  .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 2rem 0 3rem; }
+  .value { background: #f8f7ff; border-radius: 12px; padding: 2rem; text-align: center; }
+  .value-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+  .value h3 { font-size: 1.1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+  .value p { font-size: 0.95rem; color: #666; line-height: 1.5; margin: 0; }
+  .contact-box { background: #f0ebff; border-radius: 12px; padding: 2rem; margin-top: 3rem; }
+  .contact-box h3 { font-size: 1.3rem; color: #3b1fa8; margin-bottom: 0.75rem; }
+  .contact-box p { margin: 0; }
+  @media (max-width: 768px) { .about-hero h1 { font-size: 2rem; } .values-grid { grid-template-columns: 1fr; } }
+</style>

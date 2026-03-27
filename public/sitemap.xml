@@ -1,81 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
     <loc>https://vastto.com.ar/</loc>
     <lastmod>2026-03-27</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- Sobre Nosotros (E-E-A-T) -->
+  <url>
+    <loc>https://vastto.com.ar/sobre-nosotros</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- SILO: Auriculares (Pillar + Clusters) -->
   <url>
     <loc>https://vastto.com.ar/auriculares</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vastto.com.ar/auriculares/mejores-bluetooth-baratos</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vastto.com.ar/auriculares/mejores-cancelacion-ruido-baratos</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vastto.com.ar/auriculares/sony-wh-ch520-review</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vastto.com.ar/celulares</loc>
+    <loc>https://vastto.com.ar/auriculares/jbl-tune-520bt-vs-sony-wh-ch520</loc>
     <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://vastto.com.ar/smartwatch</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vastto.com.ar/accesorios</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
+  <!-- Guías (contenido original pre-silo) -->
   <url>
     <loc>https://vastto.com.ar/guias</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://vastto.com.ar/guias/mejores-auriculares-aislantes-colectivo-argentina</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vastto.com.ar/guias/mejor-celular-gama-media-argentina</loc>
     <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vastto.com.ar/guias/mejores-smartwatch-baratos-argentina</loc>
     <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vastto.com.ar/guias/auriculares-gamer-baratos-argentina</loc>
     <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vastto.com.ar/guias/samsung-vs-motorola-gama-media</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vastto.com.ar/guias/mejores-accesorios-celular-indispensables</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://vastto.com.ar/guias/mejores-auriculares-aislantes-colectivo-argentina</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Categorías -->
+  <url>
+    <loc>https://vastto.com.ar/celulares</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vastto.com.ar/smartwatch</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vastto.com.ar/accesorios</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Herramientas -->
   <url>
     <loc>https://vastto.com.ar/herramientas/calculadora-cuotas</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>

@@ -1,0 +1,208 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const products = [
+  {
+    title: 'Xiaomi Redmi Buds 6 Play - Negro',
+    price: 29999,
+    originalPrice: 45000,
+    image: '/images/xiaomi-redmi-buds-6-play---negro.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-inalambricos-xiaomi-redmi-buds-6-play-negro/p/MLA39962085',
+    badge: '🏆 MEJOR BARATO',
+    rating: 4.8,
+    reviews: 6189,
+    freeShipping: true,
+    verdict: 'Los más vendidos de Argentina por algo. 36 horas de batería entre el estuche y los auris. Por menos de $30.000 no hay nada que le gane. Si es tu primer TWS, arrancá por acá sin pensar.',
+    pros: ['Batería interminable (36h total)', 'Precio absurdamente bajo', 'Conexión Bluetooth estable', 'Livianos y cómodos'],
+    cons: ['Sin cancelación activa de ruido', 'Graves algo débiles para puristas', 'Micrófono promedio en la calle'],
+  },
+  {
+    title: 'SoundPEATS Clear In-Ear',
+    price: 42000,
+    originalPrice: 50000,
+    image: '/images/soundpeats-clear-in-ear.jpg',
+    url: 'https://www.mercadolibre.com.ar/soundpeats-c30-hybrid-noise-cancelling-bluetooth-earphones/p/MLA2048863874',
+    badge: 'DISEÑO',
+    rating: 4.6,
+    reviews: 1263,
+    freeShipping: true,
+    verdict: 'Los más lindos de la lista. El diseño transparente es único y el sonido compite con auriculares del doble de precio. Ideales para el día a día sin miedo a perderlos.',
+    pros: ['Diseño transparente llamativo', 'Sonido claro y detallado', 'Buenos graves para el precio', 'Estuche compacto'],
+    cons: ['Micrófono regular con viento', 'Plásticos se rayan', 'App algo básica'],
+  },
+  {
+    title: 'JBL Tune 510BT Wireless',
+    price: 45999,
+    originalPrice: 58000,
+    image: '/images/jbl-tune-510bt-wireless.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-jbl-tune-510bt-negro/p/MLA17347134',
+    badge: 'CLÁSICO',
+    rating: 4.8,
+    reviews: 12431,
+    freeShipping: true,
+    verdict: 'El auricular over-ear más vendido de Argentina con 12.400+ reseñas. Los bajos JBL son adictivos y la batería de 40 horas es real. Se pliegan para guardar en la mochila. El clásico que nunca falla.',
+    pros: ['Bajos JBL icónicos', '12.400+ reseñas positivas', 'Batería 40 horas', 'Plegables y transportables'],
+    cons: ['Sin cancelación de ruido', 'Almohadillas algo chicas en orejas grandes'],
+  },
+  {
+    title: 'Samsung Galaxy Buds FE - Grafito',
+    price: 54999,
+    originalPrice: 79999,
+    image: '/images/samsung-galaxy-buds-fe---grafito.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-bluetooth-samsung-galaxy-buds-fe-grafito/p/MLA22165424',
+    badge: 'CON ANC',
+    rating: 4.9,
+    reviews: 1203,
+    freeShipping: true,
+    verdict: 'Los Samsung Galaxy Buds FE son la opción más inteligente si tenés un Samsung: se sincronizan automáticamente, tienen ANC incluida y el sonido es equilibrado. El ANC no compite con Sony, pero por $55k es un golazo.',
+    pros: ['ANC incluida por buen precio', 'Integración perfecta con Samsung', 'Sonido equilibrado y limpio', 'IPX2 resistente al sudor'],
+    cons: ['ANC no compara con Sony XM5', 'Batería justa (5h con ANC)', 'Solo brillan con Samsung'],
+  },
+  {
+    title: 'Sony WH-CH520 Inalámbricos',
+    price: 87999,
+    originalPrice: 105000,
+    image: '/images/sony-wh-ch520-inal-mbricos.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-sony-wh-ch520-inalambricos/p/MLA22103546',
+    badge: '🏆 TOP OVER-EAR',
+    rating: 4.8,
+    reviews: 11023,
+    freeShipping: true,
+    verdict: 'El auricular más vendido de TODA Argentina. 50 horas de batería (sí, cincuenta), micrófono cristalino para Zoom y cómodos para 8 horas seguidas. No tiene ANC, pero a este precio con esta calidad de sonido Sony, es imbatible.',
+    pros: ['Batería RÉCORD de 50 horas', 'Micrófono nítido (Zoom/Discord)', '11.000+ reseñas', 'Cómodos para sesiones largas'],
+    cons: ['Sin cancelación activa de ruido', 'Plástico algo endeble', 'No aíslan bien en colectivo'],
+  },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Los 5 Mejores Auriculares Bluetooth Baratos en Argentina 2026",
+  "description": "Comparamos los 5 mejores auriculares bluetooth baratos disponibles en Argentina. Desde $23.000 hasta $88.000, todos con envío gratis en Mercado Libre.",
+  "author": { "@type": "Organization", "name": "VASTTO", "url": "https://vastto.com.ar" },
+  "publisher": { "@type": "Organization", "name": "VASTTO", "logo": { "@type": "ImageObject", "url": "https://vastto.com.ar/favicon.svg" } },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuáles son los mejores auriculares bluetooth baratos en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "Los Xiaomi Redmi Buds 6 Play por $30.000 son los más vendidos y baratos. Si querés over-ear, los JBL Tune 510BT por $46.000 son el clásico imbatible. Para calidad/precio premium, los Sony WH-CH520 por $88.000 son los reyes." } },
+    { "@type": "Question", "name": "¿In-ear o over-ear bluetooth?", "acceptedAnswer": { "@type": "Answer", "text": "In-ear (como los Redmi Buds) son ideales para deporte, transporte y llevar en el bolsillo. Over-ear (como los JBL 510BT o Sony CH520) suenan mejor, son más cómodos en sesiones largas y tienen más batería. Depende si priorizás portabilidad o comodidad." } },
+    { "@type": "Question", "name": "¿Merece la pena gastar más de $50.000 en auriculares?", "acceptedAnswer": { "@type": "Answer", "text": "Si usás auriculares más de 2 horas al día, sí. La diferencia de sonido, comodidad y batería entre unos de $30.000 y unos de $88.000 es enorme. Los Sony WH-CH520 por ejemplo duran 50 horas vs 4 horas de los económicos." } }
+  ]
+});
+---
+
+<Layout 
+  title="Mejores Auriculares Bluetooth Baratos en Argentina 2026 — Top 5" 
+  description="¿Qué auriculares bluetooth comprar en Argentina sin gastar de más? Los 5 mejores baratos con precios reales de Mercado Libre. Desde $23.000.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/auriculares">Auriculares</a> ›
+          <span>Bluetooth Baratos</span>
+        </nav>
+        <h1>Los 5 Mejores Auriculares Bluetooth Baratos en Argentina (2026)</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 5 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Hay cientos de auriculares bluetooth en Mercado Libre y el 80% son basura china sin nombre que muere a los 2 meses. Esta guía <strong>filtra todo ese ruido</strong> y te deja solo con los 5 que realmente valen cada peso.</p>
+
+      <h2>La Regla de Oro: No Compres por Menos de $20.000</h2>
+      <p>En serio. Los auriculares de $8.000-$15.000 que ves en ML tienen Bluetooth 4.0 (se corta caminando), baterías de 2 horas y sonido de radio AM. <strong>Gastar $30.000 en los Redmi Buds Play es infinitamente mejor</strong> que comprar 3 pares de basura que duran un mes cada uno.</p>
+
+      <div class="verdict-box">
+        <strong>🏆 Veredicto rápido VASTTO:</strong> Con los ojos cerrados → <strong>Xiaomi Redmi Buds 6 Play</strong> ($30k). Si querés over-ear cómodos → <strong>JBL Tune 510BT</strong> ($46k). Si querés lo mejor barato → <strong>Sony WH-CH520</strong> ($88k, 50 horas de batería es otra dimensión).
+      </div>
+
+      <h2>Los 5 Mejores — Solo lo que Vale la Pena</h2>
+    </div>
+
+    <div class="container products-showcase">
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Tabla Comparativa</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Modelo</th><th>Tipo</th><th>Batería</th><th>Precio</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Redmi Buds 6 Play</strong></td><td>In-ear TWS</td><td>36h (total)</td><td>~$30.000</td></tr>
+            <tr><td><strong>SoundPEATS Clear</strong></td><td>In-ear TWS</td><td>30h (total)</td><td>~$42.000</td></tr>
+            <tr><td><strong>JBL Tune 510BT</strong></td><td>Over-ear</td><td>40h</td><td>~$46.000</td></tr>
+            <tr><td><strong>Galaxy Buds FE</strong></td><td>In-ear TWS</td><td>21h (total)</td><td>~$55.000</td></tr>
+            <tr><td><strong>Sony WH-CH520</strong></td><td>Over-ear</td><td>50h</td><td>~$88.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item"><summary>¿Cuáles son los mejores auriculares bluetooth baratos?<span class="icon">+</span></summary><p>Los Xiaomi Redmi Buds 6 Play por $30k. Over-ear: JBL Tune 510BT por $46k. Premium barato: Sony WH-CH520 por $88k.</p></details>
+        <details class="faq-item"><summary>¿In-ear o over-ear bluetooth?<span class="icon">+</span></summary><p>In-ear para deporte y transporte. Over-ear para sesiones largas, trabajo y mejor sonido.</p></details>
+        <details class="faq-item"><summary>¿Merece la pena gastar más de $50k?<span class="icon">+</span></summary><p>Si usás auriculares +2h al día, sí. La diferencia en sonido, comodidad y batería es enorme.</p></details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Más sobre Auriculares</h3>
+        <ul>
+          <li><a href="/auriculares">← Volver a Auriculares</a></li>
+          <li><a href="/auriculares/sony-wh-ch520-review">Sony WH-CH520: Review completa</a></li>
+          <li><a href="/auriculares/jbl-tune-520bt-vs-sony-wh-ch520">JBL vs Sony: ¿Cuál elegir?</a></li>
+          <li><a href="/auriculares/mejores-cancelacion-ruido-baratos">Auriculares con cancelación de ruido baratos</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { background: #fdfdfd; padding: 3rem 1.5rem; border-top: 1px solid #eee; border-bottom: 1px solid #eee; max-width: 1200px; margin: 0 auto; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .table-wrapper { overflow-x: auto; margin: 1.5rem 0 2.5rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+  th { background: #f0ebff; color: #3b1fa8; font-weight: 700; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #6c47ff; font-weight: 600; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .products-grid { grid-template-columns: 1fr; } }
+</style>

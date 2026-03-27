@@ -1,0 +1,190 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const product = {
+  title: 'Sony WH-CH520 Inalámbricos',
+  price: 87999,
+  originalPrice: 105000,
+  image: '/images/sony-wh-ch520-inal-mbricos.jpg',
+  url: 'https://www.mercadolibre.com.ar/auriculares-sony-wh-ch520-inalambricos/p/MLA22103546',
+  badge: '🏆 MÁS VENDIDO',
+  rating: 4.8,
+  reviews: 11023,
+  freeShipping: true,
+  verdict: 'El auricular más vendido de toda Argentina. 50 horas de batería real, micrófono cristalino y cómodos para sesiones maratónicas. Si solo podés comprar uno, este es.',
+  pros: ['Batería RÉCORD de 50 horas', 'Micrófono excelente para llamadas', '11.000+ reseñas positivas', 'Cómodos hasta 8+ horas', 'App Sony Headphones Connect'],
+  cons: ['Sin cancelación activa de ruido', 'Construcción 100% plástico', 'No aíslan bien en transporte ruidoso', 'Almohadillas no son las más transpirables'],
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Sony WH-CH520",
+    "image": "https://vastto.com.ar/images/sony-wh-ch520-inal-mbricos.jpg",
+    "brand": { "@type": "Brand", "name": "Sony" },
+    "offers": { "@type": "Offer", "priceCurrency": "ARS", "price": 87999, "availability": "https://schema.org/InStock" }
+  },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "publisher": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Valen la pena los Sony WH-CH520?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, absolutamente. Con 11.000+ reseñas positivas en Argentina, 50 horas de batería y sonido Sony por menos de $90k, son la compra más segura en auriculares. La única razón para NO comprarlos es si necesitás cancelación activa de ruido." } },
+    { "@type": "Question", "name": "¿Los Sony WH-CH520 tienen cancelación de ruido?", "acceptedAnswer": { "@type": "Answer", "text": "No, los CH520 NO tienen cancelación activa de ruido (ANC). Sí aíslan algo gracias al diseño over-ear que cubre la oreja, pero no bloquean ruido activamente. Si necesitás ANC, mirá los Sony WH-1000XM5 (~$580k) o los Samsung Galaxy Buds FE (~$55k)." } },
+    { "@type": "Question", "name": "¿Sirven los Sony WH-CH520 para gaming?", "acceptedAnswer": { "@type": "Answer", "text": "Para gaming casual sí, el micrófono es excelente para Discord y el sonido es claro. Pero NO tienen audio espacial ni baja latencia como los auriculares gamer dedicados (HyperX, Logitech). Para gaming competitivo recomendamos el HyperX Cloud Stinger 2." } },
+    { "@type": "Question", "name": "¿Cuánto dura la batería de los Sony WH-CH520?", "acceptedAnswer": { "@type": "Answer", "text": "50 horas de reproducción continua, que es un récord en su categoría. Con 3 minutos de carga rápida obtenés 1.5 horas de uso. En uso real (con pausas), pueden durar más de 2 semanas sin cargar." } }
+  ]
+});
+---
+
+<Layout 
+  title="Sony WH-CH520: Review Completa — ¿Valen la Pena en Argentina? | VASTTO" 
+  description="Review honesta de los Sony WH-CH520, los auriculares más vendidos de Argentina. 50 horas de batería, sonido Sony por $88k. Todo lo bueno y lo malo.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/auriculares">Auriculares</a> ›
+          <span>Sony WH-CH520 Review</span>
+        </nav>
+        <h1>Sony WH-CH520 Review: ¿Los Más Vendidos de Argentina Valen la Pena?</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 6 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Con más de <strong>11.000 reseñas positivas en Mercado Libre</strong>, los Sony WH-CH520 son los auriculares más vendidos de Argentina. Pero "más vendido" no siempre significa "mejor". ¿Realmente valen $88.000? Miramos todo: lo bueno, lo malo y para quién son.</p>
+
+      <div class="score-box">
+        <div class="score">4.5<span>/5</span></div>
+        <div class="score-label">
+          <strong>Puntuación VASTTO</strong>
+          <p>Excelente relación calidad/precio. Recomendado para uso diario.</p>
+        </div>
+      </div>
+
+      <div class="verdict-box">
+        <strong>⚡ Veredicto en 10 segundos:</strong> Si buscás unos auriculares over-ear inalámbricos que suenen bien, duren como un tanque (50 horas de batería), y tengan un micrófono decente para Zoom — los CH520 son la compra más segura que podés hacer. El único motivo para NO comprarlos es si viajás mucho en colectivo/subte y necesitás cancelación activa de ruido.
+      </div>
+
+      <h2>Lo Bueno — Por Qué Son los Más Vendidos</h2>
+      <h3>Batería: 50 Horas Reales</h3>
+      <p>No es marketing. 50 horas de reproducción continua. En la práctica, <strong>cargás cada 2 semanas</strong> con uso normal. Y si te olvidás de cargar, 3 minutos enchufado te da 1.5 horas. Esto solo ya justifica la compra.</p>
+
+      <h3>Sonido Sony (de verdad)</h3>
+      <p>Sonido equilibrado con buenos medios, voces nítidas y graves presentes sin ser exagerados. No son audiófilos, pero para Spotify, podcasts, llamadas y gaming casual son más que suficientes. La app Sony Headphones Connect te deja ecualizar a gusto.</p>
+
+      <h3>Micrófono Excelente</h3>
+      <p>Acá es donde brillan vs. la competencia barata. El micro con beam forming capta tu voz y reduce ruido ambiente. <strong>Para Zoom, Google Meet y Discord es uno de los mejores del segmento.</strong> Si laburás remoto, esto importa.</p>
+
+      <h2>Lo Malo — Lo Que Sony NO Te Dice</h2>
+      <h3>Sin Cancelación de Ruido</h3>
+      <p>Los CH520 <strong>NO tienen ANC</strong>. Punto. Aíslan algo porque cubren la oreja, pero en un colectivo de Buenos Aires con el motor rugiendo, vas a escuchar TODO. Si viajás en transporte público, considerá los Samsung Galaxy Buds FE ($55k) que sí tienen ANC.</p>
+
+      <h3>Construcción Plástica</h3>
+      <p>Por $88k esperarías algo de metal, pero no. Son 100% plástico. Los hace livianos (147g) lo cual es genial para comodidad, pero dan sensación de fragilidad. No los tirés en la mochila sin estuche.</p>
+
+      <h2>¿Para Quién Son?</h2>
+      <ul>
+        <li><strong>✅ Trabajo remoto:</strong> Micrófono top + batería infinita = sesiones de Zoom sin estrés</li>
+        <li><strong>✅ Estudiantes:</strong> Cómodos para estudiar 4-5 horas, sonido claro para videos</li>
+        <li><strong>✅ Uso diario:</strong> Spotify, podcasts, YouTube en casa</li>
+        <li><strong>❌ Transporte público:</strong> Sin ANC vas a subir el volumen (malo para tus oídos)</li>
+        <li><strong>❌ Gaming competitivo:</strong> Sin audio espacial ni baja latencia</li>
+        <li><strong>❌ Audiophiles:</strong> Por esta plata un IEM con cable suena mejor</li>
+      </ul>
+    </div>
+
+    <div class="container products-showcase">
+      <ProductCard {...product} />
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Alternativas a Considerar</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Si necesitás...</th><th>Considerá</th><th>Precio</th></tr></thead>
+          <tbody>
+            <tr><td>ANC por menos plata</td><td><a href="/auriculares/mejores-cancelacion-ruido-baratos">Samsung Galaxy Buds FE</a></td><td>~$55.000</td></tr>
+            <tr><td>Over-ear más barato</td><td><a href="/auriculares/mejores-bluetooth-baratos">JBL Tune 510BT</a></td><td>~$46.000</td></tr>
+            <tr><td>ANC premium de Sony</td><td>Sony WH-1000XM5</td><td>~$580.000</td></tr>
+            <tr><td>Para gaming</td><td><a href="/guias/auriculares-gamer-baratos-argentina">HyperX Cloud Stinger 2</a></td><td>~$40.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item"><summary>¿Valen la pena los Sony WH-CH520?<span class="icon">+</span></summary><p>Sí. 11.000+ reseñas, 50h batería y sonido Sony por $88k. Solo NO los compres si necesitás ANC.</p></details>
+        <details class="faq-item"><summary>¿Tienen cancelación de ruido?<span class="icon">+</span></summary><p>No, no tienen ANC. Aíslan algo por el diseño over-ear pero no bloquean ruido activamente.</p></details>
+        <details class="faq-item"><summary>¿Sirven para gaming?<span class="icon">+</span></summary><p>Para casual sí (buen micro para Discord). Para competitivo no — sin audio espacial ni baja latencia.</p></details>
+        <details class="faq-item"><summary>¿Cuánto dura la batería?<span class="icon">+</span></summary><p>50 horas de reproducción. Carga rápida: 3 min = 1.5 horas. En uso normal duran ~2 semanas.</p></details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Más sobre Auriculares</h3>
+        <ul>
+          <li><a href="/auriculares">← Volver a Auriculares</a></li>
+          <li><a href="/auriculares/jbl-tune-520bt-vs-sony-wh-ch520">JBL Tune 510BT vs Sony WH-CH520</a></li>
+          <li><a href="/auriculares/mejores-bluetooth-baratos">Top 5 auriculares bluetooth baratos</a></li>
+          <li><a href="/auriculares/mejores-cancelacion-ruido-baratos">Auriculares con ANC baratos</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content h3 { font-size: 1.3rem; color: #3b1fa8; margin: 1.5rem 0 0.5rem; font-weight: 700; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; padding-left: 0; list-style: none; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .score-box { display: flex; align-items: center; gap: 1.5rem; background: #f0ebff; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .score { font-size: 3rem; font-weight: 800; color: #6c47ff; line-height: 1; }
+  .score span { font-size: 1.5rem; color: #999; }
+  .score-label strong { font-size: 1rem; color: #1a1a1a; }
+  .score-label p { margin: 0.25rem 0 0; font-size: 0.95rem; color: #666; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { max-width: 400px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+  th { background: #f0ebff; color: #3b1fa8; font-weight: 700; }
+  table a { color: #6c47ff; font-weight: 600; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #6c47ff; font-weight: 600; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .score-box { flex-direction: column; text-align: center; } }
+</style>
