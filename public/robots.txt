@@ -1,6 +1,3 @@
 User-agent: *
-Disallow: /*?*
-Disallow: /search/
-Disallow: /checkout/
 Allow: /
 Sitemap: https://www.vastto.com.ar/sitemap.xml

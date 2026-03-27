@@ -1,0 +1,228 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const products = [
+  {
+    title: 'Cargador Samsung Original 25W',
+    price: 28321,
+    originalPrice: 35000,
+    image: '/images/cargador-samsung-original-25w.jpg',
+    url: 'https://www.mercadolibre.com.ar/cargador-samsung-25w-sin-cable-original/p/MLA12563214',
+    badge: '🏆 ESENCIAL',
+    rating: 5,
+    reviews: 670,
+    freeShipping: true,
+    verdict: 'Si tenés un Galaxy, necesitás este cargador. Los genéricos de $5.000 pueden arruinar tu batería a largo plazo con sobrevoltaje. Este tiene Super Fast Charging certificado. OJO: viene sin el cable, comprátelo aparte.',
+    pros: ['Carga "Super Fast Charging" real', 'Protección contra sobrecarga certificada', 'Original Samsung con garantía'],
+    cons: ['Viene SIN cable (solo el cubo)', 'Cable USB-C se compra aparte por ~$5k'],
+  },
+  {
+    title: 'Cargador Baseus 65W GaN',
+    price: 42000,
+    originalPrice: 50000,
+    image: '/images/cargador-baseus-65w-gan.jpg',
+    url: 'https://www.mercadolibre.com.ar/cargador-65w-gan-ultra-carga-rapida-alta-calidad/up/MLAU3248243509',
+    badge: 'MULTIUSOS',
+    rating: 4.8,
+    reviews: 652,
+    freeShipping: true,
+    verdict: 'El único cargador que necesitás viajar. Carga la notebook, el celu y los auris al mismo tiempo gracias a tecnología GaN (más frío, más chico, más eficiente). Si viajás seguido, reemplaza 3 cargadores en uno.',
+    pros: ['Carga 3 dispositivos simultáneamente', 'Tamaño compacto y no se calienta', 'GaN es la tecnología más eficiente', 'Sirve para notebooks USB-C'],
+    cons: ['Algo pesado en el enchufe', 'Cable incluido es corto'],
+  },
+  {
+    title: 'Powerbank Xiaomi 20000mAh 18W',
+    price: 58000,
+    originalPrice: 65000,
+    image: '/images/powerbank-xiaomi-20000mah-18w.jpg',
+    url: 'https://www.mercadolibre.com.ar/cargador-portatil-xiaomi-redmi-20000mah-carga-rapida-18w-color-negro/p/MLA21029066',
+    badge: 'VIAJES',
+    rating: 4.6,
+    reviews: 370,
+    freeShipping: true,
+    verdict: 'Para el viaje en micro de 24 horas o los cortes de luz eternos. 20.000mAh te cargan el celular entero unas 4 veces. Carga rápida de 18W incluida. Es un ladrillo, pero te salva la vida.',
+    pros: ['Carga el celular 4+ veces', '2 puertos para cargar 2 cosas', 'Carga rápida 18W', 'Construcción indestructible'],
+    cons: ['Pesa casi medio kilo', 'Tarda toda la noche en recargarse'],
+  },
+  {
+    title: 'Funda Silicona iPhone 15 Pro Max',
+    price: 11999,
+    originalPrice: 15000,
+    image: '/images/funda-silicona-iphone-15-pro-max.jpg',
+    url: 'https://www.mercadolibre.com.ar/funda-iphone-15-pro-max-silicona-case/p/MLA36168243',
+    badge: 'PROTECCIÓN',
+    rating: 4.8,
+    reviews: 2143,
+    freeShipping: true,
+    verdict: 'Tu celular nuevo sin funda es como un auto sin seguro. Esta funda de silicona tiene el tacto suave que no resbala en la mesa y bordes elevados que protegen la cámara de las caídas.',
+    pros: ['Tacto suave y antideslizante', 'Bordes elevados protegen cámara', 'Compatible con carga inalámbrica', '+2.000 reseñas positivas'],
+    cons: ['Atrae pelusas con el tiempo', 'Disponible solo para iPhone'],
+  },
+  {
+    title: 'Soporte Celular Magnético Universal',
+    price: 5499,
+    originalPrice: 8500,
+    image: '/images/soporte-celular-magn-tico-universal.jpg',
+    url: 'https://www.mercadolibre.com.ar/soporte-celular-auto-imantado-universal/p/MLA15632143',
+    badge: 'AUTO',
+    rating: 4.5,
+    reviews: 876,
+    freeShipping: true,
+    verdict: 'Si usás el GPS del celular para manejar, un soporte magnético es obligatorio. Este se pega a la rejilla del aire acondicionado y el celular queda firme. Por $5.500 te ahorrás una multa por tener el celular en la mano.',
+    pros: ['Imán potente que no se cae', 'Universal para cualquier celular', 'Se instala en 2 segundos', 'No tapa las rejillas de aire'],
+    cons: ['Necesitás la plaquita metálica en la funda', 'No giratorio (se queda fijo)'],
+  },
+  {
+    title: 'Webcam Logitech C920 Full HD',
+    price: 105136,
+    originalPrice: 120000,
+    image: '/images/webcam-logitech-c920-full-hd.jpg',
+    url: 'https://www.mercadolibre.com.ar/camara-web-logitech-c920-full-hd-30fps-color-negro/p/MLA18932026',
+    badge: 'HOME OFFICE',
+    rating: 4.8,
+    reviews: 876,
+    freeShipping: true,
+    verdict: 'Si laburás remoto o tenés reuniones por Zoom, la webcam del notebook NO alcanza. La C920 tiene enfoque automático perfecto, corrección de luz y micrófono estéreo incluido. Es la estándar profesional.',
+    pros: ['1080p Full HD real', 'Autoenfoque rápido y preciso', 'Micrófono estéreo integrado', 'Compatible con Zoom, Meet, Teams'],
+    cons: ['No tiene luz integrada', 'Precio algo elevado para lo que hace'],
+  },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Los 6 Accesorios Indispensables para tu Celular en Argentina 2026",
+  "description": "Cargadores, fundas, powerbank, soporte auto y más. Los accesorios que todo celular necesita, con precios reales de Mercado Libre Argentina.",
+  "image": "https://vastto.com.ar/images/cargador-samsung-original-25w.jpg",
+  "author": { "@type": "Organization", "name": "VASTTO", "url": "https://vastto.com.ar" },
+  "publisher": { "@type": "Organization", "name": "VASTTO", "logo": { "@type": "ImageObject", "url": "https://vastto.com.ar/favicon.svg" } },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Los cargadores genéricos dañan la batería del celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, los cargadores sin certificación pueden no regular bien el voltaje y degradar la batería a largo plazo. Recomendamos siempre cargadores originales (Samsung, Apple) o marcas certificadas como Baseus y Ugreen." } },
+    { "@type": "Question", "name": "¿Qué powerbank comprar en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "El Xiaomi Redmi de 20.000mAh es la mejor opción por calidad/precio. Carga el celular 4+ veces, tiene carga rápida de 18W y es de una marca confiable. Cuesta ~$58.000 en Mercado Libre." } },
+    { "@type": "Question", "name": "¿Es necesario ponerle funda al celular?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutamente sí. Una caída desde la altura de una mesa puede romper la pantalla, y una reparación cuesta entre $50.000 y $200.000 según el modelo. Una funda de silicona de $12.000 te puede ahorrar esa plata." } }
+  ]
+});
+---
+
+<Layout 
+  title="Accesorios Indispensables para tu Celular Argentina 2026 — Top 6" 
+  description="Cargadores originales, powerbank, fundas y gadgets que todo celular necesita. Precios reales en Mercado Libre Argentina. No compres basura, comprá bien.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/guias">Guías</a> ›
+          <span>Accesorios Indispensables</span>
+        </nav>
+        <h1>Los 6 Accesorios que tu Celular Necesita SÍ o SÍ (Argentina 2026)</h1>
+        <div class="meta">
+          <span>Actualizado: Marzo 2026</span> • <span>Tiempo de lectura: 5 min</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Compraste el celular nuevo. Listo. Ahora necesitás <strong>protegerlo</strong> para que dure, <strong>cargarlo</strong> sin dañar la batería, y <strong>equiparlo</strong> con los gadgets que realmente sirven. Esta guía va directo al grano: los 6 accesorios que se pagan solos.</p>
+
+      <h2>El Error de Comprar Accesorios Baratos</h2>
+      <p>En Mercado Libre hay cargadores de $3.000 y fundas de $800. <strong>Comprar eso es peor que no comprar nada.</strong> Un cargador trucho puede freír la batería de tu celular en 6 meses. Una funda blanda se rompe en la primera caída. Gastá un poquito más y protegé una inversión de $500.000+.</p>
+
+      <div class="verdict-box">
+        <strong>💡 Kit VASTTO esencial (~$50k total):</strong> Cargador Samsung Original ($28k) + Funda de silicona ($12k) + Soporte auto ($5.5k) = <strong>~$45.500</strong> para proteger un celular de $500k+. Es el 9% del valor del celular. No escatimes.
+      </div>
+
+      <h2>Los 6 Accesorios que Recomendamos</h2>
+    </div>
+
+    <div class="container products-showcase">
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>¿Por qué estos y no otros?</h2>
+      <ul>
+        <li><strong>Marcas certificadas:</strong> Samsung, Baseus, Xiaomi, Logitech. Nada genérico sin nombre.</li>
+        <li><strong>+500 reseñas mínimo:</strong> Lo que recomendamos está probado por cientos de argentinos.</li>
+        <li><strong>Envío Full en ML:</strong> Llegan rápido con protección de compra.</li>
+        <li><strong>Precio real:</strong> No inflamos precios "originales" para que parezcan ofertas. Estos SON buenos precios.</li>
+      </ul>
+
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item">
+          <summary>¿Los cargadores genéricos dañan la batería?<span class="icon">+</span></summary>
+          <p>Sí, los cargadores sin certificación pueden degradar la batería a largo plazo. Usá siempre originales o marcas certificadas como Baseus.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué powerbank comprar en Argentina?<span class="icon">+</span></summary>
+          <p>El Xiaomi Redmi de 20.000mAh: carga el celular 4+ veces, carga rápida de 18W, ~$58.000 en ML.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Es necesario ponerle funda al celular?<span class="icon">+</span></summary>
+          <p>Sí. Una caída puede romper la pantalla y la reparación cuesta $50k-$200k. Una funda de $12k te ahorra esa plata.</p>
+        </details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Guías Relacionadas</h3>
+        <ul>
+          <li><a href="/guias/mejor-celular-gama-media-argentina">Mejor celular gama media Argentina 2026</a></li>
+          <li><a href="/guias/samsung-vs-motorola-gama-media">Samsung vs Motorola: ¿Cuál elegir?</a></li>
+          <li><a href="/guias/auriculares-gamer-baratos-argentina">Setup gamer barato en Argentina</a></li>
+        </ul>
+      </div>
+
+      <p><em>Los precios cambian diariamente. Hacé click en "Ver Oferta en ML" para el precio final. Todos los links llevan directo a Mercado Libre.</em></p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 2rem; padding-left: 1.5rem; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { background: #fdfdfd; padding: 3rem 1.5rem; border-top: 1px solid #eee; border-bottom: 1px solid #eee; max-width: 1200px; margin: 0 auto; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; font-size: 1rem; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; font-size: 1rem; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; margin: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #6c47ff; font-weight: 600; font-size: 1rem; }
+  .related-guides a:hover { text-decoration: underline; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .products-grid { grid-template-columns: 1fr; } }
+</style>

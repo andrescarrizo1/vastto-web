@@ -1,0 +1,215 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const products = [
+  {
+    title: 'HyperX Cloud Stinger 2 Core - Black',
+    price: 39999,
+    originalPrice: 59999,
+    image: '/images/hyperx-cloud-stinger-2-core---black.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-gamer-hyperx-cloud-stinger-2/p/MLA26547398',
+    badge: '🏆 MEJOR PRECIO',
+    rating: 5,
+    reviews: 1125,
+    freeShipping: true,
+    verdict: 'El auricular gamer más honesto del mercado argentino. No tiene luces RGB ni features de fantasía, pero el sonido es limpio, el micro se mutea levantándolo y las almohadillas son cómodas para jugar 4 horas seguidas. Por menos de $40k no hay nada mejor.',
+    pros: ['Micrófono que se mutea al levantarlo', 'Almohadillas de memory foam', 'Audio direccional 7.1 incluido', 'Compatible con PC, PS4, PS5, Xbox, Switch'],
+    cons: ['100% plástico', 'Cable de goma fina (cuidado con sillas gamer)'],
+  },
+  {
+    title: 'Auriculares Vincha Logitech G733 Lightspeed',
+    price: 175000,
+    originalPrice: 200000,
+    image: '/images/auriculares-vincha-logitech-g733-lightspeed.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-gamer-inalambricos-logitech-g-series-g733-negro-con-luz-rgb-led/p/MLA16269735',
+    badge: 'PREMIUM WIRELESS',
+    rating: 4.7,
+    reviews: 1732,
+    freeShipping: true,
+    verdict: 'Si no querés cables, este es EL auricular inalámbrico gamer a comprar. 278 gramos. Se siente como si no tuvieras nada puesto. El receptor USB tiene 0 lag y el micrófono con Blue VO!CE filtra todo el ruido del ventilador. Para streamers es un lujo.',
+    pros: ['Inalámbrico SIN lag (Lightspeed)', 'Peso pluma: 278g', 'Micrófono Blue VO!CE espectacular', 'RGB personalizable con G Hub'],
+    cons: ['Sonido enfocado en gaming (no tanto para música)', 'Todo plástico (a esos precios duele un poco)'],
+  },
+  {
+    title: 'Teclado Gamer Redragon Kumara K552',
+    price: 49900,
+    originalPrice: 62000,
+    image: '/images/teclado-gamer-redragon-kumara-k552.jpg',
+    url: 'https://www.mercadolibre.com.ar/teclado-redragon-kumara-k552-rgb/p/MLA15624325',
+    badge: 'TECLADO GAMER',
+    rating: 5,
+    reviews: 8500,
+    freeShipping: true,
+    verdict: 'No es auricular pero todo gamer necesita un teclado mecánico. El Kumara K552 es legendario en Argentina: indestructible, switches mecánicos intercambiables y RGB que controlás por software. Ruidoso, sí, pero la experiencia de tipeo es adictiva.',
+    pros: ['Construcción robusta metálica', 'Switches mecánicos intercambiables', 'RGB personalizable por tecla', 'Compacto TKL (sin numpad)'],
+    cons: ['Bastante ruidoso', 'Cable no desmontable'],
+  },
+  {
+    title: 'Mouse Gamer Logitech G305 Lightspeed',
+    price: 72342,
+    originalPrice: 85000,
+    image: '/images/mouse-gamer-logitech-g305-lightspeed.jpg',
+    url: 'https://www.mercadolibre.com.ar/mouse-gamer-logitech-g305-lightspeed/p/MLA11259956',
+    badge: 'MOUSE PRO',
+    rating: 5,
+    reviews: 1230,
+    freeShipping: true,
+    verdict: 'El mouse inalámbrico gamer con mejor relación calidad/precio del universo. Sensor HERO con tracking perfecto, 0 lag con Lightspeed, y la pila AA dura MESES. Lo usan jugadores profesionales de CS y Valorant.',
+    pros: ['Sensor HERO perfecto', 'Inalámbrico sin lag (Lightspeed)', 'Una pila AA dura 9 meses', 'Software Logitech G Hub potente'],
+    cons: ['Usa pila AA (no batería recargable)', 'Clicks algo huecos vs. el G Pro'],
+  },
+  {
+    title: 'Sony WH-CH520 Inalámbricos',
+    price: 87999,
+    originalPrice: 105000,
+    image: '/images/sony-wh-ch520-inal-mbricos.jpg',
+    url: 'https://www.mercadolibre.com.ar/auriculares-sony-wh-ch520-inalambricos/p/MLA22103546',
+    badge: 'MULTIUSO',
+    rating: 5,
+    reviews: 11023,
+    freeShipping: true,
+    verdict: 'No es "gamer" per se, pero si jugás Y trabajás, estos Sony son ideales. Micrófono excelente para Discord y Zoom, sonido equilibrado para juegos y los más vendidos de toda Argentina. Inalámbricos con 50 horas de batería.',
+    pros: ['Micrófono nítido para Discord/Zoom', 'Batería de 50 horas', '11.000+ reseñas positivas', 'Cómodos para sesiones largas'],
+    cons: ['Sin ANC', 'No tienen audio espacial como los gamer dedicados'],
+  },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Mejores Auriculares y Periféricos Gamer Baratos en Argentina 2026",
+  "description": "Los mejores auriculares gamer baratos, teclados mecánicos y mouse inalámbricos en Argentina. HyperX vs Logitech vs Redragon comparados.",
+  "image": "https://vastto.com.ar/images/hyperx-cloud-stinger-2-core---black.jpg",
+  "author": { "@type": "Organization", "name": "VASTTO", "url": "https://vastto.com.ar" },
+  "publisher": { "@type": "Organization", "name": "VASTTO", "logo": { "@type": "ImageObject", "url": "https://vastto.com.ar/favicon.svg" } },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuáles son los mejores auriculares gamer baratos en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "Los HyperX Cloud Stinger 2 Core son los mejores por menos de $40.000. Para inalámbricos, los Logitech G733 Lightspeed por ~$175.000 son la referencia." } },
+    { "@type": "Question", "name": "¿Auriculares gamer o auriculares normales para jugar?", "acceptedAnswer": { "@type": "Answer", "text": "Los gamer tienen micrófono integrado y audio espacial/direccional para ubicar enemigos. Si solo jugás casual, unos Sony WH-CH520 inalámbricos funcionan perfecto y te sirven también para música y trabajo." } },
+    { "@type": "Question", "name": "¿Qué teclado mecánico comprar para gaming en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "El Redragon Kumara K552 RGB es el estándar en Argentina: mecánico, compacto (TKL), con switches intercambiables y RGB, por menos de $50.000. Es ruidoso, pero indestructible." } }
+  ]
+});
+---
+
+<Layout 
+  title="Auriculares y Periféricos Gamer Baratos en Argentina 2026 — Top 5" 
+  description="¿Qué auriculares gamer comprar en Argentina sin gastar una fortuna? Comparamos HyperX, Logitech, Redragon y más. Precios reales de Mercado Libre.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/guias">Guías</a> ›
+          <span>Gamer Baratos</span>
+        </nav>
+        <h1>El Setup Gamer Más Barato que Funciona en Argentina (2026)</h1>
+        <div class="meta">
+          <span>Actualizado: Marzo 2026</span> • <span>Tiempo de lectura: 5 min</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">¿Querés armar un setup gamer decente sin vender un riñón? En Argentina los precios de periféricos están por las nubes, pero hay opciones que usan <strong>jugadores profesionales de verdad</strong> y cuestan menos de lo que pensás. Esta guía te ahorra horas de buscar en MercadoLibre.</p>
+
+      <h2>El Error del "Gamer Barato"</h2>
+      <p>Muchos compran auriculares "gamer" de $15.000 con luces LED que duran 3 meses, o teclados "mecánicos" de membrana disfrazados. <strong>El verdadero ahorro es comprar bueno una sola vez.</strong> Estos productos duran años y los usan streamers y pro players en Argentina.</p>
+
+      <div class="verdict-box">
+        <strong>🎮 Setup VASTTO por menos de $165k:</strong> Auriculares <strong>HyperX Stinger 2</strong> ($40k) + Mouse <strong>Logitech G305</strong> ($72k) + Teclado <strong>Redragon K552</strong> ($50k) = <strong>~$162.000</strong> por un setup que te dura 3+ años y compite con otros de $500k.
+      </div>
+
+      <h2>Nuestro Top 5 — Periféricos que Valen Cada Peso</h2>
+      <p>Seleccionamos auriculares, mouse y teclado con las mejores reseñas reales de compradores argentinos en Mercado Libre.</p>
+    </div>
+
+    <div class="container products-showcase">
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>¿Cómo elegimos estos periféricos?</h2>
+      <ul>
+        <li><strong>Reviews reales:</strong> Solo productos con +500 reseñas positivas de compradores argentinos verificados.</li>
+        <li><strong>Marcas con soporte local:</strong> HyperX/Kingston, Logitech y Redragon tienen servicio técnico en Argentina.</li>
+        <li><strong>Probados por la comunidad gamer:</strong> Estos son los periféricos que recomiendan en comunidades como r/Argaming.</li>
+        <li><strong>Disponibles con envío Full en ML:</strong> Llegan rápido y con compra protegida.</li>
+      </ul>
+
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item">
+          <summary>¿Cuáles son los mejores auriculares gamer baratos?<span class="icon">+</span></summary>
+          <p>Los HyperX Cloud Stinger 2 Core por menos de $40.000. Para inalámbricos, los Logitech G733 Lightspeed por ~$175.000.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Auriculares gamer o normales para jugar?<span class="icon">+</span></summary>
+          <p>Los gamer tienen micrófono integrado y audio espacial. Si solo jugás casual, unos Sony WH-CH520 funcionan perfecto y te sirven para música y trabajo también.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué teclado mecánico comprar para gaming?<span class="icon">+</span></summary>
+          <p>El Redragon Kumara K552 RGB por menos de $50.000: mecánico, compacto, con switches intercambiables y RGB. Es ruidoso pero indestructible.</p>
+        </details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Guías Relacionadas</h3>
+        <ul>
+          <li><a href="/guias/mejores-auriculares-aislantes-colectivo-argentina">Auriculares para viajar en colectivo</a></li>
+          <li><a href="/guias/mejor-celular-gama-media-argentina">Mejor celular gama media 2026</a></li>
+          <li><a href="/guias/mejores-accesorios-celular-indispensables">Accesorios indispensables para tu celular</a></li>
+        </ul>
+      </div>
+
+      <p><em>Los precios cambian diariamente. Hacé click en "Ver Oferta en ML" para ver el precio actualizado. Los links te llevan directo a Mercado Libre.</em></p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 2rem; padding-left: 1.5rem; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { background: #fdfdfd; padding: 3rem 1.5rem; border-top: 1px solid #eee; border-bottom: 1px solid #eee; max-width: 1200px; margin: 0 auto; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; font-size: 1rem; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; font-size: 1rem; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; margin: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #6c47ff; font-weight: 600; font-size: 1rem; }
+  .related-guides a:hover { text-decoration: underline; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .products-grid { grid-template-columns: 1fr; } }
+</style>

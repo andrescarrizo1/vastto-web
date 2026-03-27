@@ -1,0 +1,240 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const samsungProducts = [
+  {
+    title: 'Samsung Galaxy A55 5G 128GB',
+    price: 476717,
+    originalPrice: 529900,
+    image: '/images/samsung-galaxy-a55-5g-128gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a55-5g-128-gb-azul-increible-8-gb-ram/p/MLA32205562',
+    badge: '🏆 SAMSUNG',
+    rating: 4.9,
+    reviews: 876,
+    freeShipping: true,
+    verdict: 'El tanque de Samsung. 4 años de actualizaciones, Samsung Pay, Knox para seguridad empresarial y una pantalla Super AMOLED que te vuela la cabeza. SI querés que tu celular dure y funcione perfecto con apps bancarias, este es.',
+    pros: ['4 años de actualizaciones Android garantizadas', 'Samsung Pay + Knox integrado', 'Pantalla Super AMOLED 120Hz brutal', 'Diseño idéntico al Galaxy S24'],
+    cons: ['Carga muy lenta (25W vs 68W de Moto)', 'Procesador Exynos se calienta en juegos', 'Sin cargador en caja'],
+  },
+  {
+    title: 'Samsung Galaxy A35 5G 128GB',
+    price: 680000,
+    originalPrice: 750000,
+    image: '/images/samsung-galaxy-a35-5g-128gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a35-5g-128gb-awesome-navy-8gb-ram/p/MLA38284735',
+    badge: 'SAMSUNG',
+    rating: 4.9,
+    reviews: 351,
+    freeShipping: true,
+    verdict: 'La opción Samsung para quien no llega al A55. Misma filosofía pero un escalón abajo en procesador. Sigue siendo excelente para uso diario.',
+    pros: ['4 años de actualizaciones', 'Pantalla AMOLED', 'One UI limpio'],
+    cons: ['Carga lenta', 'Procesador Exynos algo justo'],
+  },
+];
+
+const motorolaProducts = [
+  {
+    title: 'Motorola Moto Edge 50 Fusion 256GB',
+    price: 699999,
+    originalPrice: 849999,
+    image: '/images/motorola-moto-edge-50-fusion-256gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/motorola-moto-edge-50-fusion-256-gb-azul-artico-8-gb-ram/p/MLA36934442',
+    badge: '🏆 MOTOROLA',
+    rating: 5,
+    reviews: 154,
+    freeShipping: true,
+    verdict: 'El celular que parece de $1.500.000 pero cuesta la mitad. Pantalla curva pOLED, carga de 68W que te da 12 horas en 15 minutos, y resistente al agua IP68. Android puro sin bloatware.',
+    pros: ['Carga insana de 68W (cargador incluido)', 'IP68 resistente al agua', 'Android puro sin basura', 'Diseño ultra premium y delgado'],
+    cons: ['Pantalla curva: toques fantasma posibles', 'Actualizaciones más cortas que Samsung (3 años)', 'Cámaras de noche flojas'],
+  },
+  {
+    title: 'Motorola Edge 40 Neo 256GB',
+    price: 620000,
+    originalPrice: 699000,
+    image: '/images/motorola-edge-40-neo-256gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/motorola-edge-40-neo-5g-256-gb-verde-8-gb-ram/p/MLA29349459',
+    badge: 'MOTOROLA',
+    rating: 4.6,
+    reviews: 668,
+    freeShipping: true,
+    verdict: 'El punto dulce Motorola. Mismo diseño premium que el Edge 50 pero más barato. IP68, carga rápida 68W y Android limpio.',
+    pros: ['IP68 sumergible', 'Carga 68W incluida', 'Android puro'],
+    cons: ['Batería algo justa a 144Hz', 'Cámaras nocturnas promedio'],
+  },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Samsung vs Motorola: ¿Cuál es Mejor en Gama Media en Argentina 2026?",
+  "description": "Comparativa directa Samsung Galaxy A55 vs Motorola Edge 50 Fusion. Analizamos cámara, batería, carga, actualizaciones y precio en Argentina.",
+  "image": "https://vastto.com.ar/images/samsung-galaxy-a55-5g-128gb.jpg",
+  "author": { "@type": "Organization", "name": "VASTTO", "url": "https://vastto.com.ar" },
+  "publisher": { "@type": "Organization", "name": "VASTTO", "logo": { "@type": "ImageObject", "url": "https://vastto.com.ar/favicon.svg" } },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Samsung o Motorola, cuál es mejor en Argentina 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Depende de tus prioridades. Samsung gana en actualizaciones (4 años vs 3), software empresarial (Knox/Samsung Pay) y pantalla. Motorola gana en diseño premium, carga rápida (68W vs 25W), y Android puro sin bloatware." } },
+    { "@type": "Question", "name": "¿Cuál dura más, Samsung o Motorola?", "acceptedAnswer": { "@type": "Answer", "text": "En durabilidad de software, Samsung gana: ofrece 4 años de actualizaciones Android vs 3 de Motorola. En durabilidad física, ambos son IP68 (resistentes al agua). En batería, Motorola carga a 68W vs 25W de Samsung, aunque Samsung suele tener mejor optimización de energía." } },
+    { "@type": "Question", "name": "¿Es mejor comprar Samsung Galaxy A55 o Motorola Edge 50 Fusion?", "acceptedAnswer": { "@type": "Answer", "text": "Samsung Galaxy A55 si necesitás un celular confiable para trabajo (Samsung Pay, Knox, apps bancarias) y actualizaciones largas. Motorola Edge 50 Fusion si te importa el diseño premium, la carga ultra rápida y Android puro sin apps innecesarias preinstaladas." } }
+  ]
+});
+---
+
+<Layout 
+  title="Samsung vs Motorola ¿Cuál es Mejor en Gama Media? — Comparativa Argentina 2026" 
+  description="Samsung Galaxy A55 vs Motorola Edge 50 Fusion: ¿cuál comprar en Argentina? Comparamos carga, pantalla, cámara, actualizaciones y precio real en Mercado Libre.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/guias">Guías</a> ›
+          <span>Samsung vs Motorola</span>
+        </nav>
+        <h1>Samsung vs Motorola: ¿Cuál Elegir en Gama Media en Argentina? (2026)</h1>
+        <div class="meta">
+          <span>Actualizado: Marzo 2026</span> • <span>Tiempo de lectura: 7 min</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">La pregunta del millón (literalmente) en Argentina. Samsung y Motorola se pelean el mercado de gama media con teléfonos cada vez mejores. Pero cada marca tiene una filosofía muy diferente, y elegir mal te puede costar caro. <strong>Esta guía te ahorra la duda.</strong></p>
+
+      <h2>La Diferencia Fundamental que Nadie te Dice</h2>
+      <p><strong>Samsung</strong> apuesta por <em>duración</em>: actualizaciones largas (4 años), software empresarial (Knox, Samsung Pay) y un ecosistema enorme de accesorios. Es el celular que tu contador usaría.</p>
+      <p><strong>Motorola</strong> apuesta por <em>experiencia</em>: diseño ultra premium, carga insanamente rápida (68W vs 25W), y Android puro sin basura preinstalada. Es el celular que un diseñador elegiría.</p>
+
+      <div class="verdict-box">
+        <strong>⚡ Veredicto VASTTO:</strong> Si necesitás un celular para <strong>trabajo + uso personal</strong> y querés que dure 4+ años → <strong>Samsung Galaxy A55</strong>. Si querés el <strong>celular más lindo y rápido de cargar</strong> por esa plata → <strong>Motorola Edge 50 Fusion</strong>.
+      </div>
+
+      <h2>Tabla Comparativa Directa</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>Samsung A55</th>
+              <th>Moto Edge 50 Fusion</th>
+              <th>Ganador</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Pantalla</strong></td><td>AMOLED 120Hz</td><td>pOLED 144Hz curva</td><td>🟢 Motorola</td></tr>
+            <tr><td><strong>Carga</strong></td><td>25W (lenta)</td><td>68W (cargador incl.)</td><td>🟢 Motorola</td></tr>
+            <tr><td><strong>Actualizaciones</strong></td><td>4 años Android</td><td>3 años Android</td><td>🟢 Samsung</td></tr>
+            <tr><td><strong>Agua</strong></td><td>IP67</td><td>IP68</td><td>🟢 Motorola</td></tr>
+            <tr><td><strong>Software</strong></td><td>One UI + Knox + Pay</td><td>Android puro</td><td>Empate</td></tr>
+            <tr><td><strong>Diseño</strong></td><td>Correcto (plástico)</td><td>Premium (vidrio)</td><td>🟢 Motorola</td></tr>
+            <tr><td><strong>Cámara nocturna</strong></td><td>Buena</td><td>Regular</td><td>🟢 Samsung</td></tr>
+            <tr><td><strong>Precio</strong></td><td>~$476.000</td><td>~$699.000</td><td>🟢 Samsung</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Equipo Samsung</h2>
+    </div>
+
+    <div class="container products-showcase">
+      <div class="products-grid">
+        {samsungProducts.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Equipo Motorola</h2>
+    </div>
+
+    <div class="container products-showcase">
+      <div class="products-grid">
+        {motorolaProducts.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>¿Y Xiaomi?</h2>
+      <p>Si tu presupuesto es más acotado, el <strong>Xiaomi Redmi Note 13 Pro</strong> ofrece una cámara de 200MP y 256GB por ~$509.000. Pero el software HyperOS tiene publicidad y bugs. Lee nuestra <a href="/guias/mejor-celular-gama-media-argentina">guía completa de gama media</a> para la comparativa con las 3 marcas.</p>
+
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item">
+          <summary>¿Samsung o Motorola, cuál es mejor en Argentina 2026?<span class="icon">+</span></summary>
+          <p>Samsung gana en actualizaciones y software empresarial. Motorola gana en diseño, carga rápida y Android puro. Depende de tus prioridades.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuál dura más, Samsung o Motorola?<span class="icon">+</span></summary>
+          <p>En software, Samsung: 4 años vs 3 de Motorola. En batería, Motorola carga a 68W vs 25W de Samsung. Ambos son IP68.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Samsung Galaxy A55 o Motorola Edge 50 Fusion?<span class="icon">+</span></summary>
+          <p>A55 para trabajo y durabilidad de software. Edge 50 Fusion para diseño premium y carga ultra rápida.</p>
+        </details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Guías Relacionadas</h3>
+        <ul>
+          <li><a href="/guias/mejor-celular-gama-media-argentina">Top 5 celulares gama media Argentina 2026</a></li>
+          <li><a href="/guias/mejores-accesorios-celular-indispensables">Accesorios indispensables para tu celular nuevo</a></li>
+          <li><a href="/guias/mejores-auriculares-aislantes-colectivo-argentina">Mejores auriculares para el colectivo</a></li>
+        </ul>
+      </div>
+
+      <p><em>Los precios cambian diariamente. Hacé click en "Ver Oferta en ML" para el precio final. Los links te llevan directo a Mercado Libre.</em></p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 2rem; padding-left: 1.5rem; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { background: #fdfdfd; padding: 3rem 1.5rem; border-top: 1px solid #eee; border-bottom: 1px solid #eee; max-width: 1200px; margin: 0 auto; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .table-wrapper { overflow-x: auto; margin: 1.5rem 0 2.5rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+  th { background: #f0ebff; color: #3b1fa8; font-weight: 700; }
+  tr:hover { background: #fafafa; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; font-size: 1rem; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; font-size: 1rem; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; margin: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #6c47ff; font-weight: 600; font-size: 1rem; }
+  .related-guides a:hover { text-decoration: underline; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .products-grid { grid-template-columns: 1fr; } }
+</style>

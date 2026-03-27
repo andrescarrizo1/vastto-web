@@ -1,2 +1,2 @@
-export const SITE_TITLE = 'Vastto — Los mejores productos en Mercado Libre';
-export const SITE_DESCRIPTION = 'Encontrá las mejores ofertas en tecnología, auriculares, belleza y más. Comprá en Mercado Libre con la selección curada de Vastto.';
+export const SITE_TITLE = 'VASTTO';
+export const SITE_DESCRIPTION = 'Guías de compra y comparativas de tecnología en Argentina 2026. Analizamos celulares, auriculares y smartwatch para que compres inteligente en Mercado Libre.';

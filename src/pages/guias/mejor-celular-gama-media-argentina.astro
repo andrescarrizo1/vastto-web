@@ -1,0 +1,455 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const products = [
+  {
+    title: 'Samsung Galaxy A55 5G 128GB',
+    price: 476717,
+    originalPrice: 529900,
+    image: '/images/samsung-galaxy-a55-5g-128gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a55-5g-128-gb-azul-increible-8-gb-ram/p/MLA32205562',
+    badge: '🏆 GANADOR',
+    rating: 4.9,
+    reviews: 876,
+    freeShipping: true,
+    verdict: 'El mejor equilibrio de la gama media. Pantalla Super AMOLED brutal, 4 años de actualizaciones garantizadas y diseño idéntico al Galaxy S24. Si querés un celular que te dure sin dramas, este es.',
+    pros: ['Pantalla Super AMOLED 120Hz espectacular', '4 años de actualizaciones Android', 'Diseño premium idéntico al S24', 'Resistencia al agua IP67'],
+    cons: ['Procesador Exynos se calienta en juegos pesados', 'Carga lenta de 25W comparado con Motorola'],
+  },
+  {
+    title: 'Motorola Moto Edge 50 Fusion 256GB',
+    price: 699999,
+    originalPrice: 849999,
+    image: '/images/motorola-moto-edge-50-fusion-256gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/motorola-moto-edge-50-fusion-256-gb-azul-artico-8-gb-ram/p/MLA36934442',
+    badge: 'PREMIUM',
+    rating: 5,
+    reviews: 154,
+    freeShipping: true,
+    verdict: 'El celular más lindo que podés comprar por esta plata. Pantalla curva pOLED, carga turbo de 68W y resistente al agua IP68. Si te importa el diseño y la velocidad de carga, este te va a enamorar.',
+    pros: ['Diseño premium ultra delgado', 'Carga rapidísima 68W (cargador incluido)', 'Resistente al agua IP68', 'Pantalla pOLED 144Hz'],
+    cons: ['Procesador no es para gaming pesado', 'Pantalla curva puede ser incómoda para algunos'],
+  },
+  {
+    title: 'Xiaomi Redmi Note 13 Pro 256GB',
+    price: 509900,
+    originalPrice: 589000,
+    image: '/images/xiaomi-redmi-note-13-pro-256gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/xiaomi-redmi-note-13-pro-5g-256-gb-negro-estelar-8-gb-ram/p/MLA28841744',
+    badge: 'CALIDAD/PRECIO',
+    rating: 4.8,
+    reviews: 432,
+    freeShipping: true,
+    verdict: 'La bestia de Xiaomi en gama media. Cámara de 200MP que saca fotos increíbles con buena luz, y 256GB de almacenamiento para que no te quedes sin espacio nunca. El software HyperOS todavía tiene bugs pero se banca todo.',
+    pros: ['Cámara principal de 200MP brutal', '256GB de almacenamiento', 'Pantalla AMOLED 120Hz', 'Carga rápida 67W'],
+    cons: ['HyperOS tiene bugs y publicidad', 'Cámaras secundarias flojas'],
+  },
+  {
+    title: 'Samsung Galaxy A35 5G 128GB',
+    price: 680000,
+    originalPrice: 750000,
+    image: '/images/samsung-galaxy-a35-5g-128gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a35-5g-128gb-awesome-navy-8gb-ram/p/MLA38284735',
+    badge: 'TANQUE',
+    rating: 4.9,
+    reviews: 351,
+    freeShipping: true,
+    verdict: 'El tanque confiable de Samsung. No es el más rápido ni el más lindo, pero es el que va a seguir funcionando perfecto dentro de 3 años. Actualizaciones garantizadas y cero problemas con apps bancarias.',
+    pros: ['4 años de actualizaciones seguras', 'Samsung Pay y Knox incluidos', 'Pantalla AMOLED excelente'],
+    cons: ['Carga muy lenta (25W)', 'Diseño algo conservador'],
+  },
+  {
+    title: 'Motorola Edge 40 Neo 256GB',
+    price: 620000,
+    originalPrice: 699000,
+    image: '/images/motorola-edge-40-neo-256gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/motorola-edge-40-neo-5g-256-gb-verde-8-gb-ram/p/MLA29349459',
+    badge: 'OFERTA',
+    rating: 4.6,
+    reviews: 668,
+    freeShipping: true,
+    verdict: 'El punto dulce de Motorola. Resistente al agua, pantalla curva hermosa y carga ridículamente rápida. Es para el que quiere sensación de gama alta sin pagarla.',
+    pros: ['Certificación IP68 (sumergible)', 'Diseño premium ultra liviano', 'Cargador de 68W incluido'],
+    cons: ['Batería drena rápido a 144Hz', 'Cámaras de noche promedio'],
+  },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Mejor Celular Gama Media en Argentina 2026: Top 5 Comparativa",
+  "description": "Comparamos los 5 mejores celulares gama media disponibles en Argentina en 2026. Samsung Galaxy A55 vs Motorola Edge 50 Fusion vs Xiaomi Redmi Note 13 Pro.",
+  "image": "https://vastto.com.ar/images/samsung-galaxy-a55-5g-128gb.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "VASTTO",
+    "url": "https://vastto.com.ar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "VASTTO",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://vastto.com.ar/favicon.svg"
+    }
+  },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el mejor celular gama media en Argentina 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El Samsung Galaxy A55 5G es actualmente el mejor celular gama media en Argentina por su pantalla Super AMOLED, 4 años de actualizaciones garantizadas y diseño premium. Si priorizás la carga rápida, el Motorola Edge 50 Fusion con 68W es imbatible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Samsung o Motorola para gama media en Argentina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Samsung ofrece actualizaciones más largas y mejor software (Knox, Samsung Pay), mientras que Motorola tiene mejor diseño, carga más rápida y Android casi puro. Si querés durabilidad de software, Samsung. Si querés experiencia premium por menos plata, Motorola."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Xiaomi es buena marca de celulares en Argentina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, Xiaomi ofrece excelente relación calidad/precio especialmente en la serie Redmi Note. La desventaja es que HyperOS (su sistema operativo) suele traer publicidad y algunos bugs. Para quienes priorizan hardware por menos plata, es la mejor opción."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es seguro comprar celulares en Mercado Libre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, siempre que compres publicaciones con envío 'Full' (gestionado por Mercado Libre) y de vendedores con reputación verde o tiendas oficiales. Mercado Libre te protege con su programa de compra protegida por 30 días."
+      }
+    }
+  ]
+});
+---
+
+<Layout 
+  title="Mejor Celular Gama Media en Argentina 2026 — Top 5 Comparativa" 
+  description="¿Qué celular gama media comprar en Argentina en 2026? Comparamos Samsung Galaxy A55 vs Motorola Edge 50 Fusion vs Xiaomi Redmi Note 13 Pro. Precios reales y opinión honesta.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/guias">Guías</a> ›
+          <span>Celulares Gama Media</span>
+        </nav>
+        <h1>Mejor Celular Gama Media en Argentina 2026: ¿Cuál comprar sin tirar la plata?</h1>
+        <div class="meta">
+          <span>Actualizado: Marzo 2026</span> • <span>Tiempo de lectura: 6 min</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Si tenés entre $400.000 y $700.000 para gastar en un celular en Argentina, estás en el rango más competitivo del mercado. Acá es donde Samsung, Motorola y Xiaomi se dan con todo. El problema es que hay <strong>demasiadas opciones</strong> y la diferencia entre tirar la plata y hacer una buena compra puede ser de un solo modelo.</p>
+
+      <h2>¿Por qué NO deberías comprar el gama alta?</h2>
+      <p>En Argentina, con la inflación y los precios en dólares, un celular de $1.000.000+ pierde valor muy rápido. La gama media de 2026 hace <strong>el 90% de lo que hace un flagship</strong> — buenas fotos, pantallas AMOLED, rendimiento fluido — por la mitad del precio. Salvo que seas fotógrafo profesional o gamer hardcore, no tiene sentido estirar el presupuesto.</p>
+
+      <div class="verdict-box">
+        <strong>🏆 Veredicto rápido VASTTO:</strong> Si tenés que elegir uno solo sin leer más, andá por el <strong>Samsung Galaxy A55 5G</strong>. Es el más equilibrado, con 4 años de actualizaciones y la mejor pantalla del segmento. Si la carga rápida te importa mucho, el <strong>Motorola Edge 50 Fusion</strong> con 68W es una locura.
+      </div>
+
+      <h2>Nuestro Top 5 — Comparativa Completa</h2>
+      <p>Analizamos cientos de publicaciones en Mercado Libre para traerte los 5 mejores celulares gama media realmente disponibles hoy en Argentina, con precios verificados y envío gratis.</p>
+    </div>
+
+    <div class="container products-showcase">
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Tabla Comparativa Rápida</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Pantalla</th>
+              <th>Batería</th>
+              <th>Carga</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Samsung A55</strong></td>
+              <td>AMOLED 120Hz</td>
+              <td>5000mAh</td>
+              <td>25W</td>
+              <td>~$476.000</td>
+            </tr>
+            <tr>
+              <td><strong>Moto Edge 50 Fusion</strong></td>
+              <td>pOLED 144Hz</td>
+              <td>5000mAh</td>
+              <td>68W</td>
+              <td>~$699.000</td>
+            </tr>
+            <tr>
+              <td><strong>Redmi Note 13 Pro</strong></td>
+              <td>AMOLED 120Hz</td>
+              <td>5100mAh</td>
+              <td>67W</td>
+              <td>~$509.000</td>
+            </tr>
+            <tr>
+              <td><strong>Samsung A35</strong></td>
+              <td>AMOLED 120Hz</td>
+              <td>5000mAh</td>
+              <td>25W</td>
+              <td>~$680.000</td>
+            </tr>
+            <tr>
+              <td><strong>Moto Edge 40 Neo</strong></td>
+              <td>pOLED 144Hz</td>
+              <td>5000mAh</td>
+              <td>68W</td>
+              <td>~$620.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>¿Cómo elegimos estos modelos?</h2>
+      <ul>
+        <li><strong>Pantalla AMOLED obligatoria:</strong> En 2026 no hay excusa para comprar un celular gama media con pantalla LCD. Los negros profundos y los colores vibrantes marcan una diferencia gigante.</li>
+        <li><strong>Mínimo 128GB:</strong> Con apps pesadas, fotos en alta resolución y WhatsApp acumulando archivos, 64GB ya no alcanza.</li>
+        <li><strong>Marca con soporte en Argentina:</strong> Descartamos marcas chinas sin servicio técnico local. Samsung, Motorola y Xiaomi tienen centros oficiales en el país.</li>
+        <li><strong>Precios reales en Mercado Libre:</strong> No mostramos precios de tiendas truchas ni importadores dudosos. Solo publicaciones con envío Full y vendedores verificados.</li>
+      </ul>
+
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item">
+          <summary>¿Cuál es el mejor celular gama media en Argentina 2026?<span class="icon">+</span></summary>
+          <p>El Samsung Galaxy A55 5G es actualmente el mejor celular gama media por su pantalla Super AMOLED, 4 años de actualizaciones garantizadas y diseño premium. Si priorizás la carga rápida, el Motorola Edge 50 Fusion con 68W es imbatible.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Samsung o Motorola para gama media en Argentina?<span class="icon">+</span></summary>
+          <p>Samsung ofrece actualizaciones más largas y mejor software (Knox, Samsung Pay), mientras que Motorola tiene mejor diseño, carga más rápida y Android casi puro. Si querés durabilidad de software, Samsung. Si querés experiencia premium por menos plata, Motorola.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Xiaomi es buena marca de celulares en Argentina?<span class="icon">+</span></summary>
+          <p>Sí, ofrece excelente relación calidad/precio especialmente en la serie Redmi Note. La desventaja es que HyperOS suele traer publicidad y algunos bugs. Para quienes priorizan hardware por menos plata, es la mejor opción.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Es seguro comprar celulares en Mercado Libre?<span class="icon">+</span></summary>
+          <p>Sí, siempre que compres publicaciones con envío 'Full' y de vendedores con reputación verde o tiendas oficiales. Mercado Libre te protege con su programa de compra protegida por 30 días.</p>
+        </details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Guías Relacionadas</h3>
+        <ul>
+          <li><a href="/guias/samsung-vs-motorola-gama-media">Samsung vs Motorola: ¿Cuál elegir en 2026?</a></li>
+          <li><a href="/guias/mejores-accesorios-celular-indispensables">Accesorios indispensables para tu celular nuevo</a></li>
+          <li><a href="/guias/mejores-auriculares-aislantes-colectivo-argentina">Mejores auriculares para viajar en colectivo</a></li>
+        </ul>
+      </div>
+
+      <p><em>Nota: Los precios en Argentina cambian todos los días. Hacé click en "Ver Oferta en ML" para ver el precio final actualizado de hoy. Los links te llevan directo a Mercado Libre.</em></p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header {
+    background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%);
+    color: white;
+    padding: 4rem 0 3rem;
+  }
+  .container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+  }
+  .meta {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .post-content {
+    padding: 3rem 1.5rem;
+  }
+  .lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .post-content h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin: 2.5rem 0 1rem;
+    font-weight: 800;
+  }
+  .post-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+  }
+  .post-content ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+  }
+  .post-content li {
+    margin-bottom: 0.5rem;
+  }
+  .verdict-box {
+    background: #f0ebff;
+    border-left: 4px solid #6c47ff;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 2rem 0;
+    font-size: 1.1rem;
+    color: #3b1fa8;
+    line-height: 1.6;
+  }
+  .products-showcase {
+    background: #fdfdfd;
+    padding: 3rem 1.5rem;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0 2.5rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  th {
+    background: #f0ebff;
+    color: #3b1fa8;
+    font-weight: 700;
+  }
+  tr:hover { background: #fafafa; }
+  .faq-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0 2.5rem;
+  }
+  .faq-item {
+    background: #fdfdfd;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 1.25rem;
+    font-weight: 700;
+    color: #3b1fa8;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 1rem;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p {
+    padding: 0 1.25rem 1.25rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1rem;
+  }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon {
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+    color: #6c47ff;
+  }
+  .related-guides {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+  }
+  .related-guides h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+  }
+  .related-guides ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .related-guides li {
+    margin-bottom: 0.5rem;
+  }
+  .related-guides a {
+    color: #6c47ff;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .related-guides a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .post-header h1 { font-size: 2rem; }
+    .products-grid { grid-template-columns: 1fr; }
+  }
+</style>

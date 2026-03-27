@@ -1,0 +1,215 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const products = [
+  {
+    title: 'Huawei Band 8',
+    price: 52000,
+    originalPrice: 65000,
+    image: '/images/huawei-band-8.jpg',
+    url: 'https://www.mercadolibre.com.ar/pantalla-huawei-band-band-10-de-147-pulgadas-con-correa-de-fluoroelastomero/p/MLA49735120',
+    badge: '🏆 MEJOR BARATO',
+    rating: 4.6,
+    reviews: 557,
+    freeShipping: true,
+    verdict: 'La pulsera definitiva por menos de $60k. Pantalla AMOLED que se ve increíble, mide sueño como un profesional y la batería te dura 2 semanas fácil. Ideal si solo querés contar pasos, ver notificaciones y no gastar de más.',
+    pros: ['Pantalla AMOLED vibrante', 'Carga súper rápida (5 min = 2 días)', 'Medición de sueño excelente', 'Peso pluma: no se siente en la muñeca'],
+    cons: ['No tiene GPS integrado', 'Esferas gratis limitadas tras 30 días'],
+  },
+  {
+    title: 'Amazfit Bip 5 Soft Black 1.91"',
+    price: 79999,
+    originalPrice: 109999,
+    image: '/images/amazfit-bip-5-soft-black-1-91-.jpg',
+    url: 'https://www.mercadolibre.com.ar/smartwatch-amazfit-bip-5-soft-black-191-caja-de-plastico/p/MLA29878736',
+    badge: 'PANTALLA GRANDE',
+    rating: 4.5,
+    reviews: 654,
+    freeShipping: true,
+    verdict: 'Pantalla enorme de 1.91" que parece un reloj de verdad. GPS integrado para salir a correr sin el celular. La batería dura 10 días fácil. El mejor Amazfit barato.',
+    pros: ['Pantalla grande de 1.91"', 'GPS integrado', 'Batería de 10 días', 'Llamadas Bluetooth'],
+    cons: ['Materiales plásticos se notan', 'Amazfit Zepp app tiene bugs'],
+  },
+  {
+    title: 'Xiaomi Redmi Watch 4 - Negro GPS',
+    price: 89999,
+    originalPrice: 120000,
+    image: '/images/xiaomi-redmi-watch-4---negro-gps.jpg',
+    url: 'https://www.mercadolibre.com.ar/smartwatch-xiaomi-redmi-watch-4-negro-197-gps/p/MLA29165243',
+    badge: 'POPULAR',
+    rating: 4.8,
+    reviews: 856,
+    freeShipping: true,
+    verdict: 'El smartwatch más vendido de Argentina por algo. Pantalla gigante de 1.97", GPS preciso y batería de 20 días. Si usás Xiaomi, se integra perfecto con Mi Fitness. Relación calidad/precio brutal.',
+    pros: ['Pantalla gigante y brillante (1.97")', 'GPS integrado y preciso', 'Batería de 20 días reales', 'HyperOS con buenas notificaciones'],
+    cons: ['Correas propietarias (no estándar)', 'No podés responder mensajes desde el reloj'],
+  },
+  {
+    title: 'Kieslect Ks Pro Llamadas',
+    price: 85000,
+    originalPrice: 100000,
+    image: '/images/kieslect-ks-pro-llamadas.jpg',
+    url: 'https://www.mercadolibre.com.ar/smartwatch-reloj-inteligente-kieslect-ks-pro-negro-con-pantalla-201-con-2-correas/p/MLA25868568',
+    badge: 'CON LLAMADAS',
+    rating: 4.7,
+    reviews: 1214,
+    freeShipping: true,
+    verdict: 'El clon del Apple Watch con mejor relación calidad/precio. La pantalla de 2.01" es enorme y las llamadas Bluetooth suenan claras de verdad. Viene con 2 correas (silicona + metal). Si querés hablar desde la muñeca sin gastar una fortuna, este es.',
+    pros: ['Pantalla enorme de 2.01"', 'Llamadas Bluetooth claras', 'Viene con 2 correas', 'Precio imbatible'],
+    cons: ['Sistema operativo algo lento', 'Materiales plásticos'],
+  },
+  {
+    title: 'Huawei Band 9 Smart - Negro',
+    price: 69999,
+    originalPrice: 85000,
+    image: '/images/huawei-band-9-smart---negro.jpg',
+    url: 'https://www.mercadolibre.com.ar/huawei-band-9-negro/p/MLA34532454',
+    badge: 'NUEVO 2026',
+    rating: 4.6,
+    reviews: 3241,
+    freeShipping: true,
+    verdict: 'La evolución de la Band 8 con pantalla más grande y mejor sensor de frecuencia cardíaca. Si ya tenés la 8 no vale la pena actualizar, pero si comprás desde cero, esta es la versión a elegir.',
+    pros: ['Pantalla AMOLED mejorada', 'Sensor cardíaco más preciso', 'Diseño más premium', 'Correas cómodas intercambiables'],
+    cons: ['Sin GPS (necesitás el celu)', 'Precio más alto que la Band 8'],
+  },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Mejores Smartwatch Baratos en Argentina 2026: Top 5 por Menos de $100k",
+  "description": "Los 5 mejores smartwatch y pulseras inteligentes baratas en Argentina. Comparamos Huawei Band, Amazfit Bip, Xiaomi Redmi Watch y más.",
+  "image": "https://vastto.com.ar/images/xiaomi-redmi-watch-4---negro-gps.jpg",
+  "author": { "@type": "Organization", "name": "VASTTO", "url": "https://vastto.com.ar" },
+  "publisher": { "@type": "Organization", "name": "VASTTO", "logo": { "@type": "ImageObject", "url": "https://vastto.com.ar/favicon.svg" } },
+  "datePublished": "2026-03-27",
+  "dateModified": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuál es el mejor smartwatch barato en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "La Huawei Band 8 es la opción más barata y confiable por menos de $55.000. Si querés pantalla grande y GPS, el Xiaomi Redmi Watch 4 por $90.000 es imbatible." } },
+    { "@type": "Question", "name": "¿Smartwatch o pulsera deportiva?", "acceptedAnswer": { "@type": "Answer", "text": "Si solo necesitás contar pasos, ver notificaciones y medir el sueño, una pulsera como la Huawei Band 8 te sobra. Si querés GPS para correr sin celular y pantalla grande para leer mensajes, un smartwatch como el Redmi Watch 4 es mejor inversión." } },
+    { "@type": "Question", "name": "¿Los smartwatch baratos son buenos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, en 2026 la calidad mejoró mucho. Marcas como Huawei, Xiaomi y Amazfit ofrecen pantallas AMOLED, buena batería y sensores precisos por menos de $100.000. Lo que NO vas a tener es apps como en Apple Watch o WearOS." } }
+  ]
+});
+---
+
+<Layout 
+  title="Mejores Smartwatch Baratos en Argentina 2026 — Top 5 Menos de $100k" 
+  description="¿Qué smartwatch barato comprar en Argentina? Comparamos los 5 mejores relojes inteligentes por menos de $100.000. Huawei Band vs Xiaomi Redmi Watch vs Amazfit.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/guias">Guías</a> ›
+          <span>Smartwatch Baratos</span>
+        </nav>
+        <h1>Los 5 Mejores Smartwatch Baratos en Argentina (Menos de $100.000)</h1>
+        <div class="meta">
+          <span>Actualizado: Marzo 2026</span> • <span>Tiempo de lectura: 5 min</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Querés medir tus pasos, ver las notificaciones de WhatsApp sin sacar el celular y saber cuánto dormiste anoche. Pero no querés gastar más de $100.000. Buena noticia: <strong>en 2026 hay opciones increíbles por menos de lo que cuesta una cena en un restaurante.</strong></p>
+
+      <h2>¿Smartwatch o Pulsera? La diferencia que nadie te explica</h2>
+      <p>Las <strong>pulseras</strong> (como la Huawei Band) son más chicas, livianas y baratas. Sirven para fitness y notificaciones. Los <strong>smartwatch</strong> (como el Redmi Watch 4) tienen pantalla grande, GPS y a veces hasta llamadas. Si solo querés lo básico, ahorrá plata con una pulsera. Si querés más funciones, estirá un poco el presupuesto.</p>
+
+      <div class="verdict-box">
+        <strong>🏆 Veredicto rápido VASTTO:</strong> Para presupuesto mínimo, la <strong>Huawei Band 8</strong> por ~$52k es perfecta. Si querés la experiencia completa con GPS y pantalla grande sin irte a más de $100k, el <strong>Xiaomi Redmi Watch 4</strong> es el rey indiscutido.
+      </div>
+
+      <h2>Nuestro Top 5 — Los Mejores Baratos de Verdad</h2>
+      <p>Filtramos todo lo que hay en Mercado Libre para traerte solo las opciones que realmente valen la pena. No incluimos relojes genéricos sin marca que mueren a los 2 meses.</p>
+    </div>
+
+    <div class="container products-showcase">
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>¿Cómo elegimos estos modelos?</h2>
+      <ul>
+        <li><strong>Marca conocida con soporte:</strong> Solo Huawei, Xiaomi, Amazfit y marcas con historial comprobado. Nada de "marcas" desconocidas de $15.000.</li>
+        <li><strong>Pantalla AMOLED:</strong> Se ve bajo el sol, no gasta batería mostrando negro. Es la tecnología mínima aceptable en 2026.</li>
+        <li><strong>Batería real de 7+ días:</strong> Un reloj que tenés que cargar cada noche no sirve. Todos estos duran como mínimo una semana.</li>
+        <li><strong>Disponibles en Mercado Libre con envío Full:</strong> Para que llegue rápido y con respaldo de compra protegida.</li>
+      </ul>
+
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item">
+          <summary>¿Cuál es el mejor smartwatch barato en Argentina?<span class="icon">+</span></summary>
+          <p>La Huawei Band 8 por menos de $55.000 si querés lo más barato. El Xiaomi Redmi Watch 4 por $90.000 si querés GPS y pantalla grande.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Smartwatch o pulsera deportiva?<span class="icon">+</span></summary>
+          <p>Si solo necesitás contar pasos, ver notificaciones y medir el sueño, una pulsera te sobra. Si querés GPS para correr sin celular, necesitás un smartwatch.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Los smartwatch baratos son buenos?<span class="icon">+</span></summary>
+          <p>Sí, en 2026 la calidad mejoró mucho. Marcas como Huawei, Xiaomi y Amazfit ofrecen pantallas AMOLED y sensores precisos por menos de $100k.</p>
+        </details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Guías Relacionadas</h3>
+        <ul>
+          <li><a href="/guias/mejor-celular-gama-media-argentina">Mejor celular gama media en Argentina 2026</a></li>
+          <li><a href="/guias/mejores-auriculares-aislantes-colectivo-argentina">Mejores auriculares para viajar en colectivo</a></li>
+          <li><a href="/guias/mejores-accesorios-celular-indispensables">Accesorios indispensables para tu celular</a></li>
+        </ul>
+      </div>
+
+      <p><em>Nota: Los precios cambian todos los días. Hacé click en "Ver Oferta en ML" para ver el precio final actualizado. Todos los links te llevan directo a Mercado Libre.</em></p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 2rem; padding-left: 1.5rem; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { background: #fdfdfd; padding: 3rem 1.5rem; border-top: 1px solid #eee; border-bottom: 1px solid #eee; max-width: 1200px; margin: 0 auto; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; font-size: 1rem; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; font-size: 1rem; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; margin: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #6c47ff; font-weight: 600; font-size: 1rem; }
+  .related-guides a:hover { text-decoration: underline; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .products-grid { grid-template-columns: 1fr; } }
+</style>

@@ -10,16 +10,23 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, image = '/og-vastto.jpg' } = Astro.props;
+const fullTitle = title.includes('VASTTO') ? title : `${title} | VASTTO`;
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="canonical" href={canonicalURL} />
-<title>{title} | {SITE_TITLE}</title>
+<title>{fullTitle}</title>
 <meta name="description" content={description} />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="googlebot" content="index, follow" />
-<meta name="bingbot" content="index, follow" />
+
+<!-- Geo targeting Argentina -->
+<link rel="alternate" hreflang="es-AR" href={canonicalURL} />
+<link rel="alternate" hreflang="x-default" href={canonicalURL} />
+<meta name="geo.region" content="AR" />
+<meta name="geo.placename" content="Argentina" />
+<meta name="content-language" content="es-AR" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -47,12 +54,11 @@ const { title, description, image = '/og-vastto.jpg' } = Astro.props;
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "${SITE_TITLE}",
+  "name": "VASTTO",
+  "alternateName": "VASTTO Argentina",
   "url": "https://vastto.com.ar/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://vastto.com.ar/?s={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  "description": "Guías de compra y comparativas de tecnología en Argentina. Analizamos celulares, auriculares y smartwatch.",
+  "inLanguage": "es-AR"
 }
 `} />
+
