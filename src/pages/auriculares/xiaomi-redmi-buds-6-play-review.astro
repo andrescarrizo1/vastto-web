@@ -1,0 +1,187 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const product = {
+  title: 'Xiaomi Redmi Buds 6 Play - Negro',
+  price: 29999,
+  originalPrice: 45000,
+  image: '/images/xiaomi-redmi-buds-6-play---negro.jpg',
+  url: 'https://www.mercadolibre.com.ar/auriculares-inalambricos-xiaomi-redmi-buds-6-play-negro/p/MLA39962085',
+  badge: '🏆 MEJOR BARATO',
+  rating: 4.8,
+  reviews: 6189,
+  freeShipping: true,
+  verdict: 'Los más vendidos de Argentina por algo. 36 horas de batería total, conexión súper estable y el precio es absurdamente bajo para la calidad que ofrecen. Si es tu primer auricular TWS, compralos sin pensar.',
+  pros: [
+    'Batería interminable (36h total, 7.5h por carga)', 
+    'Precio inigualable en marcas confiables', 
+    'Súper livianos (3.6g cada uno)', 
+    'Bluetooth 5.4 muy estable', 
+    'Eq configurable desde app'
+  ],
+  cons: [
+    'Sin cancelación activa de ruido (ANC)', 
+    'Graves algo débiles para amantes del reggaetón', 
+    'Plástico del estuche se raya con mirarlo'
+  ],
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Xiaomi Redmi Buds 6 Play",
+    "image": "https://vastto.com.ar/images/xiaomi-redmi-buds-6-play---negro.jpg",
+    "brand": { "@type": "Brand", "name": "Xiaomi" },
+    "offers": { "@type": "Offer", "priceCurrency": "ARS", "price": 29999, "availability": "https://schema.org/InStock" }
+  },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "publisher": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Vale la pena comprar los Redmi Buds 6 Play?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Por menos de $30.000 en Argentina, todo lo demás en Mercado Libre es basura genérica (inpods, f9, etc.) que se rompe al mes. Los Buds 6 Play son de una marca real (Xiaomi), tienen garantía, Bluetooth 5.4 y 36 horas de batería. Son la compra inteligente barata." } },
+    { "@type": "Question", "name": "¿Tienen buena calidad de sonido para música?", "acceptedAnswer": { "@type": "Answer", "text": "Suenan claro, no distorsionan a volumen máximo y las voces se escuchan nítidas. La única debilidad es que a los graves (bajos) les falta un poco de 'punch'. Si escuchás rock o pop, perfectos. Si solo escuchás trap/EDM y querés que retumbe, te conviene mirar los JBL de $45k." } },
+    { "@type": "Question", "name": "¿Tienen cancelación de ruido?", "acceptedAnswer": { "@type": "Answer", "text": "NO tienen cancelación activa de ruido (ANC). Tienen 'reducción de ruido de IA' pero eso solo sirve para que el micrófono te capte mejor en llamadas. Aíslan algo de forma pasiva por ser in-ear, pero no taparán el ruido de un colectivo o subte." } }
+  ]
+});
+---
+
+<Layout 
+  title="Xiaomi Redmi Buds 6 Play Review: ¿El Mejor Auricular TWS Barato en Argentina? | VASTTO" 
+  description="Probamos los Redmi Buds 6 Play de Xiaomi. ¿Son la mejor opción barata en Mercado Libre por $30.000? Análisis sincero: sonido, batería, micrófono y app.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/auriculares">Auriculares</a> ›
+          <span>Redmi Buds 6 Play Review</span>
+        </nav>
+        <h1>Xiaomi Redmi Buds 6 Play Review: ¿El Rey de los Auriculares Baratos en Argentina?</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 6 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Entras a Mercado Libre buscando "auriculares inalambricos", ves 500 modelos chinos injunables por $12.000 y pensás: "seguro son malísimos, pero no tengo ganas de gastar $100.000 en unos Samsung". Acá entran los <strong>Xiaomi Redmi Buds 6 Play</strong> a salvarte el día. Cuestan <strong>menos de $30.000</strong>, son de marca confiable y rompen el mercado.</p>
+
+      <div class="score-box">
+        <div class="score">4.5<span>/5</span></div>
+        <div class="score-label">
+          <strong>Puntuación VASTTO</strong>
+          <p>Relación calidad-precio imbatible. La única opción sensata debajo de $30k.</p>
+        </div>
+      </div>
+
+      <div class="verdict-box">
+        <strong>⚡ Veredicto en 10 segundos:</strong> Pagás 30 lucas y te llevás 36 horas de batería, Bluetooth 5.4, una app para ecualizar y diseño recontra liviano. Sí, el estuche se raya de nada y los graves podrían pegar más fuerte. ¿Pero quién se queja por este precio? **Si tenés bajo presupuesto, ignora la basura genérica de ML y comprate estos directo.**
+      </div>
+
+      <h2>Lo Bueno — Por Qué Destruyen a la Competencia</h2>
+      
+      <h3>1. Batería que parece infinita (36 horas)</h3>
+      <p>Es el punto más fuerte. Los auriculares sueltos te dan <strong>7.5 horas de música continua</strong> (lo que dura una jornada laboral entera). Sumando las recargas del estuche, llegás a 36 horas. En uso real, vas a cargar el estuche una vez cada semana y media de uso intenso.</p>
+
+      <h3>2. Conexión Estable (Bluetooth 5.4)</h3>
+      <p>La diferencia entre auriculares baratos "sin marca" y estos, es el chip. Los Buds 6 Play usan Bluetooth 5.4. Esto significa que podés caminar a 10 metros del celular, dar tres vueltas, y la música no se va a entrecortar como pasa con modelos más viejos.</p>
+
+      <h3>3. Comodidad Absoluta (3.6 gramos por auricular)</h3>
+      <p>No tienen "patita" larga, son compactos tipo "botón". Son tan livianos que a los 10 minutos te olvidás que los tenés puestos. Podés estar horas y no cansan el cartílago.</p>
+      
+      <h3>4. App "Xiaomi Earbuds" Funcional</h3>
+      <p>Increíble tener esto en esta gama de precio. Bajas la app, podés ver el % de batería exacto de cada auricular y el estuche, y además podés usar el ecualizador con modos pre-establecidos (destacar graves, destacar voces, etc).</p>
+
+      <h2>Lo Malo — Dónde Cortaron Costos</h2>
+      
+      <h3>Estuche de Plástico "Mate-Raya"</h3>
+      <p>El estuche hace crack-crack y el plástico se raya si lo mirás fuerte. Es un estuche que cumple su función y punto. Guardalos lejos de las llaves compartiendo bolsillo.</p>
+
+      <h3>Sonido Claro, Pero Sin "Punch" de Bajos</h3>
+      <p>El driver dinámico de 10mm hace un buen trabajo. Las voces en podcasts o videos de YouTube se escuchan genial. <strong>Pero probándolos con Trap o Electrónica, al bajo le falta peso</strong>. Usando la app de Xiaomi lo podés subir un poco, pero no vas a sentir ese "bum-bum" profundo que te darían auriculares más caros.</p>
+      
+      <h3>Micrófono Básico para Llamadas</h3>
+      <p>Tiene cancelación de ruido por IA pero solo para micrófono (para que te escuchen, no para vos escuchar música). Funciona bien para audios de WhatsApp estando adentro. Estando en la avenida Corrientes al mediodía con viento, el otro te va a escuchar robótico y alejado.</p>
+
+      <h2>¿Para Quién Son Perfectos?</h2>
+      <ul>
+        <li><strong>✅ Presupuestos ajustados:</strong> El límite seguro entre barato y "basura que dura 1 mes".</li>
+        <li><strong>✅ Uso diario y caminatas:</strong> Escuchar spotify caminando o entrenamientos de gimnasio livianos.</li>
+        <li><strong>✅ Estudiantes:</strong> Aislarse levemente a bajo costo y tener batería eterna para no cargar el case todos los días.</li>
+        <li><strong>❌ Puristas del audio (Audiophiles):</strong> Acá manda la practicidad, no el detalle instrumental.</li>
+        <li><strong>❌ Los que viajan mucho en transporte ruidoso:</strong> Mejor saltar a los SoundPEATS Clear o Galaxy FE por cancelación de ruido o al menos un mejor aislamiento pasivo.</li>
+      </ul>
+    </div>
+
+    <div class="container products-showcase">
+      <ProductCard {...product} />
+    </div>
+
+    <div class="container-narrow post-content">
+
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item"><summary>¿Tienen cancelación de ruido activa (ANC)?<span class="icon">+</span></summary><p>NO tienen. Aíslan el ruido gracias a las gomitas de silicona (In-ear), pero no apagan motores o sonidos repetitivos mediante micrófonos como auriculares más caros.</p></details>
+        <details class="faq-item"><summary>¿Sirven para ir al gimnasio?<span class="icon">+</span></summary><p>¡Si! Encajan súper profundo en el oído, y son tan livianos que por más que corras o sacudas la cabeza no se van a salir volando, además tienen cierta resistencia al sudor ligero, no sumergible obvio.</p></details>
+        <details class="faq-item"><summary>¿Qué diferencia hay con los Redmi Buds 4 Active?<span class="icon">+</span></summary><p>Los 6 Play son la actualización directa. Tienen Bluetooth 5.4 contra 5.3, mejor duración de batería total (36h vs 28h), y el diseño del botón es ligeramente más ergonómico. Ante la duda y misma franja de precio, los 6 siempre.</p></details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Seguir leyendo en VASTTO</h3>
+        <ul>
+          <li><a href="/auriculares">← Ver el Ranking completo de Auriculares</a></li>
+          <li><a href="/auriculares/mejores-bluetooth-baratos">Los 5 Mejores Auriculares Baratos del País</a></li>
+          <li><a href="/auriculares/mejores-cancelacion-ruido-baratos">La guía de auriculares con ANC accesibles (Si querés dar el salto)</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content h3 { font-size: 1.3rem; color: #3b1fa8; margin: 1.5rem 0 0.5rem; font-weight: 700; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; padding-left: 0; list-style: none; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .score-box { display: flex; align-items: center; gap: 1.5rem; background: #f0ebff; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .score { font-size: 3rem; font-weight: 800; color: #6c47ff; line-height: 1; }
+  .score span { font-size: 1.5rem; color: #999; }
+  .score-label strong { font-size: 1rem; color: #1a1a1a; }
+  .score-label p { margin: 0.25rem 0 0; font-size: 0.95rem; color: #666; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { max-width: 400px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #6c47ff; font-weight: 600; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .score-box { flex-direction: column; text-align: center; } }
+</style>
