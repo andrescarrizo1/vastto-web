@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const product = {
+  title: 'Kieslect Ks Pro Llamadas',
+  price: 85000,
+  originalPrice: 100000,
+  image: '/images/kieslect-ks-pro-llamadas.jpg',
+  url: 'https://www.mercadolibre.com.ar/jm/search?as_word=Kieslect%20Ks%20Pro%20Llamadas',
+  badge: 'CON LLAMADAS',
+  rating: 4.7,
+  reviews: 1214,
+  freeShipping: true,
+  verdict: 'El mejor diseño estilo Apple Watch por menos de $90.000. Sorprende la calidad del micrófono para hacer llamadas Bluetooth desde la muñeca. Viene con dos mallas de regalo en la caja.',
+  pros: [
+    'Pantalla gigante de 2.01" AMOLED',
+    'Llamadas Bluetooth fuertes y claras',
+    'Incluye 2 mallas (magnética y silicona)',
+    'Alertas de frecuencia cardíaca anormal'
+  ],
+  cons: [
+    'Kies OS (el sistema operativo) tiene algo de lag',
+    'Cuerpo principal de plástico (parece metal pero no es)',
+    'La batería con llamadas constantes dura 3-4 días'
+  ]
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Kieslect Ks Pro",
+    "image": "https://vastto.com.ar/images/kieslect-ks-pro-llamadas.jpg",
+    "brand": { "@type": "Brand", "name": "Kieslect" },
+    "offers": { "@type": "Offer", "priceCurrency": "ARS", "price": 85000, "availability": "https://schema.org/InStock" }
+  },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.7", "bestRating": "5" },
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "publisher": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Qué es la marca Kieslect?", "acceptedAnswer": { "@type": "Answer", "text": "Kieslect es una marca asociada al ecosistema de Xiaomi, especializada en relojes inteligentes con diseño fashion y funciones de llamadas Bluetooth a bajo costo. Tienen excelente reputación en relación calidad-precio." } },
+    { "@type": "Question", "name": "¿Se pueden hacer llamadas desde el Kieslect Ks Pro?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Gracias a su micrófono HD y altavoz integrados, podés tanto emitir como recibir llamadas directamente desde tu muñeca, siempre y cuando el reloj esté conectado por Bluetooth a tu celular." } },
+    { "@type": "Question", "name": "¿Trae mallas intercambiables?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, de fábrica incluye dos correas: una de silicona tradicional para deporte y una correa magnética bicolor muy elegante para uso diario o salir." } }
+  ]
+});
+---
+
+<Layout 
+  title="Kieslect Ks Pro Review — ¿El Mejor Clon del Apple Watch? | VASTTO" 
+  description="Analizamos el Kieslect Ks Pro en Argentina. Llamadas por Bluetooth, pantalla 2.01 pulgadas y compatibilidad. Todo lo que necesitás saber antes de comprar.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/smartwatch">Smartwatch</a> ›
+          <span>Kieslect Ks Pro Review</span>
+        </nav>
+        <h1>Kieslect Ks Pro Review: El Rey de las Llamadas Bluetooth Baratas</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 4 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Si mirás rápido el <strong>Kieslect Ks Pro</strong>, vas a pensar que es un Apple Watch Ultra. Esa es exactamente la idea de la marca. Pero lo sorprendente es que por menos de $90.000 en Argentina, no es solo una cara bonita: realmente funciona bien para hacer llamadas desde la muñeca.</p>
+
+      <div class="score-box">
+        <div class="score">4.7<span>/5</span></div>
+        <div class="score-label">
+          <strong>Puntuación VASTTO</strong>
+          <p>La opción número uno si necesitás responder llamadas manejando o trabajando.</p>
+        </div>
+      </div>
+
+      <div class="verdict-box">
+        <strong>⚡ Veredicto rápido:</strong> Si tu prioridad absoluta es la estética (querés un reloj cuadrado grande que llame la atención) y poder atender llamadas como James Bond sin sacar el celular del bolsillo, el Ks Pro es invencible por este precio. Si querés precisión para correr maratones, buscá otra cosa.
+      </div>
+
+      <h2>Lo Bueno — Magia Magnética</h2>
+      <h3>1. Pantalla Inmensa de 2.01"</h3>
+      <p>Es una de las pantallas más grandes que vas a encontrar en el mercado de gama de entrada. La resolución AMOLED hace que los colores exploten y que leer notificaciones de WhatsApp sea facilísimo sin forzar la vista.</p>
+
+      <h3>2. Micrófono y Parlante Integrado</h3>
+      <p>Acá es donde el reloj justifica cada centavo. La conexión Bluetooth 5.2 es súper estable y <strong>el volumen del parlante para llamadas es sorpresivamente fuerte</strong>. Podés ir manejando con la ventana semi-abierta y escuchar perfectamente a la otra persona.</p>
+
+      <h3>3. Un "Unboxing" Premium</h3>
+      <p>La mayoría de relojes chinos baratos vienen en una caja de cartón triste. Kieslect te entrega una experiencia premium e incluye <strong>dos correas distintas</strong> en la caja: una deportiva y una magnética espectacular de dos colores.</p>
+
+      <h2>Lo Malo — Todo Tiene un Costo</h2>
+      <h3>1. El Sistema Operativo (Kies OS 2.0)</h3>
+      <p>Al pasar rápido por los menús se puede notar algún salto de frames (lag). No funciona tan fluido de mantequilla como un Apple Watch o un Galaxy Watch caro. No es trágico, pero es notorio.</p>
+
+      <h3>2. Materiales Engañosos</h3>
+      <p>Parece acero inoxidable cepillado, pero el cuerpo <strong>es principalmente plástico pintado</strong>. Es súper liviano, pero si lo golpeás fuerte contra una pared, se va a rayar o marcar la pintura plateada.</p>
+
+      <h2>¿Para Quién Es?</h2>
+      <ul>
+        <li><strong>✅ Choferes, fleteros, delivery:</strong> Atender llamadas sin tocar el celular salva vidas.</li>
+        <li><strong>✅ Amantes del diseño Apple Watch:</strong> Tenés el "look" por un cuarto del precio.</li>
+        <li><strong>❌ Deportistas extremos:</strong> El GPS no es tan preciso como un Garmin o Amazfit.</li>
+      </ul>
+    </div>
+
+    <div class="container products-showcase">
+      <ProductCard {...product} />
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item"><summary>¿Se puede mojar?<span class="icon">+</span></summary><p>Sí, tiene protección IP68. Podés lavarte las manos o agarrar lluvia, e incluso nadar en piletas poco profundas, pero NO es recomendable para sumergirlo en mar abierto o agua caliente (duchas).</p></details>
+        <details class="faq-item"><summary>¿Responde mensajes de WhatsApp?<span class="icon">+</span></summary><p>Podés leer todos los mensajes sin problema, pero para responder solo disponés de un listado de respuestas rápidas pre-configuradas desde la app en tu celular.</p></details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Seguir Leyendo</h3>
+        <ul>
+          <li><a href="/smartwatch">← Volver al Ranking de Smartwatches</a></li>
+          <li><a href="/smartwatch/mejores-smartwatch-baratos-argentina">Top 5: Smartwatch baratos para todos los bolsillos</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content h3 { font-size: 1.3rem; color: #3b1fa8; margin: 1.5rem 0 0.5rem; font-weight: 700; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; padding-left: 0; list-style: none; margin-bottom: 2rem; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .score-box { display: flex; align-items: center; gap: 1.5rem; background: #f0ebff; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .score { font-size: 3rem; font-weight: 800; color: #6c47ff; line-height: 1; }
+  .score span { font-size: 1.5rem; color: #999; }
+  .score-label strong { font-size: 1rem; color: #1a1a1a; }
+  .score-label p { margin: 0.25rem 0 0; font-size: 0.95rem; color: #666; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { max-width: 400px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; margin-bottom: 0; }
+  .related-guides a { color: #6c47ff; font-weight: 600; padding-bottom: 0.5rem; display: inline-block; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .score-box { flex-direction: column; text-align: center; } }
+</style>

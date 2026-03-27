@@ -1,0 +1,236 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const products = [
+  {
+    title: 'Huawei Band 8',
+    price: 52000,
+    originalPrice: 65000,
+    image: '/images/huawei-band-8.jpg',
+    url: 'https://www.mercadolibre.com.ar/jm/search?as_word=Huawei%20Band%208',
+    badge: 'FITNESS',
+    rating: 4.6,
+    reviews: 557,
+    freeShipping: true,
+    verdict: 'La pulsera definitiva. Más finita, liviana y precisa que la Xiaomi Band original. Si solo querés contar pasos, ver la hora y notificaciones, no gastes más.',
+    pros: ['Pantalla AMOLED vibrante', 'Carga súper rápida', 'Medición de sueño excelente'],
+    cons: ['No tiene GPS integrado', 'Esferas gratis limitadas']
+  },
+  {
+    title: 'Kieslect Ks Pro Llamadas',
+    price: 85000,
+    originalPrice: 100000,
+    image: '/images/kieslect-ks-pro-llamadas.jpg',
+    url: 'https://www.mercadolibre.com.ar/jm/search?as_word=Kieslect%20Ks%20Pro%20Llamadas',
+    badge: 'OFERTA',
+    rating: 4.7,
+    reviews: 1214,
+    freeShipping: true,
+    verdict: 'El clon del Apple Watch con mejor relación calidad/precio. Cumple la promesa de hacer llamadas desde la muñeca sin vaciarte la billetera.',
+    pros: ['Pantalla enorme de 2.01"', 'Llamadas Bluetooth muy claras', 'Bajo precio'],
+    cons: ['Sistema operativo medio lento', 'Materiales sienten un poco plasticos']
+  },
+  {
+    title: 'Amazfit GTR 4',
+    price: 195000,
+    originalPrice: null,
+    image: '/images/amazfit-gtr-4.jpg',
+    url: 'https://www.mercadolibre.com.ar/jm/search?as_word=Amazfit%20GTR%204',
+    badge: 'PREMIUM',
+    rating: 4.9,
+    reviews: 1207,
+    freeShipping: true,
+    verdict: 'Aspecto de reloj tradicional de alta gama con funciones smart que duran dos semanas. Perfecto para el oficinista que corre los fines de semana.',
+    pros: ['Batería de hasta 14 días', 'GPS de doble banda muy preciso', 'Puedes contestar llamadas'],
+    cons: ['No se puede responder WhatsApp con teclado', 'App Zepp a veces crashea']
+  },
+  {
+    title: 'Apple Watch SE 2nd Gen 40mm',
+    price: 420000,
+    originalPrice: 480000,
+    image: '/images/apple-watch-se-2nd-gen-40mm.jpg',
+    url: 'https://www.mercadolibre.com.ar/jm/search?as_word=Apple%20Watch%20SE%202nd%20Gen%2040mm',
+    badge: 'APPLE',
+    rating: 5.0,
+    reviews: 1724,
+    freeShipping: true,
+    verdict: 'Si tenés iPhone y querés un Watch, este es el que debés comprar. Te da el 90% de la experiencia del modelo más caro, por mucho menos plata.',
+    pros: ['Integración iOS perfecta', 'Seguimiento deportivo top', 'Procesador rápido'],
+    cons: ['Batería de 1 día literal', 'Carga lenta frente a la Serie 9']
+  }
+];
+
+const siloGuides = [
+  { title: 'Top 5 Smartwatch Baratos', href: '/smartwatch/mejores-smartwatch-baratos-argentina', tag: 'Guía', desc: 'Comparamos los mejores relojes económicos que realmente sirven y no son basura.' },
+  { title: 'Huawei Band 8: Review', href: '/smartwatch/huawei-band-8-review', tag: 'Review Fitness', desc: 'Analizamos la mejor pulsera inteligente económica del mercado.' },
+  { title: 'Kieslect Ks Pro', href: '/smartwatch/kieslect-ks-pro-review', tag: 'Review Llamadas', desc: 'Probamos el clon del Apple Watch más vendido para hacer llamadas.' },
+  { title: 'Amazfit GTR 4', href: '/smartwatch/amazfit-gtr-4-review', tag: 'Review Premium', desc: 'El reloj con 14 días de batería. ¿Vale la pena la inversión?' },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Smartwatches en Argentina — Guías, Reviews y Precios",
+  "description": "Todo sobre Smartwatches en Argentina: comparativas, reviews, guías de compra de Amazfit, Huawei, Apple Watch y más al mejor precio.",
+  "url": "https://vastto.com.ar/smartwatch",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": products.slice(0, 4).map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": { "@type": "Product", "name": p.title, "image": `https://vastto.com.ar${p.image}` }
+    }))
+  }
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuál es el mejor smartwatch barato en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "Actualmente la Huawei Band 8 es la opción más confiable por menos de $60.000 si solo buscás notificaciones y salud. Si querés diseño de reloj y poder hacer llamadas, el Kieslect Ks Pro es líder en su segmento." } },
+    { "@type": "Question", "name": "¿Vale la pena comprar un Apple Watch en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "Solamente si tenés un iPhone. El ecosistema cerrado de Apple hace que la experiencia sea muy superior. El modelo más recomendable hoy es el Apple Watch SE 2nd Gen, que ofrece el 90% de un Watch Serie 9 pero mucho más barato." } }
+  ]
+});
+---
+
+<Layout 
+  title="Smartwatches en Argentina — Guías, Reviews y Precios 2026 | VASTTO" 
+  description="Todo sobre Smartwatches en Mercado Libre Argentina: Amazfit, Apple Watch, Huawei, Xiaomi. Analizamos qué reloj inteligente conviene comprar.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <section class="hero-silo">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a> ›
+        <span>Smartwatch</span>
+      </nav>
+      <h1>Smartwatches: Guías, Reviews y Precios 2026</h1>
+      <p>Tu filtro inteligente. Probamos los relojes que se consiguen en Argentina para que sepas cuáles sirven para deporte, cuáles para notificaciones y cuáles son basura genérica.</p>
+    </div>
+  </section>
+
+  <!-- SILO GUIDES - Cluster articles -->
+  <section class="silo-guides">
+    <div class="container">
+      <h2>⌚ Guías y Reseñas Clave</h2>
+      <div class="guides-grid">
+        {siloGuides.map(guide => (
+          <a href={guide.href} class="guide-card">
+            <span class="guide-tag">{guide.tag}</span>
+            <h3>{guide.title}</h3>
+            <p>{guide.desc}</p>
+            <span class="guide-cta">Leer →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL PRODUCTS -->
+  <section class="products-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ranking: Mejores Relojes Hoy</h2>
+        <p>{products.length} modelos verificados y disponibles con envío Full</p>
+      </div>
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section-wrapper">
+    <div class="container">
+      <h2>Preguntas Frecuentes sobre Smartwatches</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Cuál es el mejor smartwatch barato?<span class="icon">+</span></summary>
+          <p>Leé nuestro <a href="/smartwatch/mejores-smartwatch-baratos-argentina">Top 5 de relojes económicos</a> para descubrir las opciones de Xiaomi, Huawei y Amazfit por abajo de los 100 mil pesos.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué reloj inteligente es mejor para iPhone?<span class="icon">+</span></summary>
+          <p>La respuesta corta es: Apple Watch SE. Cualquier otra marca funcionará (como Amazfit o Kieslect), pero tendrás limitaciones en contestar mensajes o integración absoluta.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Pulsera inteligente vs Smartwatch?<span class="icon">+</span></summary>
+          <p>Las pulseras (como la Huawei Band) son ultra livianas y la batería dura semanas, ideales para dormir. Los relojes tienen pantallas enormes para mapas y llamadas, pero son más pesados y caros.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-silo {
+    background: linear-gradient(135deg, #101828 0%, #344054 50%, #475467 100%);
+    padding: 4rem 0;
+    color: white;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .hero-silo h1 { font-size: 2.75rem; font-weight: 800; margin: 0 0 0.75rem; letter-spacing: -0.5px; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .hero-silo p { color: rgba(255,255,255,0.85); font-size: 1.15rem; max-width: 800px; line-height: 1.5; }
+
+  .silo-guides { padding: 4rem 0; background: #f8f9fa; }
+  .silo-guides h2 { font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: #1a1a1a; }
+  .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+  .guide-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.75rem;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    display: block;
+  }
+  .guide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(71, 84, 103, 0.1);
+    border-color: rgba(71, 84, 103, 0.2);
+  }
+  .guide-tag {
+    background: rgba(71, 84, 103, 0.1);
+    color: #344054;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+  .guide-card h3 { font-size: 1.15rem; color: #1a1a1a; margin: 0 0 0.5rem; font-weight: 800; line-height: 1.3; }
+  .guide-card p { color: #666; font-size: 0.95rem; line-height: 1.5; margin: 0 0 1rem; }
+  .guide-cta { color: #475467; font-weight: 700; font-size: 0.9rem; }
+
+  .products-section { padding: 4rem 0; background: #fff; }
+  .section-header { margin-bottom: 2rem; }
+  .section-header h2 { font-size: 2rem; font-weight: 800; color: #1a1a1a; margin-bottom: 0.5rem; }
+  .section-header p { color: #666; font-size: 1rem; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+
+  .faq-section-wrapper { padding: 4rem 0; background: #fdfdfd; border-top: 1px solid #eee; }
+  .faq-section-wrapper h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 2rem; color: #1a1a1a; }
+  .faq-list { display: flex; flex-direction: column; gap: 1rem; max-width: 800px; }
+  .faq-item { background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #344054; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #475467; }
+  .faq-item a { color: #475467; font-weight: 600; text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .hero-silo h1 { font-size: 2rem; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .guides-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) { .products-grid { grid-template-columns: 1fr; } }
+</style>

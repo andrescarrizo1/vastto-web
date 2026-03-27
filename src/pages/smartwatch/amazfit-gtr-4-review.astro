@@ -1,0 +1,168 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const product = {
+  title: 'Amazfit GTR 4',
+  price: 195000,
+  originalPrice: 220000,
+  image: '/images/amazfit-gtr-4.jpg',
+  url: 'https://www.mercadolibre.com.ar/jm/search?as_word=Amazfit%20GTR%204',
+  badge: 'PREMIUM BATERÍA',
+  rating: 4.9,
+  reviews: 1207,
+  freeShipping: true,
+  verdict: 'Aspecto de reloj tradicional de alta gama con funciones smart que duran dos semanas. Perfecto para el oficinista que corre los fines de semana y prefiere reloj redondo a "reloj computadora".',
+  pros: [
+    'Batería de hasta 14 días con uso real',
+    'GPS de doble banda súper preciso',
+    'Permite contestar llamadas por Bluetooth',
+    'Estética de reloj tradicional muy elegante'
+  ],
+  cons: [
+    'No se puede responder WhatsApp con teclado (solo respuestas rápidas)',
+    'La tienda de aplicaciones de Zepp es muy limitada comparada con WearOS'
+  ]
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Amazfit GTR 4",
+    "image": "https://vastto.com.ar/images/amazfit-gtr-4.jpg",
+    "brand": { "@type": "Brand", "name": "Amazfit" },
+    "offers": { "@type": "Offer", "priceCurrency": "ARS", "price": 195000, "availability": "https://schema.org/InStock" }
+  },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.9", "bestRating": "5" },
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "publisher": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿El Amazfit GTR 4 es compatible con iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, la aplicación Zepp de Amazfit es completamente compatible con iOS. Sin embargo, en iPhone no podés usar las 'respuestas rápidas' de WhatsApp ni pagar con el reloj." } },
+    { "@type": "Question", "name": "¿Se pueden almacenar canciones en el Amazfit GTR 4?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cuenta con memoria interna (aprox 2.3GB libres). Podés transferirle MP3 desde el celular y conectarle auriculares Bluetooth directamente al reloj para salir a correr sin llevar el celular." } },
+    { "@type": "Question", "name": "¿Cuánto le dura la batería realmente?", "acceptedAnswer": { "@type": "Answer", "text": "A diferencia de un Apple Watch que dura 1 día, el Amazfit GTR 4 rinde fácil entre 10 y 14 días con notificaciones activadas, monitoreo de salud 24/7 y 3 entrenamientos semanales con GPS." } }
+  ]
+});
+---
+
+<Layout 
+  title="Amazfit GTR 4 Review — ¿El Mejor Reloj Batería del Mercado? | VASTTO" 
+  description="Análisis del Amazfit GTR 4 en Argentina. Descubrí si vale la pena pagar su precio premium por GPS preciso, llamadas y 14 días de batería.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/smartwatch">Smartwatch</a> ›
+          <span>Amazfit GTR 4 Review</span>
+        </nav>
+        <h1>Amazfit GTR 4 Review: 14 Días de Batería, GPS de Doble Banda y Llamadas</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 6 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Para el oficinista que quiere llegar impecable a la reunión el jueves, pero que el domingo a la mañana se clava 15km corriendo en el parque. El <strong>Amazfit GTR 4</strong> es ese extraño animal que cruza un reloj suizo elegante con una bestia de seguimiento deportivo.</p>
+
+      <div class="score-box">
+        <div class="score">4.9<span>/5</span></div>
+        <div class="score-label">
+          <strong>Puntuación VASTTO</strong>
+          <p>La opción definitiva si querés algo redondo, premium, y odiás cargar relojes todos los días.</p>
+        </div>
+      </div>
+
+      <div class="verdict-box">
+        <strong>⚡ Veredicto rápido:</strong> Es caro, sí. Ronda los $200.000 dependiendo de aduana hoy. Pero si tu presupuesto te lo permite y valorás NO tener que conectar un cargador cada 24 horas como los esclavos de Apple o Samsung, este es el mejor reloj inteligente tradicional del mercado actual.
+      </div>
+
+      <h2>Lo Bueno — Superioridad Evidente</h2>
+      <h3>1. La Batería es Insultantemente Buena</h3>
+      <p>Es difícil volver a un Apple Watch después de usar esto. Monitoreo cardíaco 24/7, medición de estrés, oxígeno en sangre, recibir 200 notificaciones al día en la muñeca, y entrenamientos con GPS. Y así y todo, te olvidás del cargador por <strong>dos semanas enteras</strong>.</p>
+
+      <h3>2. GPS de Doble Banda (Circular)</h3>
+      <p>Amazfit introdujo una antena GPS especial polarizada circularmente de doble banda. En castellano: entre edificios altísimos en Capital Federal, o en bosques tupidos, el mapa que dibuja cuando vas corriendo es perfecto. No te marca cruzando paredes como hacen los relojes más baratos.</p>
+
+      <h3>3. Música Interna y Llamadas</h3>
+      <p>Podés conectarle tus auriculares Bluetooth directamente al reloj, pasarle canciones MP3 con la app, y salir a entrenar dejando el celular en tu casa. Y si lo tenés conectado al celu, el parlante interno te deja contestar las llamadas claramente tipo manos libres.</p>
+
+      <h2>Lo Malo — No es Perfecto</h2>
+      <h3>1. Inteligencia Limitada</h3>
+      <p>A pesar de todo esto, no es un "Smartwatch Verdadero". No le podés instalar Spotify Offline directamente (tenés que usar los MP3 manualmente), no podés contestar un WhatsApp dictándole con voz y no tiene teclado. La respuesta es siempre por botones predefinidos.</p>
+
+      <h2>¿Para Quién Es?</h2>
+      <ul>
+        <li><strong>✅ Ciclistas y Runners serios:</strong> El GPS es espectacular para trazar rutas Strava.</li>
+        <li><strong>✅ Gente con fobia a los cargadores:</strong> 14 días reales de uso te cambian la vida.</li>
+        <li><strong>✅ Uso ejecutivo y gimnasio:</strong> De traje queda excelente, y en el gym cuenta tus repeticiones de fuerza automáticamente.</li>
+      </ul>
+    </div>
+
+    <div class="container products-showcase">
+      <ProductCard {...product} />
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item"><summary>¿Se raya fácil?<span class="icon">+</span></summary><p>El cristal frontal viene con un recubrimiento antihuellas y es muy duro. El marco es de aleación de aluminio aeroespacial. Se la banca genial, pero si sos muy descuidado, siempre le podés poner un hidrogel.</p></details>
+        <details class="faq-item"><summary>¿Sirve para nadar?<span class="icon">+</span></summary><p>¡Absolutamente! Resiste 5 ATM y tiene perfiles específicos en el menú para Natación en Pileta o Natación en Aguas Abiertas, y cuenta los largos él solo.</p></details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Seguir Leyendo</h3>
+        <ul>
+          <li><a href="/smartwatch">← Volver al Ranking de Smartwatches</a></li>
+          <li><a href="/smartwatch/mejores-smartwatch-baratos-argentina">Top 5: Smartwatch baratos para los todos los días</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content h3 { font-size: 1.3rem; color: #3b1fa8; margin: 1.5rem 0 0.5rem; font-weight: 700; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; padding-left: 0; list-style: none; margin-bottom: 2rem; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .score-box { display: flex; align-items: center; gap: 1.5rem; background: #f0ebff; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .score { font-size: 3rem; font-weight: 800; color: #6c47ff; line-height: 1; }
+  .score span { font-size: 1.5rem; color: #999; }
+  .score-label strong { font-size: 1rem; color: #1a1a1a; }
+  .score-label p { margin: 0.25rem 0 0; font-size: 0.95rem; color: #666; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { max-width: 400px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; margin-bottom: 0; }
+  .related-guides a { color: #6c47ff; font-weight: 600; padding-bottom: 0.5rem; display: inline-block; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .score-box { flex-direction: column; text-align: center; } }
+</style>

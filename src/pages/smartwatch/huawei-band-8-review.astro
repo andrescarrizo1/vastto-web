@@ -1,0 +1,175 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const product = {
+  title: 'Huawei Band 8',
+  price: 52000,
+  originalPrice: 65000,
+  image: '/images/huawei-band-8.jpg',
+  url: 'https://www.mercadolibre.com.ar/jm/search?as_word=Huawei%20Band%208',
+  badge: '🏆 MEJOR BARATO',
+  rating: 4.8,
+  reviews: 2154,
+  freeShipping: true,
+  verdict: 'La pulsera definitiva por menos de $60k. Pantalla AMOLED que se ve increíble, mide sueño como un profesional y la batería te dura 2 semanas fácil. Ideal si solo querés contar pasos, ver notificaciones y no gastar de más.',
+  pros: [
+    'Pantalla AMOLED vibrante de 1.47"',
+    'Carga súper rápida (5 min = 2 días de uso)',
+    'Medición de sueño excelente (TruSleep 3.0)',
+    'Peso pluma: 14g, no se siente al dormir'
+  ],
+  cons: [
+    'No tiene GPS integrado (usa el del celular)',
+    'Las esferas gratis son limitadas',
+    'No se pueden contestar llamadas por voz'
+  ]
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Huawei Band 8",
+    "image": "https://vastto.com.ar/images/huawei-band-8.jpg",
+    "brand": { "@type": "Brand", "name": "Huawei" },
+    "offers": { "@type": "Offer", "priceCurrency": "ARS", "price": 52000, "availability": "https://schema.org/InStock" }
+  },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.8", "bestRating": "5" },
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "publisher": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿La Huawei Band 8 sirve para responder WhatsApp?", "acceptedAnswer": { "@type": "Answer", "text": "Podés leer los mensajes completos y responder con respuestas rápidas predefinidas (ej. 'Sí', 'No', 'Llego en 5 min') o con emojis, pero no tiene teclado para escribir ni micrófono para audios." } },
+    { "@type": "Question", "name": "¿Se puede usar la Huawei Band 8 sin el celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sí para medir pasos, ritmo cardíaco, sueño y hacer ejercicio bajo techo. Sin embargo, no tiene GPS propio, por lo que si salís a correr afuera y querés ver la ruta en el mapa, necesitarás llevar el celular." } },
+    { "@type": "Question", "name": "¿Cuánto le dura la batería a la Huawei Band 8?", "acceptedAnswer": { "@type": "Answer", "text": "Con un uso normal (notificaciones, medir pulsaciones continuo) dura unos 9 a 12 días reales. Si apagás funciones avanzadas, llega a 14 días. Lo mejor es su carga rápida: con conectarla 5 minutos mientrás te bañás, te da batería para 2 días completos." } }
+  ]
+});
+---
+
+<Layout 
+  title="Huawei Band 8: Review Completa — ¿La Mejor Pulsera Barata? | VASTTO" 
+  description="Review honesta de la Huawei Band 8 en Argentina. Analizamos su pantalla, batería, funciones de WhatsApp y si vale la pena en 2026 por menos de $60.000.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/smartwatch">Smartwatch</a> ›
+          <span>Huawei Band 8 Review</span>
+        </nav>
+        <h1>Huawei Band 8 Review: ¿La Mejor Pulsera Barata de Argentina?</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 5 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">¿Para qué pagar cientos de miles de pesos por un Apple Watch o un Galaxy Watch si solo querés ver la hora, leer WhatsApp y saber cuánto dormiste? La <strong>Huawei Band 8</strong> cuesta menos de $60.000 en Argentina y hace el 90% de lo que hace un smartwatch Premium. Te cuento todo lo bueno, y lo malo.</p>
+
+      <div class="score-box">
+        <div class="score">4.8<span>/5</span></div>
+        <div class="score-label">
+          <strong>Puntuación VASTTO</strong>
+          <p>La opción definitiva para presupuestos ajustados. Máxima relación calidad/precio.</p>
+        </div>
+      </div>
+
+      <div class="verdict-box">
+        <strong>⚡ Veredicto en 10 segundos:</strong> Si nunca tuviste un reloj inteligente, o si querés uno hiper liviano (14g) para medir el sueño y que la batería te dure 2 semanas enteras, comprala a ciegas. <strong>No la compres</strong> si salís a correr largas distancias y necesitás GPS independiente (sin llevar el celu en el bolsillo).
+      </div>
+
+      <h2>Lo Bueno — Por Qué Destruye a la Xiaomi Band</h2>
+      <h3>1. Pantalla AMOLED sin bordes</h3>
+      <p>Es ridículo lo bien que se ve esta pantalla por el precio. Son 1.47 pulgadas con tecnología AMOLED, lo que significa negros puros y colores súper brillantes. A diferencia de las Xiaomi Band que son "pastillas" redondas, la Huawei es más cuadrada, lo que permite leer textos (como WhatsApp) de forma mucho más natural.</p>
+
+      <h3>2. Batería Infinita y Carga "Salvavidas"</h3>
+      <p>Te olvidás de que funciona con batería. Te dura unas 2 semanas. Pero la verdadera magia está en la carga rápida: ¿Te vas a trabajar y te diste cuenta que tiene 0%? <strong>La enchufás 5 minutos mientras te lavás los dientes y te carga energía para 2 días enteros.</strong></p>
+
+      <h3>3. Peso Pluma (14 gramos)</h3>
+      <p>Si la idea es monitorear tus fases del sueño (ligero, profundo, REM), necesitás dormir con ella. Con relojes pesados de metal es incomodísimo. La Band 8 pesa 14 gramos, literamente te olvidás que la llevás puesta.</p>
+
+      <h2>Lo Malo — Lo Que Huawei NO Te Dice</h2>
+      <h3>1. Limitaciones con WhatsApp</h3>
+      <p>Podés leer los mensajes, sí. Pero no podés contestar con teclado ni con audios. Solo tenés "Respuestas Rápidas" que podés configurar en la app (Ej: "Estoy ocupado", "Dale"). Para mucha gente es suficiente, pero tenés que saberlo.</p>
+
+      <h3>2. Dependencia del Celular para Correr</h3>
+      <p>La Huawei Band 8 <strong>no tiene chip de GPS integrado</strong>. Si salís a correr afuera y querés que se marque la ruta en un mapa y te calcule la distancia exacta, tenés que llevar el celular sí o sí para que la pulsera use su GPS.</p>
+
+      <h2>¿Para Quién Es?</h2>
+      <ul>
+        <li><strong>✅ La primera pulsera:</strong> Excelente puerta de entrada al mundo de los smartwatches.</li>
+        <li><strong>✅ Para dormir y salud:</strong> Su algoritmo TruSleep 3.0 es de los más precisos del mercado.</li>
+        <li><strong>✅ Presupuesto "Rata":</strong> Imposible conseguir algo mejor certificado por debajo de los $60.000.</li>
+        <li><strong>❌ Runners exigentes:</strong> Sin GPS, no te sirve para entrenar serio sin celular.</li>
+      </ul>
+    </div>
+
+    <div class="container products-showcase">
+      <ProductCard {...product} />
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item"><summary>¿La Huawei Band 8 sirve para iPhone?<span class="icon">+</span></summary><p>Sí, la app Huawei Health está en la App Store. Funciona perfecto con iPhone, aunque no podés responder notificaciones de terceros (restricción de iOS, no de Huawei).</p></details>
+        <details class="faq-item"><summary>¿Se puede mojar?<span class="icon">+</span></summary><p>Sí. Tiene resistencia 5 ATM. Podés bañarte con ella, meterla a la pileta y nadar. Mide natación en interiores.</p></details>
+        <details class="faq-item"><summary>¿Cuál es la diferencia con la Huawei Band 9?<span class="icon">+</span></summary><p>La Band 9 tiene correa más suave, ajuste automático de brillo y cambia pequeñeces de sensor. Si la 8 está en oferta, llevá la 8 sin pensarlo.</p></details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Seguir Leyendo</h3>
+        <ul>
+          <li><a href="/smartwatch">← Volver al Ranking de Smartwatches</a></li>
+          <li><a href="/smartwatch/mejores-smartwatch-baratos-argentina">Top 5: Mejores smartwatch por menos de $100.000</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  /* Same styles as previous reviews, reusing standard blog formatting */
+  .post-header { background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 50%, #6c47ff 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content h3 { font-size: 1.3rem; color: #3b1fa8; margin: 1.5rem 0 0.5rem; font-weight: 700; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; padding-left: 0; list-style: none; margin-bottom: 2rem; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .score-box { display: flex; align-items: center; gap: 1.5rem; background: #f0ebff; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .score { font-size: 3rem; font-weight: 800; color: #6c47ff; line-height: 1; }
+  .score span { font-size: 1.5rem; color: #999; }
+  .score-label strong { font-size: 1rem; color: #1a1a1a; }
+  .score-label p { margin: 0.25rem 0 0; font-size: 0.95rem; color: #666; }
+  .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
+  .products-showcase { max-width: 400px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; margin-bottom: 0; }
+  .related-guides a { color: #6c47ff; font-weight: 600; padding-bottom: 0.5rem; display: inline-block; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .score-box { flex-direction: column; text-align: center; } }
+</style>
