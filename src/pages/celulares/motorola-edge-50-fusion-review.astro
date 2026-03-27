@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const product = {
+  title: 'Motorola Moto Edge 50 Fusion 256GB',
+  price: 699999,
+  originalPrice: 849999,
+  image: '/images/motorola-moto-edge-50-fusion-256gb.jpg',
+  url: 'https://www.mercadolibre.com.ar/motorola-moto-edge-50-fusion-256-gb-azul-artico-8-gb-ram/p/MLA36934442',
+  badge: 'PREMIUM',
+  rating: 5,
+  reviews: 154,
+  freeShipping: true,
+  verdict: 'Motorola logró hacer el teléfono perfecto para el que odia los celulares feos. Pantalla curva OLED, cuero vegano en la espalda y un diseño ultra-delgado lo hacen sentir como de $1.500.000. Además, carga completa en menos de 50 minutos con el cargador INCLUIDO.',
+  pros: [
+    'Estética inigualable: acabado en Cuero Vegano o Gamuza sintética',
+    'Cargador TurboPower de 68W *incluido* en la caja',
+    'Certificación IP68 (Sumergible hasta 1.5mts)',
+    'Pantalla pOLED gigantesca y fluida (144Hz)',
+    'Software limpísimo (literalmente Android de Google con agregados útiles)'
+  ],
+  cons: [
+    'Las pantallas curvas son más frágiles ante caídas',
+    'Actualizaciones de Android (solo 3 años vs 4 de Samsung)',
+    'Las cámaras de noche sufren si no tenés buen pulso'
+  ],
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Motorola Moto Edge 50 Fusion",
+    "image": "https://vastto.com.ar/images/motorola-moto-edge-50-fusion-256gb.jpg",
+    "brand": { "@type": "Brand", "name": "Motorola" },
+    "offers": { "@type": "Offer", "priceCurrency": "ARS", "price": 699999, "availability": "https://schema.org/InStock" }
+  },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.8", "bestRating": "5" },
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "publisher": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿El Moto Edge 50 Fusion trae cargador?", "acceptedAnswer": { "@type": "Answer", "text": "¡Sí! Y no es cualquier cargador. Viene con el cargador TurboPower de 68W en la caja (un cargador que por separado costaría $80.000), capaz de cargar el teléfono al 50% en solo 15 minutos." } },
+    { "@type": "Question", "name": "¿Es resistente al agua?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, cuenta con certificación IP68. Esto significa que puede ser sumergido hasta 1.5 metros en agua dulce durante 30 minutos sin sufrir daños." } },
+    { "@type": "Question", "name": "¿En qué se diferencia con el Samsung A55?", "acceptedAnswer": { "@type": "Answer", "text": "El Edge 50 Fusion es para quien busca diseño (es mucho más delgado y liviano), carga rápida y Android puro. El Samsung A55 es para quien busca actualizaciones a largo plazo y mejor rendimiento en videojuegos pesados." } }
+  ]
+});
+---
+
+<Layout 
+  title="Motorola Edge 50 Fusion Review: ¿El más lindo de Argentina? | VASTTO" 
+  description="Probamos a fondo el Motorola Edge 50 Fusion en Argentina (2026). ¿Vale la pena por sus $700.000? Cuero vegano, 68W y pantalla curva super fluida.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/celulares">Celulares</a> ›
+          <span>Motorola Edge 50 Fusion</span>
+        </nav>
+        <h1>Motorola Edge 50 Fusion Review: Cuando el Diseño Importa Más que los Números</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 6 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Si sos de los que están cansados de los teléfonos cuadrados, pesados, y de plástico aburrido que dominaron el mercado desde 2023, el <strong>Motorola Edge 50 Fusion</strong> llega como un vaso de agua en el desierto. Cuesta alrededor de <strong>$700.000 pesos en Argentina</strong>, pero al tacto te juto que parece valer el doble.</p>
+
+      <div class="score-box">
+        <div class="score">4.8<span>/5</span></div>
+        <div class="score-label">
+          <strong>Puntuación VASTTO</strong>
+          <p>Un celular exquisito para usuarios "lifestyle" que priorizan estética, peso y velocidad de carga.</p>
+        </div>
+      </div>
+
+      <div class="verdict-box">
+        <strong>⚡ Veredicto en 10 segundos:</strong> Es el modelo perfecto si estás siempre apurado (carga del 0% al 50% mientras te duchás), si odias las fundas gruesas, y si querés presumir un teléfono distinto. Pero, si sos un Gamer que pasa 4 horas por día en el Genshin Impact, mirá para otro lado: su procesador prioriza que no levante temperatura sobre el puro rendimiento bruto.
+      </div>
+
+      <h2>Lo Bueno — Por Qué Te Vas a Enamorar</h2>
+      
+      <h3>1. Estética y Materiales (Cuero Vegano)</h3>
+      <p>Dependiendo el color, la espalda viene forrada en tacto simil cuero o gamuza italiana. No junta huellas dactilares. No resbala de la mano. Combinado con su bajísimo peso de solo 175 gramos, provoca no usarlo con funda. Es simplemente hermoso.</p>
+
+      <h3>2. Cargador de 68W INCLUIDO en la Caja</h3>
+      <p>Mientras Samsung (Galaxy A55) e incluso Apple te obligan a comprar el cargador aparte, Motorola te regala una de sus mejores armas: un transformador de 68W que revive el celu en minutos. Llegas al 50% en el tiempo que te preparás un café.</p>
+
+      <h3>3. Pantalla P-OLED curva de 144Hz</h3>
+      <p>Los bordes de la pantalla se curvan, escondiendo los biseles laterales. El panel es brutal: excelente brillo al sol, negros reales y una tasa de refresco a 144Hz que hace que scrollear por Instagram o TikTok se sienta como patinar sobre hielo de lo suave que va.</p>
+      
+      <h3>4. Software Limpio + Gestos</h3>
+      <p>Agitas dos veces y se prende la linterna. Giras la muñeca y se abre la cámara. Motorola sabe optimizar. Además, el sistema corre Android casi stock, sin bloatware (apps basura que no podés borrar) a diferencia de Xiaomi.</p>
+
+      <h2>Lo Malo — Dónde Flakea</h2>
+      
+      <h3>La Pantalla Curva no es para Torpes</h3>
+      <p>Se ve increíble, pero la pantalla curva expone más el cristal a los impactos laterales. Si sos de tirar el celu mucho al piso, este diseño es menos tolerante que uno de bordes planos, a pesar de usar cristal reforzado Gorilla Glass 5.</p>
+
+      <h3>Política de Actualizaciones Corta</h3>
+      <p>Prometen 3 años de actualizaciones de Sistema Operativo Android. Si pensás jubilar el teléfono en 2029 vas a estar bien. Pero si sos de aferrarte a tus aparatos por 5 o 6 años, el Samsung A55 asegura por escrito más supervivencia de software libre de virus.</p>
+
+      <h3>Cámara Ultra Gran Angular de Noche</h3>
+      <p>La cámara principal toma fotos divinas, muy vibrantes, perfectas para redes sociales. Pero cuando usás el lente Ultra Ancho de noche o en interiores con luces amarillas tenues, el granulado empieza a notarse. Necesita buena luz para destacarse.</p>
+
+      <h2>¿Para Quién es Perfecto?</h2>
+      <ul>
+        <li><strong>✅Usuarios "Elegantes":</strong> Que odian los "bloques de plástico" gigantes y pesados.</li>
+        <li><strong>✅Usuarios con poco tiempo libre:</strong> El cargador de 68W te salva si te olvidaste de enchufarlo y te tenés que ir a trabajar.</li>
+        <li><strong>✅Personas distraídas y el agua:</strong> La certificación IP68 lo hace sobrevivir al inodoro o a la pileta.</li>
+        <li><strong>❌Gamers Extremos:</strong> Si comprás un móvil exclusivo para emular PlayStation 2 o jugar WZ Mobile a 60fps constantes, buscá el Poco X6 Pro.</li>
+      </ul>
+    </div>
+
+    <div class="container products-showcase">
+      <ProductCard {...product} />
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item"><summary>¿Trae funda en la caja?<span class="icon">+</span></summary><p>Sí, la gran mayoría de las versiones que se venden oficialmente en Argentina (ensambladas en Tierra del Fuego) incluyen una carcasa dura del mismo color del equipo. Literalmente no tenés que ir a gastar más plata al kiosco apenas lo abrís.</p></details>
+        <details class="faq-item"><summary>¿Soporta e-SIM en Argentina (Personal/Claro/Movistar)?<span class="icon">+</span></summary><p>Sí. Soporta tanto nano-SIM tradicional (física) como perfil eSIM descargable. Te permite tener dos números (o líneas para viajar) operando simultáneamente sin dramas.</p></details>
+        <details class="faq-item"><summary>¿Tiene jack de auriculares de 3.5mm para auriculares con cable?<span class="icon">+</span></summary><p>No. Hace varios años la gama media-alta eliminó ese viejo conector. Vas a tener que usar un adaptador de USB-C a 3.5mm o migrar definitivamente al Bluetooth.</p></details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Seguir leyendo en VASTTO</h3>
+        <ul>
+          <li><a href="/celulares">← Ver el Ranking completo de Celulares</a></li>
+          <li><a href="/celulares/samsung-vs-motorola-gama-media">Frente a Frente: Edge 50 Fusion VS Galaxy A55</a></li>
+          <li><a href="/celulares/mejor-celular-gama-media-argentina">Guía: Todos los gama media de 2026 comparados</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #101828 0%, #344054 50%, #475467 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content h3 { font-size: 1.3rem; color: #344054; margin: 1.5rem 0 0.5rem; font-weight: 700; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; padding-left: 0; list-style: none; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .score-box { display: flex; align-items: center; gap: 1.5rem; background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; border: 1px solid #eee; }
+  .score { font-size: 3rem; font-weight: 800; color: #475467; line-height: 1; }
+  .score span { font-size: 1.5rem; color: #999; }
+  .score-label strong { font-size: 1rem; color: #1a1a1a; }
+  .score-label p { margin: 0.25rem 0 0; font-size: 0.95rem; color: #666; }
+  .verdict-box { background: #f8f9fa; border-left: 4px solid #475467; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #344054; line-height: 1.6; }
+  .products-showcase { max-width: 400px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #344054; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #475467; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #475467; font-weight: 600; text-decoration: underline; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .score-box { flex-direction: column; text-align: center; } }
+</style>

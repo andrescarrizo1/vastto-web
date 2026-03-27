@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const product = {
+  title: 'Xiaomi Poco X6 Pro 5G 512GB',
+  price: 680000,
+  originalPrice: 750000,
+  image: '/images/xiaomi-poco-x6-pro-256gb-negro-sin-imagen.jpg',
+  url: 'https://www.mercadolibre.com.ar/poco-x6-pro-5g-dual-sim-256-gb-negro-8-gb-ram/p/MLA34932649',
+  badge: 'RENDIMIENTO',
+  rating: 4.8,
+  reviews: 580,
+  freeShipping: true,
+  verdict: 'Si tu único objetivo es abrir juegos pesados al máximo y que el celular no sufra, dejá de buscar. El Poco X6 Pro mete un motor de Ferrari 0KM dentro del chasis de un Peugeot. Rendimiento bestial a costa de algunas tijeras en cámara y software.',
+  pros: [
+    'Procesador MediaTek Dimensity 8300-Ultra (Rendimiento Gama Alta Absoluta)',
+    'Pantalla cristalina CrystalRes a 120Hz',
+    'RAM brutal y almacenamiento tipo UFS 4.0 (Abre todo instantáneo)',
+    'Cargador de 67W en caja incluido'
+  ],
+  cons: [
+    'Material plástico trasero que se marca de mirarlo',
+    'Las cámaras no le hacen la más mínima competencia a las de Samsung',
+    'HyperOS viene cargado de apps pre-instaladas'
+  ],
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Xiaomi Poco X6 Pro",
+    "image": "https://vastto.com.ar/images/xiaomi-poco-x6-pro-256gb-negro-sin-imagen.jpg",
+    "brand": { "@type": "Brand", "name": "Xiaomi" },
+    "offers": { "@type": "Offer", "priceCurrency": "ARS", "price": 680000, "availability": "https://schema.org/InStock" }
+  },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.8", "bestRating": "5" },
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "publisher": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-27"
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Sirve para Genshin Impact, Warzone y PUBG?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Y no solo sirve, sino que los destroza. El procesador 8300-Ultra y la memoria de altísima velocidad le permiten correr juegos en gráficos Ultra a 60fps constantes sin los problemas térmicos masivos que tendrías en otras marcas por esta plata." } },
+    { "@type": "Question", "name": "¿El Poco X6 Pro saca buenas fotos?", "acceptedAnswer": { "@type": "Answer", "text": "Son 'aceptables'. La cámara principal de 64MP saca lindas fotos con HDR agresivo de día. Pero de noche, o al hacer zoom, no rinde. Está clarísimo que el 90% del presupuesto de fabricación del teléfono se fue al procesador y la pantalla, no al lente." } },
+    { "@type": "Question", "name": "¿Poco es la misma marca que Xiaomi?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Poco es una sub-marca de Xiaomi enfocada exclusivamente en procesadores potentes a precios destruidos (matagigantes o 'Flagship Killers'). Usan componentes internos de Xiaomi y el mismo sistema Operativo (HyperOS/MIUI)." } }
+  ]
+});
+---
+
+<Layout 
+  title="Poco X6 Pro Review: El Rey Indiscutido del Rendimiento | VASTTO" 
+  description="¿Buscás potencia brutal por poca plata? Analizamos el Poco X6 Pro en Argentina. Review completa sobre Gaming, temperaturas, HyperOS y cámaras.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/celulares">Celulares</a> ›
+          <span>Poco X6 Pro 5G</span>
+        </nav>
+        <h1>Xiaomi Poco X6 Pro Review: Un Motor V12 Escondido en un Gama Media</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 5 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Para muchos, el celular no es una cámara ni una billetera: es una consola portátil. Y Xiaomi lo sabe perfecto. El <strong>Poco X6 Pro</strong> es la declaración de intenciones más clara del mercado: "Te voy a poner un microprocesador absurdo y rápido, pero te voy a dar plástico para que sea barato". Bienvenido al rey Gamer de la gama media.</p>
+
+      <div class="score-box">
+        <div class="score">4.8<span>/5</span></div>
+        <div class="score-label">
+          <strong>Puntuación VASTTO</strong>
+          <p>Un monstruo de músculo financiero. Si jugás desde el celular, no cruces a otra marca.</p>
+        </div>
+      </div>
+
+      <div class="verdict-box">
+        <strong>⚡ Veredicto en 10 segundos:</strong> Es el celular más rápido en abrir apps por menos de 700 luquitas. Su chip 8300-Ultra aplasta en los benchmarks a celulares que cuestan hoy casi el doble en Mercado Libre. La desventaja es obvia: si sos "instagramero" obsesionado con la nitidez de la foto, te equivocaste de aparato.
+      </div>
+
+      <h2>Lo Bueno — Por Qué Destroza a Sus Competidores</h2>
+      
+      <h3>1. Rendimiento Fuera de Escala (Dimensity 8300-Ultra)</h3>
+      <p>Es un trabalenguas, sí, pero bajo la superficie tiene tanta fuerza de lectura y de procesamiento de gráficas que ni siquiera pestañea con títulos como *Call Of Duty: Warzone*. Carga los mapas rapidísimo. En puntajes sintéticos o Antutu se comporta como un gama Alta de mil dólares.</p>
+
+      <h3>2. Pantalla "CrystalRes"</h3>
+      <p>Xiaomi se inventó una pantalla que se sitúa a medio camino entre 1080p y 2K (1220p). Esto te da mucha nitidez extra sin masacrar la batería como haría una pantalla 4K pura. Brillante, 120 fotogramas por segundo y compatible con Dolby Vision.</p>
+
+      <h3>3. Memoria Tipo UFS 4.0</h3>
+      <p>El "UFS" es la tecnología de disco. Los Samsung A55 y los Motorola de gama media traen UFS 2.2 o 3.1. Este trae 4.0. Resumido en criollo: cuando instales un juego pesado, descargues PDF, o pases videos de la compu al celular, se pasan **casi gratis en tiempo**. Este pequeñísimo detalle cambia la experiencia total de cómo se "siente" el teléfono.</p>
+      
+      <h2>Lo Malo — Dónde Pagás el Precio</h2>
+      
+      <h3>Cámaras Terriblemente Promedio</h3>
+      <p>El lente Macro es inútil de 2 Megapixeles. El Ultra ancho, hace un "ojo de pez" oscuro de noche. La cámara principal zafa con mucha luz y el sensor saca colores artificialmente vivos. Te salva una selfie el viernes, pero no lo lleves a ser el camarógrafo secundario oficial de un casamiento.</p>
+
+      <h3>HyperOS y su Plaga de Apps</h3>
+      <p>Xiaomi incluyó el nuevo HyperOS de fábrica. Mismo perro, otro collar (es igual a MIUI). El sistema te va a venir con 14 juegos preinstalados ("crapware") y recomendaciones en carpetas vacías. Todo se puede desactivar, borrar y limpiar... pero requiere 15 minutos en las configuraciones apenas lo prendés.</p>
+
+      <h3>Materiales Económicos</h3>
+      <p>La carcasa del Poco X6 Pro Negro plástico/acrílico. De base, se te van a pintar las yemas de los dedos enteros alrededor de todo el marco reflectante y brilloso. Y por si tenías la duda, se raya al mes si lo llevás sin la funda que te trajo Xiaomi.</p>
+
+      <h2>¿Para Quién Es Este Monstruo?</h2>
+      <ul>
+        <li><strong>✅Usuarios "Hardcore" Gamers:</strong> Literalmente el segmento objetivo.</li>
+        <li><strong>✅Gente sin paciencia (Poder Puro):</strong> Vas entre tres pestañas pesadas y redes y este celular te banca el ritmo.</li>
+        <li><strong>❌Entusiastas del Diseño (minimalismo):</strong> Ese logo gigante "POCO" amarillo radiante detrás asusta a unos cuantos.</li>
+        <li><strong>❌Fotógrafos Aficionados:</strong> No va a sustituir a un equipo de cámara o a un gama alta real de Samsung tipo la serie S o el iPhone viejo reacondicionado.</li>
+      </ul>
+    </div>
+
+    <div class="container products-showcase">
+      <ProductCard {...product} />
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-section">
+        <details class="faq-item"><summary>¿Trae Funda y Cargador incluido?<span class="icon">+</span></summary><p>¡Absolutamente todo incluido! Trae una funda negra en un tono mate, el ladrillo inmenso de 67W y por si fuera poco, tiene un finísimo film en su pantallita oficial para que tengas unos primeros meses de cuidado extra.</p></details>
+        <details class="faq-item"><summary>¿Cuánto dura su batería jugando de seguido?<span class="icon">+</span></summary><p>Su batería de 5.000 mAh te aguantará unas robustas 4-5 horas seguidas sometiéndolo a carga fuerte de gaming. Con el cargador que lleva adentro la recuperás completita en aproximadamente 44 minutitos. Literalmente lo enchufas y descansas los ojos.</p></details>
+      </div>
+
+      <div class="related-guides">
+        <h3>Seguir leyendo en VASTTO</h3>
+        <ul>
+          <li><a href="/celulares/mejor-celular-gama-media-argentina">Volver al Ranking Top 5 General de Celulares</a></li>
+          <li><a href="/guias/mejores-accesorios-celular-indispensables">Proteger este Xiaomi: Mejores accesorios que le sirven a cualquier modelo</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #101828 0%, #344054 50%, #475467 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content h3 { font-size: 1.3rem; color: #344054; margin: 1.5rem 0 0.5rem; font-weight: 700; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; padding-left: 0; list-style: none; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .score-box { display: flex; align-items: center; gap: 1.5rem; background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; border: 1px solid #eee; }
+  .score { font-size: 3rem; font-weight: 800; color: #475467; line-height: 1; }
+  .score span { font-size: 1.5rem; color: #999; }
+  .score-label strong { font-size: 1rem; color: #1a1a1a; }
+  .score-label p { margin: 0.25rem 0 0; font-size: 0.95rem; color: #666; }
+  .verdict-box { background: #f8f9fa; border-left: 4px solid #475467; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #344054; line-height: 1.6; }
+  .products-showcase { max-width: 400px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
+  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #344054; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #475467; }
+  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides ul { list-style: none; padding: 0; }
+  .related-guides li { margin-bottom: 0.5rem; }
+  .related-guides a { color: #475467; font-weight: 600; text-decoration: underline; }
+  @media (max-width: 768px) { .post-header h1 { font-size: 2rem; } .score-box { flex-direction: column; text-align: center; } }
+</style>

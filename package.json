@@ -5,19 +5,22 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "update-prices": "node scripts/update-prices.js"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.8",
     "@astrojs/sitemap": "^3.7.0",
     "astro": "^4.16.0",
     "axios": "^1.13.6",
-    "cheerio": "^1.2.0"
+    "cheerio": "^1.2.0",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "playwright": "^1.58.2",
-    "puppeteer": "^24.37.5",
+    "puppeteer": "^24.40.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"
   }

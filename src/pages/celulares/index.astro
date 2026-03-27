@@ -1,0 +1,294 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const products = [
+  {
+    title: 'Samsung Galaxy A55 5G 128GB',
+    price: 476717,
+    originalPrice: 529900,
+    image: '/images/samsung-galaxy-a55-5g-128gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a55-5g-128-gb-azul-increible-8-gb-ram/p/MLA32205562',
+    badge: 'GAMA MEDIA',
+    rating: 4.9,
+    reviews: 876,
+    freeShipping: true,
+    verdict: 'El mejor gama media actual de Argentina. Equilibrio perfecto entre pantalla AMOLED, 4 años de soporte y precio competitivo.',
+    pros: ['Pantalla de 120Hz', '4 años de actualizaciones Android', 'Diseño premium de cristal'],
+    cons: ['Carga lenta de 25W', 'Sin cargador en caja']
+  },
+  {
+    title: 'Motorola Moto Edge 50 Fusion 256GB',
+    price: 699999,
+    originalPrice: 849999,
+    image: '/images/motorola-moto-edge-50-fusion-256gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/motorola-moto-edge-50-fusion-256-gb-azul-artico-8-gb-ram/p/MLA36934442',
+    badge: 'PREMIUM',
+    rating: 5,
+    reviews: 154,
+    freeShipping: true,
+    verdict: 'Diseño espectacular, resistencia al agua IP68 y carga híper rápida (cargador incluido). Ideal para los que odian las demoras.',
+    pros: ['Diseño premium con cuero vegano', 'Cargador turbo 68W en caja', 'Súper liviano'],
+    cons: ['Pantalla curva (subjetivo)', 'Soporte de software corto (2 años)']
+  },
+  {
+    title: 'Motorola Moto G54 5G 256GB',
+    price: 349999,
+    originalPrice: 449999,
+    image: '/images/motorola-moto-g54-5g-256gb---azul.jpg',
+    url: 'https://www.mercadolibre.com.ar/motorola-moto-g54-5g-256-gb-azul-artico-8-gb-ram/p/MLA29900423',
+    badge: 'CALIDAD/PRECIO',
+    rating: 4.7,
+    reviews: 1876,
+    freeShipping: true,
+    verdict: 'Si tenés menos de $400k, esta es tu mejor opción. 256GB de base y conectividad 5G.',
+    pros: ['Mucho almacenamiento (256GB)', 'Fluido (120Hz)', 'Incluye funda y cargador'],
+    cons: ['Pantalla LCD (no OLED)', 'Cámara nocturna débil']
+  },
+  {
+    title: 'Samsung Galaxy A15 128GB',
+    price: 192707,
+    originalPrice: 350990,
+    image: '/images/samsung-galaxy-a15-128gb---negro.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a15-4g-128gb-4-gb-ram-negro/p/MLA45806032',
+    badge: 'ECONÓMICO',
+    rating: 4.6,
+    reviews: 3421,
+    freeShipping: true,
+    verdict: 'Para el presupuesto más ajustado que todavía exige pantalla OLED y respaldo de marca. Funciona.',
+    pros: ['Pantalla Super AMOLED', 'Batería duradera', 'Actualizaciones garantizadas'],
+    cons: ['Procesador algo lento', 'Bordes de pantalla gruesos']
+  },
+  {
+    title: 'Xiaomi Redmi Note 13 Pro 256GB',
+    price: 509900,
+    originalPrice: 589000,
+    image: '/images/xiaomi-redmi-note-13-pro-256gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/xiaomi-redmi-note-13-pro-5g-256-gb-negro-estelar-8-gb-ram/p/MLA28841744',
+    badge: 'CÁMARA',
+    rating: 4.8,
+    reviews: 432,
+    freeShipping: true,
+    verdict: 'Cámara astronómica de 200MP en un cuerpo gama media. Excelente pantalla y carga en 45 minutos.',
+    pros: ['Cámara principal sobresaliente', 'Cargador ultra rápido en caja', 'Pantalla brillante'],
+    cons: ['Mucha publicidad en la capa de Xiaomi (MIUI/HyperOS)', 'Módulo de cámara sobresale mucho']
+  },
+  {
+    title: 'Samsung Galaxy S24 FE 256GB',
+    price: 949000,
+    originalPrice: 1050000,
+    image: '/images/samsung-galaxy-s24-fe-256gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-s24-fe-8-gb-ram-256gb-rom-5g-grafito-negro/p/MLA36168782',
+    badge: 'GAMA ALTA',
+    rating: 5.0,
+    reviews: 120,
+    freeShipping: true,
+    verdict: 'La puerta de entrada a la verdadera gama alta con Inteligencia Artificial total por abajo del palo.',
+    pros: ['Galaxy AI integrado', 'Cámaras de rango insignia', 'Potencia bestial'],
+    cons: ['Batería muy promedio', 'Bordes gruesos para su precio']
+  },
+  {
+    title: 'Xiaomi Poco X6 Pro 5G 512GB',
+    price: 680000,
+    originalPrice: 750000,
+    image: '/images/xiaomi-poco-x6-pro-256gb-negro-sin-imagen.jpg', 
+    url: 'https://www.mercadolibre.com.ar/poco-x6-pro-5g-dual-sim-256-gb-negro-8-gb-ram/p/MLA34932649',
+    badge: 'GAMER',
+    rating: 4.8,
+    reviews: 580,
+    freeShipping: true,
+    verdict: 'Poderío bruto. El mejor procesador de su segmento diseñado exclusivamente para correr Genshin Impact y Call of Duty en ultra.',
+    pros: ['Rendimiento absurdo por el precio', 'Carga a 67W turbo', 'OLED de altísima resolución'],
+    cons: ['Cámaras apenas aceptables', 'Material plástico brillante se ensucia']
+  },
+  {
+    title: 'ZTE Blade A55 128GB - Negro',
+    price: 169999,
+    originalPrice: 215260,
+    image: '/images/zte-blade-a55-128gb---negro.jpg',
+    url: 'https://www.mercadolibre.com.ar/celular-zte-blade-a55-black/p/MLA38104523',
+    badge: 'BÁSICO',
+    rating: 4.4,
+    reviews: 154,
+    freeShipping: true,
+    verdict: 'Teléfono puramente corporativo o para personas mayores. Hace llamadas y corre WhatsApp. Nada más.',
+    pros: ['Precio mínimo posible', 'Buena batería'],
+    cons: ['Lento para multitarea', 'Cámaras simbólicas']
+  }
+];
+
+const siloGuides = [
+  { title: 'Mejor Celular Gama Media 2026', href: '/celulares/mejor-celular-gama-media-argentina', tag: 'Top 5', desc: 'Comparamos Samsung, Motorola y Xiaomi con precios reales diarios.' },
+  { title: 'Samsung Galaxy A55 vs Motorola Edge 50', href: '/celulares/samsung-vs-motorola-gama-media', tag: 'Comparativa', desc: 'La batalla de los reyes: ¿Cuál vale realmente tu plata?' },
+  { title: 'Samsung Galaxy A55: Review', href: '/celulares/samsung-galaxy-a55-review', tag: 'Review Seguro', desc: 'El más vendido de Samsung. ¿Realmente vale lo que piden?' },
+  { title: 'Motorola Moto Edge 50 Fusion', href: '/celulares/motorola-edge-50-fusion-review', tag: 'Review Diseño', desc: 'Cuero vegano, carga super rápida de 68W... un teléfono para presumir.' },
+  { title: 'Xiaomi Poco X6 Pro: Review', href: '/celulares/xiaomi-poco-x6-pro-review', tag: 'Review Gamer', desc: 'Procesador de locos por muy poca plata. Especial para correr emuladores pesados.' },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Celulares en Argentina — Guías, Reviews y Mejores Precios",
+  "description": "Todo sobre celulares en Argentina: comparativas, reviews, guías de compra de Samsung, Motorola, Xiaomi y iPhone al mejor precio.",
+  "url": "https://vastto.com.ar/celulares",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": products.slice(0, 5).map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": { "@type": "Product", "name": p.title, "image": `https://vastto.com.ar${p.image}` }
+    }))
+  }
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuál es el mejor celular gama media en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "Actualmente el rey indiscutido de la gama media en Argentina por confiabilidad, pantalla y actualizaciones es el Samsung Galaxy A55, compitiendo codo a codo en estética con el Motorola Edge 50 Fusion." } },
+    { "@type": "Question", "name": "¿Qué celular comprar por menos de $300.000?", "acceptedAnswer": { "@type": "Answer", "text": "En ese rango de precios dominan el Motorola Moto G54 si buscás fluidez y mucho almacenamiento (256GB), y el Samsung Galaxy A15 si priorizás una pantalla de colores vibrantes (AMOLED) y soporte técnico largo." } },
+    { "@type": "Question", "name": "¿Qué marca de celulares es más barata en Argentina, Xiaomi o Motorola?", "acceptedAnswer": { "@type": "Answer", "text": "Motorola suele tener mejor distribución y ensamblado local (Tierra del Fuego) permitiendo cuotas, pero en pagos de contado en Mercado Libre, la sub-marca de Xiaomi 'Poco' y 'Redmi' ofrecen especificaciones muy superiores por el mismo rango de precio bruto." } }
+  ]
+});
+---
+
+<Layout 
+  title="Celulares en Argentina — Guías, Reviews y Mejores Precios | VASTTO" 
+  description="Todo sobre celulares en Mercado Libre Argentina: comparativas, reviews, guías de compra de Samsung, Motorola, Xiaomi. Analizamos qué conviene comprar.">
+  <script type="application/ld+json" set:html={schema} />
+  <script type="application/ld+json" set:html={faqSchema} />
+  
+  <section class="hero-silo">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a> ›
+        <span>Celulares</span>
+      </nav>
+      <h1>Celulares en Argentina: Guías, Reviews y Precios 2026</h1>
+      <p>Tu filtro inteligente de tecnología. Comparamos los modelos que realmente llegan a Argentina, analizamos sus peores defectos y verificamos precios en Mercado Libre.</p>
+    </div>
+  </section>
+
+  <!-- SILO GUIDES - Cluster articles -->
+  <section class="silo-guides">
+    <div class="container">
+      <h2>📱 Guías Clave y Comparativas</h2>
+      <div class="guides-grid">
+        {siloGuides.map(guide => (
+          <a href={guide.href} class="guide-card">
+            <span class="guide-tag">{guide.tag}</span>
+            <h3>{guide.title}</h3>
+            <p>{guide.desc}</p>
+            <span class="guide-cta">Leer →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL PRODUCTS -->
+  <section class="products-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ranking: Mejores Celulares Hoy</h2>
+        <p>{products.length} teléfonos verificados y disponibles con envío Full</p>
+      </div>
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section-wrapper">
+    <div class="container">
+      <h2>Preguntas Frecuentes sobre Compra de Celulares</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Cuál es el mejor celular gama media en Argentina?<span class="icon">+</span></summary>
+          <p>La batalla principal está entre el Samsung Galaxy A55 y el Motorola Edge 50 Fusion. Leé nuestra <a href="/celulares/mejor-celular-gama-media-argentina">guía completa evaluando todas las opciones</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué teléfono me compro con un presupuesto súper ajustado?<span class="icon">+</span></summary>
+          <p>Para WhatsApp, redes e Instagram básico: El Motorola Moto G54 ($350k) o el Samsung A15 ($250k). Si bajás más el presupuesto terminás comprando dolores de cabeza a futuro.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Samsung, Motorola o Xiaomi?<span class="icon">+</span></summary>
+          <p><strong>Samsung:</strong> Las mejores pantallas y soporte extendido. <strong>Motorola:</strong> Experiencia limpia sin publicidades, incluye cargador siempre. <strong>Xiaomi:</strong> Máxima potencia de procesador y batería bruta, pero software lleno de "bloatware".</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-silo {
+    background: linear-gradient(135deg, #101828 0%, #344054 50%, #475467 100%);
+    padding: 4rem 0;
+    color: white;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .hero-silo h1 { font-size: 2.75rem; font-weight: 800; margin: 0 0 0.75rem; letter-spacing: -0.5px; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .hero-silo p { color: rgba(255,255,255,0.85); font-size: 1.15rem; max-width: 800px; line-height: 1.5; }
+
+  .silo-guides { padding: 4rem 0; background: #f8f9fa; }
+  .silo-guides h2 { font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: #1a1a1a; }
+  .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+  .guide-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.75rem;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    display: block;
+  }
+  .guide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(71, 84, 103, 0.1);
+    border-color: rgba(71, 84, 103, 0.2);
+  }
+  .guide-tag {
+    background: rgba(71, 84, 103, 0.1);
+    color: #344054;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+  .guide-card h3 { font-size: 1.15rem; color: #1a1a1a; margin: 0 0 0.5rem; font-weight: 800; line-height: 1.3; }
+  .guide-card p { color: #666; font-size: 0.95rem; line-height: 1.5; margin: 0 0 1rem; }
+  .guide-cta { color: #475467; font-weight: 700; font-size: 0.9rem; }
+
+  .products-section { padding: 4rem 0; background: #fff; }
+  .section-header { margin-bottom: 2rem; }
+  .section-header h2 { font-size: 2rem; font-weight: 800; color: #1a1a1a; margin-bottom: 0.5rem; }
+  .section-header p { color: #666; font-size: 1rem; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+
+  .faq-section-wrapper { padding: 4rem 0; background: #fdfdfd; border-top: 1px solid #eee; }
+  .faq-section-wrapper h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 2rem; color: #1a1a1a; }
+  .faq-list { display: flex; flex-direction: column; gap: 1rem; max-width: 800px; }
+  .faq-item { background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item summary { padding: 1.25rem; font-weight: 700; color: #344054; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item[open] summary .icon { transform: rotate(45deg); }
+  .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #475467; }
+  .faq-item a { color: #475467; font-weight: 600; text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .hero-silo h1 { font-size: 2rem; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .guides-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) { .products-grid { grid-template-columns: 1fr; } }
+</style>
