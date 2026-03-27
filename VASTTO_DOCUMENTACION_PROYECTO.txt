@@ -1,0 +1,244 @@
+================================================================================
+VASTTO.COM.AR — DOCUMENTACIÓN COMPLETA DEL PROYECTO
+Fecha: 27 de Marzo de 2026
+Autor: Asistente AI de desarrollo
+================================================================================
+
+1. ¿QUÉ ES VASTTO?
+-------------------
+VASTTO (vastto.com.ar) es un sitio web de afiliados de Mercado Libre Argentina.
+El modelo de negocio es el siguiente:
+- El sitio muestra productos de tecnología con contenido original (guías, 
+  comparativas, reseñas).
+- Cada producto tiene un link que lleva a Mercado Libre.
+- Ese link contiene un código de referido (matt_tool=caan170047).
+- Cuando alguien compra (directa o indirectamente), el dueño gana una comisión.
+- El programa se llama "Mercado Libre Afiliados".
+
+Dominio: vastto.com.ar
+Hosting: Cloudflare Pages (deploy automático desde GitHub)
+Repositorio: https://github.com/andrescarrizo1/vastto-web
+Framework: Astro (generador de sitios estáticos)
+Código de afiliado: caan170047 (en src/utils/affiliate.ts)
+
+
+2. ESTRATEGIA SEO — EL CONCEPTO CLAVE
+--------------------------------------
+PROBLEMA ORIGINAL:
+La web estaba armada como un clon de Mercado Libre — listados de productos con 
+precios. Esto NUNCA posiciona en Google porque:
+- ML tiene millones de páginas y décadas de autoridad de dominio.
+- Google nunca va a posicionar una web chica por "auriculares bluetooth" o 
+  "celulares baratos" cuando ML ya cubre esas keywords.
+- El sitio solo tenía 5 páginas indexables — insuficiente para que Google 
+  considere el sitio como una autoridad en algo.
+
+SOLUCIÓN IMPLEMENTADA (estilo Romualds Founds):
+Pivotar a contenido de LONG-TAIL — escribir artículos/guías que responden 
+preguntas específicas que la gente busca y que Mercado Libre NO cubre.
+
+Ejemplos de long-tail keywords que atacamos:
+- "mejor celular gama media argentina 2026" (ML no tiene comparativas)
+- "samsung vs motorola cual es mejor" (ML no compara marcas)
+- "mejores smartwatch baratos argentina" (ML no tiene guías de compra)
+- "auriculares para viajar en colectivo" (nicho muy específico)
+- "accesorios indispensables para celular" (ML no recomienda)
+
+La clave: el usuario busca esa pregunta → llega a nuestra guía → lee el 
+contenido → hace click en el producto que le gustó → va a ML con nuestro link 
+de afiliado → compra → nosotros ganamos la comisión.
+
+
+3. CAMBIOS REALIZADOS (27/03/2026)
+-----------------------------------
+
+A) TECHNICAL SEO FIXES:
+   
+   - src/consts.ts
+     ANTES: SITE_TITLE = "Vastto — Los mejores productos en Mercado Libre"
+     AHORA: SITE_TITLE = "VASTTO"
+     POR QUÉ: El título se duplicaba en el <title> de cada página, quedando
+     algo como "VASTTO | Auriculares | Vastto — Los mejores...". Ahora queda
+     limpio: "Auriculares Gamer Baratos | VASTTO".
+
+   - src/components/BaseHead.astro
+     * Arreglado el <title> para no duplicar nombre del sitio
+     * Agregado hreflang="es-AR" para que Google sepa que el sitio es argentino
+     * Agregado geo.region=AR y geo.placename=Argentina
+     * Mejorado el schema de WebSite
+     POR QUÉ: Google necesita señales claras de que el contenido es para
+     Argentina. Sin hreflang, podría mostrar la web a usuarios de España o
+     México que no compran en ML Argentina.
+
+   - src/styles/global.css
+     * Eliminadas variables CSS de dark mode (el sitio es light mode)
+     * Arreglados colores de headings (eran blancos sobre fondo blanco)
+     POR QUÉ: Había conflicto entre los estilos globales (dark) y los estilos
+     inline de las páginas (light). CSS innecesario = bytes desperdiciados.
+
+   - public/robots.txt
+     ANTES: Bloqueaba /search/ y /checkout/ (rutas que NO existen)
+     AHORA: Solo "Allow: /" + referencia al sitemap
+     POR QUÉ: Reglas de bloqueo para rutas inexistentes confunden a Google.
+
+   - public/sitemap.xml
+     ANTES: 5 URLs estáticas sin lastmod
+     AHORA: 13 URLs con lastmod, changefreq y priority
+     POR QUÉ: Google necesita el sitemap para descubrir páginas nuevas.
+     Sin lastmod, no sabe cuándo se actualizó cada página.
+
+B) CONTENIDO NUEVO — 5 GUÍAS DE COMPRA:
+
+   Cada guía sigue esta estructura (estilo Romualds Founds):
+   1. Título H1 con el keyword exacto que queremos posicionar
+   2. Texto introductorio que engancha al lector
+   3. "Veredicto VASTTO" — recomendación rápida
+   4. Productos con pros/cons y links de afiliado
+   5. Tabla comparativa (cuando aplica)
+   6. FAQ con Schema FAQPage (para aparecer en "Preguntas frecuentes" de Google)
+   7. Links internos a otras guías
+
+   Guías creadas:
+   
+   1. src/pages/guias/mejor-celular-gama-media-argentina.astro
+      Keyword: "mejor celular gama media argentina 2026"
+      Productos: Samsung A55, Moto Edge 50, Redmi Note 13 Pro, A35, Edge 40 Neo
+   
+   2. src/pages/guias/mejores-smartwatch-baratos-argentina.astro
+      Keyword: "mejores smartwatch baratos argentina"
+      Productos: Huawei Band 8, Amazfit Bip 5, Redmi Watch 4, Kieslect Ks Pro,
+                 Huawei Band 9
+   
+   3. src/pages/guias/auriculares-gamer-baratos-argentina.astro
+      Keyword: "auriculares gamer baratos argentina"
+      Productos: HyperX Stinger 2, Logitech G733, Redragon K552, Logitech G305,
+                 Sony WH-CH520
+   
+   4. src/pages/guias/samsung-vs-motorola-gama-media.astro
+      Keyword: "samsung vs motorola cual es mejor"
+      Productos: Galaxy A55, Galaxy A35, Edge 50 Fusion, Edge 40 Neo
+   
+   5. src/pages/guias/mejores-accesorios-celular-indispensables.astro
+      Keyword: "accesorios indispensables para celular"
+      Productos: Cargador Samsung 25W, Baseus 65W GaN, Powerbank Xiaomi,
+                 Funda silicona, Soporte magnético, Webcam Logitech C920
+
+C) HOMEPAGE REESTRUCTURADA:
+   
+   - src/pages/index.astro
+     ANTES: Listado de 14 productos destacados (clon de ML)
+     AHORA: Content hub con sección de "Guías de Compra" prominente, solo 6
+            productos, sección "Por qué VASTTO", FAQ con schema
+     POR QUÉ: La homepage es la página con más autoridad del sitio. Usarla
+     para listar productos es desperdiciarla. Ahora distribuye autoridad
+     (link juice) a todas las guías internas.
+
+D) GUÍAS INDEX ACTUALIZADA:
+
+   - src/pages/guias/index.astro
+     ANTES: Tenía un placeholder "Próximamente" para algunas guías
+     AHORA: Lista las 6 guías reales con descripción y categoría
+     POR QUÉ: Página de directorio que Google puede crawlear para encontrar
+     todo el contenido del sitio.
+
+
+4. SISTEMA DE AFILIADOS — CÓMO FUNCIONAN LOS LINKS
+---------------------------------------------------
+Archivo clave: src/utils/affiliate.ts
+
+Contiene:
+- AFFILIATE_ID = 'caan170047'
+- Función addAffiliateParam(url) que agrega ?matt_tool=caan170047 a cualquier
+  URL de Mercado Libre.
+
+El componente ProductCard.astro usa esta función automáticamente. Cualquier
+producto que se agregue con una URL de ML tendrá el código de afiliado.
+
+IMPORTANTE: Si se cambia de cuenta de afiliado, solo hay que cambiar el ID en
+affiliate.ts y todo el sitio se actualiza automáticamente.
+
+
+5. STACK TÉCNICO
+----------------
+- Framework: Astro 4.x (generador estático)
+- Hosting: Cloudflare Pages (auto-deploy desde GitHub main branch)
+- CSS: Vanilla CSS con variables custom (sin Tailwind)
+- Fonts: Inter (Google Fonts)
+- Sitemap: Estático en public/sitemap.xml
+- Build: npm run build → genera HTML estático en dist/
+- Dev: npm run dev → servidor local en localhost:4321
+
+
+6. ESTRUCTURA DE ARCHIVOS CLAVE
+--------------------------------
+src/
+├── components/
+│   ├── BaseHead.astro          ← Meta tags, SEO, fonts, schema global
+│   ├── ProductCard.astro       ← Tarjeta de producto (con link afiliado)
+│   └── Header.astro / Footer.astro
+├── layouts/
+│   └── Layout.astro            ← Layout base de todas las páginas
+├── pages/
+│   ├── index.astro             ← Homepage (content hub)
+│   ├── [categoria].astro       ← Páginas de categoría (auriculares, celulares, etc)
+│   ├── guias/
+│   │   ├── index.astro         ← Directorio de guías
+│   │   ├── mejor-celular-gama-media-argentina.astro
+│   │   ├── mejores-smartwatch-baratos-argentina.astro
+│   │   ├── auriculares-gamer-baratos-argentina.astro
+│   │   ├── samsung-vs-motorola-gama-media.astro
+│   │   ├── mejores-accesorios-celular-indispensables.astro
+│   │   └── mejores-auriculares-aislantes-colectivo-argentina.astro (original)
+│   └── herramientas/
+│       └── calculadora-cuotas.astro
+├── styles/
+│   └── global.css              ← Variables CSS y estilos base
+├── utils/
+│   └── affiliate.ts            ← Código de afiliado y función helper
+└── consts.ts                   ← SITE_TITLE y SITE_DESCRIPTION
+
+public/
+├── sitemap.xml                 ← Mapa del sitio para Google (13 URLs)
+├── robots.txt                  ← Instrucciones para crawlers
+└── images/                     ← Imágenes de productos
+
+
+7. PRÓXIMOS PASOS RECOMENDADOS
+------------------------------
+PRIORIDAD ALTA:
+1. Monitorear Google Search Console cada semana para ver indexación
+2. Crear 2-3 guías nuevas por semana para seguir expandiendo keywords
+3. Verificar que los links de afiliado están tracking ventas en el panel de ML
+
+IDEAS PARA NUEVAS GUÍAS:
+- "Mejor celular para fotos Argentina 2026"
+- "Samsung Galaxy A15 vs A25: ¿cuál conviene?"
+- "Mejores auriculares con cancelación de ruido baratos"
+- "Cómo elegir un smartwatch según tu uso"
+- "Mejores ofertas de tecnología en Mercado Libre hoy"
+- "Celulares Xiaomi: ¿vale la pena en Argentina?"
+
+PRIORIDAD MEDIA:
+4. Conectar Google Analytics 4 para medir tráfico real
+5. Crear perfiles en redes sociales para backlinks
+6. Considerar agregar un blog con artículos de noticias tech
+
+PRIORIDAD BAJA:
+7. Migrar productos hardcodeados a Content Collections (Astro)
+8. Automatizar scraping de precios de ML
+9. Agregar páginas individuales por producto (SEO extra)
+
+
+8. GOOGLE SEARCH CONSOLE
+-------------------------
+URL: https://search.google.com/search-console/index?resource_id=sc-domain:vastto.com.ar
+Sitemap enviado: https://vastto.com.ar/sitemap.xml
+Estado al 27/03/2026: 5 indexadas, 14 sin indexar (pre-restructuración)
+Se solicitó indexación individual de todas las URLs nuevas.
+
+
+================================================================================
+FIN DEL DOCUMENTO
+Para continuar con el proyecto, leer este archivo y revisar los archivos
+mencionados en la sección 6.
+================================================================================
