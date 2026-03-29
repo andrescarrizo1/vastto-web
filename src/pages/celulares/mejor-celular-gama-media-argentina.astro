@@ -2,6 +2,9 @@
 import AuthorBio from '../../components/AuthorBio.astro';
 import Layout from '../../layouts/Layout.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import FreshnessBadge from '../../components/FreshnessBadge.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
+import NewsletterCapture from '../../components/NewsletterCapture.astro';
 
 const products = [
   {
@@ -161,14 +164,20 @@ const faqSchema = JSON.stringify({
     </header>
 
     <div class="container-narrow post-content">
+      <FreshnessBadge />
+      
+      <QuickVerdict 
+        priorities={[
+          { need: "el celular más equilibrado y duradero", model: "Samsung Galaxy A55", link: "https://www.mercadolibre.com.ar/samsung-galaxy-a55-5g-128-gb-azul-increible-8-gb-ram/p/MLA32205562?matt_tool=caan170047" },
+          { need: "carga súper rápida y diseño premium ultra fino", model: "Motorola Edge 50 Fusion", link: "https://www.mercadolibre.com.ar/motorola-moto-edge-50-fusion-256-gb-azul-artico-8-gb-ram/p/MLA36934442?matt_tool=caan170047" },
+          { need: "la mejor cámara (200MP) y mucho espacio", model: "Xiaomi Redmi Note 13 Pro", link: "https://www.mercadolibre.com.ar/xiaomi-redmi-note-13-pro-5g-256-gb-negro-estelar-8-gb-ram/p/MLA28841744?matt_tool=caan170047" },
+        ]} 
+      />
+
       <p class="lead">Si tenés entre $400.000 y $700.000 para gastar en un celular en Argentina, estás en el rango más competitivo del mercado. Acá es donde Samsung, Motorola y Xiaomi se dan con todo. El problema es que hay <strong>demasiadas opciones</strong> y la diferencia entre tirar la plata y hacer una buena compra puede ser de un solo modelo.</p>
 
       <h2>¿Por qué NO deberías comprar el gama alta?</h2>
       <p>En Argentina, con la inflación y los precios en dólares, un celular de $1.000.000+ pierde valor muy rápido. La gama media de 2026 hace <strong>el 90% de lo que hace un flagship</strong> — buenas fotos, pantallas AMOLED, rendimiento fluido — por la mitad del precio. Salvo que seas fotógrafo profesional o gamer hardcore, no tiene sentido estirar el presupuesto.</p>
-
-      <div class="verdict-box">
-        <strong>🏆 Veredicto rápido VASTTO:</strong> Si tenés que elegir uno solo sin leer más, andá por el <strong>Samsung Galaxy A55 5G</strong>. Es el más equilibrado, con 4 años de actualizaciones y la mejor pantalla del segmento. Si la carga rápida te importa mucho, el <strong>Motorola Edge 50 Fusion</strong> con 68W es una locura.
-      </div>
 
       <h2>Nuestro Top 5 — Comparativa Completa</h2>
       <p>Analizamos cientos de publicaciones en Mercado Libre para traerte los 5 mejores celulares gama media realmente disponibles hoy en Argentina, con precios verificados y envío gratis.</p>
@@ -273,6 +282,8 @@ const faqSchema = JSON.stringify({
       </div>
 
       <p><em>Nota: Los precios en Argentina cambian todos los días. Hacé click en "Ver Oferta en ML" para ver el precio final actualizado de hoy. Los links te llevan directo a Mercado Libre.</em></p>
+      
+      <NewsletterCapture />
     </div>
     <div class="container-narrow"><AuthorBio /></div>
   </article>
