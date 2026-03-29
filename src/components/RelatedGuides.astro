@@ -1,0 +1,65 @@
+---
+interface Props {
+  currentCategory: 'Celulares' | 'Auriculares' | 'Smartwatch' | 'Accesorios';
+  guides: { title: string; url: string; }[];
+}
+
+const { currentCategory, guides } = Astro.props;
+---
+<div class="related-guides">
+  <h3>Sigue explorando en {currentCategory}</h3>
+  <ul class="guide-links">
+    {guides.map((guide) => (
+      <li>
+        <a href={guide.url}>
+          <span class="link-text">{guide.title}</span>
+          <span class="arrow">→</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .related-guides {
+    margin: 4rem 0;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #1a0a3e 0%, #3b1fa8 100%);
+    border-radius: 12px;
+    color: white;
+  }
+  .related-guides h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+  }
+  .guide-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .guide-links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .guide-links a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+  }
+  .arrow {
+    color: #a894ff;
+    font-size: 1.25rem;
+  }
+</style>

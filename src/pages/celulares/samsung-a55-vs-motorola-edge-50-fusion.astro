@@ -1,0 +1,147 @@
+---
+import AuthorBio from '../../components/AuthorBio.astro';
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import EditorialVerdict from '../../components/EditorialVerdict.astro';
+import RelatedGuides from '../../components/RelatedGuides.astro';
+
+const samsung = {
+  title: 'Samsung Galaxy A55 5G 128GB',
+  price: 476717,
+  originalPrice: 529900,
+  image: '/images/samsung-galaxy-a55-5g-128gb.jpg',
+  url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a55-5g-128-gb-azul-increible-8-gb-ram/p/MLA32205562',
+  badge: 'MEJOR SOPORTE',
+  rating: 4.9,
+  reviews: 876,
+  freeShipping: true,
+  verdict: 'El rey de la estabilidad. Comprás tranquilidad sabiendo que te va a durar 4 años vigente.',
+  pros: ['Pantalla Super AMOLED gloriosa', '4 años de actualizaciones fuertes', 'Marco metálico y cristal'],
+  cons: ['Carga lentísima (25W)', 'Viene PELADO (sin funda ni cargador)']
+};
+
+const motorola = {
+  title: 'Motorola Moto Edge 50 Fusion 256GB',
+  price: 699999,
+  originalPrice: 849999,
+  image: '/images/motorola-moto-edge-50-fusion-256gb.jpg',
+  url: 'https://www.mercadolibre.com.ar/motorola-moto-edge-50-fusion-256-gb-azul-artico-8-gb-ram/p/MLA36934442',
+  badge: 'MEJOR DISEÑO',
+  rating: 5,
+  reviews: 154,
+  freeShipping: true,
+  verdict: 'Para el que quiere sentir que tiene un celular gama alta premium pero pagando menos.',
+  pros: ['Incluye cargador hiper rápido de 68W', 'Acabado en cuero vegano', 'Súper liviano y finito'],
+  cons: ['Pantalla curva (se rompe más fácil)', 'Actualizaciones limitadas a largo plazo']
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Samsung A55 vs Motorola Edge 50 Fusion: ¿Cuál Comprar en 2026?",
+  "description": "Comparativa a fondo entre los dos reyes de la gama media en Argentina. Pros, contras y veredicto definitivo de compra.",
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-29"
+});
+---
+
+<Layout 
+  title="Samsung A55 vs Motorola Edge 50 Fusion: ¿Cuál Comprar? | VASTTO" 
+  description="Enfrentamos a los dos mejores celulares gama media de 2026 en Argentina. Samsung Galaxy A55 vs Motorola Edge 50 Fusion. Precios reales en Mercado Libre.">
+  <script type="application/ld+json" set:html={schema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/celulares">Celulares</a> ›
+          <span>A55 vs Edge 50 Fusion</span>
+        </nav>
+        <h1>Samsung Galaxy A55 vs Motorola Edge 50 Fusion: Batalla Definitiva (2026)</h1>
+        <div class="meta"><span>Actualizado: Marzo 2026</span> • <span>Lectura: 6 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <AffiliateDisclaimer />
+      
+      <p class="lead">Estás por gastar más de 500 lucas en un celular nuevo y, si vivís en Argentina, en tu pantalla final seguro tenés estas dos opciones. El <strong>Samsung A55</strong> y el <strong>Motorola Edge 50 Fusion</strong> son, sin exagerar, los dueños absolutos de la gama media. Te voy a ayudar a decidir entre la cabeza (Samsung) y el corazón (Motorola).</p>
+
+      <h2>Diseño y Experiencia: El Ladrillo Premium vs La Seda Liviana</h2>
+      <p>Apenas los sacás de la caja, las diferencias son abismales.</p>
+      <ul>
+        <li><strong>El Samsung A55</strong> parece un tanque de guerra. Ahora tiene bordes de aluminio reales y la parte de atrás es de cristal. Se siente pesado (213 gramos) y frío en la mano. Parece idéntico a un Galaxy S24 carísimo. ¿Lo malo? Si le comprás funda, terminás sintiendo que tenés un ladrillo en el bolsillo.</li>
+        <li><strong>El Motorola Edge 50 Fusion</strong> apostó por la hiperdelgadez y un acabado trasero que imita cuero vegano. Es tan suave y liviano (174 gramos) que te dan ganas de usarlo sin funda. Tiene la pantalla curva en los costados que grita "teléfono caro".</li>
+      </ul>
+
+      <EditorialVerdict score={8.7} title="¿Quién gana en Diseño?">
+        <strong>Motorola</strong>. El agarre del Edge 50 Fusion es diez veces más placentero en el día a día, no resbala, no deja huellas pegadas y el factor "wow" es superior.
+      </EditorialVerdict>
+
+      <h2>Pantalla y Rendimiento Diario</h2>
+      <p>Ambos tienen paneles excelentes. El Samsung tiene una pantalla AMOLED brillante, mientras que el Motorola llega hasta los exagerados 144Hz (el Samsung se queda en 120Hz). En fluidez pura del sistema, vas a sentir un micro-segundo más fluido al Motorola simplemente por tener los Hz más altos.</p>
+      <p>Sin embargo, a nivel procesador, <strong>Samsung saca el pecho</strong>. El Exynos 1480 del A55 calienta mucho menos y aguanta mejor el maltrato a largo plazo que el Snapdragon 7s Gen 2 del Motorola.</p>
+    </div>
+
+    <!-- Cajas de Producto -->
+    <div class="container products-showcase">
+      <div class="versus-grid">
+        <ProductCard {...samsung} />
+        <div class="vs-badge">VS</div>
+        <ProductCard {...motorola} />
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>El Factor Oculto: Software y Batería (Lo que no te cuentan)</h2>
+      <p>Acá es donde se define tu compra, prestá atención:</p>
+      <ul>
+        <li><strong>Motorola te va a mimar hoy:</strong> Adentro de la caja te viene el cargador turbo de 68W (que te carga el 50% de la batería en lo que tardás en bañarte y vestirte), una funda rígida súper cheta y perfume (literal, la caja viene perfumada).</li>
+        <li><strong>Samsung te va a cuidar en 2029:</strong> En la caja viene el celular y un cable chiquitito ("arreglate"). Pero Samsung te promete <strong>4 años de versiones de Android garantizadas</strong>. A tu A55 le vas a poder instalar Android 18 en cuatro años, mientras que Motorola es famoso por dejar abandonados sus celulares gama media a las pocas actualizaciones.</li>
+      </ul>
+
+      <EditorialVerdict score={9.5} title="El Veredicto Final de VASTTO">
+        <p><strong>Comprá el Samsung A55 si:</strong> Sos una persona racional. Querés un celular que te dure 4 años sin tildarse, que tenga buen valor de reventa en Argentina y que la cámara de confianza no falle nunca. Es la compra inteligente.</p>
+        <p><strong>Comprá el Motorola Edge 50 Fusion si:</strong> Querés enamorarte de tu celular hoy. Te vuelve loco el diseño, valorás enormemente que traiga un cargador de 68W gratis, y querés el celular más liviano posible para llevar en la mano. Es la compra pasional.</p>
+      </EditorialVerdict>
+
+      <RelatedGuides 
+        currentCategory="Celulares" 
+        guides={[
+          { title: "Volver a la portada de Celulares", url: "/celulares" },
+          { title: "Mejores Smartwatches Baratos", url: "/smartwatch/mejores-smartwatch-baratos-argentina" }
+        ]} 
+      />
+    </div>
+
+    <div class="container-narrow"><AuthorBio /></div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #101828 0%, #344054 50%, #475467 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: var(--text-main); margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 2rem; padding-left: 1.5rem; }
+  .post-content li { margin-bottom: 0.5rem; }
+  
+  .products-showcase { background: var(--vastto-surface-alt); padding: 3rem 1.5rem; border-top: 1px solid var(--vastto-border); border-bottom: 1px solid var(--vastto-border); margin: 2rem auto; }
+  .versus-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center; max-width: 900px; margin: 0 auto; }
+  .vs-badge { background: #1a1a1a; color: #fff; font-size: 2rem; font-weight: 900; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  
+  @media (max-width: 800px) {
+    .versus-grid { grid-template-columns: 1fr; justify-items: center; }
+    .vs-badge { margin: -1rem 0; z-index: 10; }
+  }
+</style>

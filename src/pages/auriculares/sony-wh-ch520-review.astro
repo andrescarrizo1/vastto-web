@@ -1,6 +1,11 @@
 ---
+import AuthorBio from '../../components/AuthorBio.astro';
 import Layout from '../../layouts/Layout.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import EditorialVerdict from '../../components/EditorialVerdict.astro';
+import RealTest from '../../components/RealTest.astro';
+import RelatedGuides from '../../components/RelatedGuides.astro';
 
 const product = {
   title: 'Sony WH-CH520 Inalámbricos',
@@ -65,19 +70,12 @@ const faqSchema = JSON.stringify({
     </header>
 
     <div class="container-narrow post-content">
-      <p class="lead">Con más de <strong>11.000 reseñas positivas en Mercado Libre</strong>, los Sony WH-CH520 son los auriculares más vendidos de Argentina. Pero "más vendido" no siempre significa "mejor". ¿Realmente valen $88.000? Miramos todo: lo bueno, lo malo y para quién son.</p>
+      <AffiliateDisclaimer />
+      <p class="lead">Con más de <strong>11.000 reseñas positivas</strong>, los Sony WH-CH520 son los auriculares de diadema más vendidos de Argentina. Pero ojo, "más vendido" no siempre significa "el mejor para vos". ¿Realmente justifican casi $90 lucas o son puro humo de marca? Vamos a ver en qué la rompen y en qué hacen agua.</p>
 
-      <div class="score-box">
-        <div class="score">4.5<span>/5</span></div>
-        <div class="score-label">
-          <strong>Puntuación VASTTO</strong>
-          <p>Excelente relación calidad/precio. Recomendado para uso diario.</p>
-        </div>
-      </div>
-
-      <div class="verdict-box">
-        <strong>⚡ Veredicto en 10 segundos:</strong> Si buscás unos auriculares over-ear inalámbricos que suenen bien, duren como un tanque (50 horas de batería), y tengan un micrófono decente para Zoom — los CH520 son la compra más segura que podés hacer. El único motivo para NO comprarlos es si viajás mucho en colectivo/subte y necesitás cancelación activa de ruido.
-      </div>
+      <EditorialVerdict score={9.2} title="Comprá tranquilo, son la salvación del home-office">
+        Si querés unos auriculares que suenen joya, no te destrocen el presupuesto, y tengan una batería tan absurda (50 horas) que literalmente <strong>te olvidás de dónde dejaste el cargador</strong>, son la compra redonda. El único motivo genuino para no comprarlos es si te pasás 2 horas al día arriba de la línea B del subte en pleno ruido y necesitás cancelación de ruido para no volverte loco.
+      </EditorialVerdict>
 
       <h2>Lo Bueno — Por Qué Son los Más Vendidos</h2>
       <h3>Batería: 50 Horas Reales</h3>
@@ -86,8 +84,10 @@ const faqSchema = JSON.stringify({
       <h3>Sonido Sony (de verdad)</h3>
       <p>Sonido equilibrado con buenos medios, voces nítidas y graves presentes sin ser exagerados. No son audiófilos, pero para Spotify, podcasts, llamadas y gaming casual son más que suficientes. La app Sony Headphones Connect te deja ecualizar a gusto.</p>
 
-      <h3>Micrófono Excelente</h3>
-      <p>Acá es donde brillan vs. la competencia barata. El micro con beam forming capta tu voz y reduce ruido ambiente. <strong>Para Zoom, Google Meet y Discord es uno de los mejores del segmento.</strong> Si laburás remoto, esto importa.</p>
+      <h3>Micrófono Excelente (Para Home Office)</h3>
+      <RealTest title="Prueba Real: Dos horas en reuniones de Discord" icon="🎙️">
+        <p>Los conectamos y entramos a una call. La tecnología "beam forming" de Sony hace brujería acá: capta tu voz súper clarita y hace de cuenta que el ruido del lavarropas que tenés de fondo no existe. <strong>Para Zoom, Google Meet y laburar remoto es un viaje de ida.</strong> Ojo, no te vas a convertir en locutor de radio, pero tus compañeros de trabajo te van a dejar de repudiar por el ruido de fondo.</p>
+      </RealTest>
 
       <h2>Lo Malo — Lo Que Sony NO Te Dice</h2>
       <h3>Sin Cancelación de Ruido</h3>
@@ -133,16 +133,16 @@ const faqSchema = JSON.stringify({
         <details class="faq-item"><summary>¿Cuánto dura la batería?<span class="icon">+</span></summary><p>50 horas de reproducción. Carga rápida: 3 min = 1.5 horas. En uso normal duran ~2 semanas.</p></details>
       </div>
 
-      <div class="related-guides">
-        <h3>Más sobre Auriculares</h3>
-        <ul>
-          <li><a href="/auriculares">← Volver a Auriculares</a></li>
-          <li><a href="/auriculares/jbl-tune-520bt-vs-sony-wh-ch520">JBL Tune 510BT vs Sony WH-CH520</a></li>
-          <li><a href="/auriculares/mejores-bluetooth-baratos">Top 5 auriculares bluetooth baratos</a></li>
-          <li><a href="/auriculares/mejores-cancelacion-ruido-baratos">Auriculares con ANC baratos</a></li>
-        </ul>
-      </div>
+      <RelatedGuides 
+        currentCategory="Auriculares" 
+        guides={[
+          { title: "Comparativa en sangre: Sony WH-CH520 vs JBL Tune 510BT", url: "/auriculares/jbl-tune-520bt-vs-sony-wh-ch520" },
+          { title: "El Top 5 de Auriculares Bluetooth Baratos", url: "/auriculares/mejores-bluetooth-baratos" },
+          { title: "Volver a la portada de Auriculares", url: "/auriculares" }
+        ]} 
+      />
     </div>
+    <div class="container-narrow"><AuthorBio /></div>
   </article>
 </Layout>
 
@@ -157,32 +157,32 @@ const faqSchema = JSON.stringify({
   .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
   .post-content { padding: 3rem 1.5rem; }
   .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
-  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content h2 { font-size: 1.8rem; color: var(--text-main); margin: 2.5rem 0 1rem; font-weight: 800; }
   .post-content h3 { font-size: 1.3rem; color: #3b1fa8; margin: 1.5rem 0 0.5rem; font-weight: 700; }
-  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
-  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; padding-left: 0; list-style: none; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); padding-left: 0; list-style: none; }
   .post-content li { margin-bottom: 0.5rem; }
   .score-box { display: flex; align-items: center; gap: 1.5rem; background: #f0ebff; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
   .score { font-size: 3rem; font-weight: 800; color: #6c47ff; line-height: 1; }
   .score span { font-size: 1.5rem; color: #999; }
-  .score-label strong { font-size: 1rem; color: #1a1a1a; }
-  .score-label p { margin: 0.25rem 0 0; font-size: 0.95rem; color: #666; }
+  .score-label strong { font-size: 1rem; color: var(--text-main); }
+  .score-label p { margin: 0.25rem 0 0; font-size: 0.95rem; color: var(--text-muted); }
   .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
   .products-showcase { max-width: 400px; margin: 0 auto; padding: 2rem 1.5rem; }
   .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
   table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-  th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+  th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--vastto-border); }
   th { background: #f0ebff; color: #3b1fa8; font-weight: 700; }
   table a { color: #6c47ff; font-weight: 600; }
   .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
-  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; }
+  .faq-item { background: var(--vastto-surface-alt); border: 1px solid var(--vastto-border); border-radius: 8px; }
   .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
   .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: var(--text-body); line-height: 1.6; margin: 0; }
   .faq-item[open] summary .icon { transform: rotate(45deg); }
   .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
-  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
-  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides { background: var(--vastto-bg-alt); border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-main); }
   .related-guides ul { list-style: none; padding: 0; }
   .related-guides li { margin-bottom: 0.5rem; }
   .related-guides a { color: #6c47ff; font-weight: 600; }

@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  icon: string;
+}
+
+const { title, icon } = Astro.props;
+---
+<div class="real-test">
+  <div class="test-header">
+    <span class="test-icon">{icon}</span>
+    <h4>{title}</h4>
+  </div>
+  <div class="test-body">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .real-test {
+    background: var(--vastto-surface-alt);
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .test-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--vastto-border);
+  }
+  .test-icon {
+    font-size: 1.5rem;
+    background: #f0ebff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .test-header h4 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #3b1fa8;
+  }
+  .test-body {
+    color: #333;
+    line-height: 1.6;
+  }
+  .test-body p:last-child {
+    margin-bottom: 0;
+  }
+</style>

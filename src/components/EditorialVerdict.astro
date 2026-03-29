@@ -1,0 +1,81 @@
+---
+interface Props {
+  score: number;
+  title: string;
+}
+
+const { score, title } = Astro.props;
+---
+<div class="editorial-verdict">
+  <div class="score-box">
+    <div class="score">{score}<span>/10</span></div>
+    <div class="score-label">Puntaje VASTTO</div>
+  </div>
+  <div class="verdict-content">
+    <h3>Veredicto Final: {title}</h3>
+    <p class="direct-talk"><slot /></p>
+  </div>
+</div>
+
+<style>
+  .editorial-verdict {
+    display: flex;
+    background: var(--vastto-surface);
+    border: 1px solid rgba(108, 71, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 3rem 0;
+    box-shadow: 0 4px 15px var(--vastto-shadow);
+  }
+  .score-box {
+    background: var(--vastto-primary);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
+  }
+  .score {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .score span {
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+  .score-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .verdict-content {
+    padding: 2rem;
+    flex-grow: 1;
+  }
+  .verdict-content h3 {
+    margin-top: 0;
+    color: var(--text-main);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .direct-talk {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-body);
+    font-style: italic;
+  }
+  @media (max-width: 768px) {
+    .editorial-verdict {
+      flex-direction: column;
+    }
+    .score-box {
+      padding: 1.5rem;
+    }
+  }
+</style>

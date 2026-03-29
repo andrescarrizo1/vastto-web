@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.vastto.com.ar/sitemap.xml
+
+# Prevent indexing of system files or temp pages if any exist
+Disallow: /_astro/
+Disallow: /api/
+
+Sitemap: https://vastto.com.ar/sitemap-index.xml

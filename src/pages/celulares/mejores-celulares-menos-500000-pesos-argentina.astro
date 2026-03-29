@@ -1,0 +1,157 @@
+---
+import AuthorBio from '../../components/AuthorBio.astro';
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import EditorialVerdict from '../../components/EditorialVerdict.astro';
+import RelatedGuides from '../../components/RelatedGuides.astro';
+
+const products = [
+  {
+    title: 'Samsung Galaxy A55 5G 128GB',
+    price: 476717,
+    originalPrice: 529900,
+    image: '/images/samsung-galaxy-a55-5g-128gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a55-5g-128-gb-azul-increible-8-gb-ram/p/MLA32205562',
+    badge: '🏆 EL MEJOR (SI LLEGÁS AL CERO)',
+    rating: 4.9,
+    reviews: 876,
+    freeShipping: true,
+    verdict: 'Es el que hay que comprar si tu presupuesto son 500 lucas justas. Hoy baila en Mercado Libre entre los 470k y los 499k. Si la inflación lo permite, es la mejor compra del país.',
+    pros: ['Cuerpo de aluminio premium (frío al tacto)', 'Pantalla monstruosa a nivel Galaxy S24', '4 años de actualizaciones garantizados'],
+    cons: ['Por este precio debería traer memoria de 256GB', 'Te obligan a comprar el cargador de pared aparte (no viene incluido)'],
+  },
+  {
+    title: 'Motorola Moto G54 5G 256GB',
+    price: 349999,
+    originalPrice: 449999,
+    image: '/images/motorola-moto-g54-5g-256gb---azul.jpg',
+    url: 'https://www.mercadolibre.com.ar/motorola-moto-g54-5g-256-gb-azul-artico-8-gb-ram/p/MLA29900423',
+    badge: 'REY DE LA MEMORIA (256GB)',
+    rating: 4.7,
+    reviews: 1876,
+    freeShipping: true,
+    verdict: 'Si los 500 te quedan grandes y andás más por los 350 mil pesos, el G54 es invencible. Nunca en la historia de Argentina tuvimos 256GB de base y 5G a este precio.',
+    pros: ['Memoria infinita (256GB + Tarjeta SD)', '120Hz de fluidez al scrollear Instagram', 'Viene con cargador turbo, cable y funda protectora en la caja'],
+    cons: ['Batería muy normalita comparada a la generación anterior', 'Los colores de pantalla no son vibrantes como los de Samsung (panel LCD)'],
+  },
+  {
+    title: 'Samsung Galaxy A15 128GB',
+    price: 192707,
+    originalPrice: 425250,
+    image: '/images/samsung-galaxy-a15-128gb---negro.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a15-4g-128gb-4-gb-ram-negro/p/MLA45806032',
+    badge: 'MÁS ECONÓMICO Y DUDOSO',
+    rating: 4.6,
+    reviews: 3421,
+    freeShipping: true,
+    verdict: 'Es la entrada de emergencia al ecosistema Samsung. Si no podés pagar más de 200 mil, llevalo. Pero si podés estirarte a un A24/A25 mejor: los módulos de cámara del A15 son lentos y sufre un poco al abrir aplicaciones pesadas.',
+    pros: ['Pantalla de celular de gama media-alta (AMOLED espectacular)', 'Batería inagotable de verdad, puede rozar los 2 días', 'Mantenimiento de software a largo plazo por parte de Samsung'],
+    cons: ['Poca memoria de trabajo (se traba abriendo más de 5 apps raras a la vez)', 'Cámara gran angular inusable (se ve borrosa de noche)'],
+  },
+  {
+    title: 'ZTE Blade A55 128GB - Negro',
+    price: 169999,
+    originalPrice: 215260,
+    image: '/images/zte-blade-a55-128gb---negro.jpg',
+    url: 'https://www.mercadolibre.com.ar/celular-zte-blade-a55-black/p/MLA38104523',
+    badge: 'BÁSICO / SECUNDARIO',
+    rating: 4.4,
+    reviews: 154,
+    freeShipping: true,
+    verdict: 'Es un teléfono que deberías considerar solamente para dos escenarios: para regalárselo a una persona mayor que solo usa WhatsApp y llamadas, o como un segundo teléfono barato por temas de seguridad para la calle.',
+    pros: ['Precio ridículamente bajo para conseguir un celular nuevo (con garantía local y sellado) hoy', 'Pantalla espaciosa de 6.6" útil para personas con mala visión'],
+    cons: ['El procesador (UNISOC) lucha constantemente por reaccionar a tiempo a tus dedos', 'En Mercado Libre no se consiguen fundas y vidrios templados de estas marcas fácilmente']
+  }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Top 4 Mejores Celulares por menos de 500.000 pesos (Actualizado Marzo 2026)",
+  "description": "Una lista definitiva con los mejores celulares baratos de Argentina que no son basura. Analizamos Samsung, Motorola y alternativas por menos de medio millón.",
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-29"
+});
+---
+
+<Layout 
+  title="Top Celulares por menos de 500.000 Pesos (Argentina 2026) | VASTTO" 
+  description="No compres basura: los 4 únicos celulares que valen la pena comprar en Mercado Libre por debajo de los 500 mil pesos argentinos este mes de marzo.">
+  <script type="application/ld+json" set:html={schema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/celulares">Celulares</a> ›
+          <span>Top Sub-500k</span>
+        </nav>
+        <h1>Los Únicos 4 Celulares que te Recomiendo Comprar por Menos de 500.000 pesos</h1>
+        <div class="meta"><span>Actualizado Diario vía Scraper</span> • <span>Lectura: 5 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <AffiliateDisclaimer />
+      
+      <p class="lead">En 2026, la línea de los <strong>$500.000 ARS</strong> es la barrera sicológica de todo el país. Arriba de 500 mil ya lo consideramos "gama alta-media"; abajo de 500 mil esperamos que al celular por lo menos le dure la batería y abra Mercado Pago rápido antes de llegar la caja del super. Acá filtramos las marcas zombies para dejarte solo la carne pura.</p>
+
+      <h2>La Realidad de Mercado Libre. Cuidado con lo Barato.</h2>
+      <p>Vas a entrar a ML, vas a ver un celular marca fantasma que te dice "12GB RAM, Cámara 50MP" por 150 mil pesos. **No te mientas.** El 99% de esos equipos tienen procesadores lentísimos reciclados del año 2020. Por eso, en este ranking ignoramos de cuajo todo lo que no sea Samsung (confiabilidad de pantalla) y Motorola (Android limpio y cargador en caja). Y sumamos un solo ZTE por si la billetera realmente no existe hoy.</p>
+
+      <EditorialVerdict score={8.2} title="Regla de oro: ¿Qué estás priorizando?">
+        Si tenés entre $350k y $499k, andá de cabeza a Samsung (A55 o A35) o Motorola (Moto G54 o G84). Si te bajás de los $250k, sacrificá cámara, resignate a ver Netflix con colores medio opacos y enfocate solo en que el teléfono "abra las aplicaciones sin tildarse". Listo.
+      </EditorialVerdict>
+
+    </div>
+
+    <!-- Lista de Productos (Top 4) -->
+    <div class="container products-showcase">
+      <div class="grid-list">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Preguntas Frecuentes al comprar gama de entrada-media:</h2>
+      <ul>
+        <li><strong>¿Por qué el Samsung A55 está en este Top y no en el de gama alta?</strong> Porque en Mercado Libre, los sellers compiten tanto que el precio baja milagrosamente cerca de los 500 mil. Años anteriores el "Rey A5x" pisaba los 700 mil fácil. Un regalo.</li>
+        <li><strong>¿Debería comprar Xiaomi por debajo de 500k?</strong> Los procesadores de los Redmi (ej. Note 13 4G básico) son geniales, pero el sistema HyperOS está lleno de publicidad que frena el celular si tenés poca RAM. Si sos tech-savvy y podés limpiarlo, dale para adelante. Sino, Motorola G54.</li>
+        <li><strong>Funda y vidrio, ¿necesario?</strong> Sí, porque los modelos que rondan desde 200 a los 400 mil pesos tienen plástico inyectado, que se raya mucho más rápido micro-mirándolo mal. Salvo la honrosa excepción del cristal brutal del Samsung A55.</li>
+      </ul>
+
+      <RelatedGuides 
+        currentCategory="Hardware" 
+        guides={[
+          { title: "Guerra Épica: Samsung A55 vs Motorola Edge 50", url: "/celulares/samsung-a55-vs-motorola-edge-50-fusion" },
+          { title: "Volver a toda la sección de celulares", url: "/celulares" }
+        ]} 
+      />
+    </div>
+
+    <div class="container-narrow"><AuthorBio /></div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #101828 0%, #344054 50%, #475467 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: var(--text-main); margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 2rem; padding-left: 1.5rem; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .products-showcase { background: var(--vastto-surface-alt); padding: 3rem 1.5rem; border-top: 1px solid var(--vastto-border); border-bottom: 1px solid var(--vastto-border); margin: 2rem auto; }
+  .grid-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+</style>

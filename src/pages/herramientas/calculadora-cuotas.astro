@@ -213,16 +213,16 @@ import Layout from '../../layouts/Layout.astro';
   .calc-header {
     text-align: center;
     margin-bottom: 2rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--vastto-border);
     padding-bottom: 1.5rem;
   }
   .calc-header h2 {
     font-size: 1.8rem;
-    color: #1a1a1a;
+    color: var(--text-main);
     margin: 0 0 0.5rem;
   }
   .calc-header p {
-    color: #666;
+    color: var(--text-muted);
     margin: 0;
   }
 
@@ -260,7 +260,7 @@ import Layout from '../../layouts/Layout.astro';
   .input-prefix span {
     position: absolute;
     left: 1rem;
-    color: #666;
+    color: var(--text-muted);
     font-weight: bold;
   }
   input, select {
@@ -284,7 +284,7 @@ import Layout from '../../layouts/Layout.astro';
   }
   .help-text {
     font-size: 0.8rem;
-    color: #888;
+    color: var(--text-light);
   }
 
   .btn-calc {
@@ -384,14 +384,14 @@ import Layout from '../../layouts/Layout.astro';
     background: white;
     padding: 2rem;
     border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--vastto-border);
   }
   .seo-content h3 {
     margin-top: 0;
-    color: #1a1a1a;
+    color: var(--text-main);
   }
   .seo-content p {
-    color: #4a4a4a;
+    color: var(--text-body);
     line-height: 1.6;
     margin-bottom: 1rem;
   }

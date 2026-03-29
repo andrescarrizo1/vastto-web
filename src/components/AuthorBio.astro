@@ -1,0 +1,72 @@
+---
+// AuthorBio.astro
+---
+<div class="author-bio-box">
+  <img src="/images/andres.jpg" alt="Andrés - Editor de VASTTO" class="author-avatar" width="100" height="100" />
+  <div class="author-content">
+    <div class="author-header">
+      <h4>Escrito por Andrés</h4>
+      <span class="author-badge">✓ Verificado</span>
+    </div>
+    <p>Apasionado por la tecnología y Programador Full Stack. Cansado de las reseñas falsas y patrocinadas, creé VASTTO con un solo objetivo: hacerte las compras en Mercado Libre más fáciles, sinceras y sin tirar la plata.</p>
+  </div>
+</div>
+
+<style>
+  .author-bio-box {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--vastto-surface);
+    border: 1px solid var(--vastto-border);
+    border-radius: 12px;
+    margin: 3rem 0 1rem;
+    box-shadow: 0 4px 20px var(--vastto-shadow);
+  }
+  .author-avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px var(--vastto-shadow);
+    border: 3px solid var(--vastto-primary);
+  }
+  .author-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .author-header h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+  .author-badge {
+    background: var(--vastto-success-bg);
+    color: var(--vastto-success-text);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+  .author-content p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-body);
+  }
+  @media (max-width: 600px) {
+    .author-bio-box {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .author-header {
+      justify-content: center;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+</style>

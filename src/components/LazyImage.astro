@@ -14,5 +14,9 @@ const placeholder = '/images/placeholder.jpg'; // We need this image
   alt={alt} 
   class={className}
   loading="lazy"
+  decoding="async"
+  width="400"
+  height="400"
+  style="max-width: 100%; height: auto; aspect-ratio: 1;"
   onerror={`this.onerror=null; this.src='${placeholder}';`}
 />

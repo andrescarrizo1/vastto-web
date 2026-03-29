@@ -17,13 +17,14 @@ const year = new Date().getFullYear();
         <a href="/accesorios">Accesorios</a>
       </div>
       <div class="footer-links">
-        <h4>Legal</h4>
+        <h4>Legal e Info</h4>
         <a href="/privacidad">Privacidad</a>
+        <a href="/sobre-nosotros">Sobre Nosotros (Nuestra historia)</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {year} VASTTO. Las mejores ofertas en tecnología de Argentina.</p>
-      <p class="disclaimer">VASTTO es un sitio independiente de comparación de precios. Al hacer clic en los productos podés ser redirigido a tiendas de terceros. No somos representantes ni afiliados oficiales de ningún retailer. Los precios y disponibilidad pueden variar.</p>
+      <p>&copy; {year} VASTTO. Hecho con pasión en Argentina por Andrés y equipo.</p>
+      <p class="disclaimer"><strong>Aviso de Afiliados y Transparencia:</strong> VASTTO participa activamente en el Programa de Afiliados de Mercado Libre Argentina. Esto significa que si comprás un producto a través de nuestros links, nosotros cobramos una pequeña comisión que nos ayuda a mantener el sitio libre de publicidad intrusiva. Esto NO modifica el precio final que pagás vos. Los precios mostrados se actualizan periódicamente pero pueden variar.</p>
     </div>
   </div>
 </footer>
@@ -78,9 +79,9 @@ const year = new Date().getFullYear();
     border-top: 1px solid #333;
     padding-top: 1rem;
     font-size: 0.8rem;
-    color: #888;
+    color: var(--text-light);
   }
-  .disclaimer { margin-top: 0.5rem; font-style: italic; font-size: 0.75rem; color: #666; line-height: 1.5; }
+  .disclaimer { margin-top: 0.5rem; font-style: italic; font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
   @media (max-width: 768px) {
     .footer-grid { grid-template-columns: 1fr; }
   }

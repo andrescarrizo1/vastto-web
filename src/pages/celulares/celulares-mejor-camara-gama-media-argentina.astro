@@ -1,0 +1,150 @@
+---
+import AuthorBio from '../../components/AuthorBio.astro';
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import EditorialVerdict from '../../components/EditorialVerdict.astro';
+import RealTest from '../../components/RealTest.astro';
+import RelatedGuides from '../../components/RelatedGuides.astro';
+
+const products = [
+  {
+    title: 'Xiaomi Redmi Note 13 Pro 256GB',
+    price: 509900,
+    originalPrice: 589000,
+    image: '/images/xiaomi-redmi-note-13-pro-256gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/xiaomi-redmi-note-13-pro-5g-256-gb-negro-estelar-8-gb-ram/p/MLA28841744',
+    badge: '🏆 LOS 200MP MÁS BARATOS',
+    rating: 4.8,
+    reviews: 432,
+    freeShipping: true,
+    verdict: 'Si tu presupuesto ronda el medio millón y solo te interesa sacar fotos nítidas (como leer la chapa de un auto a una cuadra), el lente principal es un escupitajo al cielo.',
+    pros: ['Sensor brutal de 200 MP con estabilización óptica (OIS) real', 'Modo nocturno ruidoso pero que rescata luz de la nada', 'Gran pantalla y gran batería para revisar lo que sacaste'],
+    cons: ['El celular graba video apenas normal. Brilla SOLO en fotografía', 'Las dos camaritas extra atrás están puestas de adorno, las ignorás']
+  },
+  {
+    title: 'Samsung Galaxy A55 5G 128GB',
+    price: 476717,
+    originalPrice: 529900,
+    image: '/images/samsung-galaxy-a55-5g-128gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-a55-5g-128-gb-azul-increible-8-gb-ram/p/MLA32205562',
+    badge: 'EL REY DEL VIDEO / INSTAGRAM',
+    rating: 4.9,
+    reviews: 876,
+    freeShipping: true,
+    verdict: 'El Xiaomi saca mejores fotos estáticas con zoom, pero el A55 lo pisotea sin piedad apenas apretás el botón de "Video" o abrís la cámara para hacer historias.',
+    pros: ['Estabilización de video 4K (V-DIS + OIS), caminás filmando y no tiembla', 'Las fotos frontales (selfies) procesan mejor los tonos de piel sin ese filtro chino que te aclara', 'El procesamiento de software maduro de Samsung de siempre'],
+    cons: ['De noche y con muy mala luz tenés que tener pulso de cirujano si querés evitar fotos movidas']
+  },
+  {
+    title: 'Samsung Galaxy S24 FE 256GB',
+    price: 949000,
+    originalPrice: 1050000,
+    image: '/images/samsung-galaxy-s24-fe-256gb.jpg',
+    url: 'https://www.mercadolibre.com.ar/samsung-galaxy-s24-fe-8-gb-ram-256gb-rom-5g-grafito-negro/p/MLA36168782',
+    badge: 'EL EXPERTO (GAMA ALTA)',
+    rating: 5.0,
+    reviews: 120,
+    freeShipping: true,
+    verdict: 'Trampa. Se zarpa un poco del presupuesto límite de esta guía (es casi el doble), pero si tenés la tarjeta suelta y te encanta la verdadera fotografía, este es el salto necesario para obtener zoom óptico.',
+    pros: ['Cámara de teleobjetivo con zoom óptico 3x (nada de recortes digitales berretas)', 'Galaxy AI: podés eliminar o mover personas del fondo como en Photoshop, gratis.', 'Procesador de buque insignia, enfoca al toque'],
+    cons: ['Duele la billetera si recordamos que hace un año esta locura compraba un iPhone base']
+  }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Celulares con Mejor Cámara Gama Media Argentina 2026",
+  "description": "Filtramos la chamuyería de los megapíxeles y te mostramos cuáles son los 3 celulares que de verdad sacan las mejores fotos y videos.",
+  "author": { "@type": "Organization", "name": "VASTTO" },
+  "datePublished": "2026-03-29"
+});
+---
+
+<Layout 
+  title="Top Celulares con Mejor Cámara Gama Media (Argentina 2026) | VASTTO" 
+  description="No todos los de 50 Megapíxeles son buenos. Te cuento mi veredicto sobre los únicos 3 celulares de gama media que sacan fotos de verdad en Argentina.">
+  <script type="application/ld+json" set:html={schema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/celulares">Celulares</a> ›
+          <span>Ranking Cámara</span>
+        </nav>
+        <h1>Los 3 Celulares Gama Media con Mejor Cámara en Argentina (Para Fotos Que Valen la Pena)</h1>
+        <div class="meta"><span>Actualizado Diario vía Scraper</span> • <span>Lectura: 5 min</span></div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <AffiliateDisclaimer />
+      
+      <p class="lead">Las marcas asiáticas te empapelaron de publicidades gritando "108 Megapíxeles!" por celulares de cien lucas. Te lo resumo: <strong>es puro humo.</strong> Un buen lente es costoso físicamente, no podés fingir física mediante software barato. Si tu prioridad del 1 al 10 en la vida es no salir movido, estos son los referentes y por qué.</p>
+
+      <h2>El mito de "Más Megapíxeles = Mejores Fotos"</h2>
+      <p>A menos que vayas a imprimir una gigantografía e invitar a todo el barrio a que miren el poster con lupa de joyero, **los recortes inmensos de los "200 MP"** no los vas a usar casi nunca, seamos honestos. Lo que te salva las papas cuando le pasás tu celular a alguien con Parkinson y decís "Sacame", se llama <strong>OIS (Estabilización Óptica de Imagen)</strong>.</p>
+      
+      <p>Tener OIS significa que el lentecito del celular está literalmente suspendido sobre resortes invisibles que absorben el temblor de la mano. Los resultados no se logran por megapíxeles mágicos, sino porque el lente de la maquinita tiembla menos, por lo que deja entrar más luz un milisegundo más, lo que equivale a la foto de noche súper limpia. Así de simple.</p>
+
+      <EditorialVerdict score={9.0} title="El Resumen Bruto">
+        Si subís Reels, Historias, TikToks caminándote por Puerto Madero: comprá ciego el <strong>Samsung Galaxy A55</strong>. El procesador del A55 te aguanta transiciones que el Xiaomi no procesa tan suave.<br/><br/>
+        Si lo tuyo es viajar de mochilero al sur y querés sacarle fotos clavadas a la cordillera impecable o un contraluz en un bosque: mandale al lente grande del <strong>Xiaomi Redmi Note 13 Pro</strong>.
+      </EditorialVerdict>
+
+    </div>
+
+    <!-- Lista de Productos -->
+    <div class="container products-showcase">
+      <div class="grid-list">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+
+    <div class="container-narrow post-content">
+      <h2>Preguntas Frecuentes Fotográficas:</h2>
+      <ul>
+        <li><strong>¿Tienen GCAM?</strong> En los foros se suele mencionar que instalarle la app de cámara de Google (GCAM) al Redmi mejora absurdamente pero al 100% sus fotos en la oscuridad porque el software oficial de Xiaomi a veces empasta o "suaviza" las pieles (modo belleza forzado).</li>
+        <li><strong>¿Y la cámara Macro?</strong> Son chistes de 2 MP. Ocupan "espacio" para rellenar de marketing y decir que tenés 3 o 4 cámaras seguidas. No te vas asombrar más de lo que verías acercando vos un ojo al objeto. Nunca de tu vida deberías tomar una decisión de de compra por la cámara Macro de un gama media.</li>
+      </ul>
+
+      <RealTest title="Prueba Real en Exteriores" icon="📸">
+        <p>Saqué con el A55 intentando filmar andando en Bici en un empedrado de barrio. El video que salió era usableísimo, parece un dron si no mirás muy cerca. Las fotos contra el sol con luz fuerte del mediodía tenían un HDR automático fantástico (Samsung expone la sombra del árbol sin reventar de blanco el cielo en un 80% de las veces). Vas a parecer buen fotógrafo, ese es el mayor halago para estos procesadores de hoy.</p>
+      </RealTest>
+
+      <RelatedGuides 
+        currentCategory="Celulares" 
+        guides={[
+          { title: "Ver la Comparativa Topos: Samsung A55 vs Motorola Edge 50", url: "/celulares/samsung-a55-vs-motorola-edge-50-fusion" },
+          { title: "Volver a la portada general de Celulares", url: "/celulares" }
+        ]} 
+      />
+    </div>
+
+    <div class="container-narrow"><AuthorBio /></div>
+  </article>
+</Layout>
+
+<style>
+  .post-header { background: linear-gradient(135deg, #101828 0%, #344054 50%, #475467 100%); color: white; padding: 4rem 0 3rem; }
+  .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -1px; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: var(--text-main); margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 2rem; padding-left: 1.5rem; }
+  .post-content li { margin-bottom: 0.5rem; }
+  .products-showcase { background: var(--vastto-surface-alt); padding: 3rem 1.5rem; border-top: 1px solid var(--vastto-border); border-bottom: 1px solid var(--vastto-border); margin: 2rem auto; }
+  .grid-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+</style>

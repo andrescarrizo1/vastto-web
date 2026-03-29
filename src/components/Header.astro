@@ -11,25 +11,90 @@ import { SITE_TITLE } from '../consts';
       </svg>
       <span class="logo-text">VASTTO</span>
     </a>
-    <nav>
+
+    <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <nav class="main-nav">
       <a href="/">Inicio</a>
       <a href="/guias">Guías de Compra</a>
-      <a href="/herramientas/calculadora-cuotas">Calculadora de Cuotas</a>
-      <a href="/auriculares">Auriculares</a>
+      <a href="/sobre-nosotros">Sobre Nosotros</a>
       <a href="/celulares">Celulares</a>
+      <a href="/auriculares">Auriculares</a>
       <a href="/smartwatch">Smartwatch</a>
-      <a href="/accesorios">Accesorios</a>
     </nav>
-    <a href="/" class="cta-btn">Ver Ofertas</a>
+    <div class="header-actions">
+      <button id="theme-toggle" aria-label="Cambiar modo oscuro" class="theme-btn">
+        <svg class="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line></svg>
+        <svg class="moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <a href="/" class="cta-btn">Ver Ofertas</a>
+    </div>
   </div>
 </header>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.main-nav');
+    
+    if(btn && nav) {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('nav-open');
+        
+        // Change icon to X when open
+        if (!expanded) {
+          btn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+        } else {
+          btn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+        }
+      });
+    }
+
+    // Theme logic
+    const themeBtn = document.getElementById('theme-toggle');
+    const sunIcon = themeBtn?.querySelector('.sun');
+    const moonIcon = themeBtn?.querySelector('.moon');
+
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    if(sunIcon && moonIcon) {
+      if (currentTheme === 'dark') {
+        sunIcon.style.display = 'block';
+      } else {
+        moonIcon.style.display = 'block';
+      }
+    }
+
+    themeBtn?.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const newTheme = isDark ? 'light' : 'dark';
+      
+      document.documentElement.classList.remove('dark', 'light');
+      document.documentElement.classList.add(newTheme);
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+
+      if (sunIcon && moonIcon) {
+        sunIcon.style.display = newTheme === 'dark' ? 'block' : 'none';
+        moonIcon.style.display = newTheme === 'light' ? 'block' : 'none';
+      }
+    });
+  });
+</script>
+
 <style>
   .site-header {
-    background: rgba(255, 255, 255, 0.85); /* Glass base */
+    background: var(--glass-bg); /* Glass base */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--vastto-border);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -58,40 +123,40 @@ import { SITE_TITLE } from '../consts';
   .logo-text {
     font-weight: 800;
     font-size: 1.5rem;
-    color: #1a1a1a;
+    color: var(--text-main);
     letter-spacing: -0.5px;
   }
-  nav {
+  .main-nav {
     display: flex;
     gap: 2rem;
   }
-  nav a {
+  .main-nav a {
     text-decoration: none;
-    color: #4a4a4a;
+    color: var(--text-body);
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.2s ease;
     padding: 0.5rem 0;
     position: relative;
   }
-  nav a::after {
+  .main-nav a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #3483fa;
+    background-color: var(--vastto-primary);
     transition: width 0.3s ease;
   }
-  nav a:hover {
-    color: #1a1a1a;
+  .main-nav a:hover {
+    color: var(--text-main);
   }
-  nav a:hover::after {
+  .main-nav a:hover::after {
     width: 100%;
   }
   .cta-btn {
-    background: #3483fa;
+    background: var(--vastto-primary);
     color: white;
     text-decoration: none;
     padding: 0.6rem 1.25rem;
@@ -100,15 +165,69 @@ import { SITE_TITLE } from '../consts';
     font-size: 0.9rem;
     transition: all 0.3s ease;
     white-space: nowrap;
-    box-shadow: 0 4px 14px 0 rgba(52, 131, 250, 0.39);
+    box-shadow: 0 4px 14px 0 rgba(108, 71, 255, 0.39);
   }
   .cta-btn:hover {
-    background: #2968c8;
+    background: var(--vastto-primary-hover);
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(52, 131, 250, 0.4);
+    box-shadow: 0 6px 20px rgba(108, 71, 255, 0.4);
   }
+  .header-actions { display: flex; align-items: center; gap: 1rem; }
+  .theme-btn {
+    background: none; border: none; cursor: pointer; color: var(--text-body);
+    padding: 0.5rem; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; transition: all 0.2s ease;
+  }
+  .theme-btn:hover { background: var(--vastto-border); color: var(--vastto-primary); }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-main);
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+  }
+  .mobile-menu-btn:hover { color: var(--vastto-primary); }
+
+  @media (max-width: 900px) {
+    .main-nav { gap: 1rem; }
+  }
+
   @media (max-width: 768px) {
-    nav { display: none; }
+    .mobile-menu-btn {
+      display: block;
+      z-index: 101;
+    }
+    
+    .main-nav {
+      flex-direction: column;
+      justify-content: flex-start;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 75%;
+      max-width: 300px;
+      background: var(--vastto-surface);
+      box-shadow: -5px 0 20px var(--vastto-shadow);
+      padding: 5rem 2rem 2rem;
+      transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 100;
+      gap: 1.5rem;
+    }
+    
+    .main-nav.nav-open {
+      right: 0;
+    }
+
+    .main-nav a {
+      font-size: 1.25rem;
+      border-bottom: 1px solid var(--vastto-border);
+      padding-bottom: 1rem;
+    }
+
     .cta-btn { display: none; }
     .container { padding: 0 1rem; height: 64px; }
   }

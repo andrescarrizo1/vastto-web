@@ -1,6 +1,10 @@
 ---
+import AuthorBio from '../../components/AuthorBio.astro';
 import Layout from '../../layouts/Layout.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import EditorialVerdict from '../../components/EditorialVerdict.astro';
+import RelatedGuides from '../../components/RelatedGuides.astro';
 
 const products = [
   {
@@ -120,14 +124,15 @@ const faqSchema = JSON.stringify({
     </header>
 
     <div class="container-narrow post-content">
-      <p class="lead">Querés medir tus pasos, ver las notificaciones de WhatsApp sin sacar el celular y saber cuánto dormiste anoche. Pero no querés gastar más de $100.000. Buena noticia: <strong>en 2026 hay opciones increíbles por menos de lo que cuesta una cena en un restaurante.</strong></p>
+      <AffiliateDisclaimer />
+      <p class="lead">Querés medir cuánto caminás en la oficina, ver los mil mensajes de WhatsApp sin sacar el celular en la calle por miedo a que te lo roben, y saber si dormiste bien o mal. Pero ni loco vas a pagar medio millón de pesos por un Apple Watch. Buena noticia: <strong>hoy hay opciones chinas premium por menos de lo que salen unas zapatillas.</strong></p>
 
       <h2>¿Smartwatch o Pulsera? La diferencia que nadie te explica</h2>
-      <p>Las <strong>pulseras</strong> (como la Huawei Band) son más chicas, livianas y baratas. Sirven para fitness y notificaciones. Los <strong>smartwatch</strong> (como el Redmi Watch 4) tienen pantalla grande, GPS y a veces hasta llamadas. Si solo querés lo básico, ahorrá plata con una pulsera. Si querés más funciones, estirá un poco el presupuesto.</p>
+      <p>Las <strong>pulseras</strong> (como la Huawei Band) son finitas, hiper livianas y valen dos mangos. Ideales para disimular. Los <strong>smartwatches</strong> (como el Redmi Watch 4) tienen pantallas cuadradas gigantes (parecen relojes caros), GPS y parlantes para hablar estilo Power Ranger. Mi consejo: si solo querés leer la hora y los mensajes, comprá la pulsera y ahorrá plata. Si querés "facha" y salir a correr sin el celular, andá por el smartwatch.</p>
 
-      <div class="verdict-box">
-        <strong>🏆 Veredicto rápido VASTTO:</strong> Para presupuesto mínimo, la <strong>Huawei Band 8</strong> por ~$52k es perfecta. Si querés la experiencia completa con GPS y pantalla grande sin irte a más de $100k, el <strong>Xiaomi Redmi Watch 4</strong> es el rey indiscutido.
-      </div>
+      <EditorialVerdict score={9.0} title="Nuestras selecciones de confianza">
+        No compres marcas fantasmas ("Smartwatch i8 Pro Max Ultra") que se rompen al mes y no miden ni los latidos de un gato. Para presupuesto ultra rascado, andá ciego por la <strong>Huawei Band 8</strong> ($52k aprox). Si querés la experiencia completa estilo Apple sin empeñar un riñón, el <strong>Xiaomi Redmi Watch 4</strong> ($90k) es el rey absoluto en nuestro país este año.
+      </EditorialVerdict>
 
       <h2>Nuestro Top 5 — Los Mejores Baratos de Verdad</h2>
       <p>Filtramos todo lo que hay en Mercado Libre para traerte solo las opciones que realmente valen la pena. No incluimos relojes genéricos sin marca que mueren a los 2 meses.</p>
@@ -166,17 +171,18 @@ const faqSchema = JSON.stringify({
         </details>
       </div>
 
-      <div class="related-guides">
-        <h3>Guías Relacionadas</h3>
-        <ul>
-          <li><a href="/guias/mejor-celular-gama-media-argentina">Mejor celular gama media en Argentina 2026</a></li>
-          <li><a href="/guias/mejores-auriculares-aislantes-colectivo-argentina">Mejores auriculares para viajar en colectivo</a></li>
-          <li><a href="/guias/mejores-accesorios-celular-indispensables">Accesorios indispensables para tu celular</a></li>
-        </ul>
-      </div>
+      <RelatedGuides 
+        currentCategory="Hardware" 
+        guides={[
+          { title: "Mejor celular gama media en Argentina 2026", url: "/celulares/samsung-vs-motorola-gama-media" },
+          { title: "Mejores auriculares baratos aislantes de ruido", url: "/auriculares/mejores-cancelacion-ruido-baratos" },
+          { title: "Volver a la portada de VASTTO", url: "/" }
+        ]} 
+      />
 
-      <p><em>Nota: Los precios cambian todos los días. Hacé click en "Ver Oferta en ML" para ver el precio final actualizado. Todos los links te llevan directo a Mercado Libre.</em></p>
+      <p><em>Nota frontal: Los precios en ML cambian más rápido que la inflación. Tocá "Ver Oferta en ML" en las tarjetas para chequear el número exacto hoy.</em></p>
     </div>
+    <div class="container-narrow"><AuthorBio /></div>
   </article>
 </Layout>
 
@@ -191,22 +197,22 @@ const faqSchema = JSON.stringify({
   .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
   .post-content { padding: 3rem 1.5rem; }
   .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
-  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
-  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
-  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 2rem; padding-left: 1.5rem; }
+  .post-content h2 { font-size: 1.8rem; color: var(--text-main); margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 2rem; padding-left: 1.5rem; }
   .post-content li { margin-bottom: 0.5rem; }
   .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
-  .products-showcase { background: #fdfdfd; padding: 3rem 1.5rem; border-top: 1px solid #eee; border-bottom: 1px solid #eee; max-width: 1200px; margin: 0 auto; }
+  .products-showcase { background: var(--vastto-surface-alt); padding: 3rem 1.5rem; border-top: 1px solid var(--vastto-border); border-bottom: 1px solid var(--vastto-border); max-width: 1200px; margin: 0 auto; }
   .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
   .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
-  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+  .faq-item { background: var(--vastto-surface-alt); border: 1px solid var(--vastto-border); border-radius: 8px; overflow: hidden; }
   .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; font-size: 1rem; }
   .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; font-size: 1rem; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: var(--text-body); line-height: 1.6; margin: 0; font-size: 1rem; }
   .faq-item[open] summary .icon { transform: rotate(45deg); }
   .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
-  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
-  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides { background: var(--vastto-bg-alt); border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-main); }
   .related-guides ul { list-style: none; padding: 0; margin: 0; }
   .related-guides li { margin-bottom: 0.5rem; }
   .related-guides a { color: #6c47ff; font-weight: 600; font-size: 1rem; }

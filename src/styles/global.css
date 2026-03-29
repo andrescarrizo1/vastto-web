@@ -1,15 +1,52 @@
 /* VASTTO — Clean Light Theme */
 :root {
   --vastto-primary: #6c47ff;
-  --vastto-primary-dark: #3b1fa8;
+  --vastto-primary-hover: #4e29e0;
   --vastto-accent: #ff6b35;
   --vastto-green: #10b981;
+  --vastto-red: #ef4444;
+  
+  /* Fondos y Superficies Light */
   --vastto-bg: #ffffff;
-  --vastto-bg-alt: #fdfdfd;
-  --vastto-border: rgba(0,0,0,0.05);
+  --vastto-bg-alt: #f8f9fa;
+  --vastto-surface: #ffffff;
+  --vastto-surface-alt: #fdfdfd;
+  
+  /* Bordes y Sombras Light */
+  --vastto-border: rgba(0,0,0,0.08);
+  --vastto-border-hover: rgba(71, 84, 103, 0.2);
+  --vastto-shadow: rgba(0,0,0,0.05);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  
+  /* Textos Light */
   --text-main: #1a1a1a;
-  --text-muted: #666;
-  --text-light: #888;
+  --text-body: #4a4a4a;
+  --text-muted: #666666;
+  --text-light: #888888;
+}
+
+[data-theme="dark"] {
+  --vastto-primary: #8162ff;
+  --vastto-primary-hover: #9c84ff;
+  --vastto-accent: #ff8c61;
+  
+  /* Fondos y Superficies Dark */
+  --vastto-bg: #0f1115;
+  --vastto-bg-alt: #16191f;
+  --vastto-surface: #1e2229;
+  --vastto-surface-alt: #1a1d24;
+  
+  /* Bordes y Sombras Dark */
+  --vastto-border: rgba(255,255,255,0.08);
+  --vastto-border-hover: rgba(255,255,255,0.2);
+  --vastto-shadow: rgba(0,0,0,0.3);
+  --glass-bg: rgba(15, 17, 21, 0.85);
+  
+  /* Textos Dark */
+  --text-main: #f3f4f6;
+  --text-body: #d1d5db;
+  --text-muted: #9ca3af;
+  --text-light: #6b7280;
 }
 
 *,

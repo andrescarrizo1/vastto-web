@@ -5,7 +5,7 @@ import ProductCard from '../../components/ProductCard.astro';
 const products = [
   {
     title: 'HyperX Cloud Stinger 2 Core - Black',
-    price: 39363,
+    price: 36692,
     originalPrice: null,
     image: '/images/hyperx-cloud-stinger-2-core---black.jpg',
     url: 'https://www.mercadolibre.com.ar/auriculares-gamer-hyperx-cloud-stinger-2/p/MLA26547398',
@@ -191,22 +191,22 @@ const faqSchema = JSON.stringify({
   .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
   .post-content { padding: 3rem 1.5rem; }
   .lead { font-size: 1.25rem; line-height: 1.6; color: #444; font-weight: 500; margin-bottom: 2rem; }
-  .post-content h2 { font-size: 1.8rem; color: #1a1a1a; margin: 2.5rem 0 1rem; font-weight: 800; }
-  .post-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
-  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 2rem; padding-left: 1.5rem; }
+  .post-content h2 { font-size: 1.8rem; color: var(--text-main); margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 2rem; padding-left: 1.5rem; }
   .post-content li { margin-bottom: 0.5rem; }
   .verdict-box { background: #f0ebff; border-left: 4px solid #6c47ff; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.1rem; color: #3b1fa8; line-height: 1.6; }
-  .products-showcase { background: #fdfdfd; padding: 3rem 1.5rem; border-top: 1px solid #eee; border-bottom: 1px solid #eee; max-width: 1200px; margin: 0 auto; }
+  .products-showcase { background: var(--vastto-surface-alt); padding: 3rem 1.5rem; border-top: 1px solid var(--vastto-border); border-bottom: 1px solid var(--vastto-border); max-width: 1200px; margin: 0 auto; }
   .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
   .faq-section { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
-  .faq-item { background: #fdfdfd; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+  .faq-item { background: var(--vastto-surface-alt); border: 1px solid var(--vastto-border); border-radius: 8px; overflow: hidden; }
   .faq-item summary { padding: 1.25rem; font-weight: 700; color: #3b1fa8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; font-size: 1rem; }
   .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item p { padding: 0 1.25rem 1.25rem; color: #4a4a4a; line-height: 1.6; margin: 0; font-size: 1rem; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; color: var(--text-body); line-height: 1.6; margin: 0; font-size: 1rem; }
   .faq-item[open] summary .icon { transform: rotate(45deg); }
   .icon { font-size: 1.5rem; transition: transform 0.2s ease; color: #6c47ff; }
-  .related-guides { background: #f8f9fa; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
-  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .related-guides { background: var(--vastto-bg-alt); border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .related-guides h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-main); }
   .related-guides ul { list-style: none; padding: 0; margin: 0; }
   .related-guides li { margin-bottom: 0.5rem; }
   .related-guides a { color: #6c47ff; font-weight: 600; font-size: 1rem; }

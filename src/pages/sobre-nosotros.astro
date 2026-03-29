@@ -3,19 +3,21 @@ import Layout from '../layouts/Layout.astro';
 
 const personSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "VASTTO",
-  "url": "https://vastto.com.ar",
-  "description": "Sitio argentino independiente de guías de compra y comparativas de tecnología. Analizamos celulares, auriculares, smartwatch y accesorios disponibles en Mercado Libre.",
-  "foundingDate": "2026",
-  "areaServed": { "@type": "Country", "name": "Argentina" },
-  "sameAs": []
+  "@type": "Person",
+  "name": "Andrés",
+  "jobTitle": "Programador Full Stack & Reviewer",
+  "url": "https://vastto.com.ar/sobre-nosotros",
+  "image": "https://vastto.com.ar/images/andres.jpg",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "VASTTO"
+  }
 });
 ---
 
 <Layout 
-  title="Sobre Nosotros — Quiénes Somos | VASTTO" 
-  description="VASTTO es un sitio argentino independiente de guías de compra tecnológicas. No vendemos productos, te ayudamos a elegir inteligentemente en Mercado Libre.">
+  title="Sobre Nosotros — Quién está detrás de VASTTO | VASTTO" 
+  description="Conocé a Andrés, el programador full stack y apasionado por la tecnología detrás de VASTTO. Nuestra misión es hacer tus compras más fáciles.">
   <script type="application/ld+json" set:html={personSchema} />
   
   <section class="about-hero">
@@ -24,59 +26,58 @@ const personSchema = JSON.stringify({
         <a href="/">Inicio</a> ›
         <span>Sobre Nosotros</span>
       </nav>
-      <h1>Sobre VASTTO</h1>
-      <p>Tu filtro inteligente de tecnología en Argentina</p>
+      <h1>Sobre Nosotros</h1>
+      <p>Conocé al humano detrás del algoritmo</p>
     </div>
   </section>
 
   <section class="about-content">
     <div class="container-narrow">
-      <h2>¿Qué es VASTTO?</h2>
-      <p>VASTTO es un sitio argentino independiente de <strong>guías de compra y comparativas de tecnología</strong>. No somos tienda, no vendemos nada. Analizamos celulares, auriculares, smartwatch y accesorios disponibles en Mercado Libre para que no tires la plata comprando a ciegas.</p>
-
-      <h2>¿Por qué existe VASTTO?</h2>
-      <p>Porque en Argentina falta un sitio que te diga la verdad sobre los productos. Las reseñas de YouTube duran 15 minutos y no te dicen los defectos. Las publicaciones de Mercado Libre solo muestran lo bueno. Y los foros tienen información desactualizada.</p>
-      <p>Nosotros comparamos precios reales, mostramos pros Y contras, y te damos un veredicto honesto basado en reseñas de usuarios reales, specs técnicos y experiencia de uso.</p>
-
-      <div class="values-grid">
-        <div class="value">
-          <span class="value-icon">🔍</span>
-          <h3>Análisis Honesto</h3>
-          <p>Mostramos los defectos de cada producto. Si un auricular de $50k tiene micrófono malo, te lo decimos.</p>
-        </div>
-        <div class="value">
-          <span class="value-icon">🇦🇷</span>
-          <h3>100% Argentina</h3>
-          <p>Precios en pesos, productos disponibles en ML con envío a todo el país. No recomendamos cosas que no puedas comprar acá.</p>
-        </div>
-        <div class="value">
-          <span class="value-icon">🛒</span>
-          <h3>Compra Segura</h3>
-          <p>Todo se compra en Mercado Libre con Compra Protegida. No manejamos pagos ni datos personales.</p>
-        </div>
-        <div class="value">
-          <span class="value-icon">💡</span>
-          <h3>Independencia</h3>
-          <p>Nuestras recomendaciones no están influenciadas por marcas. Si un Xiaomi de $30k le gana a un Samsung de $80k, lo decimos.</p>
+      <div class="profile-section">
+        <img src="/images/andres.jpg" alt="Andrés de VASTTO" class="profile-pic" />
+        <div class="profile-text">
+          <h2>¡Hola! Soy Andrés 👋</h2>
+          <p class="lead">Soy un apasionado empedernido por la tecnología y Programador Full Stack de profesión. Y soy el responsable detrás de todo lo que leés en VASTTO.</p>
         </div>
       </div>
 
-      <h2>¿Cómo nos mantenemos?</h2>
-      <p>VASTTO participa en el programa de afiliados de Mercado Libre. Cuando hacés click en un producto y comprás, recibimos una pequeña comisión de ML. Esto <strong>no cambia el precio que pagás</strong> — es exactamente el mismo que verías buscándolo vos directamente.</p>
-      <p>Esta es la forma en que financiamos el sitio y podemos seguir creando contenido gratuito para ayudarte a comprar mejor.</p>
+      <h2>¿Por qué creé VASTTO?</h2>
+      <p>Te voy a ser completamente sincero: <strong>me cansé de las reviews compradas.</strong></p>
+      <p>Hace unos años, buscando comprar un celular en Mercado Libre, me di cuenta que la información estaba rota. Vas a YouTube y te encontrás con videos de 20 minutos donde los "tech tubers" solo leen las especificaciones de una caja o no se animan a decir los defectos de un producto porque la marca se los regaló.</p>
+      <p>Vas a los foros, y la info está desactualizada. Vas a otras páginas we, y son traducciones robóticas mal hechas del inglés que te recomiendan productos de Amazon que acá en Argentina cuestan el triple por los impuestos o ni siquiera entran al país.</p>
+      <p>Ahí nació la idea de <strong>VASTTO</strong>: Un espacio curado donde filtro el inmenso ruido de internet para <strong>hacerle las compras más fáciles a los argentinos.</strong></p>
 
-      <h2>¿Cómo seleccionamos los productos?</h2>
-      <p>Cada producto que recomendamos pasa por un proceso de filtrado:</p>
+      <div class="values-grid">
+        <div class="value">
+          <span class="value-icon">🇦🇷</span>
+          <h3>100% Argentino</h3>
+          <p>Solo analizo productos que podés conseguir hoy, con envío rápido y precios en nuestra moneda. Nada de "comprar por courier".</p>
+        </div>
+        <div class="value">
+          <span class="value-icon">⚖️</span>
+          <h3>Independencia Total</h3>
+          <p>Las marcas no me pagan por hablar bien de ellas. Si un auricular suena a lata, te digo que suena a lata.</p>
+        </div>
+        <div class="value">
+          <span class="value-icon">🤓</span>
+          <h3>Ojo Clínico</h3>
+          <p>Como programador y geek, analizo especificaciones duras. Pero como consumidor, testo el "uso real" (batería, comodidad, software).</p>
+        </div>
+      </div>
+
+      <h2>El "Secreto" de Cómo se Mantiene el Sitio</h2>
+      <p>Mantener servidores, dominios y pasar horas analizando productos tiene un costo. Para financiar VASTTO sin llenarte la pantalla de anuncios intrusivos, utilizo el <strong>Programa de Afiliados de Mercado Libre</strong>.</p>
+      <p>Esto significa que si hacés clic en mis links y terminás comprando el producto, Mercado Libre me cede una comisión de su ganancia. <strong>A vos el producto te cuesta exactamente lo mismo</strong>. Cero recargos de tu bolsillo, y a mí me sirve para poder seguir armando guías y desvelándome probando cosas.</p>
+
+      <h2>Mi Promesa Editorial</h2>
       <ol>
-        <li><strong>Disponibilidad real:</strong> Solo productos que podés comprar hoy en ML Argentina con envío</li>
-        <li><strong>Reseñas de usuarios:</strong> Mínimo 100+ reseñas reales con rating 4+</li>
-        <li><strong>Relación precio/calidad:</strong> No recomendamos lo más caro ni lo más barato, sino lo que vale lo que cuesta</li>
-        <li><strong>Marca con soporte:</strong> Descartamos marcas sin representación en Argentina que no ofrecen garantía real</li>
+        <li>No te voy a recomendar algo que yo mismo, o un familiar, no usaría.</li>
+        <li>Si hay una alternativa igual de buena pero a mitad de precio, siempre te voy a recomendar la barata.</li>
       </ol>
 
       <div class="contact-box">
-        <h3>Contacto</h3>
-        <p>¿Tenés una sugerencia, encontraste un error o querés colaborar? Escribinos a <strong>contacto@vastto.com.ar</strong></p>
+        <h3>Charlemos</h3>
+        <p>¿Tenés dudas sobre qué comprar? ¿Compraste algo que recomendé y querés putearme o agradecerme? Escribime a <strong>contacto@vastto.com.ar</strong> y lo leemos juntos.</p>
       </div>
     </div>
   </section>
@@ -95,18 +96,50 @@ const personSchema = JSON.stringify({
   .breadcrumb a:hover { color: #fff; }
   .about-hero h1 { font-size: 2.75rem; font-weight: 800; margin: 0 0 0.5rem; }
   .about-hero p { color: rgba(255,255,255,0.85); font-size: 1.15rem; }
+  
   .about-content { padding: 4rem 0; }
-  .about-content h2 { font-size: 1.8rem; font-weight: 800; color: #1a1a1a; margin: 2.5rem 0 1rem; }
-  .about-content p { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; margin-bottom: 1.5rem; }
-  .about-content ol { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; padding-left: 1.5rem; }
+  
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    background: var(--vastto-surface-alt);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  }
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #6c47ff;
+    box-shadow: 0 10px 20px rgba(108, 71, 255, 0.2);
+  }
+  .profile-text h2 { margin: 0 0 1rem; font-size: 2rem; font-weight: 800; }
+  .profile-text .lead { font-size: 1.2rem; color: #444; margin: 0; line-height: 1.6; }
+
+  .about-content h2 { font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin: 2.5rem 0 1rem; }
+  .about-content p { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1.5rem; }
+  .about-content ol { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); padding-left: 1.5rem; }
   .about-content li { margin-bottom: 0.75rem; }
-  .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 2rem 0 3rem; }
-  .value { background: #f8f7ff; border-radius: 12px; padding: 2rem; text-align: center; }
+  
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 3rem 0; }
+  .value { background: #f8f7ff; border-radius: 12px; padding: 2rem 1.5rem; text-align: center; border: 1px solid #f0ebff; transition: transform 0.2s ease; }
+  .value:hover { transform: translateY(-5px); }
   .value-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
-  .value h3 { font-size: 1.1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
-  .value p { font-size: 0.95rem; color: #666; line-height: 1.5; margin: 0; }
-  .contact-box { background: #f0ebff; border-radius: 12px; padding: 2rem; margin-top: 3rem; }
+  .value h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; }
+  .value p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+  
+  .contact-box { background: #f0ebff; border-radius: 12px; padding: 2rem; margin-top: 3rem; border-left: 4px solid #6c47ff; }
   .contact-box h3 { font-size: 1.3rem; color: #3b1fa8; margin-bottom: 0.75rem; }
-  .contact-box p { margin: 0; }
-  @media (max-width: 768px) { .about-hero h1 { font-size: 2rem; } .values-grid { grid-template-columns: 1fr; } }
+  .contact-box p { margin: 0; color: var(--text-body); font-size: 1.1rem; }
+  
+  @media (max-width: 768px) { 
+    .about-hero h1 { font-size: 2rem; } 
+    .profile-section { flex-direction: column; text-align: center; }
+    .values-grid { grid-template-columns: 1fr; } 
+  }
 </style>
