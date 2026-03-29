@@ -1,8 +1,7 @@
 User-agent: *
 Allow: /
 
-# Prevent indexing of system files or temp pages if any exist
-Disallow: /_astro/
+# Permitimos crawlear todo para que Google renderice la UI correcta
 Disallow: /api/
 
 Sitemap: https://vastto.com.ar/sitemap-index.xml
