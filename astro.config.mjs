@@ -6,9 +6,5 @@ export default defineConfig({
   site: 'https://vastto.com.ar',
   output: 'static',
 
-  build: {
-    format: 'file'
-  },
-
-  integrations: [sitemap()]
+  // integrations: [sitemap()]
 });
