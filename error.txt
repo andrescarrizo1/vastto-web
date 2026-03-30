@@ -1,0 +1,8 @@
+Cannot read properties of undefined (reading 'reduce')
+  Location:
+    C:\Users\Ryzen 5\opencode\node_modules\@astrojs\sitemap\dist\index.js:85:37
+  Stack trace:
+    at astro:build:done (file:///C:/Users/Ryzen%205/opencode/node_modules/@astrojs/sitemap/dist/index.js:85:37)
+    at async AstroBuilder.build (file:///C:/Users/Ryzen%205/opencode/node_modules/astro/dist/core/build/index.js:159:5)
+    at async build (file:///C:/Users/Ryzen%205/opencode/node_modules/astro/dist/core/build/index.js:51:3)
+    at async runCommand (file:///C:/Users/Ryzen%205/opencode/node_modules/astro/dist/cli/index.js:147:7)

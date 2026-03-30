@@ -1,0 +1,183 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import productsData from '../../scripts/formatted_products.json';
+
+// Flatten products JSON into a single array
+const allProducts = Object.values(productsData).flat();
+
+// Filter valid deals: has originalPrice and price is less than originalPrice
+const deals = allProducts.filter(p => p.originalPrice && p.price < p.originalPrice);
+
+// Add discount percentage and grab top 15 deals
+const sortedDeals = deals.map(p => {
+  const discount = Math.round(((p.originalPrice - p.price) / p.originalPrice) * 100);
+  return { ...p, discount };
+}).sort((a, b) => b.discount - a.discount).slice(0, 15);
+
+const title = "Mejores Ofertas de Tecnología en Argentina (Actualizado Hoy)";
+const description = "Descubre las mejores ofertas, descuentos y rebajas en celulares, auriculares y smartwatch en Argentina. Filtramos por el mayor porcentaje de descuento real.";
+
+// SEO Schema
+const itemListElement = sortedDeals.map((product, index) => ({
+  "@type": "ListItem",
+  "position": index + 1,
+  "item": {
+    "@type": "Product",
+    "name": product.title,
+    "image": `https://vastto.com.ar${product.image}`,
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "ARS",
+      "price": product.price,
+      "url": product.url
+    }
+  }
+}));
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Las Mejores Ofertas de Tecnología Diarias",
+  "itemListElement": itemListElement
+};
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+	<BaseHead title={title} description={description} />
+	<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</head>
+<body>
+	<Header />
+	<main class="page-container">
+		<header class="category-header">
+			<div class="header-content">
+				<span class="badge">ACTUALIZADO 24HS</span>
+				<h1>Ofertas de Tecnología en Argentina</h1>
+				<p>Rastreamos las tiendas todos los días para traerte los verdaderos descuentos en celulares, auriculares y smartwatches, ordenados por porcentaje de ahorro. No te pierdas de nada.</p>
+			</div>
+		</header>
+
+		<section class="deals-grid">
+			{sortedDeals.length > 0 ? (
+				<div class="grid-layout">
+					{sortedDeals.map((product) => (
+						<div class="deal-wrapper">
+							<div class="discount-badge">-{product.discount}% OFF</div>
+							<ProductCard {...product} />
+						</div>
+					))}
+				</div>
+			) : (
+				<p class="no-deals">No encontramos grandes descuentos el día de hoy. ¡Vuelve mañana!</p>
+			)}
+		</section>
+	</main>
+	<Footer />
+</body>
+</html>
+
+<style>
+	.page-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem;
+	}
+	
+	.category-header {
+		text-align: center;
+		margin-bottom: 3rem;
+		padding: 3rem 1rem;
+		background: linear-gradient(135deg, rgba(255,51,102,0.1) 0%, rgba(108,71,255,0.05) 100%);
+		border-radius: 24px;
+		border: 1px solid var(--vastto-border);
+	}
+
+	.header-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.badge {
+		display: inline-block;
+		background: #FF3366;
+		color: white;
+		padding: 0.4rem 1rem;
+		border-radius: 20px;
+		font-weight: 800;
+		font-size: 0.85rem;
+		letter-spacing: 1px;
+		margin-bottom: 1rem;
+	}
+
+	h1 {
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 900;
+		color: var(--text-main);
+		margin-bottom: 1rem;
+		line-height: 1.2;
+	}
+
+	p {
+		font-size: 1.1rem;
+		color: var(--text-body);
+		line-height: 1.6;
+	}
+
+	.grid-layout {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.deal-wrapper {
+		position: relative;
+		transition: transform 0.3s ease;
+	}
+
+	.deal-wrapper:hover {
+		transform: translateY(-5px);
+		z-index: 10;
+	}
+
+	.discount-badge {
+		position: absolute;
+		top: -15px;
+		right: 15px;
+		background: #FF3366;
+		color: white;
+		font-weight: 900;
+		font-size: 1.2rem;
+		padding: 0.5rem 1rem;
+		border-radius: 12px;
+		z-index: 10;
+		box-shadow: 0 8px 20px rgba(255,51,102,0.4);
+		transform: rotate(3deg);
+	}
+
+	.no-deals {
+		text-align: center;
+		font-size: 1.2rem;
+		color: var(--text-body);
+		padding: 4rem;
+		background: var(--vastto-surface);
+		border-radius: 16px;
+	}
+
+	@media (max-width: 768px) {
+		.grid-layout {
+			grid-template-columns: 1fr;
+		}
+		
+		.category-header {
+			padding: 2rem 1rem;
+		}
+	}
+</style>

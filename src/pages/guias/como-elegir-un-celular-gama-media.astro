@@ -1,0 +1,138 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import NewsletterCapture from '../../components/NewsletterCapture.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cómo elegir un celular en Argentina: Guía Definitiva 2026",
+  "description": "Aprende qué mirar antes de comprar un teléfono móvil. Procesador, memoria RAM, tipo de pantalla y especificaciones críticas para no tirar la plata.",
+  "author": {
+    "@type": "Organization",
+    "name": "VASTTO",
+    "url": "https://vastto.com.ar"
+  }
+});
+---
+
+<Layout 
+  title="Cómo Elegir Celular en Argentina: Guía Definitiva 2026" 
+  description="No compres tu próximo celular sin leer esto. Te explicamos qué significan los Hz, la RAM, y qué procesador conviene realmente comprar en Argentina.">
+  <script type="application/ld+json" set:html={schema} />
+  
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container-narrow">
+        <nav class="breadcrumb">
+          <a href="/">Inicio</a> ›
+          <a href="/celulares">Celulares</a> ›
+          <span>Guía Evergreen</span>
+        </nav>
+        <h1>Cómo Elegir un Celular Nuevo en Argentina (Y NO Tirar la Plata)</h1>
+        <div class="meta">
+          <span>Actualizado: Marzo 2026</span> • <span>Tiempo de lectura: 8 min</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-narrow post-content">
+      <p class="lead">Las marcas te bombardean con números: 200 Megapíxeles, 120Hz, 8GB de RAM. Sin embargo, en la Argentina actual con semejantes variaciones de precios, dejarse llevar por el marketing puede costarte carísimo. <strong>Esta es la guía definitiva donde te explico en criollo en qué fijarte antes de comprar.</strong></p>
+
+      <h2>1. El Procesador (El motor del auto)</h2>
+      <p>Es la pieza MÁS importante. Si el chip es malo, el celular va a andar lento a los 6 meses, no importa cuántos megapíxeles tenga la cámara.</p>
+      <ul>
+        <li><strong>Snapdragon (Qualcomm):</strong> Los más estables y eficientes. Busca celulares con series como Snapdragon 6 Gen 1, o Snapdragon 7s Gen 2. Ideal para juegos y autonomía.</li>
+        <li><strong>MediaTek Dimensity:</strong> Muy buenos hoy en día, sobre todo en calidad-precio. Un Dimensity 7050 rinde excelente en la gama media.</li>
+        <li><strong>Exynos (Samsung):</strong> Cuidado. Algunos son buenos (como el modelo del Galaxy A55), pero modelos baratos suelen recalentar la batería rápido.</li>
+      </ul>
+
+      <div class="tip-box">
+        <strong>💡 Consejo VASTTO:</strong> Evitá cualquier celular en 2026 que diga "MediaTek Helio G85" o procesadores "Unisoc". Vas a odiar abrir WhatsApp de lo lento que andan.
+      </div>
+
+      <h2>2. Memoria RAM y Almacenamiento (La mochila)</h2>
+      <p>A las marcas les encanta vender celulares baratos con "RAM virtual". Es puro humo comercial. La memoria virtual usa el almacenamiento lento para emular RAM, y causa más problemas de los que soluciona.</p>
+      <ul>
+        <li><strong>Memoria RAM Física:</strong> Mínimo absoluto <strong>6GB</strong>. Lo ideal hoy son <strong>8GB de RAM</strong>. Con menos de eso, las aplicaciones se te van a cerrar solas cuando pases de Instagram a Spotify.</li>
+        <li><strong>Almacenamiento:</strong> Olvidate de los 64GB. El sistema operativo Android ya ocupa 15GB. Necesitás mínimo <strong>128GB</strong>, pero si mandás muchos videos por WhatsApp o querés que te dure 3 años, andá directo por <strong>256GB</strong>.</li>
+      </ul>
+
+      <h2>3. La Pantalla: LCD vs AMOLED</h2>
+      <p>Vas a mirar este rectángulo 4 horas al día. No escatimes acá.</p>
+      <ul>
+        <li><strong>Pantalla AMOLED / pOLED:</strong> Los píxeles negros se apagan. Eso ahorra batería, da negros perfectos y los colores se ven mil veces mejor.</li>
+        <li><strong>Tasa de Refresco (Hz):</strong> Mínimo 90Hz. Ideal 120Hz. Esto mide cuántas veces por segundo la pantalla "dibuja" la imagen. Si venís de un celular viejo de 60Hz, vas a sentir que el nuevo vuela solo por tener la pantalla más fluida.</li>
+      </ul>
+
+      <h2>4. Batería y Carga Rápida (El combustible)</h2>
+      <p>Casi todos los celulares vienen con baterías de <strong>5.000 mAh</strong>. Lo que marca la diferencia no es el tamaño del tanque, sino con qué velocidad se llena.</p>
+      <p>Samsung recién ahora mejoró un poco, pero Motorola y Xiaomi destrozan este mercado. Por ejemplo, modelos con carga de <strong>68W o 67W</strong> (que además incluyen el cargador en la caja) te cargan del 0 al 100% en apenas 40 minutos. Samsung te sigue cobrando aparte un cargador que tarda más de una hora con suerte.</p>
+
+      <h2>Conclusión: ¿Qué comprar entonces?</h2>
+      <p>Resumiendo, tu "check-list" de compra en 2026 debe ser:</p>
+      <ul>
+        <li>Procesador Snapdragon/Dimensity reciente.</li>
+        <li>Pantalla AMOLED a 120Hz.</li>
+        <li>Mínimo 8GB de RAM física y 128GB/256GB de almacenamiento.</li>
+      </ul>
+      
+      <p>Ahora que ya sabés la teoría, <strong>¡mirá cómo aplicamos estos filtros en nuestras comparativas reales!</strong></p>
+
+      <div class="related-guides">
+        <h3>Te recomendamos leer:</h3>
+        <ul>
+          <li><a href="/celulares/mejor-celular-gama-media-argentina">👉 Top 5: Los mejores celulares Gama Media (Aplicando estos criterios)</a></li>
+          <li><a href="/celulares/samsung-vs-motorola-gama-media">👉 Samsung vs Motorola: ¿Qué diseño te conviene más?</a></li>
+        </ul>
+      </div>
+
+      <NewsletterCapture />
+      
+    </div>
+    
+    <div class="container-narrow"><AuthorBio /></div>
+  </article>
+</Layout>
+
+<style>
+  /* (Mismos estilos que las guias para coherencia visual) */
+  .post-header {
+    background: linear-gradient(135deg, #0a193e 0%, #1f2a8a 50%, #4754ff 100%);
+    color: white;
+    padding: 4rem 0 3rem;
+  }
+  .container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .post-header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .meta { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+  .post-content { padding: 3rem 1.5rem; }
+  .lead { font-size: 1.25rem; line-height: 1.6; color: var(--text-main); font-weight: 500; margin-bottom: 2rem; }
+  .post-content h2 { font-size: 1.8rem; color: var(--text-main); margin: 2.5rem 0 1rem; font-weight: 800; }
+  .post-content p { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1.5rem; }
+  .post-content ul { font-size: 1.1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 2rem; padding-left: 1.5rem; }
+  .tip-box {
+    background: rgba(108, 71, 255, 0.1);
+    border-left: 4px solid #6c47ff;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 2rem 0;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    line-height: 1.6;
+  }
+  .related-guides {
+    background: var(--vastto-bg-alt);
+    border: 1px solid var(--vastto-border);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin: 3rem 0;
+  }
+  .related-guides h3 { margin-bottom: 1rem; color: var(--text-main); }
+  .related-guides a { color: #6c47ff; font-weight: 600; font-size: 1.1rem; }
+</style>

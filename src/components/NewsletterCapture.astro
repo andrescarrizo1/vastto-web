@@ -1,0 +1,110 @@
+---
+---
+
+<div class="newsletter-capture">
+  <div class="newsletter-content">
+    <h3>🔥 Alerta de Derrumbe de Precios</h3>
+    <p>Los precios en Mercado Libre suben y bajan de madrugada. Dejanos tu email y te avisamos (sin hacer spam) cuando nuestro bot detecte una oferta brutal real en tecnología.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte al radar de precios VASTTO!')">
+      <input type="email" placeholder="Tu mejor email..." required />
+      <button type="submit">Rastrear Ofertas</button>
+    </form>
+    <small>🔒 Tu mail está seguro. Odiamos el spam tanto como vos.</small>
+  </div>
+</div>
+
+<style>
+  .newsletter-capture {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    margin: 3rem 0;
+    color: #f3f4f6;
+    text-align: center;
+    border: 1px solid #374151;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .newsletter-capture::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: #6c47ff;
+    filter: blur(80px);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  
+  .newsletter-content {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .newsletter-content h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    color: #fff;
+  }
+  
+  .newsletter-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter-form input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #4b5563;
+    background: #374151;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .newsletter-form input:focus {
+    border-color: #6c47ff;
+    box-shadow: 0 0 0 2px rgba(108, 71, 255, 0.2);
+  }
+  
+  .newsletter-form button {
+    background: #6c47ff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .newsletter-form button:hover {
+    background: #5535e0;
+  }
+  
+  .newsletter-content small {
+    color: #6b7280;
+    font-size: 0.8rem;
+  }
+  
+  @media (max-width: 600px) {
+    .newsletter-form {
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,76 @@
+---
+interface Priority {
+  need: string;
+  model: string;
+  link?: string;
+}
+
+interface Props {
+  priorities: Priority[];
+}
+
+const { priorities } = Astro.props;
+---
+
+<div class="quick-verdict-box">
+  <h4>⏱️ ¿No tenés tiempo? El veredicto en 10 segundos:</h4>
+  <ul>
+    {priorities.map((p) => (
+      <li>
+        Si priorizás <strong>{p.need}</strong> → 
+        {p.link ? (
+          <a href={p.link}>{p.model}</a>
+        ) : (
+          <span>{p.model}</span>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .quick-verdict-box {
+    background: var(--vastto-surface-alt);
+    border: 2px solid #5535e0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 4px 15px rgba(85, 53, 224, 0.15);
+  }
+  
+  .quick-verdict-box h4 {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .quick-verdict-box ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    color: var(--text-body);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .quick-verdict-box li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .quick-verdict-box a {
+    color: #6c47ff;
+    font-weight: 700;
+    text-decoration: none;
+    background: rgba(108, 71, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .quick-verdict-box a:hover {
+    background: rgba(108, 71, 255, 0.2);
+  }
+</style>
