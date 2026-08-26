@@ -1,8 +1,7 @@
 ---
 import AuthorBio from '../../components/AuthorBio.astro';
 import Layout from '../../layouts/Layout.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import ProductCardV2 from '../../components/ProductCardV2.astro';
 import EditorialVerdict from '../../components/EditorialVerdict.astro';
 import RealTest from '../../components/RealTest.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
@@ -12,7 +11,6 @@ const product = {
   price: 39363,
   originalPrice: null,
   image: '/images/hyperx-cloud-stinger-2-core---black.jpg',
-  url: 'https://www.mercadolibre.com.ar/auriculares-gamer-hyperx-cloud-stinger-2/p/MLA26547398',
   badge: 'GAMER BARATO',
   rating: 5,
   reviews: 1125,
@@ -78,7 +76,6 @@ const faqSchema = JSON.stringify({
     </header>
 
     <div class="container-narrow post-content">
-      <AffiliateDisclaimer />
       <p class="lead">Entrar en el mundo de los "Auriculares Gamer" baratos es un campo minado. Te quieren vender auris llenos de luces RGB berretas que se parten al medio al mes de uso. Acá el trato es distinto. Los <strong>HyperX Cloud Stinger 2 Core</strong> te salen unas $40 lucas y cumplen con lo único que importa a esta altura del partido: escuchar los pasos del adversario y decirle de todo a tus amigos por Discord sin parecer un robot bajo el agua.</p>
 
       <EditorialVerdict score={8.8} title="Plástico del bueno, ideal para rankear sin lujos">
@@ -120,7 +117,7 @@ const faqSchema = JSON.stringify({
     </div>
 
     <div class="container products-showcase">
-      <ProductCard {...product} />
+      <ProductCardV2 {...product} />
     </div>
 
     <div class="container-narrow post-content">

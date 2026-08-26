@@ -1,7 +1,7 @@
 ---
 import AuthorBio from '../../components/AuthorBio.astro';
 import Layout from '../../layouts/Layout.astro';
-import ProductCard from '../../components/ProductCard.astro';
+import ProductCardV2 from '../../components/ProductCardV2.astro';
 
 const products = [
   {
@@ -51,7 +51,6 @@ const products = [
     price: 41608,
     originalPrice: null,
     image: '/images/samsung-galaxy-buds-fe---grafito.jpg',
-    url: 'https://www.mercadolibre.com.ar/auriculares-bluetooth-samsung-galaxy-buds-fe-grafito/p/MLA22165424',
     badge: 'CON ANC',
     rating: 4.9,
     reviews: 1203,
@@ -133,7 +132,7 @@ const faqSchema = JSON.stringify({
     <div class="container products-showcase">
       <div class="products-grid">
         {products.map(product => (
-          <ProductCard {...product} />
+          <ProductCardV2 {...product} />
         ))}
       </div>
     </div>
