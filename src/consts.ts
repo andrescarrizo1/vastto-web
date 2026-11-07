@@ -9,7 +9,7 @@ export const SITE_URL = 'https://vastto.com.ar';
 export const FOUNDER_NAME = 'Andrés Carrizo';
 export const FOUNDER_ROLE = 'Desarrollador Full Stack enfocado en automatización e inteligencia artificial aplicada';
 export const FOUNDER_LOCATION = 'San Rafael, Mendoza, Argentina';
-export const CONTACT_EMAIL = 'contacto@vastto.com.ar';
+export const CONTACT_EMAIL = 'carrizo226@gmail.com';
 export const LINKEDIN_URL = 'https://linkedin.com/in/andres-carrizo-129893213';
 export const GITHUB_URL = 'https://github.com/andrescarrizo1';
 
