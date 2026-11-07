@@ -497,7 +497,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCAT
           </p>
         </div>
 
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Gracias por comunicarte con VASTTO. Te responderemos a la brevedad vía email o WhatsApp.');">
+        <form class="contact-form" id="home-contact-form">
           <div class="form-row">
             <div class="form-group">
               <label for="nombre">Nombre y Apellido *</label>
@@ -533,13 +533,34 @@ import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCAT
 
           <div class="form-footer">
             <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
-              Enviar Consulta Comercial
+              Enviar Consulta vía Correo Directo
             </button>
             <p class="form-privacy-note">
-              🔒 <strong>Privacidad Garantizada:</strong> Tus datos serán utilizados exclusivamente para evaluar tu solicitud de acuerdo con la Ley 25.326 de Protección de Datos Personales. Nunca compartimos información con terceros.
+              🔒 <strong>Privacidad Garantizada:</strong> Tus datos serán utilizados exclusivamente para evaluar tu solicitud de acuerdo con la Ley 25.326 de Protección de Datos Personales. Abre tu cliente de correo para enviar la consulta directamente a Andrés Carrizo.
             </p>
           </div>
         </form>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('home-contact-form') as HTMLFormElement | null;
+            if (form) {
+              form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const nombre = (document.getElementById('nombre') as HTMLInputElement)?.value || '';
+                const empresa = (document.getElementById('empresa') as HTMLInputElement)?.value || '';
+                const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
+                const servicio = (document.getElementById('servicio') as HTMLSelectElement)?.value || '';
+                const mensaje = (document.getElementById('mensaje') as HTMLTextAreaElement)?.value || '';
+
+                const subject = `[Consulta VASTTO] ${empresa} - ${nombre}`;
+                const body = `Nombre: ${nombre}\nEmpresa: ${empresa}\nEmail: ${email}\nServicio de Interés: ${servicio}\n\nDetalle:\n${mensaje}`;
+
+                window.location.href = `mailto:contacto@vastto.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              });
+            }
+          });
+        </script>
 
         <div class="direct-channels-divider">
           <span>O si prefieres conversar de inmediato</span>

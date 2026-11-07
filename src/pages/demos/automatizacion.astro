@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '../../consts';
+---
+
+<Layout 
+  title="Demo Agente IA: Automatización de Pedidos | VASTTO"
+  description="Consola interactiva y flujo de trabajo en tiempo real de un agente de inteligencia artificial procesando pedidos comerciales no estructurados."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container container-narrow">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="badge badge-cyan section-eyebrow">CONSOLA EN VIVO • FASE 5</span>
+        <h1>Agente de Inteligencia Artificial para Pedidos y CRM</h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 1rem auto 0 auto;">
+          Observa cómo un modelo local de lenguaje analiza mensajes libres enviados por WhatsApp o correo, detecta artículos y cantidades, y genera el registro en la base de datos sin errores humanos.
+        </p>
+      </div>
+
+      <div class="card-tech" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan);">
+            CONSOLA DE EJECUCIÓN (AGENT PIPELINE)
+          </div>
+          <span class="badge badge-emerald">MODO PREVIEW</span>
+        </div>
+
+        <div style="background: #040508; border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem; font-family: var(--font-mono); font-size: 0.82rem; color: #a0aec0; line-height: 1.7; overflow-x: auto;">
+          <span style="color: #6366f1;">[15:10:01] EVENT_RECEIVED:</span> Mensaje entrante de WhatsApp (+54 9 260 4...):<br/>
+          <span style="color: #ffffff; padding-left: 1.5rem; display: block; margin: 0.3rem 0;">"Buenas tardes! Preciso 25 cajas de vino malbec reserva y 10 cajas de cabernet para el evento del sábado. Me confirmás precio con factura A?"</span>
+          <span style="color: #00f0ff;">[15:10:02] PARSER_AGENT:</span> Invocando LLM con esquema Pydantic estructurado...<br/>
+          <span style="color: #10b981;">[15:10:03] EXTRACTION_SUCCESS:</span><br/>
+          <pre style="color: #38bdf8; margin: 0.5rem 0 0.5rem 1.5rem; font-family: var(--font-mono);">{`{
+  "cliente_tipo": "EMPRESA_RESPONSABLE_INSCRIPTO",
+  "comprobante": "FACTURA_A",
+  "items": [
+    {"producto": "VINO_MALBEC_RESERVA", "cantidad_cajas": 25},
+    {"producto": "VINO_CABERNET", "cantidad_cajas": 10}
+  ],
+  "fecha_requerida": "PROXIMO_SABADO",
+  "stock_disponible": true
+}`}</pre>
+          <span style="color: #10b981;">[15:10:04] DB_DISPATCH:</span> Presupuesto #8492 generado en PostgreSQL. Enviando PDF al WhatsApp del cliente...
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <a 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola Andrés, quiero evaluar un agente de automatización de pedidos como el de la demo para mi empresa.')}`} 
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Consultar por Implementación
+          </a>
+          <a href="/demos" class="btn btn-secondary" style="margin-left: 1rem;">
+            ← Volver al Centro de Demos
+          </a>
+        </div>
+      </div>
+
+      <div class="card-tech" style="padding: 1.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">
+          📌 <em>Nota técnica: Simulador interactivo en tiempo real en desarrollo para la Fase 5.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

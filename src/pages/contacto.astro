@@ -18,7 +18,7 @@ import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL
       </div>
 
       <div class="contact-box">
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensaje recibido con éxito. Nos pondremos en contacto contigo dentro de las próximas 24 horas hábiles.');">
+        <form class="contact-form" id="contact-form">
           <div class="form-row">
             <div class="form-group">
               <label for="contact-nombre">Nombre y Apellido *</label>
@@ -58,13 +58,35 @@ import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL
           </div>
 
           <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
-            Enviar Solicitud de Presupuesto
+            Enviar Solicitud vía Correo Directo
           </button>
 
           <p class="form-privacy-note" style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
-            🔒 Tratamiento confidencial de la información de acuerdo con la Ley 25.326. No enviamos spam ni compartimos datos con terceros.
+            🔒 Tratamiento confidencial de la información de acuerdo con la Ley 25.326. Abre tu cliente de correo para enviar la solicitud sin intermediarios.
           </p>
         </form>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form') as HTMLFormElement | null;
+            if (form) {
+              form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const nombre = (document.getElementById('contact-nombre') as HTMLInputElement)?.value || '';
+                const empresa = (document.getElementById('contact-empresa') as HTMLInputElement)?.value || '';
+                const email = (document.getElementById('contact-email') as HTMLInputElement)?.value || '';
+                const telefono = (document.getElementById('contact-telefono') as HTMLInputElement)?.value || '';
+                const servicio = (document.getElementById('contact-servicio') as HTMLSelectElement)?.value || '';
+                const mensaje = (document.getElementById('contact-mensaje') as HTMLTextAreaElement)?.value || '';
+
+                const subject = `[Consulta VASTTO] ${empresa} - ${nombre}`;
+                const body = `Nombre: ${nombre}\nEmpresa: ${empresa}\nEmail: ${email}\nTeléfono: ${telefono}\nServicio de Interés: ${servicio}\n\nDetalle del Proyecto:\n${mensaje}`;
+
+                window.location.href = `mailto:contacto@vastto.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              });
+            }
+          });
+        </script>
 
         <div style="text-align: center; margin: 3rem 0 1.5rem 0; position: relative;">
           <div style="height: 1px; background: var(--border-subtle); position: absolute; top: 50%; left: 0; right: 0;"></div>

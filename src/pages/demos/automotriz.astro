@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '../../consts';
+---
+
+<Layout 
+  title="Demo Automotriz: Filtro de Permutas y Cuotas | VASTTO"
+  description="Demostración y prototipo comercial para agencias y concesionarias de autos en Mendoza. Simulación de permutas y precualificación financiera."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container container-narrow">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="badge badge-cyan section-eyebrow">PROTOTIPO EN DESARROLLO • FASE 5</span>
+        <h1>Simulador Comercial para Agencias de Autos</h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 1rem auto 0 auto;">
+          Herramienta orientada a concesionarias para captar consultas de interesados, tasar permutas con datos estandarizados y simular anticipos y cuotas en segundos.
+        </p>
+      </div>
+
+      <div class="card-tech" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan);">
+            FLUJO DE ATENCIÓN AUTOMÁTICA
+          </div>
+          <span class="badge badge-emerald">DATOS SINTÉTICOS</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="margin-bottom: 0.5rem; color: #fff;">1. Consulta del Cliente</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic;">
+              "Tengo una Hilux 2018 SRV con 140.000 km y quiero subir a una 2022. ¿Cuánto me toman la permuta y qué diferencia me queda financiar?"
+            </p>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="margin-bottom: 0.5rem; color: #fff;">2. Cálculo Estimado y Calificación</h4>
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-emerald); line-height: 1.6;">
+              ✓ Vehículo de entrega: Toyota Hilux 2018 SRV (Tasación orientativa registrada)<br/>
+              ✓ Unidad objetivo: Toyota Hilux 2022 en inventario activo<br/>
+              ✓ Brecha financiera estimada: calculada automáticamente en pesos / USD<br/>
+              ✓ Opciones de financiación simuladas: 12, 24 y 36 cuotas fijas
+            </div>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="margin-bottom: 0.5rem; color: #fff;">3. Coordinación de Visita a Salón</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              El interesado recibe un enlace de calendario para acercar su vehículo a peritaje técnico y realizar una prueba de manejo en el salón comercial.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <a 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola Andrés, me gustaría ver la demo del simulador automotriz para agencias.')}`} 
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Solicitar Demostración Guiada
+          </a>
+          <a href="/demos" class="btn btn-secondary" style="margin-left: 1rem;">
+            ← Volver al Centro de Demos
+          </a>
+        </div>
+      </div>
+
+      <div class="card-tech" style="padding: 1.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">
+          📌 <em>Nota técnica: Prototipo funcional programado para la Fase 5 de VASTTO 2.0.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
