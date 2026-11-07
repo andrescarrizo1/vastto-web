@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getWhatsAppLink, WA_MESSAGES, WHATSAPP_ENABLED } from '../consts';
 ---
 
 <Layout 
@@ -12,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
         <span class="badge badge-cyan section-eyebrow">EXPERIMENTACIÓN EN VIVO</span>
         <h1>Centro de Demostraciones Interactivas</h1>
         <p class="section-desc">
-          Creemos que la mejor forma de evaluar la tecnología es probándola. Todas nuestras demostraciones funcionan 100% en tu navegador con datos sintéticos, sin necesidad de registro ni instalaciones.
+          Creemos que la mejor forma de evaluar la tecnología es probándola. Todas nuestras demostraciones funcionan completamente en tu navegador con datos sintéticos, sin necesidad de registro ni instalaciones.
         </p>
       </div>
 
@@ -22,12 +23,12 @@ import Layout from '../layouts/Layout.astro';
           <div class="demo-status-pill">PROTOTIPO PREVIO (FASE 5)</div>
           <h3>Demo Inmobiliaria</h3>
           <p>
-            Simulador de asistente de calificación de compradores e inquilinos en San Rafael. Filtra presupuesto, zona y urgencia, generando fichas de prospectos y borradores para WhatsApp.
+            Simulador de asistente de calificación de compradores e inquilinos en San Rafael. Filtra presupuesto, zona y urgencia, generando fichas estructuradas de prospectos.
           </p>
           <div class="demo-features-tag">
-            <span>• Lead Scoring automático</span>
+            <span>• Lead Scoring comercial</span>
             <span>• Desglose de presupuesto USD</span>
-            <span>• Asignación a asesores</span>
+            <span>• Filtro por zonas de Mendoza</span>
           </div>
           <a href="/demos/inmobiliaria" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">
             Probar Demo Inmobiliaria →
@@ -39,12 +40,12 @@ import Layout from '../layouts/Layout.astro';
           <div class="demo-status-pill">PROTOTIPO PREVIO (FASE 5)</div>
           <h3>Demo Concesionaria de Autos</h3>
           <p>
-            Simulador comercial para agencias de vehículos 0km y usados. Evalúa solicitudes de permuta, calcula cuotas estimadas de financiación y agenda pruebas de manejo.
+            Simulador comercial para agencias de vehículos 0km y usados. Evalúa solicitudes de permuta, calcula cuotas orientativas de financiación y agenda visitas a salón.
           </p>
           <div class="demo-features-tag">
             <span>• Filtro de permutas de vehículos</span>
-            <span>• Simulación de cuotas</span>
-            <span>• Tareas automáticas de venta</span>
+            <span>• Simulación de cuotas orientativa</span>
+            <span>• Enlace de agenda a salón</span>
           </div>
           <a href="/demos/automotriz" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">
             Probar Demo Automotriz →
@@ -56,12 +57,12 @@ import Layout from '../layouts/Layout.astro';
           <div class="demo-status-pill">PROTOTIPO PREVIO (FASE 5)</div>
           <h3>Demo Agente IA de Procesos</h3>
           <p>
-            Consola interactiva que muestra el paso a paso de un agente de IA extrayendo datos estructurados de un pedido comercial no estandarizado y actualizando el CRM.
+            Consola interactiva que muestra el procesamiento de un agente de IA extrayendo datos estructurados de un pedido comercial no estandarizado.
           </p>
           <div class="demo-features-tag">
-            <span>• Consola tipo terminal en vivo</span>
+            <span>• Consola tipo terminal interactiva</span>
             <span>• Extracción semántica JSON</span>
-            <span>• Disparo de eventos a base de datos</span>
+            <span>• Validación de reglas de negocio</span>
           </div>
           <a href="/demos/automatizacion" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">
             Probar Demo Agente IA →
@@ -69,9 +70,35 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <div class="card-tech" style="padding: 2.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
-        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 720px; margin: 0 auto;">
-          ⚠️ <strong>Aviso de Demostración:</strong> Todas las herramientas interactivas de esta sección operan de forma simulada con datos sintéticos y aislados. No representan sistemas conectados a clientes reales ni exponen datos privados.
+      <!-- Banner de Conversión Comercial -->
+      <div class="card-tech" style="padding: 3rem 2rem; text-align: center; margin-bottom: 2.5rem; background: linear-gradient(135deg, rgba(14, 18, 27, 0.9) 0%, rgba(37, 211, 102, 0.08) 100%); border-color: rgba(37, 211, 102, 0.3);">
+        <h2 style="color: #ffffff; font-size: 1.75rem; margin-bottom: 0.75rem;">¿Quieres llevar una solución como esta a tu empresa?</h2>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 650px; margin: 0 auto 1.75rem auto;">
+          Diseñamos e integramos asistentes a medida con WhatsApp Business API, bases de datos locales y tus sistemas comerciales vigentes.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          {WHATSAPP_ENABLED && (
+            <a 
+              href={getWhatsAppLink(WA_MESSAGES.demos)} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-whatsapp btn-lg"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.782-.395-1.294-.528-2.186-1.849-2.251-1.936-.064-.087-.528-.702-.528-1.341 0-.638.334-.952.453-1.077.12-.125.26-.156.347-.156.087 0 .173.001.248.006.079.004.185-.03.288.218.106.255.361.881.393.946.032.065.053.142.011.226-.043.084-.064.137-.128.213-.064.075-.134.168-.192.226-.064.064-.131.134-.056.263.075.129.333.549.715.889.492.438.906.574 1.035.638.129.064.205.054.281-.033.076-.087.325-.379.412-.508.087-.13.173-.109.29-.065.118.043.748.353.877.417.129.065.216.098.248.152.032.054.032.315-.112.72z"/>
+              </svg>
+              <span>Consultar Solución por WhatsApp</span>
+            </a>
+          )}
+          <a href="/contacto" class="btn btn-secondary btn-lg">
+            Solicitar Presupuesto por Email
+          </a>
+        </div>
+      </div>
+
+      <div class="card-tech" style="padding: 1.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 720px; margin: 0 auto;">
+          ⚠️ <strong>Aviso de Demostración:</strong> Todas las herramientas interactivas de esta sección operan de forma simulada con datos sintéticos y aislados en tu navegador. No representan sistemas conectados a clientes reales ni exponen datos privados.
         </p>
       </div>
     </div>

@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL } from '../consts';
+import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL, getWhatsAppLink, WA_MESSAGES, WHATSAPP_DISPLAY, WHATSAPP_ENABLED } from '../consts';
 ---
 
 <Layout 
@@ -9,15 +9,45 @@ import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL
 >
   <section class="section" style="padding-top: 5rem;">
     <div class="container container-narrow">
-      <div class="contact-header-wrap" style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="contact-header-wrap" style="text-align: center; margin-bottom: 3rem;">
         <span class="badge badge-emerald section-eyebrow">CANALES DIRECTOS</span>
         <h1>Iniciemos una conversación comercial</h1>
         <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 640px; margin: 1rem auto 0 auto;">
-          Sin intermediarios ni ejecutivos de cuenta. Hablas directamente con Andrés Carrizo, líder técnico de VASTTO.
+          Sin intermediarios ni ejecutivos de cuenta. Hablas directamente con {FOUNDER_NAME}, líder técnico de VASTTO.
         </p>
       </div>
 
       <div class="contact-box">
+        {WHATSAPP_ENABLED && (
+          <div class="whatsapp-quick-box" style="background: rgba(37, 211, 102, 0.08); border: 1px solid rgba(37, 211, 102, 0.35); border-radius: 12px; padding: 1.5rem; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="background: #25D366; color: #ffffff; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.782-.395-1.294-.528-2.186-1.849-2.251-1.936-.064-.087-.528-.702-.528-1.341 0-.638.334-.952.453-1.077.12-.125.26-.156.347-.156.087 0 .173.001.248.006.079.004.185-.03.288.218.106.255.361.881.393.946.032.065.053.142.011.226-.043.084-.064.137-.128.213-.064.075-.134.168-.192.226-.064.064-.131.134-.056.263.075.129.333.549.715.889.492.438.906.574 1.035.638.129.064.205.054.281-.033.076-.087.325-.379.412-.508.087-.13.173-.109.29-.065.118.043.748.353.877.417.129.065.216.098.248.152.032.054.032.315-.112.72z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 style="margin: 0; color: #ffffff; font-size: 1.1rem;">Atención Comercial Inmediata por WhatsApp</h3>
+                <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem; color: var(--text-secondary);">
+                  Línea directa: <strong style="color: #ffffff;">{WHATSAPP_DISPLAY}</strong> • Andrés Carrizo
+                </p>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 0.2rem;">
+                  Al presionar el botón serás redirigido a WhatsApp para confirmar y enviar tu mensaje.
+                </span>
+              </div>
+            </div>
+            <a 
+              href={getWhatsAppLink(WA_MESSAGES.contacto)} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-whatsapp btn-lg"
+            >
+              <span>Abrir WhatsApp</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        )}
+
         <form class="contact-form" id="contact-form">
           <div class="form-row">
             <div class="form-group">
@@ -66,7 +96,7 @@ import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL
           </p>
 
           <p class="form-privacy-note" style="text-align: center; margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
-            🔒 Tratamiento confidencial de la información de acuerdo con la <a href="/privacidad" style="color: var(--text-muted); text-decoration: underline;">Ley 25.326</a>. No recopilamos datos en bases de datos intermedias; la consulta se envía directamente por email a Andrés Carrizo.
+            🔒 Tratamiento confidencial de la información de acuerdo con la <a href="/privacidad" style="color: var(--text-muted); text-decoration: underline;">Ley 25.326</a>. No recopilamos datos en bases de datos intermedias; la consulta se envía directamente por email a {FOUNDER_NAME}.
           </p>
         </form>
 
@@ -94,10 +124,26 @@ import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL
 
         <div style="text-align: center; margin: 3rem 0 1.5rem 0; position: relative;">
           <div style="height: 1px; background: var(--border-subtle); position: absolute; top: 50%; left: 0; right: 0;"></div>
-          <span style="position: relative; background: var(--bg-surface); padding: 0 1rem; font-size: 0.85rem; color: var(--text-muted);">Canales de Contacto Directo</span>
+          <span style="position: relative; background: var(--bg-surface); padding: 0 1rem; font-size: 0.85rem; color: var(--text-muted);">Canales Oficiales de Contacto Directo</span>
         </div>
 
         <div class="direct-methods-grid">
+          {WHATSAPP_ENABLED && (
+            <a 
+              href={getWhatsAppLink(WA_MESSAGES.contacto)} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="direct-method-card"
+              style="border-color: rgba(37, 211, 102, 0.4);"
+            >
+              <div class="method-icon" style="color: #25D366;">💬</div>
+              <div>
+                <strong>WhatsApp Directo</strong>
+                <span>{WHATSAPP_DISPLAY}</span>
+              </div>
+            </a>
+          )}
+
           <a href={`mailto:${CONTACT_EMAIL}`} class="direct-method-card">
             <div class="method-icon" style="color: #00f0ff;">✉️</div>
             <div>
@@ -174,7 +220,7 @@ import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL
 
   .direct-methods-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
   }
 

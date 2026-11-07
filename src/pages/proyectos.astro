@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { CONTACT_EMAIL } from '../consts';
+import { CONTACT_EMAIL, getWhatsAppLink, WA_MESSAGES, WHATSAPP_ENABLED } from '../consts';
 ---
 
 <Layout 
@@ -131,6 +131,19 @@ import { CONTACT_EMAIL } from '../consts';
           Conversemos sobre los requerimientos de tu negocio. Evaluamos la arquitectura adecuada y los plazos de entrega con total claridad.
         </p>
         <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          {WHATSAPP_ENABLED && (
+            <a 
+              href={getWhatsAppLink(WA_MESSAGES.home)} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-whatsapp btn-lg"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.782-.395-1.294-.528-2.186-1.849-2.251-1.936-.064-.087-.528-.702-.528-1.341 0-.638.334-.952.453-1.077.12-.125.26-.156.347-.156.087 0 .173.001.248.006.079.004.185-.03.288.218.106.255.361.881.393.946.032.065.053.142.011.226-.043.084-.064.137-.128.213-.064.075-.134.168-.192.226-.064.064-.131.134-.056.263.075.129.333.549.715.889.492.438.906.574 1.035.638.129.064.205.054.281-.033.076-.087.325-.379.412-.508.087-.13.173-.109.29-.065.118.043.748.353.877.417.129.065.216.098.248.152.032.054.032.315-.112.72z"/>
+              </svg>
+              <span>Consultar Proyecto por WhatsApp</span>
+            </a>
+          )}
           <a href="/contacto" class="btn btn-primary btn-lg">Solicitar Consulta por Email</a>
           <a href="/demos" class="btn btn-secondary btn-lg">Explorar Demostraciones en Vivo</a>
         </div>

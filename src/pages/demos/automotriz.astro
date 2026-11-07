@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '../../consts';
+import { CONTACT_EMAIL, getWhatsAppLink, WA_MESSAGES, WHATSAPP_ENABLED } from '../../consts';
 ---
 
 <Layout 
@@ -10,63 +10,78 @@ import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '../../consts';
   <section class="section" style="padding-top: 5rem;">
     <div class="container container-narrow">
       <div style="text-align: center; margin-bottom: 3rem;">
-        <span class="badge badge-cyan section-eyebrow">PROTOTIPO EN DESARROLLO • FASE 5</span>
+        <span class="badge badge-cyan section-eyebrow">PROTOTIPO EN NAVEGADOR • DATOS SINTÉTICOS</span>
         <h1>Simulador Comercial para Agencias de Autos</h1>
-        <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 1rem auto 0 auto;">
-          Herramienta orientada a concesionarias para captar consultas de interesados, tasar permutas con datos estandarizados y simular anticipos y cuotas en segundos.
+        <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 1rem auto 0 auto; line-height: 1.65;">
+          Herramienta conceptual orientada a concesionarias para captar consultas de interesados, tasar permutas con datos estandarizados y simular anticipos y cuotas orientativas.
         </p>
       </div>
 
-      <div class="card-tech" style="padding: 2.5rem; margin-bottom: 3rem;">
-        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+      <div class="card-tech" style="padding: 2.5rem; margin-bottom: 2.5rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
           <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan);">
-            FLUJO DE ATENCIÓN AUTOMÁTICA
+            SIMULACIÓN DE ATENCIÓN COMERCIAL
           </div>
-          <span class="badge badge-emerald">DATOS SINTÉTICOS</span>
+          <span class="badge badge-emerald">DATOS SINTÉTICOS DE PRUEBA</span>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
           <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
             <h4 style="margin-bottom: 0.5rem; color: #fff;">1. Consulta del Cliente</h4>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic;">
+            <p style="font-size: 0.92rem; color: var(--text-secondary); font-style: italic; margin: 0;">
               "Tengo una Hilux 2018 SRV con 140.000 km y quiero subir a una 2022. ¿Cuánto me toman la permuta y qué diferencia me queda financiar?"
             </p>
           </div>
 
           <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
             <h4 style="margin-bottom: 0.5rem; color: #fff;">2. Cálculo Estimado y Calificación</h4>
-            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-emerald); line-height: 1.6;">
+            <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-emerald); line-height: 1.65;">
               ✓ Vehículo de entrega: Toyota Hilux 2018 SRV (Tasación orientativa registrada)<br/>
               ✓ Unidad objetivo: Toyota Hilux 2022 en inventario activo<br/>
-              ✓ Brecha financiera estimada: calculada automáticamente en pesos / USD<br/>
+              ✓ Brecha financiera estimada: calculada según parámetros ingresados en pesos / USD<br/>
               ✓ Opciones de financiación simuladas: 12, 24 y 36 cuotas fijas
             </div>
           </div>
 
           <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
-            <h4 style="margin-bottom: 0.5rem; color: #fff;">3. Coordinación de Visita a Salón</h4>
-            <p style="font-size: 0.9rem; color: var(--text-secondary);">
-              El interesado recibe un enlace de calendario para acercar su vehículo a peritaje técnico y realizar una prueba de manejo en el salón comercial.
+            <h4 style="margin-bottom: 0.75rem; color: #fff;">3. Procesamiento y Alcance Real de Implementación</h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+              En una implementación de producción, este simulador puede integrarse con el inventario real de usados y 0km de la agencia, tablas de valuación (DNRPA / CCA) y el calendario de visitas del salón de ventas.
+            </p>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin: 0;">
+              Esta demostración es un prototipo del lado del cliente y no consulta bases de datos vehiculares en vivo.
             </p>
           </div>
         </div>
 
-        <div style="margin-top: 2rem; text-align: center;">
-          <a 
-            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[Demo Automotriz] Solicitud de demostración')}&body=${encodeURIComponent('Hola Andrés,\n\nMe interesa conocer la demo del simulador automotriz para agencias.\n\nNombre:\nEmpresa:\nTeléfono:')}`} 
-            class="btn btn-primary"
-          >
-            Solicitar Demostración por Email
-          </a>
-          <a href="/demos" class="btn btn-secondary" style="margin-left: 1rem;">
-            ← Volver al Centro de Demos
-          </a>
+        <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; width: 100%;">
+            {WHATSAPP_ENABLED && (
+              <a 
+                href={getWhatsAppLink(WA_MESSAGES.demoAutomotriz)} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-whatsapp btn-lg"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.782-.395-1.294-.528-2.186-1.849-2.251-1.936-.064-.087-.528-.702-.528-1.341 0-.638.334-.952.453-1.077.12-.125.26-.156.347-.156.087 0 .173.001.248.006.079.004.185-.03.288.218.106.255.361.881.393.946.032.065.053.142.011.226-.043.084-.064.137-.128.213-.064.075-.134.168-.192.226-.064.064-.131.134-.056.263.075.129.333.549.715.889.492.438.906.574 1.035.638.129.064.205.054.281-.033.076-.087.325-.379.412-.508.087-.13.173-.109.29-.065.118.043.748.353.877.417.129.065.216.098.248.152.032.054.032.315-.112.72z"/>
+                </svg>
+                <span>Consultar Implementación para mi Agencia</span>
+              </a>
+            )}
+            <a href="/demos" class="btn btn-secondary btn-lg">
+              Ver otras soluciones
+            </a>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+            O escribe por correo a: <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[Demo Automotriz] Consulta comercial')}`} style="color: var(--accent-cyan); text-decoration: underline;">{CONTACT_EMAIL}</a>
+          </p>
         </div>
       </div>
 
       <div class="card-tech" style="padding: 1.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
-        <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">
-          📌 <em>Nota técnica: Prototipo funcional programado para la Fase 5 de VASTTO 2.0.</em>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+          📌 <em>Aviso de transparencia: Prototipo visual del lado del cliente. La conexión con sistemas de inventario o tasación externa se cotiza según las herramientas vigentes de la concesionaria.</em>
         </p>
       </div>
     </div>

@@ -1,34 +1,34 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '../../consts';
+import { CONTACT_EMAIL, getWhatsAppLink, WA_MESSAGES, WHATSAPP_ENABLED } from '../../consts';
 ---
 
 <Layout 
   title="Demo Agente IA: Automatización de Pedidos | VASTTO"
-  description="Consola interactiva y flujo de trabajo en tiempo real de un agente de inteligencia artificial procesando pedidos comerciales no estructurados."
+  description="Consola de simulación y flujo de trabajo de un agente de inteligencia artificial procesando pedidos comerciales no estructurados."
 >
   <section class="section" style="padding-top: 5rem;">
     <div class="container container-narrow">
       <div style="text-align: center; margin-bottom: 3rem;">
-        <span class="badge badge-cyan section-eyebrow">CONSOLA EN VIVO • FASE 5</span>
+        <span class="badge badge-cyan section-eyebrow">SIMULACIÓN DE PIPELINE • CONSOLA TÉCNICA</span>
         <h1>Agente de Inteligencia Artificial para Pedidos y CRM</h1>
-        <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 1rem auto 0 auto;">
-          Observa cómo un modelo local de lenguaje analiza mensajes libres enviados por WhatsApp o correo, detecta artículos y cantidades, y genera el registro en la base de datos sin errores humanos.
+        <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 1rem auto 0 auto; line-height: 1.65;">
+          Observa cómo un modelo de lenguaje procesa mensajes libres recibidos por canales comerciales, detecta artículos y cantidades, y genera el registro estructurado con validación de esquema y reglas de negocio.
         </p>
       </div>
 
-      <div class="card-tech" style="padding: 2.5rem; margin-bottom: 3rem;">
-        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+      <div class="card-tech" style="padding: 2.5rem; margin-bottom: 2.5rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
           <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan);">
-            CONSOLA DE EJECUCIÓN (AGENT PIPELINE)
+            CONSOLA DE EJECUCIÓN (SIMULACIÓN DE PIPELINE)
           </div>
-          <span class="badge badge-emerald">MODO PREVIEW</span>
+          <span class="badge badge-emerald">DATOS SINTÉTICOS DE PRUEBA</span>
         </div>
 
         <div style="background: #040508; border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem; font-family: var(--font-mono); font-size: 0.82rem; color: #a0aec0; line-height: 1.7; overflow-x: auto;">
-          <span style="color: #6366f1;">[15:10:01] EVENT_RECEIVED:</span> Mensaje entrante de WhatsApp (+54 9 260 4...):<br/>
+          <span style="color: #6366f1;">[15:10:01] EVENT_RECEIVED:</span> Mensaje simulado entrante de canal de chat:<br/>
           <span style="color: #ffffff; padding-left: 1.5rem; display: block; margin: 0.3rem 0;">"Buenas tardes! Preciso 25 cajas de vino malbec reserva y 10 cajas de cabernet para el evento del sábado. Me confirmás precio con factura A?"</span>
-          <span style="color: #00f0ff;">[15:10:02] PARSER_AGENT:</span> Invocando LLM con esquema Pydantic estructurado...<br/>
+          <span style="color: #00f0ff;">[15:10:02] PARSER_AGENT:</span> Invocando LLM con validación de esquema Pydantic...<br/>
           <span style="color: #10b981;">[15:10:03] EXTRACTION_SUCCESS:</span><br/>
           <pre style="color: #38bdf8; margin: 0.5rem 0 0.5rem 1.5rem; font-family: var(--font-mono);">{`{
   "cliente_tipo": "EMPRESA_RESPONSABLE_INSCRIPTO",
@@ -40,25 +40,37 @@ import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '../../consts';
   "fecha_requerida": "PROXIMO_SABADO",
   "stock_disponible": true
 }`}</pre>
-          <span style="color: #10b981;">[15:10:04] DB_DISPATCH:</span> Presupuesto #8492 generado en PostgreSQL. Enviando PDF al WhatsApp del cliente...
+          <span style="color: #10b981;">[15:10:04] PIPELINE_OUTPUT:</span> Estructura validada. Registro de presupuesto #8492 preparado para confirmación y emisión.
         </div>
 
-        <div style="margin-top: 2rem; text-align: center;">
-          <a 
-            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[Demo Agente IA] Consulta sobre automatización de pedidos')}&body=${encodeURIComponent('Hola Andrés,\n\nQuiero evaluar la viabilidad de un agente de automatización de pedidos para mi empresa.\n\nNombre:\nEmpresa:\nTeléfono:')}`} 
-            class="btn btn-primary"
-          >
-            Consultar por Implementación vía Email
-          </a>
-          <a href="/demos" class="btn btn-secondary" style="margin-left: 1rem;">
-            ← Volver al Centro de Demos
-          </a>
+        <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; width: 100%;">
+            {WHATSAPP_ENABLED && (
+              <a 
+                href={getWhatsAppLink(WA_MESSAGES.demoAutomatizacion)} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-whatsapp btn-lg"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.782-.395-1.294-.528-2.186-1.849-2.251-1.936-.064-.087-.528-.702-.528-1.341 0-.638.334-.952.453-1.077.12-.125.26-.156.347-.156.087 0 .173.001.248.006.079.004.185-.03.288.218.106.255.361.881.393.946.032.065.053.142.011.226-.043.084-.064.137-.128.213-.064.075-.134.168-.192.226-.064.064-.131.134-.056.263.075.129.333.549.715.889.492.438.906.574 1.035.638.129.064.205.054.281-.033.076-.087.325-.379.412-.508.087-.13.173-.109.29-.065.118.043.748.353.877.417.129.065.216.098.248.152.032.054.032.315-.112.72z"/>
+                </svg>
+                <span>Consultar Automatización para mi Operación</span>
+              </a>
+            )}
+            <a href="/demos" class="btn btn-secondary btn-lg">
+              Ver otras soluciones
+            </a>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+            O escribe por correo a: <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[Demo Agente IA] Consulta sobre automatización')}`} style="color: var(--accent-cyan); text-decoration: underline;">{CONTACT_EMAIL}</a>
+          </p>
         </div>
       </div>
 
       <div class="card-tech" style="padding: 1.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
-        <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">
-          📌 <em>Nota técnica: Simulador interactivo en tiempo real en desarrollo para la Fase 5.</em>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+          📌 <em>Aviso de transparencia: Prototipo ilustrativo de terminal. La integración en producción con ERPs (SAP, Tango, bases de datos SQL o WhatsApp Business API) se desarrolla y configura a medida de cada empresa.</em>
         </p>
       </div>
     </div>

@@ -250,6 +250,21 @@ p {
   box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
 }
 
+.btn-whatsapp {
+  background: #25D366;
+  color: #ffffff;
+  border: 1px solid #20ba5a;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+  background: #22c35e;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
 .btn-sm {
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
