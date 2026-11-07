@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Centro de Demostraciones Interactivas | VASTTO"
+  description="Prueba en tu navegador prototipos interactivos de calificación comercial para inmobiliarias, concesionarias de autos y automatizaciones con agentes IA."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="badge badge-cyan section-eyebrow">EXPERIMENTACIÓN EN VIVO</span>
+        <h1>Centro de Demostraciones Interactivas</h1>
+        <p class="section-desc">
+          Creemos que la mejor forma de evaluar la tecnología es probándola. Todas nuestras demostraciones funcionan 100% en tu navegador con datos sintéticos, sin necesidad de registro ni instalaciones.
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom: 4rem;">
+        <!-- Demo 1 -->
+        <div class="card-tech demo-hub-card">
+          <div class="demo-status-pill">PROTOTIPO DISPONIBLE</div>
+          <h3>Demo Inmobiliaria</h3>
+          <p>
+            Simulador de asistente de calificación de compradores e inquilinos en San Rafael. Filtra presupuesto, zona y urgencia, generando fichas de prospectos y borradores para WhatsApp.
+          </p>
+          <div class="demo-features-tag">
+            <span>• Lead Scoring automático</span>
+            <span>• Desglose de presupuesto USD</span>
+            <span>• Asignación a asesores</span>
+          </div>
+          <a href="/demos/inmobiliaria" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">
+            Probar Demo Inmobiliaria →
+          </a>
+        </div>
+
+        <!-- Demo 2 -->
+        <div class="card-tech demo-hub-card">
+          <div class="demo-status-pill">PROTOTIPO DISPONIBLE</div>
+          <h3>Demo Concesionaria de Autos</h3>
+          <p>
+            Simulador comercial para agencias de vehículos 0km y usados. Evalúa solicitudes de permuta, calcula cuotas estimadas de financiación y agenda pruebas de manejo.
+          </p>
+          <div class="demo-features-tag">
+            <span>• Filtro de permutas de vehículos</span>
+            <span>• Simulación de cuotas</span>
+            <span>• Tareas automáticas de venta</span>
+          </div>
+          <a href="/demos/automotriz" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">
+            Probar Demo Automotriz →
+          </a>
+        </div>
+
+        <!-- Demo 3 -->
+        <div class="card-tech demo-hub-card">
+          <div class="demo-status-pill">PROTOTIPO DISPONIBLE</div>
+          <h3>Demo Agente IA de Procesos</h3>
+          <p>
+            Consola interactiva que muestra el paso a paso de un agente de IA extrayendo datos estructurados de un pedido comercial no estandarizado y actualizando el CRM.
+          </p>
+          <div class="demo-features-tag">
+            <span>• Consola tipo terminal en vivo</span>
+            <span>• Extracción semántica JSON</span>
+            <span>• Disparo de eventos a base de datos</span>
+          </div>
+          <a href="/demos/automatizacion" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">
+            Probar Demo Agente IA →
+          </a>
+        </div>
+      </div>
+
+      <div class="card-tech" style="padding: 2.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 720px; margin: 0 auto;">
+          ⚠️ <strong>Aviso de Demostración:</strong> Todas las herramientas interactivas de esta sección operan de forma simulada con datos sintéticos y aislados. No representan sistemas conectados a clientes reales ni exponen datos privados.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .demo-hub-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .demo-status-pill {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  .demo-features-tag {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 1.25rem 0;
+    padding: 0.85rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+  }
+</style>

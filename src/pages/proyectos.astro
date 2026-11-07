@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Portfolio de Proyectos & Casos de Ingeniería | VASTTO"
+  description="Conoce los sistemas y desarrollos de software construidos por VASTTO y Andrés Carrizo: CUYOPROSPECT, Razón y Asombro y la refundación de VASTTO 2.0."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="badge badge-indigo section-eyebrow">PORTFOLIO DE INGENIERÍA</span>
+        <h1>Proyectos reales, arquitectura y código verificable</h1>
+        <p class="section-desc">
+          No mostramos capturas genéricas de clientes no identificables. Mostramos sistemas completos desarrollados con rigor técnico, documentación y pruebas de calidad.
+        </p>
+      </div>
+
+      <div class="projects-list">
+        <!-- Proyecto 1: CUYOPROSPECT -->
+        <article class="card-tech project-card">
+          <div class="project-header-row">
+            <div>
+              <span class="badge badge-cyan">SISTEMA PROPIO DE INTELIGENCIA COMERCIAL</span>
+              <h2>CUYOPROSPECT</h2>
+              <p class="project-tagline">Plataforma Local-First de Prospección Comercial Ética y Generación de Demos B2B</p>
+            </div>
+            <div class="badge badge-emerald">OPERATIVO // 53 TESTS</div>
+          </div>
+
+          <p class="project-description">
+            CUYOPROSPECT es un sistema diseñado específicamente para resolver la prospección comercial de empresas en San Rafael y Mendoza. Investiga sitios web oficiales, audita su estado tecnológico y SEO, detecta oportunidades reales de digitalización, produce demostraciones personalizadas y gestiona un pipeline CRM de 13 etapas con generación de borradores comerciales.
+          </p>
+
+          <div class="project-features-grid">
+            <div class="feature-item">
+              <strong>🔍 Discovery Engine:</strong> Crawling cortés y seguro que respeta robots.txt y extrae canales de contacto legítimos publicados.
+            </div>
+            <div class="feature-item">
+              <strong>🧠 Business Intelligence:</strong> Auditoría técnica de formularios, indexabilidad y scoring de oportunidad comercial de 0 a 100 puntos.
+            </div>
+            <div class="feature-item">
+              <strong>📄 Demo Generator:</strong> Generación automática de propuestas interactivas en HTML y documentos ejecutivos en PDF generados con ReportLab.
+            </div>
+            <div class="feature-item">
+              <strong>🛡️ Seguridad & Human-in-the-Loop:</strong> Mitigación de SSRF en redirecciones, defensa anti-inyecciones de prompt y garantía formal de cero envíos sin autorización humana.
+            </div>
+          </div>
+
+          <div class="tech-spec-bar">
+            <span><strong>Stack:</strong> Python 3.10 • FastAPI • SQLite (Modo WAL) • Astro 5 • Playwright • BeautifulSoup • ReportLab</span>
+          </div>
+        </article>
+
+        <!-- Proyecto 2: Razón y Asombro -->
+        <article class="card-tech project-card">
+          <div class="project-header-row">
+            <div>
+              <span class="badge badge-indigo">PLATAFORMA EDITORIAL DIGITAL</span>
+              <h2>Razón y Asombro</h2>
+              <p class="project-tagline">Sitio web editorial de alto rendimiento enfocado en lectura profunda</p>
+            </div>
+            <div class="badge badge-cyan">100/100 LIGHTHOUSE</div>
+          </div>
+
+          <p class="project-description">
+            Plataforma editorial independiente construida desde cero con el objetivo de demostrar que la lectura en pantalla puede ser tan placentera y rápida como el papel impreso. Optimizada al extremo para ofrecer tiempos de carga imperceptibles y excelente posicionamiento SEO orgánico.
+          </p>
+
+          <div class="project-features-grid">
+            <div class="feature-item">
+              <strong>⚡ Rendimiento Extremo:</strong> Cero JavaScript innecesario en el cliente. Calificación perfecta en Core Web Vitals en conexiones móviles 4G.
+            </div>
+            <div class="feature-item">
+              <strong>📖 Tipografía & UX:</strong> Escalas de lectura proporcionales, contrastes cuidados para evitar fatiga visual y diseño responsivo fluido.
+            </div>
+            <div class="feature-item">
+              <strong>🔍 SEO Semántico:</strong> Marcado JSON-LD con Schema.org Article, Publisher y Person para máxima autoridad en buscadores.
+            </div>
+            <div class="feature-item">
+              <strong>🚀 Despliegue en el Edge:</strong> Distribución global instantánea con caché perimetral sin servidores que mantener.
+            </div>
+          </div>
+
+          <div class="tech-spec-bar">
+            <span><strong>Stack:</strong> Astro SSG • Markdown / MDX • TypeScript • CSS Moderno • Cloudflare</span>
+          </div>
+        </article>
+
+        <!-- Proyecto 3: VASTTO 2.0 -->
+        <article class="card-tech project-card">
+          <div class="project-header-row">
+            <div>
+              <span class="badge badge-emerald">TRANSFORMACIÓN DIGITAL INTEGRAL</span>
+              <h2>VASTTO 2.0</h2>
+              <p class="project-tagline">Refundación arquitectónica y comercial de un dominio activo</p>
+            </div>
+            <div class="badge badge-cyan">EN PRODUCCIÓN</div>
+          </div>
+
+          <p class="project-description">
+            Un caso en vivo de migración y reposicionamiento tecnológico: transformar un sitio de reseñas de productos de consumo en un estudio tecnológico B2B premium. El proyecto demuestra cómo reestructurar la arquitectura de información, preservar el posicionamiento orgánico mediante redirecciones limpias sin caer en Soft 404, e implementar demostraciones interactivas client-side.
+          </p>
+
+          <div class="project-features-grid">
+            <div class="feature-item">
+              <strong>🔄 Migración Limpia:</strong> Protocolo de redirección 301 semántica y respuestas 410 Gone para eliminar URLs obsoletas sin penalizaciones.
+            </div>
+            <div class="feature-item">
+              <strong>🧪 Demos Client-Side:</strong> Prototipos funcionales que permiten a los empresarios probar las soluciones en su navegador con datos sintéticos.
+            </div>
+            <div class="feature-item">
+              <strong>🎨 Sistema de Diseño Propio:</strong> Tokens de diseño oscuro tecnológico, componentes modulares y tipografía de ingeniería.
+            </div>
+            <div class="feature-item">
+              <strong>🎯 Orientación a Conversión:</strong> Canales claros de contacto comercial y validación estricta de formularios sin dependencias externas inseguras.
+            </div>
+          </div>
+
+          <div class="tech-spec-bar">
+            <span><strong>Stack:</strong> Astro 4.x / 5 • TypeScript • Cloudflare Pages • Vanilla JS Reactivo</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Banner Final -->
+      <div class="portfolio-cta-banner">
+        <h2>¿Quieres desarrollar un sistema similar para tu empresa?</h2>
+        <p>
+          Hablemos sobre tu proyecto. Definimos el alcance, la arquitectura y los plazos de entrega con total claridad.
+        </p>
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/contacto" class="btn btn-primary btn-lg">Solicitar Presupuesto</a>
+          <a href="/demos" class="btn btn-secondary btn-lg">Explorar Demostraciones en Vivo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .project-card {
+    padding: 3rem;
+  }
+
+  .project-header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .project-header-row h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0 0.25rem 0;
+  }
+
+  .project-tagline {
+    font-size: 1.05rem;
+    color: var(--accent-cyan);
+    font-weight: 500;
+  }
+
+  .project-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .project-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .feature-item {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.25rem;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .feature-item strong {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .tech-spec-bar {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .tech-spec-bar strong {
+    color: var(--text-secondary);
+  }
+
+  .portfolio-cta-banner {
+    margin-top: 5rem;
+    background: linear-gradient(135deg, rgba(14, 17, 26, 0.9) 0%, rgba(20, 25, 38, 0.95) 100%);
+    border: 1px solid var(--border-medium);
+    border-radius: 16px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+  }
+
+  .portfolio-cta-banner p {
+    max-width: 650px;
+    margin: 1rem auto 0 auto;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    .project-card {
+      padding: 2rem 1.5rem;
+    }
+    .project-features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

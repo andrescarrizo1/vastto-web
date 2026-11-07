@@ -1,88 +1,236 @@
 ---
-const year = new Date().getFullYear();
+import { SITE_NAME, SITE_TAGLINE, FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL } from '../consts';
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="container footer-container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="logo">⚡ VASTTO</a>
-        <p>Las mejores ofertas de tecnología en Argentina. Comparamos precios y te llevamos a las mejores tiendas online.</p>
+      <!-- Columna 1: Identidad y Misión -->
+      <div class="footer-brand-col">
+        <div class="footer-logo">
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="#0E121B" stroke="#00F0FF" stroke-width="1.5" stroke-opacity="0.5"/>
+            <path d="M11 12L20 28L29 12" stroke="#00F0FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="20" cy="28" r="2.5" fill="#00F0FF"/>
+          </svg>
+          <span class="footer-brand-name">{SITE_NAME}</span>
+        </div>
+        <p class="footer-tagline">{SITE_TAGLINE}</p>
+        <p class="footer-location">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>{FOUNDER_LOCATION}</span>
+        </p>
+        <div class="founder-badge">
+          <span class="pulse-dot"></span>
+          <span>Liderado por {FOUNDER_NAME}</span>
+        </div>
       </div>
-      <div class="footer-links">
-        <h4>Categorias</h4>
-        <a href="/auriculares">Auriculares</a>
-        <a href="/celulares">Celulares</a>
-        <a href="/smartwatch">Smartwatch</a>
-        <a href="/accesorios">Accesorios</a>
+
+      <!-- Columna 2: Servicios -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Servicios Core</h4>
+        <ul class="footer-links">
+          <li><a href="/automatizacion">Automatización de Procesos</a></li>
+          <li><a href="/inteligencia-artificial">Inteligencia Artificial & Agentes</a></li>
+          <li><a href="/desarrollo">Desarrollo de Software</a></li>
+          <li><a href="/marketing-digital">SEO Técnico & Meta Ads</a></li>
+          <li><a href="/demos">Centro de Demostraciones</a></li>
+        </ul>
       </div>
-      <div class="footer-links">
-        <h4>Legal e Info</h4>
-        <a href="/privacidad">Privacidad</a>
-        <a href="/sobre-nosotros">Sobre Nosotros (Nuestra historia)</a>
+
+      <!-- Columna 3: Soluciones Verticales -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Soluciones por Sector</h4>
+        <ul class="footer-links">
+          <li><a href="/soluciones/inmobiliarias">Inmobiliarias & Desarrollos</a></li>
+          <li><a href="/soluciones/automotrices">Agencias de Autos & Concesionarias</a></li>
+          <li><a href="/soluciones/distribuidoras">Distribuidoras & Mayoristas</a></li>
+          <li><a href="/proyectos">Portfolio Tecnológico</a></li>
+          <li><a href="/sobre-mi">Sobre Andrés Carrizo</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Contacto y Canales -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Contacto Directo</h4>
+        <ul class="footer-links">
+          <li>
+            <a href="mailto:contacto@vastto.com.ar" class="contact-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>{CONTACT_EMAIL}</span>
+            </a>
+          </li>
+          <li>
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <span>LinkedIn Oficial</span>
+            </a>
+          </li>
+          <li>
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>GitHub Repositories</span>
+            </a>
+          </li>
+          <li style="margin-top: 0.5rem;">
+            <a href="/contacto" class="btn btn-secondary btn-sm" style="width: 100%;">
+              Formulario de Consulta
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
+
+    <!-- Barra Inferior de Cumplimiento -->
     <div class="footer-bottom">
-      <p>&copy; {year} VASTTO. Hecho con pasión en Argentina por Andrés y equipo.</p>
-      <p class="disclaimer"><strong>Aviso de Afiliados y Transparencia:</strong> VASTTO participa activamente en el Programa de Afiliados de Mercado Libre Argentina. Esto significa que si comprás un producto a través de nuestros links, nosotros cobramos una pequeña comisión que nos ayuda a mantener el sitio libre de publicidad intrusiva. Esto NO modifica el precio final que pagás vos. Los precios mostrados se actualizan periódicamente pero pueden variar.</p>
+      <div class="footer-copy">
+        © {currentYear} VASTTO. Todos los derechos reservados.
+      </div>
+      <div class="footer-compliance">
+        <span>Privacidad y Protección de Datos (Ley 25.326 Argentina)</span>
+        <span class="compliance-dot">•</span>
+        <span>Sin trackers de terceros</span>
+      </div>
     </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background: #1a1a1a;
-    color: #ccc;
-    margin-top: 3rem;
-    padding: 2rem 0 1rem;
+    background: #050609;
+    border-top: 1px solid var(--border-subtle);
+    padding: 4.5rem 0 2rem 0;
+    margin-top: auto;
   }
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
+
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
   }
-  .footer-brand .logo {
-    color: #6c47ff;
-    text-decoration: none;
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
     font-weight: 800;
-    font-size: 1.2rem;
-    display: block;
-    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    color: #ffffff;
   }
-  .footer-brand p {
+
+  .footer-tagline {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    max-width: 290px;
+  }
+
+  .footer-location {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     font-size: 0.85rem;
-    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
   }
-  .footer-links h4 {
-    color: #fff;
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
+
+  .founder-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+  }
+
+  .footer-heading {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
   }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
   .footer-links a {
-    display: block;
-    color: #aaa;
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin-bottom: 0.4rem;
-    transition: color 0.2s;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color var(--transition-fast), transform var(--transition-fast);
   }
-  .footer-links a:hover { color: #6c47ff; }
+
+  .footer-links a:hover {
+    color: var(--accent-cyan);
+    transform: translateX(2px);
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
   .footer-bottom {
-    border-top: 1px solid #333;
-    padding-top: 1rem;
-    font-size: 0.8rem;
-    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  .disclaimer { margin-top: 0.5rem; font-style: italic; font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
-  @media (max-width: 768px) {
-    .footer-grid { grid-template-columns: 1fr; }
+
+  .footer-compliance {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .compliance-dot {
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 </style>

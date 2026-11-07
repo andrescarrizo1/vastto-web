@@ -8,19 +8,21 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  type?: 'website' | 'article';
 }
 
 const {
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
   image = '/og-vastto.jpg',
+  type = 'website'
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
-    <BaseHead title={title} description={description} image={image} />
+    <BaseHead title={title} description={description} image={image} type={type} />
   </head>
   <body>
     <Header />

@@ -4,7 +4,8 @@ export const AFFILIATE_ID = 'caan170047';
 /**
  * Add affiliate parameter to Mercado Libre URLs
  */
-export function addAffiliateParam(url: string): string {
+export function addAffiliateParam(url?: string): string {
+  if (!url) return '#';
   if (!url.includes('mercadolibre.com')) return url;
   
   const separator = url.includes('?') ? '&' : '?';

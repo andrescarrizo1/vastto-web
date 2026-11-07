@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, LINKEDIN_URL, GITHUB_URL } from '../consts';
+---
+
+<Layout 
+  title="Sobre Andrés Carrizo | Full Stack Developer & AI Engineer"
+  description="Conoce a Andrés Carrizo, desarrollador Full Stack especializado en automatización de procesos e inteligencia artificial aplicada para empresas desde San Rafael, Mendoza."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container container-narrow">
+      <div class="about-hero-wrap">
+        <span class="badge badge-cyan section-eyebrow">PERFIL PROFESIONAL</span>
+        <h1>{FOUNDER_NAME}</h1>
+        <p class="role-subtitle">{FOUNDER_ROLE} • {FOUNDER_LOCATION}</p>
+      </div>
+
+      <div class="card-tech about-main-card">
+        <h3>Trayectoria y Visión Técnica</h3>
+        <p>
+          Soy desarrollador Full Stack con residencia en San Rafael, Mendoza. Mi trabajo se centra en resolver problemas operativos y comerciales concretos mediante la aplicación pragmática de la tecnología.
+        </p>
+        <p>
+          A lo largo de los años he visto cómo muchas empresas invierten en soluciones de software excesivamente complejas que terminan abandonadas por falta de usabilidad, o dependen de planillas de cálculo manuales que consumen cientos de horas improductivas. Mi objetivo en <strong>VASTTO</strong> es cerrar esa brecha: construir software ágil, robusto y automatizaciones que generen impacto medible en las finanzas y los tiempos de la empresa.
+        </p>
+
+        <h3 style="margin-top: 2.5rem;">Stack Tecnológico Verificado</h3>
+        <p>
+          Herramientas y lenguajes con los que desarrollo soluciones de producción diariamente:
+        </p>
+
+        <div class="tech-stack-columns">
+          <div class="stack-category">
+            <h4>Backend & Automatización</h4>
+            <ul>
+              <li><strong>Python:</strong> FastAPI, AsyncIO, Webhooks, Pydantic, SQLAlchemy.</li>
+              <li><strong>JavaScript & Node.js:</strong> Automatizaciones de navegador, scripts de procesamiento.</li>
+              <li><strong>Web Scraping Ético:</strong> Playwright, BeautifulSoup, Trafilatura.</li>
+              <li><strong>Bases de Datos:</strong> SQLite en modo WAL, PostgreSQL, modelado relacional.</li>
+            </ul>
+          </div>
+
+          <div class="stack-category">
+            <h4>Frontend & Rendimiento</h4>
+            <ul>
+              <li><strong>Astro 4.x / 5:</strong> Arquitectura SSG de ultra-alta velocidad y Core Web Vitals verdes.</li>
+              <li><strong>TypeScript:</strong> Tipado estático y prevención rigurosa de errores de ejecución.</li>
+              <li><strong>Tailwind CSS & CSS Moderno:</strong> Interfaces responsivas y limpias.</li>
+              <li><strong>Despliegues:</strong> Cloudflare Pages, Docker, GitHub Actions.</li>
+            </ul>
+          </div>
+
+          <div class="stack-category">
+            <h4>Inteligencia Artificial Aplicada</h4>
+            <ul>
+              <li><strong>Modelos LLM:</strong> Integración de APIs (OpenAI, Google Gemini) y modelos locales con Ollama.</li>
+              <li><strong>Agentes Autónomos:</strong> LangChain, llamadas a herramientas (Tool Calling) y RAG.</li>
+              <li><strong>Prompt Defense:</strong> Blindaje contra inyecciones indirectas y alucinaciones.</li>
+            </ul>
+          </div>
+
+          <div class="stack-category">
+            <h4>Adquisición & Marketing</h4>
+            <ul>
+              <li><strong>SEO Técnico:</strong> Estructura semántica, Schema.org, auditorías en Google Search Console.</li>
+              <li><strong>Meta Ads:</strong> Campañas de captación orientadas a costo por lead calificado.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2.5rem;">Filosofía de Trabajo y Transparencia</h3>
+        <ul class="principles-list">
+          <li><strong>Cero métricas infladas:</strong> No invento clientes masivos ni casos de éxito ficticios. Cada proyecto que muestro es código real verificable.</li>
+          <li><strong>Propiedad del cliente:</strong> El código y los datos pertenecen 100% a la empresa contratante. No creo dependencias cautivas.</li>
+          <li><strong>Pragmatismo antes que modas:</strong> Si un problema se resuelve mejor con una base de datos simple que con un modelo de IA costoso, propongo la base de datos simple.</li>
+        </ul>
+
+        <div class="about-actions-row">
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Conectar en LinkedIn</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span>Ver código en GitHub</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="/contacto" class="btn btn-secondary">
+            <span>Enviar mensaje directo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-hero-wrap {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .role-subtitle {
+    font-size: 1.25rem;
+    color: var(--accent-cyan);
+    font-family: var(--font-display);
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  .about-main-card {
+    padding: 3rem;
+  }
+
+  .tech-stack-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .stack-category {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .stack-category h4 {
+    font-size: 1rem;
+    color: var(--accent-cyan);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .stack-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stack-category li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .stack-category strong {
+    color: #ffffff;
+  }
+
+  .principles-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .principles-list li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .principles-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: var(--accent-emerald);
+    font-weight: bold;
+  }
+
+  .about-actions-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  @media (max-width: 768px) {
+    .about-main-card {
+      padding: 2rem 1.5rem;
+    }
+    .tech-stack-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
