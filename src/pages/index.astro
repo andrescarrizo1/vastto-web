@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, LINKEDIN_URL, GITHUB_URL } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, CONTACT_EMAIL, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, LINKEDIN_URL, GITHUB_URL } from '../consts';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -35,13 +35,13 @@ import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCAT
           </div>
           <div class="trust-pill">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-            <span>Privacidad Total y Datos Propios</span>
+            <span>Código Propio y Arquitectura Local-First</span>
           </div>
         </div>
 
         <div class="hero-actions">
           <a href="#contacto" class="btn btn-primary btn-lg">
-            <span>Solicitar Diagnóstico Sin Cargo</span>
+            <span>Conversación Exploratoria Inicial</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
           <a href="/demos" class="btn btn-secondary btn-lg">
@@ -287,41 +287,41 @@ import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCAT
           <div class="industry-badge">INMOBILIARIAS & DESARROLLOS</div>
           <h3>Asistente de Calificación Inmobiliaria</h3>
           <p>
-            Filtra y clasifica compradores e inquilinos por presupuesto, zona preferida y tipo de propiedad. Asigna visitas a los agentes y automatiza el seguimiento comercial.
+            Filtra y clasifica compradores e inquilinos por presupuesto (USD), zona preferida y tipo de propiedad. Notifica al asesor comercial asignado y entrega fichas preliminares.
           </p>
           <div class="industry-metric">
-            <span class="metric-val">100%</span>
-            <span class="metric-lbl">de consultas respondidas en el primer minuto</span>
+            <span class="metric-val" style="font-size: 1.4rem;">Triaje Inmediato</span>
+            <span class="metric-lbl">calificación comercial por presupuesto y zona de interés</span>
           </div>
-          <a href="/soluciones/inmobiliarias" class="industry-link">Ver solución inmobiliaria →</a>
+          <a href="/soluciones/inmobiliarias" class="industry-link">Ver solución para inmobiliarias →</a>
         </div>
 
         <!-- Concesionarias -->
         <div class="card-tech">
-          <div class="industry-badge">CONCESIONARIAS & AUTOS</div>
+          <div class="industry-badge">CONCESIONARIAS (EN DISEÑO)</div>
           <h3>Gestor Comercial de Vehículos</h3>
           <p>
-            Captura consultas por vehículos 0km y usados, calcula simulaciones de cuotas, evalúa ofertas de permutas y envía fichas de prospectos al equipo de ventas.
+            Captura consultas por vehículos 0km y usados, calcula simulaciones estimadas de cuotas y evalúa ofertas preliminares de permutas para el equipo de ventas.
           </p>
           <div class="industry-metric">
-            <span class="metric-val">-65%</span>
-            <span class="metric-lbl">tiempo perdido en consultas no calificadas</span>
+            <span class="metric-val" style="font-size: 1.4rem;">Precualificación</span>
+            <span class="metric-lbl">evaluación preliminar de permutas y anticipos estimados</span>
           </div>
-          <a href="/soluciones/automotrices" class="industry-link">Ver solución automotriz →</a>
+          <a href="/soluciones/automotrices" class="industry-link">Ver especificación comercial →</a>
         </div>
 
         <!-- Distribuidoras -->
         <div class="card-tech">
-          <div class="industry-badge">DISTRIBUIDORAS & MAYORISTAS</div>
-          <h3>Automatización de Pedidos y Stock</h3>
+          <div class="industry-badge">DISTRIBUIDORAS (EN DISEÑO)</div>
+          <h3>Automatización de Pedidos B2B</h3>
           <p>
-            Permite a clientes comerciales enviar pedidos por WhatsApp o web, procesa listas de precios dinámicas y genera órdenes listas para depósito y facturación.
+            Estructuración de pedidos comerciales enviados por WhatsApp o email hacia la base de datos interna, reduciendo fricciones en transcripción manual y depósito.
           </p>
           <div class="industry-metric">
-            <span class="metric-val">0</span>
-            <span class="metric-lbl">errores de transcripción manual de pedidos</span>
+            <span class="metric-val" style="font-size: 1.4rem;">Estructuración</span>
+            <span class="metric-lbl">extracción de pedidos directo hacia base de datos</span>
           </div>
-          <a href="/soluciones/distribuidoras" class="industry-link">Ver solución distribuidoras →</a>
+          <a href="/soluciones/distribuidoras" class="industry-link">Ver especificación comercial →</a>
         </div>
       </div>
     </div>
@@ -368,10 +368,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCAT
           </p>
           <div class="project-specs">
             <div><strong>Backend:</strong> Python, FastAPI, SQLite WAL</div>
-            <div><strong>Frontend:</strong> Astro 5, Tailwind CSS</div>
-            <div><strong>Auditoría:</strong> 53 tests unitarios aprobados, 83% cobertura</div>
+            <div><strong>Especialidad:</strong> OSINT comercial ético y extracción estructurada</div>
+            <div><strong>Auditoría interna:</strong> 53 tests aprobados (83% cobertura verificada)</div>
           </div>
-          <p class="project-note">Arquitectura desacoplada, defensa anti-SSRF y garantía Human-in-the-Loop.</p>
+          <p class="project-note">Arquitectura local-first con mitigación anti-SSRF y control Human-in-the-Loop.</p>
         </div>
 
         <!-- Razón y Asombro -->
@@ -382,11 +382,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCAT
             Plataforma editorial independiente de alto rendimiento optimizada para lectura profunda y SEO semántico.
           </p>
           <div class="project-specs">
-            <div><strong>Stack:</strong> Astro SSG, MDX, CSS Moderno</div>
-            <div><strong>Rendimiento:</strong> 100/100 Core Web Vitals en Google</div>
-            <div><strong>Enfoque:</strong> Accesibilidad, tipografía cuidada y cero bloatware</div>
+            <div><strong>Stack:</strong> Astro SSG, Markdown/MDX, CSS Moderno</div>
+            <div><strong>Rendimiento:</strong> Arquitectura estática sin JavaScript innecesario</div>
+            <div><strong>Enfoque:</strong> Accesibilidad, tipografía proporcional y lectura sin fatiga</div>
           </div>
-          <p class="project-note">Diseño visual sobrio, estructuración Schema.org y velocidad instantánea.</p>
+          <p class="project-note">Diseño visual sobrio, estructuración Schema.org y entrega ultra-rápida en CDN.</p>
         </div>
 
         <!-- VASTTO 2.0 -->
@@ -397,11 +397,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCAT
             Refundación completa de una plataforma de afiliados a un estudio de ingeniería de software e inteligencia artificial B2B.
           </p>
           <div class="project-specs">
-            <div><strong>Arquitectura:</strong> Astro 4.x, TypeScript, Cloudflare Edge</div>
-            <div><strong>Seguridad:</strong> Políticas de desindexación limpia sin Soft 404</div>
-            <div><strong>Demos:</strong> Prototipos funcionales client-side con datos sintéticos</div>
+            <div><strong>Arquitectura:</strong> Astro 4.16, TypeScript, Cloudflare Pages</div>
+            <div><strong>Estrategia SEO:</strong> Preservación de autoridad orgánica y catálogo B2B</div>
+            <div><strong>Demos:</strong> Prototipos simulados client-side con datos sintéticos</div>
           </div>
-          <p class="project-note">Demostración práctica de migración arquitectónica sin interrumpir producción.</p>
+          <p class="project-note">Despliegue de previsualización CI/CD sobre rama aislada sin alterar producción.</p>
         </div>
       </div>
     </div>
@@ -463,8 +463,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCAT
       <div class="grid-4">
         <div class="step-card">
           <div class="step-num">01</div>
-          <h4>Diagnóstico del Problema</h4>
-          <p>Conversamos 20 minutos para entender cuál es el proceso que más tiempo o dinero te hace perder hoy.</p>
+          <h4>Conversación Exploratoria</h4>
+          <p>Llamada inicial de 20 minutos sin costo para analizar los cuellos de botella de tu negocio y evaluar la viabilidad técnica.</p>
         </div>
         <div class="step-card">
           <div class="step-num">02</div>
@@ -535,8 +535,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCAT
             <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
               Enviar Consulta vía Correo Directo
             </button>
+            <p style="text-align: center; margin-top: 1rem; font-size: 0.88rem; color: var(--text-secondary);">
+              ¿Prefieres redactar directamente desde tu correo? Escríbenos a: <a href={`mailto:${CONTACT_EMAIL}`} style="color: var(--accent-cyan); font-weight: 600; text-decoration: underline;">{CONTACT_EMAIL}</a>
+            </p>
             <p class="form-privacy-note">
-              🔒 <strong>Privacidad Garantizada:</strong> Tus datos serán utilizados exclusivamente para evaluar tu solicitud de acuerdo con la Ley 25.326 de Protección de Datos Personales. Abre tu cliente de correo para enviar la consulta directamente a Andrés Carrizo.
+              🔒 <strong>Privacidad de Datos (Ley 25.326):</strong> La información ingresada se utiliza exclusivamente para analizar tu proyecto. No almacenamos datos en bases de datos intermedias; el envío se realiza directamente a través de tu aplicación de correo.
             </p>
           </div>
         </form>
@@ -563,13 +566,17 @@ import { SITE_TITLE, SITE_DESCRIPTION, FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCAT
         </script>
 
         <div class="direct-channels-divider">
-          <span>O si prefieres conversar de inmediato</span>
+          <span>Canales de Contacto Directo</span>
         </div>
 
-        <div class="direct-channels">
-          <a href="https://wa.me/5492604000000?text=Hola%20Andr%C3%A9s%2C%20quisiera%20conversar%20sobre%20un%20proyecto%20tecnol%C3%B3gico%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn btn-emerald" style="width: 100%;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-            <span>Conversar directamente por WhatsApp</span>
+        <div class="direct-channels" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+          <a href={`mailto:${CONTACT_EMAIL}`} class="btn btn-secondary" style="width: 100%; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>{CONTACT_EMAIL}</span>
+          </a>
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-indigo)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span>LinkedIn de Andrés Carrizo</span>
           </a>
         </div>
       </div>

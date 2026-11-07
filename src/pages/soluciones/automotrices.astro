@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CONTACT_EMAIL } from '../../consts';
+---
+
+<Layout 
+  title="Solución para Concesionarias y Agencias de Autos | VASTTO"
+  description="Especificación técnica de herramientas comerciales para agencias de autos 0km y usados en Mendoza: filtro de permutas y cálculo de cuotas."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container container-narrow">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="badge badge-indigo section-eyebrow">EN FASE DE ESPECIFICACIÓN • FASE 4</span>
+        <h1>Solución comercial para agencias de autos y concesionarias</h1>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 740px; margin: 1.25rem auto 0 auto; line-height: 1.65;">
+          Diseño de flujo para clasificar solicitudes de vehículos 0km y usados, calcular simulaciones de cuotas preliminares y evaluar permutas con datos estandarizados.
+        </p>
+      </div>
+
+      <div class="card-tech" style="padding: 3rem; margin-bottom: 3rem;">
+        <h3 style="color: #fff; margin-bottom: 1rem;">Alcance del Módulo en Desarrollo</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+          Esta vertical está orientada a resolver las pérdidas de tiempo de los vendedores de autos atendiendo consultas sin intención real de compra o con expectativas de permuta inviables:
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;">
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">1. Tasador Orientativo de Permutas</h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0;">
+              Formulario guiado que solicita año, marca, modelo, kilometraje y estado general para estimar un valor orientativo antes de convocar al cliente a peritaje en salón.
+            </p>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">2. Simulador Financiero de Cuotas</h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0;">
+              Cálculo estimativo de anticipo y cuotas en base a las líneas de financiación vigentes de la concesionaria.
+            </p>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">3. Coordinación de Test Drives</h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0;">
+              Agenda conectada para que los interesados calificados reserven horario de prueba en la concesionaria.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/demos/automotriz" class="btn btn-primary">Ver Prototipo Simulador →</a>
+          <a href="/contacto" class="btn btn-secondary">Consultar por Proyecto Piloto</a>
+        </div>
+      </div>
+
+      <div class="card-tech" style="padding: 1.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+          📌 <em>Estado: Esta solución se encuentra en fase de diseño técnico para la Fase 4 de VASTTO 2.0. Si eres propietario o gerente de una concesionaria en Mendoza y deseas colaborar en el piloto, escríbenos a {CONTACT_EMAIL}.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

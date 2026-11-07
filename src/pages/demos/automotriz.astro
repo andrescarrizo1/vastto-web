@@ -53,12 +53,10 @@ import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '../../consts';
 
         <div style="margin-top: 2rem; text-align: center;">
           <a 
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola Andrés, me gustaría ver la demo del simulador automotriz para agencias.')}`} 
+            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[Demo Automotriz] Solicitud de demostración')}&body=${encodeURIComponent('Hola Andrés,\n\nMe interesa conocer la demo del simulador automotriz para agencias.\n\nNombre:\nEmpresa:\nTeléfono:')}`} 
             class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
           >
-            Solicitar Demostración Guiada
+            Solicitar Demostración por Email
           </a>
           <a href="/demos" class="btn btn-secondary" style="margin-left: 1rem;">
             ← Volver al Centro de Demos

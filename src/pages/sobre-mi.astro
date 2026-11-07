@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, LINKEDIN_URL, GITHUB_URL } from '../consts';
+import { FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL } from '../consts';
 ---
 
 <Layout 
-  title="Sobre Andrés Carrizo | Full Stack Developer & AI Engineer"
-  description="Conoce a Andrés Carrizo, desarrollador Full Stack especializado en automatización de procesos e inteligencia artificial aplicada para empresas desde San Rafael, Mendoza."
+  title="Sobre Andrés Carrizo | Desarrollador Full Stack & Automatización"
+  description="Conoce el perfil técnico de Andrés Carrizo: desarrollo Full Stack enfocado en automatización de procesos e inteligencia artificial aplicada para empresas desde San Rafael, Mendoza."
 >
   <section class="section" style="padding-top: 5rem;">
     <div class="container container-narrow">
@@ -16,76 +16,64 @@ import { FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, LINKEDIN_URL, GITHUB_URL 
       </div>
 
       <div class="card-tech about-main-card">
-        <h3>Trayectoria y Visión Técnica</h3>
+        <h3>Enfoque y Propósito Técnico</h3>
         <p>
-          Soy desarrollador Full Stack con residencia en San Rafael, Mendoza. Mi trabajo se centra en resolver problemas operativos y comerciales concretos mediante la aplicación pragmática de la tecnología.
+          Soy desarrollador Full Stack radicado en San Rafael, Mendoza. Trabajo en la intersección entre el desarrollo de software confiable y la automatización práctica de procesos comerciales y administrativos.
         </p>
         <p>
-          A lo largo de los años he visto cómo muchas empresas invierten en soluciones de software excesivamente complejas que terminan abandonadas por falta de usabilidad, o dependen de planillas de cálculo manuales que consumen cientos de horas improductivas. Mi objetivo en <strong>VASTTO</strong> es cerrar esa brecha: construir software ágil, robusto y automatizaciones que generen impacto medible en las finanzas y los tiempos de la empresa.
+          En muchas empresas locales y regionales, los procesos críticos aún dependen de transcripciones manuales entre planillas, chats desorganizados y tiempos de respuesta lentos que provocan pérdida de oportunidades comerciales. Mi propuesta con <strong>VASTTO</strong> es construir software a medida, pipelines de automatización e integraciones de IA que resuelvan cuellos de botella específicos, con código comprensible, interfaces rápidas y bajo costo de mantenimiento.
         </p>
 
-        <h3 style="margin-top: 2.5rem;">Stack Tecnológico Verificado</h3>
-        <p>
-          Herramientas y lenguajes con los que desarrollo soluciones de producción diariamente:
+        <h3 style="margin-top: 2.5rem;">Stack Tecnológico</h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+          Presento con total transparencia las herramientas con las que construyo sistemas, diferenciando las utilizadas en proyectos reales de aquellas que continúo estudiando y explorando activamente:
         </p>
 
         <div class="tech-stack-columns">
           <div class="stack-category">
-            <h4>Backend & Automatización</h4>
+            <h4>Herramientas en Proyectos Reales</h4>
             <ul>
-              <li><strong>Python:</strong> FastAPI, AsyncIO, Webhooks, Pydantic, SQLAlchemy.</li>
-              <li><strong>JavaScript & Node.js:</strong> Automatizaciones de navegador, scripts de procesamiento.</li>
-              <li><strong>Web Scraping Ético:</strong> Playwright, BeautifulSoup, Trafilatura.</li>
-              <li><strong>Bases de Datos:</strong> SQLite en modo WAL, PostgreSQL, modelado relacional.</li>
+              <li><strong>Python & FastAPI:</strong> Desarrollo de APIs REST, servicios asíncronos, validación con Pydantic y generación de reportes ejecutivos.</li>
+              <li><strong>JavaScript & Node.js:</strong> Scripts de procesamiento, desarrollo de componentes interactivos y herramientas de testing.</li>
+              <li><strong>Astro (v4.16):</strong> Arquitectura de sitios estáticos ultrarrápidos (SSG), componentes modulares y optimización web.</li>
+              <li><strong>Bases de Datos & SQL:</strong> SQLite (modo WAL para concurrencia local), modelado relacional y consultas estructuradas.</li>
+              <li><strong>Web Scraping & Automatización:</strong> Playwright y BeautifulSoup para extracción legítima de información pública y emulación de navegador.</li>
+              <li><strong>Contenedores:</strong> Docker y Docker Compose para empaquetado y entornos reproducibles.</li>
+              <li><strong>SEO Técnico:</strong> Marcado semántico Schema.org, sitemaps limpios, auditorías en Google Search Console y Core Web Vitals.</li>
+              <li><strong>Meta Ads:</strong> Estructuración de campañas de publicidad orientadas a captación de prospectos comerciales.</li>
             </ul>
           </div>
 
           <div class="stack-category">
-            <h4>Frontend & Rendimiento</h4>
+            <h4>Áreas en Exploración & Profundización</h4>
             <ul>
-              <li><strong>Astro 4.x / 5:</strong> Arquitectura SSG de ultra-alta velocidad y Core Web Vitals verdes.</li>
-              <li><strong>TypeScript:</strong> Tipado estático y prevención rigurosa de errores de ejecución.</li>
-              <li><strong>Tailwind CSS & CSS Moderno:</strong> Interfaces responsivas y limpias.</li>
-              <li><strong>Despliegues:</strong> Cloudflare Pages, Docker, GitHub Actions.</li>
-            </ul>
-          </div>
-
-          <div class="stack-category">
-            <h4>Inteligencia Artificial Aplicada</h4>
-            <ul>
-              <li><strong>Modelos LLM:</strong> Integración de APIs (OpenAI, Google Gemini) y modelos locales con Ollama.</li>
-              <li><strong>Agentes Autónomos:</strong> LangChain, llamadas a herramientas (Tool Calling) y RAG.</li>
-              <li><strong>Prompt Defense:</strong> Blindaje contra inyecciones indirectas y alucinaciones.</li>
-            </ul>
-          </div>
-
-          <div class="stack-category">
-            <h4>Adquisición & Marketing</h4>
-            <ul>
-              <li><strong>SEO Técnico:</strong> Estructura semántica, Schema.org, auditorías en Google Search Console.</li>
-              <li><strong>Meta Ads:</strong> Campañas de captación orientadas a costo por lead calificado.</li>
+              <li><strong>Agentes IA y LLMs:</strong> Integración de APIs (OpenAI, Gemini), modelos locales mediante Ollama y arquitecturas de triaje semántico.</li>
+              <li><strong>Sistemas RAG (Retrieval-Augmented Generation):</strong> Recuperación semántica sobre documentación interna y bases de conocimiento.</li>
+              <li><strong>Prompt Defense:</strong> Técnicas para reducir alucinaciones y prevenir inyecciones indirectas en pipelines automatizados.</li>
+              <li><strong>Orquestación Multi-Agente:</strong> Diseño de arquitecturas con agentes especializados y supervisión humana (Human-in-the-Loop).</li>
             </ul>
           </div>
         </div>
 
-        <h3 style="margin-top: 2.5rem;">Filosofía de Trabajo y Transparencia</h3>
+        <h3 style="margin-top: 2.5rem;">Criterios de Trabajo y Transparencia</h3>
         <ul class="principles-list">
-          <li><strong>Cero métricas infladas:</strong> No invento clientes masivos ni casos de éxito ficticios. Cada proyecto que muestro es código real verificable.</li>
-          <li><strong>Propiedad del cliente:</strong> El código y los datos pertenecen 100% a la empresa contratante. No creo dependencias cautivas.</li>
-          <li><strong>Pragmatismo antes que modas:</strong> Si un problema se resuelve mejor con una base de datos simple que con un modelo de IA costoso, propongo la base de datos simple.</li>
+          <li><strong>Sin afirmaciones infladas:</strong> No presento cifras comerciales inventadas ni certificaciones que no poseo. La solvencia técnica se demuestra en el código y en la arquitectura de cada entrega.</li>
+          <li><strong>Control y propiedad del cliente:</strong> Los sistemas desarrollados pertenecen en su totalidad a la empresa contratante. No creo dependencias propietarias cautivas ni cobro abonos por código que no lo amerite.</li>
+          <li><strong>Pragmatismo técnico:</strong> Si una necesidad comercial se resuelve eficazmente con una base de datos simple y un webhook, esa será siempre la solución propuesta frente a alternativas innecesariamente complejas.</li>
         </ul>
 
         <div class="about-actions-row">
-          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <span>Conectar en LinkedIn</span>
+          <a href={`mailto:${CONTACT_EMAIL}`} class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>Escribir a {CONTACT_EMAIL}</span>
+          </a>
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span>Perfil en LinkedIn</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
           <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
             <span>Ver código en GitHub</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-          </a>
-          <a href="/contacto" class="btn btn-secondary">
-            <span>Enviar mensaje directo</span>
           </a>
         </div>
       </div>
@@ -100,36 +88,50 @@ import { FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, LINKEDIN_URL, GITHUB_URL 
   }
 
   .role-subtitle {
-    font-size: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
     color: var(--accent-cyan);
-    font-family: var(--font-display);
-    font-weight: 600;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
+    letter-spacing: 0.04em;
   }
 
   .about-main-card {
-    padding: 3rem;
+    padding: 3.5rem;
+  }
+
+  .about-main-card h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-main-card p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
   }
 
   .tech-stack-columns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.75rem;
-    margin-top: 1.5rem;
+    gap: 2rem;
+    margin: 2rem 0;
   }
 
   .stack-category {
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    padding: 1.5rem;
+    border-radius: 12px;
+    padding: 1.75rem;
   }
 
   .stack-category h4 {
-    font-size: 1rem;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
     color: var(--accent-cyan);
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-subtle);
   }
 
@@ -139,13 +141,13 @@ import { FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, LINKEDIN_URL, GITHUB_URL 
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.85rem;
   }
 
   .stack-category li {
     font-size: 0.88rem;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   .stack-category strong {
@@ -155,10 +157,10 @@ import { FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, LINKEDIN_URL, GITHUB_URL 
   .principles-list {
     list-style: none;
     padding: 0;
-    margin: 1.25rem 0 0 0;
+    margin: 1.5rem 0 2.5rem 0;
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 1rem;
   }
 
   .principles-list li {
@@ -170,18 +172,21 @@ import { FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, LINKEDIN_URL, GITHUB_URL 
   }
 
   .principles-list li::before {
-    content: '✔';
+    content: "✓";
     position: absolute;
     left: 0;
     color: var(--accent-emerald);
     font-weight: bold;
   }
 
+  .principles-list strong {
+    color: #ffffff;
+  }
+
   .about-actions-row {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid var(--border-subtle);
   }
@@ -192,6 +197,14 @@ import { FOUNDER_NAME, FOUNDER_ROLE, FOUNDER_LOCATION, LINKEDIN_URL, GITHUB_URL 
     }
     .tech-stack-columns {
       grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .about-actions-row {
+      flex-direction: column;
+    }
+    .about-actions-row .btn {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>

@@ -1,0 +1,202 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CONTACT_EMAIL } from '../../consts';
+---
+
+<Layout 
+  title="Soluciones Tecnológicas para Inmobiliarias en San Rafael y Mendoza | VASTTO"
+  description="Automatización de captación, triaje de prospectos por presupuesto en USD y zona, y fichas de propiedades para inmobiliarias y desarrolladores urbanos."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container container-narrow">
+      <div class="vertical-header-wrap">
+        <span class="badge badge-cyan section-eyebrow">VERTICAL COMERCIAL • INMOBILIARIAS</span>
+        <h1>Tecnología comercial para inmobiliarias y loteos en San Rafael y Mendoza</h1>
+        <p class="vertical-intro">
+          Ayudamos a inmobiliarias, martilleros y desarrolladores inmobiliarios a calificar prospectos en tiempo real, filtrar compradores por presupuesto en USD y organizar las visitas de ventas sin desorden administrativo.
+        </p>
+        <div class="vertical-pills-row">
+          <span class="trust-pill">🏡 Enfoque en Loteos, Fincas y Propiedades</span>
+          <span class="trust-pill">⚡ Triaje por Presupuesto y Zona</span>
+          <span class="trust-pill">📄 Fichas Automáticas para Asesores</span>
+        </div>
+      </div>
+
+      <!-- 1. Los Dolores Reales del Sector -->
+      <div class="content-block">
+        <h2>1. Los desafíos comerciales que frena a las inmobiliarias hoy</h2>
+        <p>
+          En el mercado inmobiliario de San Rafael y el sur mendocino, la captación digital suele generar una gran cantidad de consultas, pero también una enorme pérdida de tiempo para los asesores:
+        </p>
+        <div class="problem-list-grid">
+          <div class="problem-item">
+            <strong>Consultas de curiosos sin presupuesto calificado:</strong> Decenas de mensajes semanales preguntando precios de fincas o lotes en Las Paredes, Rama Caída o Valle Grande de personas que no disponen de los fondos necesarios o buscan permutas inviables.
+          </div>
+          <div class="problem-item">
+            <strong>Demoras de horas en enviar fichas técnicas:</strong> Mientras el vendedor busca las fotos y los datos del inmueble en carpetas dispersas, el comprador interesado ya consultó a otra inmobiliaria de la zona.
+          </div>
+          <div class="problem-item">
+            <strong>Falta de seguimiento ordenado:</strong> Consultas valiosas que quedan sepultadas en chats personales de WhatsApp sin que nadie vuelva a contactar al interesado cuando entra una propiedad similar.
+          </div>
+          <div class="problem-item">
+            <strong>Descoordinación en agendas de visitas:</strong> Cruces de horarios y visitas frustradas por falta de confirmación estructurada previa.
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. La Solución VASTTO -->
+      <div class="content-block">
+        <h2>2. El sistema que implementamos para tu negocio</h2>
+        <p>
+          No vendemos un CRM genérico que tu equipo nunca aprenderá a usar. Construimos un flujo simple y adaptado a tu operatoria comercial:
+        </p>
+
+        <div class="solution-cards-grid">
+          <div class="card-tech solution-item">
+            <div class="solution-num">A</div>
+            <h4>Asistente de Triaje y Calificación Inmediata</h4>
+            <p>
+              Un formulario interactivo en tu web o mensaje estructurado que pregunta lo esencial: presupuesto aproximado en USD (contado o financiado), tipo de operación (compra o alquiler), urgencia y zona preferida.
+            </p>
+          </div>
+
+          <div class="card-tech solution-item">
+            <div class="solution-num">B</div>
+            <h4>Ficha Ejecutiva Instantánea</h4>
+            <p>
+              El interesado que califica recibe al instante un documento o ficha con las propiedades que cumplen su criterio exacto, aumentando el interés antes de la primera llamada con el asesor.
+            </p>
+          </div>
+
+          <div class="card-tech solution-item">
+            <div class="solution-num">C</div>
+            <h4>Alerta Calificada al Vendedor Asignado</h4>
+            <p>
+              El asesor recibe la ficha completa del comprador con puntuación de interés (Lead Scoring). Sabe exactamente qué busca el cliente antes de marcar su número.
+            </p>
+          </div>
+
+          <div class="card-tech solution-item">
+            <div class="solution-num">D</div>
+            <h4>Base de Demandantes Activos</h4>
+            <p>
+              Cada consulta calificada queda registrada en una base de datos propia. Cuando ingresa una nueva propiedad a tu cartera, puedes consultar qué compradores calificados estaban buscando exactamente eso.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Demostración en Vivo -->
+      <div class="card-tech demo-cta-card">
+        <span class="badge badge-emerald">PROTOTIPO DISPONIBLE</span>
+        <h3>Prueba la Demostración Inmobiliaria en tu Navegador</h3>
+        <p>
+          Hemos preparado un prototipo con datos sintéticos de propiedades en San Rafael para que experimentes cómo funciona la calificación de prospectos.
+        </p>
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="/demos/inmobiliaria" class="btn btn-primary">Probar Demostración Inmobiliaria →</a>
+          <a href="/demos" class="btn btn-secondary">Ver Todas las Demos</a>
+        </div>
+      </div>
+
+      <!-- 4. Contacto y Diagnóstico -->
+      <div class="content-block" style="text-align: center; margin-top: 4rem;">
+        <h2>¿Quieres modernizar la captación de tu inmobiliaria?</h2>
+        <p style="max-width: 620px; margin: 0.75rem auto 1.75rem auto;">
+          Tengamos una conversación inicial de 20 minutos sin cargo. Analizamos tu flujo actual de propiedades y consultas y te decimos cómo ordenar la captación con costos claros.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/contacto" class="btn btn-primary btn-lg">Solicitar Conversación Exploratoria</a>
+          <a href={`mailto:${CONTACT_EMAIL}`} class="btn btn-secondary btn-lg">{CONTACT_EMAIL}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .vertical-header-wrap {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .vertical-intro {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 760px;
+    margin: 1.25rem auto 0 auto;
+  }
+
+  .vertical-pills-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.75rem;
+  }
+
+  .solution-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .solution-item {
+    position: relative;
+    padding: 2rem;
+  }
+
+  .solution-num {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    margin-bottom: 0.75rem;
+  }
+
+  .solution-item h4 {
+    font-size: 1.15rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .solution-item p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .demo-cta-card {
+    background: linear-gradient(135deg, rgba(14, 18, 27, 0.9) 0%, rgba(0, 240, 255, 0.08) 100%);
+    border: 1px solid var(--border-medium);
+    border-radius: 16px;
+    padding: 3rem;
+    margin: 4rem 0;
+    text-align: left;
+  }
+
+  .demo-cta-card h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0.75rem 0;
+  }
+
+  .demo-cta-card p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .solution-cards-grid {
+      grid-template-columns: 1fr;
+    }
+    .demo-cta-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

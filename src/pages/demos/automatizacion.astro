@@ -45,12 +45,10 @@ import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '../../consts';
 
         <div style="margin-top: 2rem; text-align: center;">
           <a 
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola Andrés, quiero evaluar un agente de automatización de pedidos como el de la demo para mi empresa.')}`} 
+            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[Demo Agente IA] Consulta sobre automatización de pedidos')}&body=${encodeURIComponent('Hola Andrés,\n\nQuiero evaluar la viabilidad de un agente de automatización de pedidos para mi empresa.\n\nNombre:\nEmpresa:\nTeléfono:')}`} 
             class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
           >
-            Consultar por Implementación
+            Consultar por Implementación vía Email
           </a>
           <a href="/demos" class="btn btn-secondary" style="margin-left: 1rem;">
             ← Volver al Centro de Demos

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { CONTACT_EMAIL } from '../consts';
 ---
 
 <Layout 
@@ -12,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
         <span class="badge badge-indigo section-eyebrow">PORTFOLIO DE INGENIERÍA</span>
         <h1>Proyectos reales, arquitectura y código verificable</h1>
         <p class="section-desc">
-          No mostramos capturas genéricas de clientes no identificables. Mostramos sistemas completos desarrollados con rigor técnico, documentación y pruebas de calidad.
+          No mostramos capturas genéricas de clientes no identificables. Presentamos sistemas completos construidos con documentación, especificación técnica y suites de pruebas ejecutables.
         </p>
       </div>
 
@@ -25,30 +26,30 @@ import Layout from '../layouts/Layout.astro';
               <h2>CUYOPROSPECT</h2>
               <p class="project-tagline">Plataforma Local-First de Prospección Comercial Ética y Generación de Demos B2B</p>
             </div>
-            <div class="badge badge-emerald">OPERATIVO // 53 TESTS</div>
+            <div class="badge badge-emerald">AUDITORÍA: 53 TESTS // 83% COBERTURA</div>
           </div>
 
           <p class="project-description">
-            CUYOPROSPECT es un sistema diseñado específicamente para resolver la prospección comercial de empresas en San Rafael y Mendoza. Investiga sitios web oficiales, audita su estado tecnológico y SEO, detecta oportunidades reales de digitalización, produce demostraciones personalizadas y gestiona un pipeline CRM de 13 etapas con generación de borradores comerciales.
+            CUYOPROSPECT es un sistema de ingeniería desarrollado para investigar empresas legítimas en San Rafael y Mendoza. Audita técnicamente la presencia digital de los negocios, detecta oportunidades reales de automatización y captación comercial, genera propuestas interactivas en HTML y gestiona un pipeline CRM local-first de 13 estados con generación de borradores comerciales bajo estricto control humano.
           </p>
 
           <div class="project-features-grid">
             <div class="feature-item">
-              <strong>🔍 Discovery Engine:</strong> Crawling cortés y seguro que respeta robots.txt y extrae canales de contacto legítimos publicados.
+              <strong>🔍 Discovery Engine:</strong> Módulo de crawling respetuoso con robots.txt, normalización de dominios y validación sintáctica/DNS de correos publicados.
             </div>
             <div class="feature-item">
-              <strong>🧠 Business Intelligence:</strong> Auditoría técnica de formularios, indexabilidad y scoring de oportunidad comercial de 0 a 100 puntos.
+              <strong>🧠 Business Intelligence:</strong> Análisis técnico observable de formularios, canales de contacto y scoring de oportunidad de 0 a 100 puntos.
             </div>
             <div class="feature-item">
-              <strong>📄 Demo Generator:</strong> Generación automática de propuestas interactivas en HTML y documentos ejecutivos en PDF generados con ReportLab.
+              <strong>📄 Demo Generator:</strong> Generación de prototipos visuales con datos sintéticos y propuestas ejecutivas en PDF estructuradas con ReportLab.
             </div>
             <div class="feature-item">
-              <strong>🛡️ Seguridad & Human-in-the-Loop:</strong> Mitigación de SSRF en redirecciones, defensa anti-inyecciones de prompt y garantía formal de cero envíos sin autorización humana.
+              <strong>🛡️ Auditoría y Seguridad:</strong> Suite de 53 tests verificados (integración, API, seguridad y auditoría E2E) con 83% de cobertura sobre 2.873 líneas de backend Python.
             </div>
           </div>
 
           <div class="tech-spec-bar">
-            <span><strong>Stack:</strong> Python 3.10 • FastAPI • SQLite (Modo WAL) • Astro 5 • Playwright • BeautifulSoup • ReportLab</span>
+            <span><strong>Stack Verificado:</strong> Python 3.10 • FastAPI • SQLite (Modo WAL) • Playwright • BeautifulSoup • ReportLab</span>
           </div>
         </article>
 
@@ -58,32 +59,32 @@ import Layout from '../layouts/Layout.astro';
             <div>
               <span class="badge badge-indigo">PLATAFORMA EDITORIAL DIGITAL</span>
               <h2>Razón y Asombro</h2>
-              <p class="project-tagline">Sitio web editorial de alto rendimiento enfocado en lectura profunda</p>
+              <p class="project-tagline">Publicación web editorial de alto rendimiento enfocada en lectura profunda</p>
             </div>
-            <div class="badge badge-cyan">100/100 LIGHTHOUSE</div>
+            <div class="badge badge-cyan">OPTIMIZACIÓN SSG</div>
           </div>
 
           <p class="project-description">
-            Plataforma editorial independiente construida desde cero con el objetivo de demostrar que la lectura en pantalla puede ser tan placentera y rápida como el papel impreso. Optimizada al extremo para ofrecer tiempos de carga imperceptibles y excelente posicionamiento SEO orgánico.
+            Plataforma editorial independiente diseñada para ofrecer una experiencia de lectura en pantalla fluida y sin distracciones. Implementa una arquitectura puramente estática donde el contenido se procesa en tiempo de compilación, eliminando scripts pesados en el navegador y asegurando alta velocidad de carga y óptima indexación en buscadores.
           </p>
 
           <div class="project-features-grid">
             <div class="feature-item">
-              <strong>⚡ Rendimiento Extremo:</strong> Cero JavaScript innecesario en el cliente. Calificación perfecta en Core Web Vitals en conexiones móviles 4G.
+              <strong>⚡ Rendimiento Estático (SSG):</strong> Cero JavaScript innecesario en el cliente. Optimizado para obtener puntajes elevados en auditorías de Google Lighthouse.
             </div>
             <div class="feature-item">
-              <strong>📖 Tipografía & UX:</strong> Escalas de lectura proporcionales, contrastes cuidados para evitar fatiga visual y diseño responsivo fluido.
+              <strong>📖 Tipografía & UX:</strong> Escala proporcional de lectura, diseño responsivo y contrastes cuidados para reducir la fatiga visual.
             </div>
             <div class="feature-item">
-              <strong>🔍 SEO Semántico:</strong> Marcado JSON-LD con Schema.org Article, Publisher y Person para máxima autoridad en buscadores.
+              <strong>🔍 SEO Semántico:</strong> Marcado JSON-LD con Schema.org (`Article`, `Publisher`, `Person`) para facilitar el rastreo algorítmico.
             </div>
             <div class="feature-item">
-              <strong>🚀 Despliegue en el Edge:</strong> Distribución global instantánea con caché perimetral sin servidores que mantener.
+              <strong>🚀 Distribución Global:</strong> Despliegue perimetral en red CDN perimetral, garantizando disponibilidad y entrega inmediata.
             </div>
           </div>
 
           <div class="tech-spec-bar">
-            <span><strong>Stack:</strong> Astro SSG • Markdown / MDX • TypeScript • CSS Moderno • Cloudflare</span>
+            <span><strong>Stack Verificado:</strong> Astro SSG • Markdown / MDX • TypeScript • CSS Moderno • Cloudflare</span>
           </div>
         </article>
 
@@ -93,32 +94,32 @@ import Layout from '../layouts/Layout.astro';
             <div>
               <span class="badge badge-emerald">TRANSFORMACIÓN DIGITAL INTEGRAL</span>
               <h2>VASTTO 2.0</h2>
-              <p class="project-tagline">Refundación arquitectónica y comercial de un dominio activo</p>
+              <p class="project-tagline">Refundación arquitectónica y reposicionamiento comercial de un dominio activo</p>
             </div>
-            <div class="badge badge-cyan">EN PRODUCCIÓN</div>
+            <div class="badge badge-cyan">EN PREVIEW CI/CD</div>
           </div>
 
           <p class="project-description">
-            Un caso en vivo de migración y reposicionamiento tecnológico: transformar un sitio de reseñas de productos de consumo en un estudio tecnológico B2B premium. El proyecto demuestra cómo reestructurar la arquitectura de información, preservar el posicionamiento orgánico mediante redirecciones limpias sin caer en Soft 404, e implementar demostraciones interactivas client-side.
+            Caso práctico de migración tecnológica y reposicionamiento comercial: transformar una web de reseñas de productos en un estudio tecnológico B2B para empresas. El proyecto demuestra cómo reestructurar la arquitectura de información, mantener intacto el entorno de producción mediante ramas aisladas y canalizaciones de previsualización CI/CD, e implementar prototipos client-side para prospectos.
           </p>
 
           <div class="project-features-grid">
             <div class="feature-item">
-              <strong>🔄 Migración Limpia:</strong> Protocolo de redirección 301 semántica y respuestas 410 Gone para eliminar URLs obsoletas sin penalizaciones.
+              <strong>🔄 Estrategia de Migración:</strong> Desarrollo aislado en rama de rediseño, compilación estática de 45+ páginas y verificación continua antes de producción.
             </div>
             <div class="feature-item">
-              <strong>🧪 Demos Client-Side:</strong> Prototipos funcionales que permiten a los empresarios probar las soluciones en su navegador con datos sintéticos.
+              <strong>🧪 Prototipos Client-Side:</strong> Demostraciones interactivas que permiten a los empresarios evaluar flujos comerciales con datos sintéticos en su propio navegador.
             </div>
             <div class="feature-item">
-              <strong>🎨 Sistema de Diseño Propio:</strong> Tokens de diseño oscuro tecnológico, componentes modulares y tipografía de ingeniería.
+              <strong>🎨 Sistema de Diseño Técnico:</strong> Tokens CSS oscuros, componentes modulares y tipografía técnica (Plus Jakarta Sans y JetBrains Mono).
             </div>
             <div class="feature-item">
-              <strong>🎯 Orientación a Conversión:</strong> Canales claros de contacto comercial y validación estricta de formularios sin dependencias externas inseguras.
+              <strong>🎯 Contacto y Transparencia:</strong> Canales directos de consulta sin almacenamiento intermediario de datos ni simulación de envíos inexistentes.
             </div>
           </div>
 
           <div class="tech-spec-bar">
-            <span><strong>Stack:</strong> Astro 4.x / 5 • TypeScript • Cloudflare Pages • Vanilla JS Reactivo</span>
+            <span><strong>Stack Verificado (según package.json):</strong> Astro 4.16.0 • TypeScript 5.9.3 • Playwright 1.58.2 • Cloudflare Pages</span>
           </div>
         </article>
       </div>
@@ -127,12 +128,15 @@ import Layout from '../layouts/Layout.astro';
       <div class="portfolio-cta-banner">
         <h2>¿Quieres desarrollar un sistema similar para tu empresa?</h2>
         <p>
-          Hablemos sobre tu proyecto. Definimos el alcance, la arquitectura y los plazos de entrega con total claridad.
+          Conversemos sobre los requerimientos de tu negocio. Evaluamos la arquitectura adecuada y los plazos de entrega con total claridad.
         </p>
         <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="/contacto" class="btn btn-primary btn-lg">Solicitar Presupuesto</a>
+          <a href="/contacto" class="btn btn-primary btn-lg">Solicitar Consulta por Email</a>
           <a href="/demos" class="btn btn-secondary btn-lg">Explorar Demostraciones en Vivo</a>
         </div>
+        <p style="margin-top: 1.25rem; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">
+          O escríbenos directamente a: <a href={`mailto:${CONTACT_EMAIL}`} style="color: var(--accent-cyan); text-decoration: underline;">{CONTACT_EMAIL}</a>
+        </p>
       </div>
     </div>
   </section>
@@ -151,22 +155,24 @@ import Layout from '../layouts/Layout.astro';
 
   .project-header-row {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 1.5rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
   }
 
-  .project-header-row h2 {
+  .project-card h2 {
     font-size: 2rem;
+    color: #ffffff;
     margin: 0.5rem 0 0.25rem 0;
   }
 
   .project-tagline {
-    font-size: 1.05rem;
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
     color: var(--accent-cyan);
-    font-weight: 500;
+    margin: 0;
   }
 
   .project-description {
@@ -179,16 +185,16 @@ import Layout from '../layouts/Layout.astro';
   .project-features-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
     margin-bottom: 2rem;
   }
 
   .feature-item {
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.25);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    padding: 1.25rem;
-    font-size: 0.92rem;
+    border-radius: 8px;
+    padding: 1.2rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.55;
   }
@@ -200,30 +206,37 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .tech-spec-bar {
-    padding-top: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid var(--border-subtle);
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
+    padding-top: 1.25rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
   }
 
   .tech-spec-bar strong {
-    color: var(--text-secondary);
+    color: var(--accent-cyan);
   }
 
   .portfolio-cta-banner {
     margin-top: 5rem;
-    background: linear-gradient(135deg, rgba(14, 17, 26, 0.9) 0%, rgba(20, 25, 38, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(14, 18, 27, 0.9) 0%, rgba(99, 102, 241, 0.1) 100%);
     border: 1px solid var(--border-medium);
     border-radius: 16px;
     padding: 3.5rem 2rem;
     text-align: center;
   }
 
+  .portfolio-cta-banner h2 {
+    font-size: 1.85rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
   .portfolio-cta-banner p {
-    max-width: 650px;
-    margin: 1rem auto 0 auto;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   @media (max-width: 768px) {

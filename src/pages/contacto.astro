@@ -61,8 +61,12 @@ import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL
             Enviar Solicitud vía Correo Directo
           </button>
 
-          <p class="form-privacy-note" style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
-            🔒 Tratamiento confidencial de la información de acuerdo con la Ley 25.326. Abre tu cliente de correo para enviar la solicitud sin intermediarios.
+          <p style="text-align: center; margin-top: 1rem; font-size: 0.88rem; color: var(--text-secondary);">
+            ¿Prefieres escribir directamente desde tu aplicación de correo? Escríbenos a: <a href={`mailto:${CONTACT_EMAIL}`} style="color: var(--accent-cyan); font-weight: 600; text-decoration: underline;">{CONTACT_EMAIL}</a>
+          </p>
+
+          <p class="form-privacy-note" style="text-align: center; margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
+            🔒 Tratamiento confidencial de la información de acuerdo con la <a href="/privacidad" style="color: var(--text-muted); text-decoration: underline;">Ley 25.326</a>. No recopilamos datos en bases de datos intermedias; la consulta se envía directamente por email a Andrés Carrizo.
           </p>
         </form>
 
@@ -90,18 +94,10 @@ import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL
 
         <div style="text-align: center; margin: 3rem 0 1.5rem 0; position: relative;">
           <div style="height: 1px; background: var(--border-subtle); position: absolute; top: 50%; left: 0; right: 0;"></div>
-          <span style="position: relative; background: var(--bg-surface); padding: 0 1rem; font-size: 0.85rem; color: var(--text-muted);">Canales de Atención Directa</span>
+          <span style="position: relative; background: var(--bg-surface); padding: 0 1rem; font-size: 0.85rem; color: var(--text-muted);">Canales de Contacto Directo</span>
         </div>
 
         <div class="direct-methods-grid">
-          <a href="https://wa.me/5492604000000?text=Hola%20Andr%C3%A9s%2C%20quisiera%20conversar%20sobre%20un%20proyecto%20tecnol%C3%B3gico%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="direct-method-card">
-            <div class="method-icon" style="color: #10b981;">💬</div>
-            <div>
-              <strong>WhatsApp Business</strong>
-              <span>Respuesta inmediata en horario comercial</span>
-            </div>
-          </a>
-
           <a href={`mailto:${CONTACT_EMAIL}`} class="direct-method-card">
             <div class="method-icon" style="color: #00f0ff;">✉️</div>
             <div>
@@ -114,7 +110,15 @@ import { FOUNDER_NAME, FOUNDER_LOCATION, CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL
             <div class="method-icon" style="color: #6366f1;">💼</div>
             <div>
               <strong>LinkedIn Profesional</strong>
-              <span>Perfil de Andrés Carrizo</span>
+              <span>Perfil verificado de Andrés Carrizo</span>
+            </div>
+          </a>
+
+          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" class="direct-method-card">
+            <div class="method-icon" style="color: #10b981;">💻</div>
+            <div>
+              <strong>GitHub</strong>
+              <span>Repositorios y código fuente</span>
             </div>
           </a>
         </div>

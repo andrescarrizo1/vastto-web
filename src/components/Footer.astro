@@ -47,8 +47,8 @@ const currentYear = new Date().getFullYear();
         <h4 class="footer-heading">Soluciones por Sector</h4>
         <ul class="footer-links">
           <li><a href="/soluciones/inmobiliarias">Inmobiliarias & Desarrollos</a></li>
-          <li><a href="/soluciones/automotrices">Agencias de Autos & Concesionarias</a></li>
-          <li><a href="/soluciones/distribuidoras">Distribuidoras & Mayoristas</a></li>
+          <li><a href="/soluciones/automotrices">Agencias de Autos (En diseño)</a></li>
+          <li><a href="/soluciones/distribuidoras">Distribuidoras B2B (En diseño)</a></li>
           <li><a href="/proyectos">Portfolio Tecnológico</a></li>
           <li><a href="/sobre-mi">Sobre Andrés Carrizo</a></li>
         </ul>
@@ -59,7 +59,7 @@ const currentYear = new Date().getFullYear();
         <h4 class="footer-heading">Contacto Directo</h4>
         <ul class="footer-links">
           <li>
-            <a href="mailto:contacto@vastto.com.ar" class="contact-link">
+            <a href={`mailto:${CONTACT_EMAIL}`} class="contact-link">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               <span>{CONTACT_EMAIL}</span>
             </a>
@@ -88,12 +88,12 @@ const currentYear = new Date().getFullYear();
     <!-- Barra Inferior de Cumplimiento -->
     <div class="footer-bottom">
       <div class="footer-copy">
-        © {currentYear} VASTTO. Todos los derechos reservados.
+        © {currentYear} VASTTO • Estudio Tecnológico Independiente
       </div>
       <div class="footer-compliance">
-        <span>Privacidad y Protección de Datos (Ley 25.326 Argentina)</span>
+        <a href="/privacidad" style="color: var(--text-secondary); text-decoration: underline;">Política de Privacidad (Ley 25.326)</a>
         <span class="compliance-dot">•</span>
-        <span>Sin trackers de terceros</span>
+        <span>Sin almacenamiento de datos de navegación</span>
       </div>
     </div>
   </div>
