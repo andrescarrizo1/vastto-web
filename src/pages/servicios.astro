@@ -1,0 +1,333 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Servicios Tecnológicos & Automatización | VASTTO"
+  description="Catálogo de servicios de ingeniería: automatización de procesos, agentes de inteligencia artificial, desarrollo de software a medida y SEO técnico."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="badge badge-cyan section-eyebrow">CATÁLOGO DE SERVICIOS</span>
+        <h1>Ingeniería de software y automatización para empresas</h1>
+        <p class="section-desc">
+          No vendemos paquetes genéricos. Diseñamos e implementamos soluciones tecnológicas a la medida exacta de los desafíos de tu negocio en San Rafael, Mendoza y Argentina.
+        </p>
+      </div>
+
+      <!-- Servicios Principales -->
+      <div class="services-list">
+        <!-- Servicio 1: Automatización -->
+        <article class="service-detail-card" id="automatizacion">
+          <div class="service-detail-header">
+            <div class="service-badge-row">
+              <span class="badge badge-cyan">SERVICIO CORE 01</span>
+              <span class="service-tech-pill">Python • FastAPI • WhatsApp API</span>
+            </div>
+            <h2>Automatización de Procesos Comerciales & Administrativos</h2>
+            <p class="service-lead">
+              Conectamos tus canales de venta, sistemas y planillas para reducir la transcripción manual de datos y acelerar la atención comercial.
+            </p>
+          </div>
+
+          <div class="grid-2" style="margin: 2rem 0;">
+            <div class="detail-box">
+              <h4>¿Qué problemas resuelve?</h4>
+              <ul>
+                <li>Demoras de horas en responder consultas en WhatsApp que provocan pérdida de ventas.</li>
+                <li>Empleados dedicando media jornada a copiar datos entre Excel, chats y facturación.</li>
+                <li>Falta de seguimiento ordenado a clientes interesados tras la primera consulta.</li>
+                <li>Pérdida de trazabilidad sobre qué vendedor atendió a cada cliente.</li>
+              </ul>
+            </div>
+            <div class="detail-box">
+              <h4>¿Qué solución desarrollamos?</h4>
+              <ul>
+                <li>Pipelines de captación y calificación instantánea de prospectos con WhatsApp Business API.</li>
+                <li>Automatización de alertas a vendedores según zona, presupuesto o urgencia.</li>
+                <li>CRMs locales sin costos de suscripción recurrente en dólares adaptados a tu flujo.</li>
+                <li>Generación automatizada de presupuestos, órdenes de pedido y comprobantes.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card-footer">
+            <div class="implementation-summary">
+              <strong>Entregables típicos:</strong> Servidor API local/nube, webhook de WhatsApp configurado, panel de control administrativo y capacitación al equipo.
+            </div>
+            <a href="/automatizacion" class="btn btn-primary">Ver especificación completa →</a>
+          </div>
+        </article>
+
+        <!-- Servicio 2: Inteligencia Artificial -->
+        <article class="service-detail-card" id="ia">
+          <div class="service-detail-header">
+            <div class="service-badge-row">
+              <span class="badge badge-indigo">SERVICIO CORE 02</span>
+              <span class="service-tech-pill">LLMs • Agentes Autónomos • Ollama • LangChain</span>
+            </div>
+            <h2>Inteligencia Artificial Aplicada & Agentes Autónomos</h2>
+            <p class="service-lead">
+              Modelos de lenguaje y agentes autónomos configurados para tareas concretas: triaje de consultas, extracción documental y soporte operativo interno.
+            </p>
+          </div>
+
+          <div class="grid-2" style="margin: 2rem 0;">
+            <div class="detail-box">
+              <h4>¿Qué problemas resuelve?</h4>
+              <ul>
+                <li>Cientos de mensajes diarios con preguntas frecuentes repetitivas que saturan la línea.</li>
+                <li>Documentos, contratos y comprobantes en PDF que nadie tiene tiempo de revisar y cargar.</li>
+                <li>Falta de personal para clasificar consultas complejas fuera del horario comercial.</li>
+                <li>Riesgo de filtración de datos sensibles al usar herramientas de IA públicas no controladas.</li>
+              </ul>
+            </div>
+            <div class="detail-box">
+              <h4>¿Qué solución desarrollamos?</h4>
+              <ul>
+                <li>Agentes de IA autónomos entrenados exclusivamente con los datos y políticas de tu empresa.</li>
+                <li>Pipelines de extracción semántica que leen PDFs y extraen datos tabulados a SQL.</li>
+                <li>Asistentes inteligentes para cotizaciones complejas con reglas de negocio estrictas.</li>
+                <li>Arquitectura privada (opción de modelos locales vía Ollama sin enviar datos al exterior).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card-footer">
+            <div class="implementation-summary">
+              <strong>Entregables típicos:</strong> Agente IA desplegado, sandbox con prompt defense contra inyecciones, conexión a base de datos y consola de monitoreo.
+            </div>
+            <a href="/inteligencia-artificial" class="btn btn-primary">Ver especificación completa →</a>
+          </div>
+        </article>
+
+        <!-- Servicio 3: Desarrollo de Software -->
+        <article class="service-detail-card" id="desarrollo">
+          <div class="service-detail-header">
+            <div class="service-badge-row">
+              <span class="badge badge-cyan">SERVICIO CORE 03</span>
+              <span class="service-tech-pill">Astro • Python • TypeScript • Docker • PostgreSQL</span>
+            </div>
+            <h2>Desarrollo de Software a Medida & Integraciones</h2>
+            <p class="service-lead">
+              Desarrollamos aplicaciones web, plataformas internas y APIs propietarias. Código limpio, alto rendimiento y propiedad 100% de tu empresa.
+            </p>
+          </div>
+
+          <div class="grid-2" style="margin: 2rem 0;">
+            <div class="detail-box">
+              <h4>¿Qué problemas resuelve?</h4>
+              <ul>
+                <li>Sistemas comerciales enlatados que no contemplan las particularidades de tu negocio.</li>
+                <li>Múltiples herramientas desconectadas entre sí que obligan a saltar entre 4 pantallas.</li>
+                <li>Aplicaciones web lentas y pesadas que espantan a usuarios móviles en conexiones 4G.</li>
+                <li>Dependencia de proveedores externos con costos de licencia crecientes.</li>
+              </ul>
+            </div>
+            <div class="detail-box">
+              <h4>¿Qué solución desarrollamos?</h4>
+              <ul>
+                <li>Paneles de gestión interna (dashboards) modernos, rápidos y fáciles de usar.</li>
+                <li>APIs RESTful de integración para conectar sistemas legados con nuevas plataformas.</li>
+                <li>Migración y consolidación de datos desde hojas de cálculo hacia bases de datos seguras.</li>
+                <li>Desarrollo de scrapers y conectores de información pública comercial legítima.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card-footer">
+            <div class="implementation-summary">
+              <strong>Entregables típicos:</strong> Repositorio de código fuente, contenedores Docker listos para desplegar, base de datos estructurada y documentación técnica.
+            </div>
+            <a href="/desarrollo" class="btn btn-primary">Ver especificación completa →</a>
+          </div>
+        </article>
+
+        <!-- Servicio 4: Marketing Tecnológico -->
+        <article class="service-detail-card" id="marketing">
+          <div class="service-detail-header">
+            <div class="service-badge-row">
+              <span class="badge badge-emerald">COMPLEMENTARIO</span>
+              <span class="service-tech-pill">SEO Técnico • Rendimiento SSG • Meta Ads</span>
+            </div>
+            <h2>SEO Técnico & Campañas de Meta Ads</h2>
+            <p class="service-lead">
+              Aseguramos que tu infraestructura tecnológica genere flujo continuo de clientes potenciales mediante posicionamiento orgánico en Google y publicidad de precisión.
+            </p>
+          </div>
+
+          <div class="grid-2" style="margin: 2rem 0;">
+            <div class="detail-box">
+              <h4>¿Qué problemas resuelve?</h4>
+              <ul>
+                <li>Sitios web invisibles en Google cuando un cliente busca tu servicio en San Rafael o Mendoza.</li>
+                <li>Páginas lentas con alto abandono móvil antes de que el usuario vea la propuesta.</li>
+                <li>Campañas de anuncios con alto gasto pero que generan consultas de curiosos sin presupuesto.</li>
+                <li>Falta de medición exacta de qué anuncio o canal produjo ventas reales.</li>
+              </ul>
+            </div>
+            <div class="detail-box">
+              <h4>¿Qué solución desarrollamos?</h4>
+              <ul>
+                <li>Auditoría y optimización de SEO técnico, estructura semántica Schema.org e indexación limpia.</li>
+                <li>Reconstrucción de páginas de destino (Landing Pages) en Astro con arquitectura estática ultra-rápida.</li>
+                <li>Campañas de Meta Ads orientadas exclusivamente a generación de prospectos calificados.</li>
+                <li>Analítica y trazabilidad de conversión respetando la privacidad de los usuarios.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card-footer">
+            <div class="implementation-summary">
+              <strong>Entregables típicos:</strong> Informe técnico de indexación, Landing Page optimizada, configuración de campañas Meta y métricas de costo por lead.
+            </div>
+            <a href="/marketing-digital" class="btn btn-primary">Ver especificación completa →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Banner de Contacto Final -->
+      <div class="services-cta-banner">
+        <h2>¿No estás seguro de cuál es el primer paso?</h2>
+        <p>
+          Tengamos una breve conversación exploratoria de 20 minutos sin cargo. Analizamos tu proceso actual, identificamos los cuellos de botella y te decimos con total honestidad qué tecnología conviene implementar.
+        </p>
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/contacto" class="btn btn-primary btn-lg">Solicitar Evaluación Técnica</a>
+          <a href="mailto:contacto@vastto.com.ar" class="btn btn-secondary btn-lg">contacto@vastto.com.ar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .service-detail-card {
+    background: var(--bg-surface-card);
+    border: 1px solid var(--border-medium);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .service-tech-pill {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .service-detail-header h2 {
+    font-size: 1.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-lead {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 900px;
+  }
+
+  .detail-box {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.75rem;
+  }
+
+  .detail-box h4 {
+    font-size: 1.05rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .detail-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .detail-box li {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    position: relative;
+    padding-left: 1.25rem;
+  }
+
+  .detail-box li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+    font-weight: bold;
+  }
+
+  .service-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+  }
+
+  .implementation-summary {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    line-height: 1.5;
+  }
+
+  .implementation-summary strong {
+    color: var(--text-primary);
+  }
+
+  .services-cta-banner {
+    margin-top: 5rem;
+    background: linear-gradient(135deg, rgba(14, 17, 26, 0.9) 0%, rgba(20, 25, 38, 0.95) 100%);
+    border: 1px solid var(--accent-cyan-border);
+    border-radius: 16px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+  }
+
+  .services-cta-banner p {
+    max-width: 680px;
+    margin: 1rem auto 0 auto;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    .service-detail-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

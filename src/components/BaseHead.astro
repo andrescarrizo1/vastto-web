@@ -1,15 +1,22 @@
 ---
 import '../styles/global.css';
-import { SITE_TITLE } from '../consts';
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, FOUNDER_NAME } from '../consts';
 
 interface Props {
   title: string;
-  description: string;
+  description?: string;
   image?: string;
+  type?: 'website' | 'article';
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, image = '/og-vastto.jpg' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://vastto.com.ar');
+const { 
+  title, 
+  description = SITE_DESCRIPTION, 
+  image = '/og-vastto.jpg',
+  type = 'website'
+} = Astro.props;
+
 const fullTitle = title.includes('VASTTO') ? title : `${title} | VASTTO`;
 ---
 <meta charset="utf-8" />
@@ -21,58 +28,82 @@ const fullTitle = title.includes('VASTTO') ? title : `${title} | VASTTO`;
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="googlebot" content="index, follow" />
 
-<!-- Geo targeting Argentina -->
+<!-- Geo-targeting San Rafael, Mendoza, Argentina -->
 <link rel="alternate" hreflang="es-AR" href={canonicalURL} />
 <link rel="alternate" hreflang="x-default" href={canonicalURL} />
-<meta name="geo.region" content="AR" />
-<meta name="geo.placename" content="Argentina" />
+<meta name="geo.region" content="AR-M" />
+<meta name="geo.placename" content="San Rafael, Mendoza" />
 <meta name="content-language" content="es-AR" />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<!-- Open Graph / Redes Sociales -->
+<meta property="og:type" content={type} />
 <meta property="og:url" content={canonicalURL} />
-<meta property="og:title" content={title} />
+<meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
-<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:site_name" content={SITE_NAME} />
 <meta property="og:locale" content="es_AR" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content={canonicalURL} />
-<meta name="twitter:title" content={title} />
+<meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={new URL(image, Astro.url)} />
 
-<!-- Fonts -->
+<!-- Preconexión de Fuentes -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-<!-- FOUC Prevention Script -->
-<script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme');
-    }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
-    return 'light';
-  })();
-  document.documentElement.setAttribute('data-theme', theme);
-</script>
-
-<!-- Structured Data -->
-<script type="application/ld+json" set:html={`
-{
+<!-- Marcado Estructurado Schema.org para Estudio de Software e Ingeniería -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "VASTTO",
-  "alternateName": "VASTTO Argentina",
-  "url": "https://vastto.com.ar/",
-  "description": "Guías de compra y comparativas de tecnología en Argentina. Analizamos celulares, auriculares y smartwatch.",
-  "inLanguage": "es-AR"
-}
-`} />
-
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://vastto.com.ar/#organization",
+      "name": "VASTTO",
+      "url": "https://vastto.com.ar",
+      "logo": "https://vastto.com.ar/favicon.svg",
+      "image": "https://vastto.com.ar/og-vastto.jpg",
+      "description": "Estudio tecnológico especializado en desarrollo de software, automatización de procesos empresariales e inteligencia artificial aplicada.",
+      "founder": {
+        "@type": "Person",
+        "name": FOUNDER_NAME,
+        "jobTitle": "Full Stack Developer & AI Engineer",
+        "sameAs": [
+          "https://linkedin.com/in/andres-carrizo-129893213",
+          "https://github.com/andrescarrizo1"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Rafael",
+        "addressRegion": "Mendoza",
+        "addressCountry": "AR"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "San Rafael" },
+        { "@type": "AdministrativeArea", "name": "Mendoza" },
+        { "@type": "Country", "name": "Argentina" }
+      ],
+      "knowsAbout": [
+        "Software Development",
+        "Process Automation",
+        "Artificial Intelligence Agents",
+        "FastAPI",
+        "Python",
+        "Astro Web Development",
+        "Technical SEO"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vastto.com.ar/#website",
+      "url": "https://vastto.com.ar",
+      "name": "VASTTO",
+      "publisher": { "@id": "https://vastto.com.ar/#organization" },
+      "inLanguage": "es-AR"
+    }
+  ]
+})} />

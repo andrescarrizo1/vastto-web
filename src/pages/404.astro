@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_EMAIL } from '../consts';
+---
+
+<Layout 
+  title="Página no encontrada (404) | VASTTO"
+  description="La página que buscas no existe o ha sido reubicada."
+>
+  <section class="section" style="padding-top: 7rem; min-height: 70vh; display: flex; align-items: center;">
+    <div class="container container-narrow" style="text-align: center;">
+      <span class="badge badge-amber section-eyebrow">ERROR 404</span>
+      <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); margin-bottom: 1.5rem; letter-spacing: -0.03em;">Página no encontrada</h1>
+      <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem auto; line-height: 1.65;">
+        El recurso que intentas acceder no existe, ha cambiado de ruta o se encuentra en proceso de reestructuración técnica.
+      </p>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3.5rem;">
+        <a href="/" class="btn btn-primary">← Volver al Inicio</a>
+        <a href="/servicios" class="btn btn-secondary">Ver Catálogo de Servicios</a>
+        <a href="/contacto" class="btn btn-secondary">Contactar Soporte</a>
+      </div>
+
+      <div class="card-tech" style="padding: 1.5rem; max-width: 500px; margin: 0 auto; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+          ¿Buscabas una solución específica para tu empresa? Escríbenos directamente a <a href={`mailto:${CONTACT_EMAIL}`} style="color: var(--accent-cyan);">{CONTACT_EMAIL}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

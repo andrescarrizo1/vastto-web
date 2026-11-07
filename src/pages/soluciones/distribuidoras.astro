@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CONTACT_EMAIL } from '../../consts';
+---
+
+<Layout 
+  title="Solución para Distribuidoras y Mayoristas B2B | VASTTO"
+  description="Especificación técnica de herramientas para distribuidoras y mayoristas en Cuyo: procesamiento de pedidos no estructurados y sincronización operativa."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container container-narrow">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="badge badge-indigo section-eyebrow">EN FASE DE ESPECIFICACIÓN • FASE 4</span>
+        <h1>Solución operativa para distribuidoras y mayoristas</h1>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 740px; margin: 1.25rem auto 0 auto; line-height: 1.65;">
+          Diseño de flujos de automatización para recepción de pedidos recurrentes, extracción de datos desde mensajes no estructurados y sincronización administrativa.
+        </p>
+      </div>
+
+      <div class="card-tech" style="padding: 3rem; margin-bottom: 3rem;">
+        <h3 style="color: #fff; margin-bottom: 1rem;">Desafíos Operativos B2B en Cuyo</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+          En distribuidoras de alimentos, bebidas, repuestos y materiales de construcción, gran parte de las horas comerciales se pierden transcribiendo pedidos que llegan por canales desordenados:
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;">
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">1. Ingesta de Pedidos No Estructurados</h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0;">
+              Captura de listas de productos enviadas en mensajes de texto o fotos de remitos manuscritos, extrayendo ítems, cantidades y códigos para convertirlos en registros JSON válidos.
+            </p>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">2. Validación de Stock y Precios Vigentes</h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0;">
+              Cruce automático con la base de datos de precios y stock actual para alertar de faltantes antes de enviar el pedido al depósito.
+            </p>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">3. Recepción y Verificación de Comprobantes</h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0;">
+              Extracción de datos de transferencias bancarias enviadas por clientes (importe, CBU/CVU de origen, número de operación) para conciliar con cuentas corrientes.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/demos/automatizacion" class="btn btn-primary">Ver Demo de Flujo de Datos →</a>
+          <a href="/contacto" class="btn btn-secondary">Conversar sobre un Piloto</a>
+        </div>
+      </div>
+
+      <div class="card-tech" style="padding: 1.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+          📌 <em>Estado: Esta solución forma parte del roadmap de la Fase 4 de VASTTO 2.0. Si gestionas una distribuidora en San Rafael o Mendoza y quieres evaluar un flujo a medida, contáctanos a {CONTACT_EMAIL}.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

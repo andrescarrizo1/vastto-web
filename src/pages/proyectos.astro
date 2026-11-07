@@ -1,0 +1,250 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_EMAIL } from '../consts';
+---
+
+<Layout 
+  title="Portfolio de Proyectos & Casos de Ingeniería | VASTTO"
+  description="Conoce los sistemas y desarrollos de software construidos por VASTTO y Andrés Carrizo: CUYOPROSPECT, Razón y Asombro y la refundación de VASTTO 2.0."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="badge badge-indigo section-eyebrow">PORTFOLIO DE INGENIERÍA</span>
+        <h1>Proyectos reales, arquitectura y código verificable</h1>
+        <p class="section-desc">
+          No mostramos capturas genéricas de clientes no identificables. Presentamos sistemas completos construidos con documentación, especificación técnica y suites de pruebas ejecutables.
+        </p>
+      </div>
+
+      <div class="projects-list">
+        <!-- Proyecto 1: CUYOPROSPECT -->
+        <article class="card-tech project-card">
+          <div class="project-header-row">
+            <div>
+              <span class="badge badge-cyan">SISTEMA PROPIO DE INTELIGENCIA COMERCIAL</span>
+              <h2>CUYOPROSPECT</h2>
+              <p class="project-tagline">Plataforma Local-First de Prospección Comercial Ética y Generación de Demos B2B</p>
+            </div>
+            <div class="badge badge-emerald">AUDITORÍA: 53 TESTS // 83% COBERTURA</div>
+          </div>
+
+          <p class="project-description">
+            CUYOPROSPECT es un sistema de ingeniería desarrollado para investigar empresas legítimas en San Rafael y Mendoza. Audita técnicamente la presencia digital de los negocios, detecta oportunidades reales de automatización y captación comercial, genera propuestas interactivas en HTML y gestiona un pipeline CRM local-first de 13 estados con generación de borradores comerciales bajo estricto control humano.
+          </p>
+
+          <div class="project-features-grid">
+            <div class="feature-item">
+              <strong>🔍 Discovery Engine:</strong> Módulo de crawling respetuoso con robots.txt, normalización de dominios y validación sintáctica/DNS de correos publicados.
+            </div>
+            <div class="feature-item">
+              <strong>🧠 Business Intelligence:</strong> Análisis técnico observable de formularios, canales de contacto y scoring de oportunidad de 0 a 100 puntos.
+            </div>
+            <div class="feature-item">
+              <strong>📄 Demo Generator:</strong> Generación de prototipos visuales con datos sintéticos y propuestas ejecutivas en PDF estructuradas con ReportLab.
+            </div>
+            <div class="feature-item">
+              <strong>🛡️ Auditoría y Seguridad:</strong> Suite de 53 tests verificados (integración, API, seguridad y auditoría E2E) con 83% de cobertura sobre 2.873 líneas de backend Python.
+            </div>
+          </div>
+
+          <div class="tech-spec-bar">
+            <span><strong>Stack Verificado:</strong> Python 3.10 • FastAPI • SQLite (Modo WAL) • Playwright • BeautifulSoup • ReportLab</span>
+          </div>
+        </article>
+
+        <!-- Proyecto 2: Razón y Asombro -->
+        <article class="card-tech project-card">
+          <div class="project-header-row">
+            <div>
+              <span class="badge badge-indigo">PLATAFORMA EDITORIAL DIGITAL</span>
+              <h2>Razón y Asombro</h2>
+              <p class="project-tagline">Publicación web editorial de alto rendimiento enfocada en lectura profunda</p>
+            </div>
+            <div class="badge badge-cyan">OPTIMIZACIÓN SSG</div>
+          </div>
+
+          <p class="project-description">
+            Plataforma editorial independiente diseñada para ofrecer una experiencia de lectura en pantalla fluida y sin distracciones. Implementa una arquitectura puramente estática donde el contenido se procesa en tiempo de compilación, eliminando scripts pesados en el navegador y asegurando alta velocidad de carga y óptima indexación en buscadores.
+          </p>
+
+          <div class="project-features-grid">
+            <div class="feature-item">
+              <strong>⚡ Rendimiento Estático (SSG):</strong> Cero JavaScript innecesario en el cliente. Optimizado para obtener puntajes elevados en auditorías de Google Lighthouse.
+            </div>
+            <div class="feature-item">
+              <strong>📖 Tipografía & UX:</strong> Escala proporcional de lectura, diseño responsivo y contrastes cuidados para reducir la fatiga visual.
+            </div>
+            <div class="feature-item">
+              <strong>🔍 SEO Semántico:</strong> Marcado JSON-LD con Schema.org (`Article`, `Publisher`, `Person`) para facilitar el rastreo algorítmico.
+            </div>
+            <div class="feature-item">
+              <strong>🚀 Distribución Global:</strong> Despliegue perimetral en red CDN perimetral, garantizando disponibilidad y entrega inmediata.
+            </div>
+          </div>
+
+          <div class="tech-spec-bar">
+            <span><strong>Stack Verificado:</strong> Astro SSG • Markdown / MDX • TypeScript • CSS Moderno • Cloudflare</span>
+          </div>
+        </article>
+
+        <!-- Proyecto 3: VASTTO 2.0 -->
+        <article class="card-tech project-card">
+          <div class="project-header-row">
+            <div>
+              <span class="badge badge-emerald">TRANSFORMACIÓN DIGITAL INTEGRAL</span>
+              <h2>VASTTO 2.0</h2>
+              <p class="project-tagline">Refundación arquitectónica y reposicionamiento comercial de un dominio activo</p>
+            </div>
+            <div class="badge badge-cyan">EN PREVIEW CI/CD</div>
+          </div>
+
+          <p class="project-description">
+            Caso práctico de migración tecnológica y reposicionamiento comercial: transformar una web de reseñas de productos en un estudio tecnológico B2B para empresas. El proyecto demuestra cómo reestructurar la arquitectura de información, mantener intacto el entorno de producción mediante ramas aisladas y canalizaciones de previsualización CI/CD, e implementar prototipos client-side para prospectos.
+          </p>
+
+          <div class="project-features-grid">
+            <div class="feature-item">
+              <strong>🔄 Estrategia de Migración:</strong> Desarrollo aislado en rama de rediseño, compilación estática de 45+ páginas y verificación continua antes de producción.
+            </div>
+            <div class="feature-item">
+              <strong>🧪 Prototipos Client-Side:</strong> Demostraciones interactivas que permiten a los empresarios evaluar flujos comerciales con datos sintéticos en su propio navegador.
+            </div>
+            <div class="feature-item">
+              <strong>🎨 Sistema de Diseño Técnico:</strong> Tokens CSS oscuros, componentes modulares y tipografía técnica (Plus Jakarta Sans y JetBrains Mono).
+            </div>
+            <div class="feature-item">
+              <strong>🎯 Contacto y Transparencia:</strong> Canales directos de consulta sin almacenamiento intermediario de datos ni simulación de envíos inexistentes.
+            </div>
+          </div>
+
+          <div class="tech-spec-bar">
+            <span><strong>Stack Verificado (según package.json):</strong> Astro 4.16.0 • TypeScript 5.9.3 • Playwright 1.58.2 • Cloudflare Pages</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Banner Final -->
+      <div class="portfolio-cta-banner">
+        <h2>¿Quieres desarrollar un sistema similar para tu empresa?</h2>
+        <p>
+          Conversemos sobre los requerimientos de tu negocio. Evaluamos la arquitectura adecuada y los plazos de entrega con total claridad.
+        </p>
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/contacto" class="btn btn-primary btn-lg">Solicitar Consulta por Email</a>
+          <a href="/demos" class="btn btn-secondary btn-lg">Explorar Demostraciones en Vivo</a>
+        </div>
+        <p style="margin-top: 1.25rem; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">
+          O escríbenos directamente a: <a href={`mailto:${CONTACT_EMAIL}`} style="color: var(--accent-cyan); text-decoration: underline;">{CONTACT_EMAIL}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .project-card {
+    padding: 3rem;
+  }
+
+  .project-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .project-card h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0.5rem 0 0.25rem 0;
+  }
+
+  .project-tagline {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    color: var(--accent-cyan);
+    margin: 0;
+  }
+
+  .project-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .project-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .feature-item {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .feature-item strong {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .tech-spec-bar {
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 1.25rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .tech-spec-bar strong {
+    color: var(--accent-cyan);
+  }
+
+  .portfolio-cta-banner {
+    margin-top: 5rem;
+    background: linear-gradient(135deg, rgba(14, 18, 27, 0.9) 0%, rgba(99, 102, 241, 0.1) 100%);
+    border: 1px solid var(--border-medium);
+    border-radius: 16px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+  }
+
+  .portfolio-cta-banner h2 {
+    font-size: 1.85rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .portfolio-cta-banner p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .project-card {
+      padding: 2rem 1.5rem;
+    }
+    .project-features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,74 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CONTACT_EMAIL, WHATSAPP_NUMBER } from '../../consts';
+---
+
+<Layout 
+  title="Demo Inmobiliaria: Calificador de Prospectos | VASTTO"
+  description="Demostración y prototipo de asistente de captación y calificación comercial de interesados inmobiliarios para San Rafael y Mendoza."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container container-narrow">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="badge badge-cyan section-eyebrow">PROTOTIPO EN DESARROLLO • FASE 5</span>
+        <h1>Calificador Inteligente de Prospectos Inmobiliarios</h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 1rem auto 0 auto;">
+          Este sistema simula la recepción de consultas desde portales o WhatsApp, realiza el triaje por presupuesto (USD) y zona, y genera la ficha calificada para el asesor de ventas.
+        </p>
+      </div>
+
+      <div class="card-tech" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan);">
+            MODO SIMULACIÓN INTERACTIVA
+          </div>
+          <span class="badge badge-emerald">DATOS SINTÉTICOS</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="margin-bottom: 0.5rem; color: #fff;">1. Entrada de Consulta Ficticia</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic;">
+              "Hola, busco lote de al menos 1.500 m2 en Las Paredes o Rama Caída. Tengo hasta 45.000 USD de contado y me gustaría escriturar antes de fin de año."
+            </p>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="margin-bottom: 0.5rem; color: #fff;">2. Triaje y Extracción Semántica</h4>
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-emerald); line-height: 1.6;">
+              ✓ Intención detectada: COMPRA_TERRENO_RESIDENCIAL<br/>
+              ✓ Presupuesto analizado: USD 45.000 (Filtro aprobado)<br/>
+              ✓ Zonas solicitadas: ["Las Paredes", "Rama Caída"]<br/>
+              ✓ Lead Score asignado: 94 / 100 (Alta prioridad de contacto)
+            </div>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="margin-bottom: 0.5rem; color: #fff;">3. Acción Inmediata Disparada</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              El sistema notifica al asesor asignado por WhatsApp con la ficha estructurada y envía automáticamente al interesado un PDF con los 3 lotes disponibles que cumplen su criterio exacto.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <a 
+            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[Demo Inmobiliaria] Solicitud de demostración')}&body=${encodeURIComponent('Hola Andrés,\n\nMe interesa conocer la demostración completa de calificación inmobiliaria para mi negocio.\n\nNombre:\nEmpresa:\nTeléfono:')}`} 
+            class="btn btn-primary"
+          >
+            Solicitar Demostración por Email
+          </a>
+          <a href="/demos" class="btn btn-secondary" style="margin-left: 1rem;">
+            ← Volver al Centro de Demos
+          </a>
+        </div>
+      </div>
+
+      <div class="card-tech" style="padding: 1.5rem; text-align: center; border-color: rgba(255, 255, 255, 0.08);">
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">
+          📌 <em>Nota técnica: La interfaz interactiva completa con inputs en tiempo real será desplegada en la Fase 5 del proyecto.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

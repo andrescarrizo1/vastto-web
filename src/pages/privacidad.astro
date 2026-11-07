@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_EMAIL, FOUNDER_NAME, FOUNDER_LOCATION } from '../consts';
+---
+
+<Layout 
+  title="Política de Privacidad | VASTTO"
+  description="Política de privacidad de VASTTO conforme a la Ley 25.326 de Protección de Datos Personales de la República Argentina."
+>
+  <section class="section" style="padding-top: 5rem;">
+    <div class="container container-narrow">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="badge badge-emerald section-eyebrow">MARCO LEGAL Y PRIVACIDAD</span>
+        <h1>Política de Privacidad</h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 720px; margin: 1.25rem auto 0 auto; line-height: 1.65;">
+          En VASTTO la privacidad, la soberanía de los datos y el principio de recolección mínima son pilares fundamentales de nuestra arquitectura técnica y comercial.
+        </p>
+      </div>
+
+      <div class="card-tech" style="padding: 2.5rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2.5rem;">
+        <h2 style="color: #fff; font-size: 1.35rem; margin-top: 0; margin-bottom: 1rem;">1. Responsable del Tratamiento</h2>
+        <p>
+          El responsable del tratamiento de los datos personales recopilados a través de este sitio web es <strong>{FOUNDER_NAME}</strong>, con domicilio operativo en <strong>{FOUNDER_LOCATION}</strong>. Canal oficial de contacto: <a href={`mailto:${CONTACT_EMAIL}`} style="color: var(--accent-cyan);">{CONTACT_EMAIL}</a>.
+        </p>
+
+        <h2 style="color: #fff; font-size: 1.35rem; margin-top: 2rem; margin-bottom: 1rem;">2. Marco Legal Aplicable</h2>
+        <p>
+          Esta política se rige en estricto cumplimiento de la <strong>Ley Nacional N° 25.326 de Protección de Datos Personales de la República Argentina</strong>, su Decreto Reglamentario N° 1558/2001 y las disposiciones emitidas por la Agencia de Acceso a la Información Pública (AAIP), órgano de control en materia de protección de datos.
+        </p>
+
+        <h2 style="color: #fff; font-size: 1.35rem; margin-top: 2rem; margin-bottom: 1rem;">3. Datos que Recopilamos y Finalidad</h2>
+        <p>
+          VASTTO aplica el principio de <em>minimización de datos</em>. Únicamente recopilamos la información que el usuario proporciona de manera voluntaria y explícita:
+        </p>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+          <li><strong>Consultas comerciales y técnicas:</strong> Al escribirnos a nuestro correo electrónico ({CONTACT_EMAIL}) o utilizar enlaces de contacto directo, recopilamos su dirección de correo electrónico, nombre y la información que decida incluir en su mensaje para responder a su solicitud técnica o comercial.</li>
+          <li><strong>Sin creación de perfiles invasivos:</strong> No comercializamos, cedemos ni compartimos sus datos con agencias de marketing ni brokers de datos.</li>
+        </ul>
+
+        <h2 style="color: #fff; font-size: 1.35rem; margin-top: 2rem; margin-bottom: 1rem;">4. Demos Interactivas y Prototipos en el Navegador</h2>
+        <p>
+          Las demostraciones interactivas disponibles en la sección <code>/demos/*</code> (como el calificador inmobiliario o el simulador de vehículos) son prototipos visuales que se ejecutan <strong>exclusivamente en el navegador de su dispositivo (lado del cliente)</strong>:
+        </p>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+          <li>Los datos simulados o ingresados en dichas pantallas no se almacenan en ninguna base de datos ni se transmiten a servidores externos.</li>
+          <li>Al refrescar la página, los datos simulados se descartan completamente de la memoria volátil de su navegador.</li>
+        </ul>
+
+        <h2 style="color: #fff; font-size: 1.35rem; margin-top: 2rem; margin-bottom: 1rem;">5. Cookies, Píxeles y Rastreadores</h2>
+        <p>
+          Este sitio web estático (desarrollado con Astro y servido globalmente a través de Cloudflare Pages):
+        </p>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+          <li><strong>NO utiliza cookies de rastreo publicitario de terceros</strong> (como Meta Pixel o Google Remarketing).</li>
+          <li><strong>NO emplea cookies intrusivas de sesión</strong> para los visitantes regulares del sitio.</li>
+          <li>Las tecnologías empleadas en la entrega de contenido responden únicamente a la seguridad perimetral, compresión y entrega estática de alto rendimiento.</li>
+        </ul>
+
+        <h2 style="color: #fff; font-size: 1.35rem; margin-top: 2rem; margin-bottom: 1rem;">6. Derechos del Titular de los Datos (Derechos ARCO)</h2>
+        <p>
+          Conforme a los artículos 14, 15 y 16 de la Ley 25.326, usted tiene derecho a:
+        </p>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+          <li><strong>Acceso:</strong> Solicitar información sobre los datos personales que tengamos almacenados con motivo de su correspondencia comercial.</li>
+          <li><strong>Rectificación:</strong> Solicitar la corrección o actualización de sus datos si fueran inexactos o incompletos.</li>
+          <li><strong>Supresión / Actualización:</strong> Solicitar la eliminación total o bloqueo de sus datos de nuestros registros de correspondencia.</li>
+        </ul>
+        <p>
+          Para ejercer cualquiera de estos derechos en forma gratuita, puede enviar una comunicación con el asunto <em>"Derechos Ley 25.326"</em> a <a href={`mailto:${CONTACT_EMAIL}`} style="color: var(--accent-cyan);">{CONTACT_EMAIL}</a> acreditando su identidad. Su solicitud será atendida dentro de los plazos legales establecidos.
+        </p>
+
+        <h2 style="color: #fff; font-size: 1.35rem; margin-top: 2rem; margin-bottom: 1rem;">7. Órgano de Control</h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0;">
+          La AGENCIA DE ACCESO A LA INFORMACIÓN PÚBLICA, en su carácter de Órgano de Control de la Ley N° 25.326, tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos por incumplimiento de las normas vigentes en materia de protección de datos personales.
+        </p>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <a href="/" class="btn btn-secondary">← Volver al Inicio</a>
+      </div>
+    </div>
+  </section>
+</Layout>
